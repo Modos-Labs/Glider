@@ -1,0 +1,12 @@
+The following are the changes for the hardware.
+
+R0.1
+1. Initial release.
+
+R0.2
+1. Switch from ECP5 to SPARTAN6 FPGA
+
+R0.3
+1. Remove on-board 39pin/ 50pin connector, switch to 40pin connector or EPD
+2. Remove DSI input connector
+3. Add DisplayPort to LVDS bridge chip and DisplayPort input
