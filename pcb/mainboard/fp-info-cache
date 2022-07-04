@@ -1,4 +1,4 @@
-66989136759143
+37621078134234
 footprints
 472720024
 47272-0024
@@ -28,54 +28,12 @@ AXT524124
 28
 25
 footprints
-BGA-96_9.0x13.0mm_P0.8mm
-BGA-96, http://www.mouser.com/ds/2/198/43-46TR16640B-81280BL-706483.pdf
-BGA-96
-0
-96
-96
-footprints
 BGA-96_9.0x14.0mm_P0.8mm
 BGA-96, http://www.mouser.com/ds/2/198/43-46TR16640B-81280BL-706483.pdf
 BGA-96
 0
 96
 96
-footprints
-BGA-541_25x25_19.0x19.0mm
-
-
-0
-541
-541
-footprints
-Connector_USB_905-562A2021S10100
-
-
-0
-6
-5
-footprints
-FCI_10064555-392120HLF
-
-
-0
-41
-40
-footprints
-HDMI-D
-PADOVETE OT 1.6X0.28 STAVAT NA 1.6X0.25
-PADOVETE OT 1.6X0.28 STAVAT NA 1.6X0.25
-0
-23
-20
-footprints
-HDMI-D-Stripped
-PADOVETE OT 1.6X0.28 STAVAT NA 1.6X0.25
-PADOVETE OT 1.6X0.28 STAVAT NA 1.6X0.25
-0
-23
-20
 footprints
 HRS_FH26W-39S-0.3SHW(60)
 
@@ -91,27 +49,6 @@ connector Hirose FH12 horizontal
 42
 41
 footprints
-JAE_KX14-40K5D
-0.8mm pitch, SMT, Parallel/ vertical, 40 pos., Receptacle
-
-0
-42
-41
-footprints
-Jack_3.5mm_PJ327E_5A
-PJ327E-A 5pin SMD 3.5mm stereo headphones jack.
-headphones jack plug stereo 3.5mm PJ327E
-0
-5
-5
-footprints
-KH_RCHSP32_8P8C-D
-10/100Base-TX RJ45 ethernet magnetic transformer connector horizontal with green/orange LEDs https://katalog.we-online.de/pbs/datasheet/7499010121A.pdf
-RJ45 ethernet magnetic
-0
-14
-13
-footprints
 L_1212
 Inductor, 3.0mmx3.0mm
 inductor vishay ihlp smd
@@ -126,6 +63,13 @@ surface mount common mode bead
 4
 4
 footprints
+L_FXL0420
+
+
+0
+2
+2
+footprints
 L_MAPM0630F
 
 
@@ -134,27 +78,6 @@ L_MAPM0630F
 2
 footprints
 L_MAPM1040F
-
-
-0
-2
-2
-footprints
-M2_BKEY
-
-APCI0144-P001A, TE 2199230
-0
-69
-68
-footprints
-M2_MKEY
-
-APCI0144-P001A, TE 2199230
-0
-70
-69
-footprints
-MIC_45
 
 
 0
@@ -182,20 +105,6 @@ connector Molex  top entry
 8
 7
 footprints
-PJ-327E
-
-
-0
-5
-5
-footprints
-PinHeader_1x04_P1.27mm_Horizontal_Alt
-Through hole angled pin header, 1x04, 1.27mm pitch, 4.0mm pin length, single row
-Through hole angled pin header THT 1x04 1.27mm single row
-0
-4
-4
-footprints
 QFN-28-1EP_4x5mm_P0.5mm_EP2.65x3.65mm_ThermalVias_0.3
 QFN, 28 Pin (http://www.analog.com/media/en/technical-documentation/data-sheets/3555fe.pdf#page=32), generated with kicad-footprint-generator ipc_noLead_generator.py
 QFN NoLead
@@ -210,19 +119,12 @@ QFN NoLead
 71
 49
 footprints
-RL-SM02BD(RTL8723BS)
-
-
+RP2040-QFN-56
+QFN, 56 Pin (http://www.cypress.com/file/416486/download#page=40), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
+QFN DFN_QFN
 0
-46
-46
-footprints
-RP-A311D
-
-
-0
-172
-172
+70
+57
 footprints
 TE_5-2069716-3_1x40-1MP_P0.5mm_Horizontal
 TE FPC connector, 40 top-side contacts, 0.5mm pitch, SMT, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1734839%7FC%7Fpdf%7FEnglish%7FENG_CD_1734839_C_C_1734839.pdf%7F4-1734839-0
@@ -252,37 +154,9 @@ SATA, Receptacle, Cable-to-Board, 22 Position, 7P + 15P, Standard Connector Prof
 24
 23
 footprints
-TFC-WPAPR-08
-OFFSET X-> -0.950MM
-OFFSET X-> -0.950MM
+Xilinx_FTG256
+Artix-7 BGA, 16x16 grid, 17x17mm package, 1mm pitch; https://www.xilinx.com/support/documentation/user_guides/ug475_7Series_Pkg_Pinout.pdf#page=269, NSMD pad definition Appendix A
+BGA 256 1 FT256 FTG256
 0
-13
-13
-footprints
-USB_A_Wuerth_614008235023_Vertical_Stacked
-Stacked USB A connector http://katalog.we-online.de/em/datasheet/61400826021.pdf
-Wuerth stacked USB_A
-0
-12
-9
-footprints
-USB_Adapter_Board
-
-
-0
-8
-8
-footprints
-bt_antenna_1ant_2gnd
-
-
-0
-12
-3
-footprints
-t4x
-
-
-0
-0
-0
+256
+256
