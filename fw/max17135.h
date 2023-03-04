@@ -21,5 +21,4 @@
 //
 #pragma once
 
-void ptn3460_init();
-bool ptn3460_is_valid();
+void tps_init(void);

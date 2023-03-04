@@ -21,5 +21,6 @@
 //
 #pragma once
 
-void ptn3460_init();
-bool ptn3460_is_valid();
+void fpga_init(void);
+void fpga_suspend(void);
+void fpga_resume(void);

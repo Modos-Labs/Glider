@@ -19,64 +19,54 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
-#include <stdio.h>
 #include "pico/stdlib.h"
-#include "pico/binary_info.h"
 #include "hardware/i2c.h"
-#include "utils.h"
-#include "tcpm_driver.h"
-#include "usb_pd.h"
-#include "ptn3460.h"
-#include "tps65185.h"
 #include "max17135.h"
-#include "fpga.h"
 
-int main()
-{
-    stdio_init_all();
+#define MAX_I2C i2c0
+#define MAX_I2C_ADDR 0x48
 
-    //sleep_ms(2000);
-
-    printf("\n");
-    printf("Glider\n");
-
-    int result = tcpm_init(0);
-    if (result)
-        fatal("Failed to initialize TCPC\n");
-
-    int cc1, cc2;
-    tcpc_config[0].drv->get_cc(0, &cc1, &cc2);
-    printf("CC status %d %d\n", cc1, cc2);
-
-    gpio_init(10);
-    gpio_put(10, 0);
-    gpio_set_dir(10, GPIO_OUT);
-
-    tps_init();
-    fpga_init();
-
-    ptn3460_init();
-    pd_init(0);
-    sleep_ms(50);
-
-    extern int dp_enabled;
-    bool hpd_sent = false;
-    bool dp_valid = false;
-
-    while (1) {
-        // TODO: Implement interrupt
-        fusb302_tcpc_alert(0);
-        pd_run_state_machine(0);
-        if (dp_enabled && !hpd_sent && !pd_is_vdm_busy(0)) {
-            printf("DP enabled\n");
-            pd_send_hpd(0, hpd_high);
-            hpd_sent = true;
-        }
-        if (dp_valid != ptn3460_is_valid()) {
-            dp_valid = ptn3460_is_valid();
-            printf(dp_valid ? "Input is valid\n" : "Input is invalid\n");
-        }
+void max_write(uint8_t reg, uint8_t val) {
+    uint8_t buf[2];
+    int result;
+    buf[0] = reg;
+    buf[1] = val;
+    result = i2c_write_blocking(MAX_I2C, MAX_I2C_ADDR, buf, 2, false);
+    if (result != 2) {
+        fatal("Failed writing data to MAX");
     }
+}
 
-    return 0;
+uint8_t max_read(uint8_t reg) {
+    int result;
+    uint8_t buf[1];
+    buf[0] = reg;
+    result = i2c_write_blocking(MAX_I2C, MAX_I2C_ADDR, buf, 1, true);
+    if (result != 1) {
+        fatal("Failed writing data to MAX");
+    }
+    result = i2c_read_blocking(MAX_I2C, MAX_I2C_ADDR, buf, 1, false);
+    if (result != 1) {
+        fatal("Failed reading data from MAX");
+    }
+    return buf[0];
+}
+
+void max_set_vcom(uint16_t vcom) {
+    max_write(0x04, (vcom >> 16));
+    max_write(0x03, vcom & 0xff);
+}
+
+void max_init(void) {
+    //max_set_vcom(100); // -1V
+    printf("Product Revision: %08x\n", max_read(0x06));
+    printf("Product ID: %08x\n", max_read(0x07));
+    max_write(0x10, 0x80);
+    max_write(0x09, 0x01); // Startup
+    for (int i = 0; i < 20; i++) {
+        sleep_ms(10);
+        uint8_t val = max_read(0x05);
+        printf("Status: %08x\n", val);
+    }
+    printf("Fault: %08x\n", max_read(0x0a));
 }

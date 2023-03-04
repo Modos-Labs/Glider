@@ -32,6 +32,7 @@ void fatal(const char *msg, ...) {
     
     printf("[FATAL] ");
     vprintf(msg, params);
+    printf("\n");
 
     va_end(params);
 

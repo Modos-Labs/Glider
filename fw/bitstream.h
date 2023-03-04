@@ -21,5 +21,5 @@
 //
 #pragma once
 
-void ptn3460_init();
-bool ptn3460_is_valid();
+extern const char fpga_bitstream[];
+extern const int fpga_bitstream_length;

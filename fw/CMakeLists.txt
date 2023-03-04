@@ -25,6 +25,10 @@ add_executable(fw
         fusb302.c
         ptn3460.c
         tcpm_driver.c
+        tps65185.c
+        max17135.c
+        bitstream.c
+        fpga.c
         usb_pd_driver.c
         usb_pd_policy.c
         usb_pd_protocol.c
