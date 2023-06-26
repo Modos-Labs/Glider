@@ -1,4 +1,4 @@
-37621078134234
+39436226710237
 footprints
 472720024
 47272-0024
@@ -153,6 +153,13 @@ SATA, Receptacle, Cable-to-Board, 22 Position, 7P + 15P, Standard Connector Prof
 0
 24
 23
+footprints
+USB-306A-B-SU
+USB TYPE C, RA RCPT PCB, Hybrid, https://www.amphenolcanada.com/StockAvailabilityPrice.aspx?From=&PartNum=12401548E4%7e2A
+USB C Type-C Receptacle Hybrid
+0
+28
+25
 footprints
 Xilinx_FTG256
 Artix-7 BGA, 16x16 grid, 17x17mm package, 1mm pitch; https://www.xilinx.com/support/documentation/user_guides/ug475_7Series_Pkg_Pinout.pdf#page=269, NSMD pad definition Appendix A
