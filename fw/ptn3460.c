@@ -46,6 +46,14 @@ void ptn3460_select_edid_emulation(uint8_t id) {
 
 void ptn3460_load_edid(uint8_t *edid) {
     int result;
+    // Fix checksum in EDID
+    uint8_t checksum = 0;
+    for (int i = 1; i < 128; i++) {
+        checksum += edid[i];
+    }
+    checksum = ~checksum + 1;
+    edid[128] = checksum;
+
     result = i2c_write_blocking(PTN3460_I2C, PTN3460_I2C_ADDRESS,
             edid, 129, false);
     if (result != 129) {
@@ -65,7 +73,7 @@ void ptn3460_write(uint8_t reg, uint8_t val) {
     }
 }
 
-void ptn3460_init() {
+void ptn3460_init(void) {
     gpio_init(PTN3460_HPD_PIN);
     gpio_set_dir(PTN3460_HPD_PIN, GPIO_IN);
     gpio_pull_down(PTN3460_HPD_PIN);
@@ -104,6 +112,6 @@ void ptn3460_init() {
     }*/
 }
 
-bool ptn3460_is_valid() {
+bool ptn3460_is_valid(void) {
     return gpio_get(PTN3460_VALID_PIN);
 }
