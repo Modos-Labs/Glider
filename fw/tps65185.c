@@ -60,6 +60,10 @@ void tps_set_vcom(uint16_t vcom) {
     tps_write(0x03, vcom & 0xff);
 }
 
+void tps_enable(bool en) {
+    gpio_put(TPS_EN_PIN, en);
+}
+
 void tps_init(void) {
     gpio_init(TPS_EN_PIN);
     gpio_put(TPS_EN_PIN, 1);

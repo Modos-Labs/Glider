@@ -27,8 +27,7 @@
 #include "tcpm_driver.h"
 #include "usb_pd.h"
 #include "ptn3460.h"
-#include "tps65185.h"
-#include "max17135.h"
+#include "power.h"
 #include "fpga.h"
 
 int main()
@@ -52,7 +51,8 @@ int main()
     gpio_put(10, 0);
     gpio_set_dir(10, GPIO_OUT);
 
-    tps_init();
+    power_init();
+    power_enable(true); // TODO: should be dependent on DP signal valid
     fpga_init();
 
     ptn3460_init();

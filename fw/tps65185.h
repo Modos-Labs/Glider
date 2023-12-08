@@ -22,3 +22,5 @@
 #pragma once
 
 void tps_init(void);
+void tps_enable(bool en);
+void tps_set_vcom(uint16_t vcom);

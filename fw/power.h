@@ -1,5 +1,5 @@
 //
-// Copyright 2022 Wenting Zhang <zephray@outlook.com>
+// Copyright 2023 Wenting Zhang <zephray@outlook.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,24 @@
 //
 #pragma once
 
-void max_init(void);
-void max_set_vcom(uint16_t vcom);
-void max_enable(bool en);
+#if defined(POWER_TPS65185)
+#include "tps65185.h"
+
+#define power_init()        tps_init()
+#define power_enable(x)     tps_enable(x)
+#define power_set_vcom(x)   tps_set_vcom(x)
+
+#elif defined(POWER_MAX17135)
+#include "max17135.h"
+
+#define power_init()        max_init()
+#define power_enable(x)     max_enable(x)
+#define power_set_vcom(x)   max_set_vcom(x)
+
+#elif defined(POWER_GPIO)
+
+void power_init(void);
+void power_enable(bool en);
+void power_set_vcom(uint16_t vcom);
+
+#endif

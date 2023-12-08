@@ -57,6 +57,10 @@ void max_set_vcom(uint16_t vcom) {
     max_write(0x03, vcom & 0xff);
 }
 
+void max_enable(bool en) {
+    // TODO
+}
+
 void max_init(void) {
     //max_set_vcom(100); // -1V
     printf("Product Revision: %08x\n", max_read(0x06));
