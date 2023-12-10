@@ -23,6 +23,7 @@
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
 #include "hardware/i2c.h"
+#include "config.h"
 #include "utils.h"
 #include "tcpm_driver.h"
 #include "usb_pd.h"
