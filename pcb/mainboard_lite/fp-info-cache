@@ -1,0 +1,3116 @@
+752959845778355
+Inductor_SMD
+L_6.3x6.3_H3
+Choke, SMD, 6.3x6.3mm 3mm height
+Choke SMD
+0
+2
+2
+Inductor_SMD
+L_7.3x7.3_H3.5
+Choke, SMD, 7.3x7.3mm 3.5mm height
+Choke SMD
+0
+2
+2
+Inductor_SMD
+L_7.3x7.3_H4.5
+Choke, SMD, 7.3x7.3mm 4.5mm height
+Choke SMD
+0
+2
+2
+Inductor_SMD
+L_10.4x10.4_H4.8
+Choke, SMD, 10.4x10.4mm 4.8mm height
+Choke SMD
+0
+2
+2
+Inductor_SMD
+L_12x12mm_H4.5mm
+Choke, SMD, 12x12mm 4.5mm height
+Choke SMD
+0
+2
+2
+Inductor_SMD
+L_12x12mm_H6mm
+Choke, SMD, 12x12mm 6mm height
+Choke SMD
+0
+2
+2
+Inductor_SMD
+L_12x12mm_H8mm
+Choke, SMD, 12x12mm 8mm height
+Choke SMD
+0
+2
+2
+Inductor_SMD
+L_0201_0603Metric
+Inductor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
+inductor
+0
+4
+2
+Inductor_SMD
+L_0201_0603Metric_Pad0.64x0.40mm_HandSolder
+Inductor SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+4
+2
+Inductor_SMD
+L_0402_1005Metric
+Inductor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_0402_1005Metric_Pad0.77x0.64mm_HandSolder
+Inductor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_0603_1608Metric
+Inductor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+Inductor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_0805_2012Metric
+Inductor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_0805_2012Metric_Pad1.05x1.20mm_HandSolder
+Inductor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_0805_2012Metric_Pad1.15x1.40mm_HandSolder
+Inductor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_01005_0402Metric
+Inductor SMD 01005 (0402 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.vishay.com/docs/20056/crcw01005e3.pdf), generated with kicad-footprint-generator
+inductor
+0
+4
+2
+Inductor_SMD
+L_01005_0402Metric_Pad0.57x0.30mm_HandSolder
+Inductor SMD 01005 (0402 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.vishay.com/docs/20056/crcw01005e3.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+4
+2
+Inductor_SMD
+L_1008_2520Metric
+Inductor SMD 1008 (2520 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://ecsxtal.com/store/pdf/ECS-MPI2520-SMD-POWER-INDUCTOR.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_1008_2520Metric_Pad1.43x2.20mm_HandSolder
+Inductor SMD 1008 (2520 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://ecsxtal.com/store/pdf/ECS-MPI2520-SMD-POWER-INDUCTOR.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_1206_3216Metric
+Inductor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_1206_3216Metric_Pad1.22x1.90mm_HandSolder
+Inductor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_1206_3216Metric_Pad1.42x1.75mm_HandSolder
+Inductor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_1210_3225Metric
+Inductor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_1210_3225Metric_Pad1.42x2.65mm_HandSolder
+Inductor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_1806_4516Metric
+Inductor SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_1806_4516Metric_Pad1.45x1.90mm_HandSolder
+Inductor SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 80, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_1812_4532Metric
+Inductor SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_1812_4532Metric_Pad1.30x3.40mm_HandSolder
+Inductor SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_2010_5025Metric
+Inductor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_2010_5025Metric_Pad1.52x2.65mm_HandSolder
+Inductor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_2512_6332Metric
+Inductor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor
+0
+2
+2
+Inductor_SMD
+L_2512_6332Metric_Pad1.52x3.35mm_HandSolder
+Inductor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+inductor handsolder
+0
+2
+2
+Inductor_SMD
+L_AVX_LMLP07A7
+Inductor, AVX Kyocera, LMLP Series, style D, 6.6mmx7.3mm, 3.0mm height. (Script generated with StandardBox.py) (https://datasheets.avx.com/LMLPD.pdf)
+Inductor LMLP
+0
+2
+2
+Inductor_SMD
+L_Abracon_ASPI-0630LR
+smd shielded power inductor https://abracon.com/Magnetics/power/ASPI-0630LR.pdf
+inductor abracon smd shielded
+0
+2
+2
+Inductor_SMD
+L_Abracon_ASPI-3012S
+smd shielded power inductor http://www.abracon.com/Magnetics/power/ASPI-3012S.pdf
+inductor abracon smd shielded
+0
+2
+2
+Inductor_SMD
+L_Abracon_ASPI-4030S
+smd shielded power inductor 4x4x3mm, Abracon ASPI-4030S, https://abracon.com/Magnetics/power/ASPI-4030S.pdf
+inductor abracon smd shielded
+0
+2
+2
+Inductor_SMD
+L_Bourns-SRN1060
+Bourns SRN1060 series SMD inductor https://www.bourns.com/docs/Product-Datasheets/SRN1060.pdf
+Bourns SRN1060 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns-SRN4018
+Bourns SRN4018 series SMD inductor, https://www.bourns.com/docs/Product-Datasheets/SRN4018.pdf
+Bourns SRN4018 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns-SRN6028
+Bourns SRN6028 series SMD inductor
+Bourns SRN6028 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns-SRN8040_8x8.15mm
+Bourns SRN8040 series SMD inductor 8x8.15mm, https://www.bourns.com/docs/Product-Datasheets/SRN8040.pdf
+Bourns SRN8040 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns-SRR1005
+Bourns SRR1005 series SMD inductor
+Bourns SRR1005 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns-SRU1028_10.0x10.0mm
+Bourns SRU1028 series SMD inductor, https://www.bourns.com/docs/Product-Datasheets/SRU1028.pdf
+Bourns SRU1028 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns-SRU8028_8.0x8.0mm
+Bourns SRU8028 series SMD inductor
+Bourns SRU8028 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns-SRU8043
+Bourns SRU8043 series SMD inductor
+Bourns SRU8043 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns_SDR1806
+https://www.bourns.com/docs/Product-Datasheets/SDR1806.pdf
+Bourns SDR1806
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRF1260
+Inductor, Bourns, SRF1260, 12.5mmx12.5mm (Script generated with StandardBox.py) (https://www.bourns.com/docs/Product-Datasheets/SRF1260.pdf)
+Inductor Bourns_SRF1260
+0
+4
+4
+Inductor_SMD
+L_Bourns_SRN6045TA
+http://www.bourns.com/docs/product-datasheets/srn6045ta.pdf
+Semi-shielded Power Inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRN8040TA
+https://www.bourns.com/docs/product-datasheets/srn8040ta.pdf
+Inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRP1038C_10.0x10.0mm
+Bourns SRP1038C series SMD inductor http://www.bourns.com/docs/Product-Datasheets/SRP1038C.pdf
+Bourns SRP1038C SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRP1245A
+Bourns SRP1245A series SMD inductor http://www.bourns.com/docs/Product-Datasheets/SRP1245A.pdf
+Bourns SRP1245A SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRP1770TA_16.9x16.9mm
+Bourns SRP1770TA series SMD Inductor http://www.bourns.com/docs/Product-Datasheets/SRP1770TA.pdf
+Bourns SRP1770TA series SMD Inductor 
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRP2313AA
+Bourns SRR1260 series SMD inductor http://www.bourns.com/docs/product-datasheets/srp2313aa.pdf
+Bourns SRR1260 SMD inductor
+0
+4
+2
+Inductor_SMD
+L_Bourns_SRP5030T
+Inductor, Bourns, SRP5030T, 5.7mmx5.2mm (Script generated with StandardBox.py) (https://www.bourns.com/data/global/pdfs/SRP5030T.pdf)
+Inductor Bourns_SRP5030T
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRP7028A_7.3x6.6mm
+Shielded Power Inductors (https://www.bourns.com/docs/product-datasheets/srp7028a.pdf)
+Shielded Inductors Bourns SMD SRP7028A
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRR1208_12.7x12.7mm
+Bourns SRP1208 series SMD inductor https://www.bourns.com/pdfs/SRR1208.pdf
+Bourns SRP1208 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRR1210A
+Bourns SRR1210A series SMD inductor https://www.bourns.com/docs/Product-Datasheets/SRR1210A.pdf
+Bourns SRR1210A SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Bourns_SRR1260
+Bourns SRR1260 series SMD inductor http://www.bourns.com/docs/Product-Datasheets/SRR1260.pdf
+Bourns SRR1260 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR3010S
+Inductor, Changjiang, FNR3010S, 3.0x3.0x1.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR3012S
+Inductor, Changjiang, FNR3012S, 3.0x3.0x1.2mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR3015S
+Inductor, Changjiang, FNR3015S, 3.0x3.0x1.5mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR3021S
+Inductor, Changjiang, FNR3021S, 3.0x3.0x2.35mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR4010S
+Inductor, Changjiang, FNR4010S, 4.0x4.0x1.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR4012S
+Inductor, Changjiang, FNR4012S, 4.0x4.0x1.2mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR4015S
+Inductor, Changjiang, FNR4015S, 4.0x4.0x1.65mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR4018S
+Inductor, Changjiang, FNR4018S, 4.0x4.0x1.8mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR4020S
+Inductor, Changjiang, FNR4020S, 4.0x4.0x2.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR4026S
+Inductor, Changjiang, FNR4026S, 4.0x4.0x2.6mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR4030S
+Inductor, Changjiang, FNR4030S, 4.0x4.0x3.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR5012S
+Inductor, Changjiang, FNR5012S, 5.0x5.0x1.2mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR5015S
+Inductor, Changjiang, FNR5015S, 5.0x5.0x1.5mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR5020S
+Inductor, Changjiang, FNR5020S, 5.0x5.0x2.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR5030S
+Inductor, Changjiang, FNR5030S, 5.0x5.0x3.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR5040S
+Inductor, Changjiang, FNR5040S, 5.0x5.0x4.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR5045S
+Inductor, Changjiang, FNR5045S, 5.0x5.0x4.5mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR6020S
+Inductor, Changjiang, FNR6020S, 6.0x6.0x2.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR6028S
+Inductor, Changjiang, FNR6028S, 6.0x6.0x2.8mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR6040S
+Inductor, Changjiang, FNR6040S, 6.0x6.0x4.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR6045S
+Inductor, Changjiang, FNR6045S, 6.0x6.0x4.5mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR8040S
+Inductor, Changjiang, FNR8040S, 8.0x8.0x4.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR8050S
+Inductor, Changjiang, FNR8050S, 8.0x8.0x5.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR8065S
+Inductor, Changjiang, FNR8065S, 8.0x8.0x6.5mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR252010S
+Inductor, Changjiang, FNR252010S, 2.5x2.0x1.0mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Changjiang_FNR252012S
+Inductor, Changjiang, FNR252012S, 2.5x2.0x1.2mm, https://datasheet.lcsc.com/lcsc/1806131217_cjiang-Changjiang-Microelectronics-Tech-FNR5040S3R3NT_C167960.pdf
+Inductor wirewound power shielded
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRA00040415
+Inductor, Chilisin, BMRA00040415, 4.6x4.1x1.5mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRA00040420
+Inductor, Chilisin, BMRA00040420, 4.6x4.1x2.0mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRA00050520
+Inductor, Chilisin, BMRA00050520, 5.7x5.4x1.8mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRA00050530
+Inductor, Chilisin, BMRA00050530, 5.7x5.4x3.0mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRB00050512
+Inductor, Chilisin, BMRB00050512, 5.7x5.4x1.2mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRB00050518
+Inductor, Chilisin, BMRB00050518, 5.7x5.4x1.8mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRB00050518-B
+Inductor, Chilisin, BMRB00050518-B, 5.4x5.2x1.6mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRB00060612
+Inductor, Chilisin, BMRB00060612, 7.3x6.6x1.2mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRB00060618
+Inductor, Chilisin, BMRB00060618, 7.3x6.6x1.6mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRB00060624
+Inductor, Chilisin, BMRB00060624, 7.3x6.6x2.4mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRB00060650
+Inductor, Chilisin, BMRB00060650, 7.3x6.6x5.0mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRF00101040
+Inductor, Chilisin, BMRF00101040, 11.6x10.1x4.0mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRF00131350
+Inductor, Chilisin, BMRF00131350, 13.8x12.6x5.0mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRF00131360
+Inductor, Chilisin, BMRF00131360, 13.8x12.6x5.8mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRF00171770
+Inductor, Chilisin, BMRF00171770, 17.15x17.15x6.8mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRG00101030
+Inductor, Chilisin, BMRG00101030, 11.6x10.1x3.0mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRG00131360
+Inductor, Chilisin, BMRG00131360, 13.8x12.6x6.0mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRx00040412
+Inductor, Chilisin, BMRx00040412, 4.6x4.1x1.2mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRx00050512-B
+Inductor, Chilisin, BMRx00050512-B, 5.4x5.2x1.2mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRx00050515
+Inductor, Chilisin, BMRx00050515, 5.7x5.4x1.5mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRx00060615
+Inductor, Chilisin, BMRx00060615, 7.3x6.6x1.3mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Chilisin_BMRx00060630
+Inductor, Chilisin, BMRx00060630, 7.3x6.6x3.0mm, https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf
+Inductor bmrx mchi
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_LPS3010
+Shielded Power Inductor SMD 3x3x1mm, Coilcraft LPS3010, https://www.coilcraft.com/pdfs/lps3010.pdf
+inductor low profile
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_LPS3314
+SMD Inductor, 3.3x3.3x1.4mm, Coilcraft LPS3314, https://www.coilcraft.com/pdfs/lps3314.pdf
+L Coilcraft LPS3314
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_LPS4018
+SMD Inductor Coilcraft LPS4018 https://www.coilcraft.com/pdfs/lps4018.pdf
+L Coilcraft LPS4018
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_LPS5030
+Shielded Power Inductor SMD, Coilcraft LPS5030, https://www.coilcraft.com/pdfs/lps5030.pdf, StepUp generated footprint
+inductor
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1010-XXX
+Inductor, Coilcraft, XAL1010-XXX, 10.5x11.8x10.0mm, https://www.coilcraft.com/getmedia/dd74e670-e705-456a-9a69-585fe02eaf3c/xal1010.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1030-XXX
+Inductor, Coilcraft, XAL1030-XXX, 10.5x11.8x3.1mm, https://www.coilcraft.com/getmedia/7b108457-7731-456d-9256-ca72f2e1a551/xal1030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1060-XXX
+Inductor, Coilcraft, XAL1060-XXX, 10.5x11.8x6.0mm, https://www.coilcraft.com/getmedia/8909f858-b441-4d60-acff-8b8ca36f9ede/xal1060.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1350-XXX
+Inductor, Coilcraft, XAL1350-XXX, 13.2x14.2x5.0mm, https://www.coilcraft.com/getmedia/dc536f86-3a3b-454f-950e-8e153260e61c/xal1350.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1510-103
+Inductor, Coilcraft, XAL1510-103, 15.4x16.4x10.0mm, https://www.coilcraft.com/getmedia/cd1cef27-13f0-4568-8894-f7311475209b/xal1510.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1510-153
+Inductor, Coilcraft, XAL1510-153, 15.4x16.4x10.0mm, https://www.coilcraft.com/getmedia/cd1cef27-13f0-4568-8894-f7311475209b/xal1510.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1510-223
+Inductor, Coilcraft, XAL1510-223, 15.4x16.4x10.0mm, https://www.coilcraft.com/getmedia/cd1cef27-13f0-4568-8894-f7311475209b/xal1510.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1510-333
+Inductor, Coilcraft, XAL1510-333, 15.4x16.4x11.0mm, https://www.coilcraft.com/getmedia/cd1cef27-13f0-4568-8894-f7311475209b/xal1510.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1510-472
+Inductor, Coilcraft, XAL1510-472, 15.4x16.4x10.0mm, https://www.coilcraft.com/getmedia/cd1cef27-13f0-4568-8894-f7311475209b/xal1510.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1510-682
+Inductor, Coilcraft, XAL1510-682, 15.4x16.4x10.0mm, https://www.coilcraft.com/getmedia/cd1cef27-13f0-4568-8894-f7311475209b/xal1510.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1510-822
+Inductor, Coilcraft, XAL1510-822, 15.4x16.4x10.0mm, https://www.coilcraft.com/getmedia/cd1cef27-13f0-4568-8894-f7311475209b/xal1510.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1513-153
+Inductor, Coilcraft, XAL1513-153, 15.4x16.4x13.0mm, https://www.coilcraft.com/getmedia/129ad6f3-0445-47fd-a0b3-edeb49177c17/xal1513.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-102
+Inductor, Coilcraft, XAL1580-102, 15.4x16.4x8.2mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-132
+Inductor, Coilcraft, XAL1580-132, 15.4x16.4x8.0mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-182
+Inductor, Coilcraft, XAL1580-182, 15.4x16.4x8.0mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-202
+Inductor, Coilcraft, XAL1580-202, 15.4x16.4x8.0mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-302
+Inductor, Coilcraft, XAL1580-302, 15.4x16.4x8.0mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-401
+Inductor, Coilcraft, XAL1580-401, 15.4x16.4x8.2mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-452
+Inductor, Coilcraft, XAL1580-452, 15.4x16.4x8.0mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-532
+Inductor, Coilcraft, XAL1580-532, 15.4x16.4x8.0mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-612
+Inductor, Coilcraft, XAL1580-612, 15.4x16.4x8.0mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL1580-741
+Inductor, Coilcraft, XAL1580-741, 15.4x16.4x8.2mm, https://www.coilcraft.com/getmedia/7fdfd306-5217-4ddc-b6b7-a2659ceeb6e3/xal1580.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL4020-XXX
+Inductor, Coilcraft, XAL4020-XXX, 4.3x4.3x2.1mm, https://www.coilcraft.com/getmedia/6adcb47d-8b55-416c-976e-1e22e0d2848c/xal4000.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL4030-XXX
+Inductor, Coilcraft, XAL4030-XXX, 4.3x4.3x3.1mm, https://www.coilcraft.com/getmedia/6adcb47d-8b55-416c-976e-1e22e0d2848c/xal4000.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL4040-XXX
+Inductor, Coilcraft, XAL4040-XXX, 4.3x4.3x4.1mm, https://www.coilcraft.com/getmedia/6adcb47d-8b55-416c-976e-1e22e0d2848c/xal4000.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL5020-XXX
+Inductor, Coilcraft, XAL5020-XXX, 5.48x5.68x2.0mm, https://www.coilcraft.com/getmedia/1941eff1-c018-493c-8cd6-d88d2edf5029/xal5020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL5030-XXX
+Inductor, Coilcraft, XAL5030-XXX, 5.48x5.68x3.1mm, https://www.coilcraft.com/getmedia/49bc46c8-4b2c-45b9-9b6c-2eaa235ea698/xal50xx.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL5050-XXX
+Inductor, Coilcraft, XAL5050-XXX, 5.48x5.68x5.1mm, https://www.coilcraft.com/getmedia/49bc46c8-4b2c-45b9-9b6c-2eaa235ea698/xal50xx.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL6020-XXX
+Inductor, Coilcraft, XAL6020-XXX, 6.56x6.76x2.1mm, https://www.coilcraft.com/getmedia/467ff589-8942-4e57-92d0-5bef6e04ce09/xal6020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL6030-XXX
+Inductor, Coilcraft, XAL6030-XXX, 6.56x6.76x3.1mm, https://www.coilcraft.com/getmedia/ea51f14b-7f32-4dc6-8dfe-d4b70549040f/xal60xx.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL6060-XXX
+Inductor, Coilcraft, XAL6060-XXX, 6.56x6.76x6.1mm, https://www.coilcraft.com/getmedia/ea51f14b-7f32-4dc6-8dfe-d4b70549040f/xal60xx.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-102
+Inductor, Coilcraft, XAL7020-102, 8.0x8.0x2.0mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-122
+Inductor, Coilcraft, XAL7020-122, 8.0x8.0x2.0mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-151
+Inductor, Coilcraft, XAL7020-151, 8.0x8.0x2.05mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-152
+Inductor, Coilcraft, XAL7020-152, 8.0x8.0x2.0mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-222
+Inductor, Coilcraft, XAL7020-222, 8.0x8.0x2.0mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-271
+Inductor, Coilcraft, XAL7020-271, 8.0x8.0x2.05mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-331
+Inductor, Coilcraft, XAL7020-331, 8.0x8.0x2.0mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-471
+Inductor, Coilcraft, XAL7020-471, 8.0x8.0x2.0mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7020-681
+Inductor, Coilcraft, XAL7020-681, 8.0x8.0x2.0mm, https://www.coilcraft.com/getmedia/0197e98c-67f7-4375-9e38-14d7376a46f3/xal7020.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-102
+Inductor, Coilcraft, XAL7030-102, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-103
+Inductor, Coilcraft, XAL7030-103, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-152
+Inductor, Coilcraft, XAL7030-152, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-161
+Inductor, Coilcraft, XAL7030-161, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-222
+Inductor, Coilcraft, XAL7030-222, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-272
+Inductor, Coilcraft, XAL7030-272, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-301
+Inductor, Coilcraft, XAL7030-301, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-332
+Inductor, Coilcraft, XAL7030-332, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-472
+Inductor, Coilcraft, XAL7030-472, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-562
+Inductor, Coilcraft, XAL7030-562, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-601
+Inductor, Coilcraft, XAL7030-601, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-682
+Inductor, Coilcraft, XAL7030-682, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7030-822
+Inductor, Coilcraft, XAL7030-822, 8.0x8.0x3.1mm, https://www.coilcraft.com/getmedia/0d05a05e-d55d-4a0c-911d-46bd73686633/xal7030.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7050-XXX
+Inductor, Coilcraft, XAL7050-XXX, 7.7x8.0x5.0mm, https://www.coilcraft.com/getmedia/13a991b3-4273-4be3-81ba-f3cf372b4691/xal7050.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL7070-XXX
+Inductor, Coilcraft, XAL7070-XXX, 7.7x8.0x7.0mm, https://www.coilcraft.com/getmedia/1ba55433-bcc8-4838-9b21-382f497e12e0/xal7070.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL8050-223
+Inductor, Coilcraft, XAL8050-223, 8.3x8.8x5.0mm, https://www.coilcraft.com/getmedia/5885ede8-ea4f-464a-9dcb-18dbf143a845/xal8050.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XAL8080-XXX
+Inductor, Coilcraft, XAL8080-XXX, 8.3x8.8x8.0mm, https://www.coilcraft.com/getmedia/345e50d6-a804-4ecb-9a92-5185221faf3e/xal8080.pdf
+Inductor xal
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XFL2010
+Coilcraft XFL2010, Shielded power inductor, 0808, 1.9x2.0mm, https://www.coilcraft.com/getmedia/50382b97-998f-4b75-b5ee-4a93b0ac4411/xfl2010.pdf
+miniature
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XxL4020
+L_Coilcraft_XxL4020 https://www.coilcraft.com/pdfs/xfl4020.pdf
+L Coilcraft XxL4020
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XxL4030
+L_Coilcraft_XxL4030 https://www.coilcraft.com/pdfs/xfl4030.pdf
+L Coilcraft XxL4030
+0
+2
+2
+Inductor_SMD
+L_Coilcraft_XxL4040
+L_Coilcraft_XxL4040 https://www.coilcraft.com/pdfs/xal4000.pdf
+L Coilcraft XxL4040
+0
+2
+2
+Inductor_SMD
+L_CommonModeChoke_Coilcraft_0603USB
+Coilcraft 0603USB Series Common Mode Choke, https://www.coilcraft.com/pdfs/0603usb.pdf
+surface mount common mode bead
+0
+4
+4
+Inductor_SMD
+L_CommonModeChoke_Coilcraft_0805USB
+Coilcraft 0805USB Series Common Mode Choke, https://www.coilcraft.com/pdfs/0805usb.pdf
+surface mount common mode bead
+0
+4
+4
+Inductor_SMD
+L_CommonModeChoke_Coilcraft_1812CAN
+Coilcraft 1812CAN Series Common Mode Choke, https://www.coilcraft.com/pdfs/1812can.pdf
+surface mount common mode bead
+0
+4
+4
+Inductor_SMD
+L_CommonModeChoke_Murata_DLW5BTMxxxSQ2x_5x5mm
+Wire Wound Chip Common Mode Choke Coil SMD, Murata DLW5BTxxxSQ2x, https://www.murata.com/products/productdata/8796762701854/EFLC0020.pdf, manual footprint
+inductor common mode choke
+0
+4
+4
+Inductor_SMD
+L_CommonModeChoke_Wuerth_WE-SL5
+WE-SL5 SMT Common Mode Line Filter, https://www.we-online.de/katalog/en/WE-SL5/, https://www.we-online.de/katalog/datasheet/744272471.pdf
+SMT Common Mode Line Filter
+0
+4
+4
+Inductor_SMD
+L_CommonMode_Delevan_4222
+API Delevan, Surface Mount Common Mode Bead, 4222 4222R, http://www.delevan.com/seriesPDFs/4222.pdf
+surface mount common mode bead
+0
+4
+4
+Inductor_SMD
+L_CommonMode_Wuerth_WE-SL2
+http://katalog.we-online.de/en/pbs/WE-SL2?sid=5fbec16187#vs_t1:c1_ct:1
+Wuerth WE-SL2
+0
+4
+4
+Inductor_SMD
+L_CommonMode_Wurth_WE-CNSW-1206
+WE-CNSW SMT Common Mode Line Filter, https://www.we-online.com/components/products/datasheet/744232090.pdf
+common mode choke 1206 cnsw
+0
+4
+4
+Inductor_SMD
+L_Eaton_MCL2012V1
+Inductor, Eaton, MCL2012V1, 2.0x1.2x0.9mm, https://eu.mouser.com/datasheet/2/87/eaton-mcl2012v1-multilayer-chip-inductor-data-shee-1622891.pdf
+Inductor ferrite multilayer power
+0
+2
+2
+Inductor_SMD
+L_Fastron_PISN
+Choke, Drossel, PISN, SMD, Fastron,
+Choke Drossel PISN SMD Fastron 
+0
+2
+2
+Inductor_SMD
+L_Fastron_PISN_Handsoldering
+Choke, Drossel, PISN, SMD, Fastron,
+Choke Drossel PISN SMD Fastron 
+0
+2
+2
+Inductor_SMD
+L_Fastron_PISR
+Choke, Drossel, PISR, Fastron, SMD,
+Choke Drossel PISR Fastron SMD 
+0
+2
+2
+Inductor_SMD
+L_Fastron_PISR_Handsoldering
+Choke, Drossel, PISR, Fastron, SMD,
+Choke Drossel PISR Fastron SMD 
+0
+2
+2
+Inductor_SMD
+L_Ferrocore_DLG-0302
+Ferrocore DLG-0302 unshielded SMD power inductor, 3.0x2.8x2.5mm, https://www.tme.eu/Document/bda580f72a60a2225c2f6576c2740ae1/dlg-0504.pdf
+smd inductor dlg-0302
+0
+2
+2
+Inductor_SMD
+L_Ferrocore_DLG-0403
+ Ferrocore DLG-0403 unshielded SMD power inductor, 4.5x4.0x3.2mm, https://www.tme.eu/Document/bda580f72a60a2225c2f6576c2740ae1/dlg-0504.pdf
+smd inductor dlg-0403
+0
+2
+2
+Inductor_SMD
+L_Ferrocore_DLG-0504
+Ferrocore DLG-0504 unshielded SMD power inductor, 5.8x5.2x4.5mm, https://www.tme.eu/Document/bda580f72a60a2225c2f6576c2740ae1/dlg-0504.pdf
+smd inductor dlg-0504
+0
+2
+2
+Inductor_SMD
+L_Ferrocore_DLG-0703
+Ferrocore DLG-0703 unshielded SMD power inductor, 7.8x7.0x3.5mm, https://www.tme.eu/Document/bda580f72a60a2225c2f6576c2740ae1/dlg-0504.pdf
+smd inductor dlg-0703
+0
+2
+2
+Inductor_SMD
+L_Ferrocore_DLG-0705
+Ferrocore DLG-0705 unshielded SMD power inductor, 7.8x7.0x5.0mm, https://www.tme.eu/Document/bda580f72a60a2225c2f6576c2740ae1/dlg-0504.pdf
+smd inductor dlg-0705
+0
+2
+2
+Inductor_SMD
+L_Ferrocore_DLG-1004
+Ferrocore DLG-1004 unshielded SMD power inductor, 10.0x9.0x4.0mm, https://www.tme.eu/Document/bda580f72a60a2225c2f6576c2740ae1/dlg-0504.pdf
+smd inductor dlg-1004
+0
+2
+2
+Inductor_SMD
+L_Ferrocore_DLG-1005
+Ferrocore DLG-1005 unshielded SMD power inductor, 10.0x9.0x5.4mm, https://www.tme.eu/Document/bda580f72a60a2225c2f6576c2740ae1/dlg-0504.pdf
+smd inductor dlg-1005
+0
+2
+2
+Inductor_SMD
+L_Murata_DEM35xxC
+https://www.murata.com/~/media/webrenewal/products/inductor/chip/tokoproducts/wirewoundferritetypeforpl/m_dem3518c.ashx
+Inductor SMD DEM35xxC
+0
+2
+2
+Inductor_SMD
+L_Murata_DFE201610P
+Inductor, Murata, DFE201610P, 2.0x1.6x1.0mm, https://www.murata.com/~/media/webrenewal/products/inductor/chip/tokoproducts/wirewoundmetalalloychiptype/m_dfe201610p.ashx
+Inductor power chip flatwire
+0
+2
+2
+Inductor_SMD
+L_Murata_LQH2MCNxxxx02_2.0x1.6mm
+Inductor, Murata, LQH2MCN_02 series, 1.6x2.0x0.9mm (https://search.murata.co.jp/Ceramy/image/img/P02/JELF243A-0053.pdf)
+chip coil inductor Murata LQH2MC
+0
+2
+2
+Inductor_SMD
+L_Murata_LQH55DN_5.7x5.0mm
+Inductor, SMD, 5.7x5.0x4.7mm, https://search.murata.co.jp/Ceramy/image/img/P02/JELF243A-0045.pdf
+inductor smd
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_1turn_HDM0131A
+Neosid, Air-Coil, SML, 1turn, HDM0131A,
+Neosid Air-Coil SML 1turn HDM0131A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_2turn_HAM0231A
+Neosid, Air-Coil, SML, 2turn, HAM0231A,
+Neosid Air-Coil SML 2turn HAM0231A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_2turn_HDM0231A
+Neosid, Air-Coil, SML, 2turn, HDM0231A,
+Neosid Air-Coil SML 2turn HDM0231A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_3turn_HAM0331A
+Neosid, Air-Coil, SML, 2turn, HAM0331A,
+Neosid Air-Coil SML 3turn HAM0331A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_3turn_HDM0331A
+Neosid, Air-Coil, SML, 3turn, HDM0331A,
+Neosid Air-Coil SML 3turn HDM0331A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_4turn_HAM0431A
+Neosid, Air-Coil, SML, 4turn, HAM0431A,
+Neosid Air-Coil SML 4turn HAM0431A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_4turn_HDM0431A
+Neosid, Air-Coil, SML, 4turn, HDM0431A,
+Neosid Air-Coil SML 4turn HDM0431A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_5turn_HAM0531A
+Neosid, Air-Coil, SML, 5turn, HAM0531A,
+Neosid Air-Coil SML 5turn HAM0531A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_5turn_HDM0531A
+Neosid, Air-Coil, SML, 5turn, HDM0531A,
+Neosid Air-Coil SML 5turn HDM0531A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_6-10turn_HAM0631A-HAM1031A
+Neosid, Air-Coil, SML, 6-10turn, HAM0631A-HAM1031A,
+Neosid Air-Coil SML 6-10turn HAM0631A-HAM1031A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_6-10turn_HDM0431A-HDM1031A
+Neosid, Air-Coil, SML, 6-10turn, HDM0431A-HDM1031A,
+Neosid Air-Coil SML 6-10turn HDM0431A-HDM1031A
+0
+2
+2
+Inductor_SMD
+L_Neosid_Air-Coil_SML_6turn_HAM0631A
+Neosid, Air-Coil, SML, 6turn, HAM0631A,
+Neosid Air-Coil SML 6turn HAM0631A
+0
+2
+2
+Inductor_SMD
+L_Neosid_MicroCoil_Ms36-L
+Neosid, Micro Coil, Inductor, Ms36-L, SMD, Fixed inductor, anti clockwise, https://neosid.de/en/products/inductors/rod-core-chokes/smd-rod-core-chokes/52026/ms-36/7-h?c=94
+Neosid Micro Coil Inductor Ms36-L SMD Fixed inductor anti clockwise
+0
+2
+2
+Inductor_SMD
+L_Neosid_Ms42
+Neosid, Inductor, SMs42, Fixed inductor, SMD, magneticaly shielded, https://neosid.de/import-data/product-pdf/neoFestind_Ms42.pdf
+Neosid Inductor SMs42 Fixed inductor SMD magneticaly shielded
+0
+2
+2
+Inductor_SMD
+L_Neosid_Ms50
+Neosid, Power Inductor, Ms50, SMD, Fixed inductor, https://neosid.de/import-data/product-pdf/neoFestind_Ms50.pdf
+Neosid Power Inductor Ms50 SMD Fixed inductor
+0
+2
+2
+Inductor_SMD
+L_Neosid_Ms50T
+Neosid, Power Inductor, Ms50T, SMD, Fixed inductor,  high temperature, https://neosid.de/import-data/product-pdf/neoFestind_Ms50T.pdf
+Neosid Power Inductor Ms50T SMD Fixed inductor high temperature
+0
+2
+2
+Inductor_SMD
+L_Neosid_Ms85
+Neosid, Ms85, Ms85T, SMD Inductor, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_Ms85.pdf
+Neosid Ms85 Ms85T SMD Inductor Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_Ms85T
+Neosid, Ms85, Ms85T, SMD Inductor, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_Ms85T.pdf
+Neosid Ms85 Ms85T SMD Inductor Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_Ms95
+Neosid,Inductor,Ms95, Ms95a, Ms95T, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_Ms95.pdf
+NeosidInductorMs95 Ms95a Ms95T Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_Ms95T
+Neosid,Inductor,Ms95, Ms95a, Ms95T, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_Ms95T.pdf
+NeosidInductorMs95 Ms95a Ms95T Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_Ms95a
+Neosid,Inductor,Ms95, Ms95a, Ms95T, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_Ms95a.pdf
+NeosidInductorMs95 Ms95a Ms95T Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SM-NE95H
+Neosid, Inductor,SM-NE95H, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_SMNE95H.pdf
+Neosid Inductor SM-NE95H Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SM-NE127
+Neosid, Inductor, SM-NE127, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_SMNE127.pdf
+Neosid Inductor SM-NE127 Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SM-NE127_HandSoldering
+Neosid, Inductor, SM-NE127, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_SMNE127.pdf
+Neosid Inductor SM-NE127 Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SM-NE150
+Neosid, Inductor, SM-NE150, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_SMNE150.pdf
+Neosid Inductor SM-NE150 Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SM-PIC0512H
+Neosid, Inductor, PIC0512H, Power Inductor, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_SMPIC0512H.pdf
+Neosid Inductor PIC0512H Power Inductor Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SM-PIC0602H
+Neosid, Power Inductor, SM-PIC0602H, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_SMPIC0602H.pdf
+Neosid Power Inductor SM-PIC0602H Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SM-PIC0612H
+Neosid, Power Inductor, SM-PIC0612H, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_SMPIC0612H.pdf
+Neosid Power Inductor SM-PIC0612H Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SM-PIC1004H
+Neosid, Inductor, SM-PIC1004H, Fixed inductor, SMD, https://neosid.de/import-data/product-pdf/neoFestind_SMPIC1004H.pdf
+Neosid Inductor SM-PIC1004H Fixed inductor SMD
+0
+2
+2
+Inductor_SMD
+L_Neosid_SMS-ME3010
+Neosid, Inductor, SMS-ME3010, Fixed inductor, SMD, magnetically shielded, https://neosid.de/import-data/product-pdf/neoFestind_SMSME3010.pdf
+Neosid Inductor SMS-ME3010 Fixed inductor SMD magnetically shielded
+0
+2
+2
+Inductor_SMD
+L_Neosid_SMS-ME3015
+Neosid, Power Inductor, SMS-ME3015, Fixed inductor, SMD, magnetically shielded, https://neosid.de/import-data/product-pdf/neoFestind_SMSME3015.pdf
+Neosid Power Inductor SMS-ME3015 Fixed inductor SMD magnetically shielded
+0
+2
+2
+Inductor_SMD
+L_Neosid_SMs42
+Neosid, Inductor, SMs42, Fixed inductor, SMD, magneticaly shielded, https://neosid.de/import-data/product-pdf/neoFestind_ma_SMs42.pdf
+Neosid Inductor SMs42 Fixed inductor SMD magneticaly shielded
+0
+2
+2
+Inductor_SMD
+L_Neosid_SMs50
+Neosid, Inductor, SMs50, Fixed inductor, SMD, magneticaly shielded, https://neosid.de/import-data/product-pdf/neoFestind_ma_SMs50.pdf
+Neosid Inductor SMs50 Fixed inductor SMD magneticaly shielded
+0
+2
+2
+Inductor_SMD
+L_Neosid_SMs85
+Neosid, Inductor, SMs85, Fixed inductor, SMD, magnetically shielded, https://neosid.de/import-data/product-pdf/neoFestind_ma_SMs85.pdf
+Neosid Inductor SMs85 Fixed inductor SMD magnetically shielded
+0
+2
+2
+Inductor_SMD
+L_Neosid_SMs95_SMs95p
+Neosid, Inductor, SMs95, Fixed inductor, SMD, magnetically shielded, https://neosid.de/import-data/product-pdf/neoFestind_SMs95SMs95p.pdf
+Neosid Inductor SMs95 Fixed inductor SMD magnetically shielded
+0
+2
+2
+Inductor_SMD
+L_Pulse_P059x
+1:1, Power Inductor, https://productfinder.pulseelectronics.com/api/open/product-attachments/datasheet/p0599nl
+inductor coil choke
+0
+4
+4
+Inductor_SMD
+L_Pulse_PA4320
+Inductor SMD Pulse PA4320 http://productfinder.pulseeng.com/products/datasheets/P787.pdf
+Inductor SMD Pulse PA4320
+0
+2
+2
+Inductor_SMD
+L_Pulse_PA4344
+Pulse PA4344 / PM4344 Series SMD Inductors https://productfinder.pulseelectronics.com/api/public/uploads/product-attachments/datasheet_p771_1608107700.pdf
+Pulse PA4344 PM4344 Series SMD Inductors
+0
+2
+2
+Inductor_SMD
+L_Pulse_PA4349
+Shielded Molded High Current Power Inductors 23.5x22mm, https://productfinder.pulseelectronics.com/api/open/product-attachments/datasheet/pa4349.104anlt
+Shielded Molded High Current Power Inductor
+0
+2
+2
+Inductor_SMD
+L_Sagami_CER1242B
+Inductor, Sagami, h=4.5mm, http://www.sagami-elec.co.jp/file/CER1242B-CER1257B-CER1277B.pdf
+inductor sagami cer12xxb smd
+0
+2
+2
+Inductor_SMD
+L_Sagami_CER1257B
+Inductor, Sagami, h=6.0mm, http://www.sagami-elec.co.jp/file/CER1242B-CER1257B-CER1277B.pdf
+inductor sagami cer12xxb smd
+0
+2
+2
+Inductor_SMD
+L_Sagami_CER1277B
+Inductor, Sagami, h=8.0mm, http://www.sagami-elec.co.jp/file/CER1242B-CER1257B-CER1277B.pdf
+inductor sagami cer12xxb smd
+0
+2
+2
+Inductor_SMD
+L_Sagami_CWR1242C
+Sagami power inductor, CWR1242C, H=4.5mm (http://www.sagami-elec.co.jp/file/16Car_SMDCwr.pdf)
+inductor sagami cwr12xx smd
+0
+4
+2
+Inductor_SMD
+L_Sagami_CWR1257C
+Sagami power inductor, CWR1242C, H=6.0mm (http://www.sagami-elec.co.jp/file/16Car_SMDCwr.pdf)
+inductor sagami cwr12xx smd
+0
+4
+2
+Inductor_SMD
+L_Sagami_CWR1277C
+Sagami power inductor, CWR1242C, H=7.7mm (http://www.sagami-elec.co.jp/file/16Car_SMDCwr.pdf)
+inductor sagami cwr12xx smd
+0
+4
+2
+Inductor_SMD
+L_SigTra_SC3316F
+http://www.signaltransformer.com/sites/all/pdf/smd/P080_SC3316F.pdf
+Choke 
+0
+2
+2
+Inductor_SMD
+L_Sumida_CDMC6D28_7.25x6.5mm
+SMD Power Inductor (http://products.sumida.com/products/pdf/CDMC6D28.pdf)
+Inductor Sumida SMD CDMC6D28
+0
+2
+2
+Inductor_SMD
+L_Sumida_CR75
+Inductor, Sumida, 8.1mm × 7.3mm × 5.5 mm, Unshielded, http://products.sumida.com/products/pdf/CR75.pdf
+Inductor SMD CR75 Unshielded
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0402S
+Inductor, Sunlord, MWSA0402S, 4.4x4.2x1.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0412S
+Inductor, Sunlord, MWSA0412S, 4.4x4.2x1.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0503S
+Inductor, Sunlord, MWSA0503S, 5.4x5.2x2.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0518S
+Inductor, Sunlord, MWSA0518S, 5.4x5.2x1.6mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0602S
+Inductor, Sunlord, MWSA0602S, 7.0x6.6x1.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0603S
+Inductor, Sunlord, MWSA0603S, 7.0x6.6x2.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0604S
+Inductor, Sunlord, MWSA0604S, 7.0x6.6x3.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0605S
+Inductor, Sunlord, MWSA0605S, 7.0x6.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0615S
+Inductor, Sunlord, MWSA0615S, 7.0x6.6x1.3mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0618S
+Inductor, Sunlord, MWSA0618S, 7.0x6.6x1.6mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0624S
+Inductor, Sunlord, MWSA0624S, 7.0x6.6x2.2mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA0804S
+Inductor, Sunlord, MWSA0804S, 8.2x8.8x3.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1003S
+Inductor, Sunlord, MWSA1003S, 11.5x10.0x2.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1004S
+Inductor, Sunlord, MWSA1004S, 11.0x10.0x3.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1005S
+Inductor, Sunlord, MWSA1005S, 11.5x10.0x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-1R0
+Inductor, Sunlord, MWSA1204S-1R0, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-1R5
+Inductor, Sunlord, MWSA1204S-1R5, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-2R2
+Inductor, Sunlord, MWSA1204S-2R2, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-3R3
+Inductor, Sunlord, MWSA1204S-3R3, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-4R7
+Inductor, Sunlord, MWSA1204S-4R7, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-6R8
+Inductor, Sunlord, MWSA1204S-6R8, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-100
+Inductor, Sunlord, MWSA1204S-100, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-150
+Inductor, Sunlord, MWSA1204S-150, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-220
+Inductor, Sunlord, MWSA1204S-220, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-R22
+Inductor, Sunlord, MWSA1204S-R22, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-R47
+Inductor, Sunlord, MWSA1204S-R47, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-R68
+Inductor, Sunlord, MWSA1204S-R68, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1204S-R82
+Inductor, Sunlord, MWSA1204S-R82, 13.45x12.8x4.0mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-1R0
+Inductor, Sunlord, MWSA1205S-1R0, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-1R5
+Inductor, Sunlord, MWSA1205S-1R5, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-2R2
+Inductor, Sunlord, MWSA1205S-2R2, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-3R3
+Inductor, Sunlord, MWSA1205S-3R3, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-4R7
+Inductor, Sunlord, MWSA1205S-4R7, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-6R8
+Inductor, Sunlord, MWSA1205S-6R8, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-100
+Inductor, Sunlord, MWSA1205S-100, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-150
+Inductor, Sunlord, MWSA1205S-150, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-220
+Inductor, Sunlord, MWSA1205S-220, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-330
+Inductor, Sunlord, MWSA1205S-330, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-470
+Inductor, Sunlord, MWSA1205S-470, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-R22
+Inductor, Sunlord, MWSA1205S-R22, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-R36
+Inductor, Sunlord, MWSA1205S-R36, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-R50
+Inductor, Sunlord, MWSA1205S-R50, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-R68
+Inductor, Sunlord, MWSA1205S-R68, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1205S-R82
+Inductor, Sunlord, MWSA1205S-R82, 13.45x12.6x4.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-1R5
+Inductor, Sunlord, MWSA1206S-1R5, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-2R2
+Inductor, Sunlord, MWSA1206S-2R2, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-3R3
+Inductor, Sunlord, MWSA1206S-3R3, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-4R7
+Inductor, Sunlord, MWSA1206S-4R7, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-5R6
+Inductor, Sunlord, MWSA1206S-5R6, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-6R8
+Inductor, Sunlord, MWSA1206S-6R8, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-8R2
+Inductor, Sunlord, MWSA1206S-8R2, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-100
+Inductor, Sunlord, MWSA1206S-100, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-101
+Inductor, Sunlord, MWSA1206S-101, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-120
+Inductor, Sunlord, MWSA1206S-120, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-121
+Inductor, Sunlord, MWSA1206S-121, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-150
+Inductor, Sunlord, MWSA1206S-150, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-151
+Inductor, Sunlord, MWSA1206S-151, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-180
+Inductor, Sunlord, MWSA1206S-180, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-220
+Inductor, Sunlord, MWSA1206S-220, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-270
+Inductor, Sunlord, MWSA1206S-270, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-330
+Inductor, Sunlord, MWSA1206S-330, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-470
+Inductor, Sunlord, MWSA1206S-470, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-680
+Inductor, Sunlord, MWSA1206S-680, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1206S-R68
+Inductor, Sunlord, MWSA1206S-R68, 13.45x12.6x5.8mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1265S
+Inductor, Sunlord, MWSA1265S, 13.45x12.6x6.5mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA1707S
+Inductor, Sunlord, MWSA1707S, 17.15x17.15x6.7mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_MWSA2213S
+Inductor, Sunlord, MWSA2213S, 23.5x22.0x12.6mm, https://sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMjExMTUxNDQ4MDU0NTQucGRm&lan=en
+Inductor mwsa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA3010S
+Inductor, Sunlord, SWPA3010S, 3.0x3.0x1.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA3012S
+Inductor, Sunlord, SWPA3012S, 3.0x3.0x1.2mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA3015S
+Inductor, Sunlord, SWPA3015S, 3.0x3.0x1.5mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA4010S
+Inductor, Sunlord, SWPA4010S, 4.0x4.0x1.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA4012S
+Inductor, Sunlord, SWPA4012S, 4.0x4.0x1.2mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA4018S
+Inductor, Sunlord, SWPA4018S, 4.0x4.0x1.8mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA4020S
+Inductor, Sunlord, SWPA4020S, 4.0x4.0x2.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA4026S
+Inductor, Sunlord, SWPA4026S, 4.0x4.0x2.6mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA4030S
+Inductor, Sunlord, SWPA4030S, 4.0x4.0x3.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA5012S
+Inductor, Sunlord, SWPA5012S, 5.0x5.0x1.2mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA5020S
+Inductor, Sunlord, SWPA5020S, 5.0x5.0x2.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA5040S
+Inductor, Sunlord, SWPA5040S, 5.0x5.0x4.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA6020S
+Inductor, Sunlord, SWPA6020S, 6.0x6.0x2.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA6028S
+Inductor, Sunlord, SWPA6028S, 6.0x6.0x2.8mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA6040S
+Inductor, Sunlord, SWPA6040S, 6.0x6.0x4.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA6045S
+Inductor, Sunlord, SWPA6045S, 6.0x6.0x4.5mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA8040S
+Inductor, Sunlord, SWPA8040S, 8.0x8.0x4.2mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA252010S
+Inductor, Sunlord, SWPA252010S, 2.5x2.0x1.0mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWPA252012S
+Inductor, Sunlord, SWPA252012S, 2.5x2.0x1.2mm, https://www.sunlordinc.com/UploadFiles/PDF_Cat/20120704094224784.pdf
+Inductor swpa
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWRB1204S
+Inductor, Sunlord, SWRB1204S, 12.5x12.5x5.0mm, https://www.sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMTA2MTAxMTMyMzc4MTEucGRm&lan=en
+Inductor swrb
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWRB1205S
+Inductor, Sunlord, SWRB1205S, 12.5x12.5x6.0mm, https://www.sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMTA2MTAxMTMyMzc4MTEucGRm&lan=en
+Inductor swrb
+0
+2
+2
+Inductor_SMD
+L_Sunlord_SWRB1207S
+Inductor, Sunlord, SWRB1207S, 12.5x12.5x8.0mm, https://www.sunlordinc.com/Download.aspx?file=L1VwbG9hZEZpbGVzL1BERl9DYXQvMjAyMTA2MTAxMTMyMzc4MTEucGRm&lan=en
+Inductor swrb
+0
+2
+2
+Inductor_SMD
+L_TDK_MLZ1608
+Inductor, TDK, MLZ1608, 1.6x0.8x0.8mm,  "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_decoupling_mlz1608_en.pdf"
+Inductor MLZ
+0
+2
+2
+Inductor_SMD
+L_TDK_MLZ2012_h0.85mm
+Inductor, TDK, MLZ2012_h0.85mm, 2.0x1.25x0.85mm,  "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_decoupling_mlz2012_en.pdf"
+Inductor MLZ
+0
+2
+2
+Inductor_SMD
+L_TDK_MLZ2012_h1.25mm
+Inductor, TDK, MLZ2012_h1.25mm, 2.0x1.25x1.25mm,  "https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_decoupling_mlz2012_en.pdf"
+Inductor MLZ
+0
+2
+2
+Inductor_SMD
+L_TDK_NLV25_2.5x2.0mm
+TDK NLV25, 2.5x2.0x1.8mm, https://product.tdk.com/info/en/catalog/datasheets/inductor_commercial_standard_nlv25-ef_en.pdf
+tdk nlv25 nlcv25 nlfv25
+0
+2
+2
+Inductor_SMD
+L_TDK_NLV32_3.2x2.5mm
+TDK NLV32, 3.2x2.5x2.2mm, https://product.tdk.com/info/en/catalog/datasheets/inductor_commercial_standard_nlv32-ef_en.pdf
+tdk nlv32 nlcv32 nlfv32
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF6025
+Inductor, TDK, SLF6025, 6.0mmx6.0mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/document/catalog/smd/inductor_commercial_power_slf6025_en.pdf)
+Inductor TDK_SLF6025
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF6028
+Inductor, TDK, SLF6028, 6.0mmx6.0mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/document/catalog/smd/inductor_commercial_power_slf6028_en.pdf)
+Inductor TDK_SLF6028
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF6045
+Inductor, TDK, SLF6045, 6.0mmx6.0mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/document/catalog/smd/inductor_commercial_power_slf6045_en.pdf)
+Inductor TDK_SLF6045
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF7032
+Inductor, TDK, SLF7032, 7.0mmx7.0mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/document/catalog/smd/inductor_commercial_power_slf7032_en.pdf)
+Inductor TDK_SLF7032
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF7045
+Inductor, TDK, SLF7045, 7.0mmx7.0mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/document/catalog/smd/inductor_commercial_power_slf7045_en.pdf)
+Inductor TDK_SLF7045
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF7055
+Inductor, TDK, SLF7055, 7.0mmx7.0mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/document/catalog/smd/inductor_commercial_power_slf7055_en.pdf)
+Inductor TDK_SLF7055
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF10145
+Inductor, TDK, SLF10145, 10.1mmx10.1mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/catalog/datasheets/inductor_automotive_power_slf10145-h_en.pdf)
+Inductor TDK_SLF10145
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF10165
+Inductor, TDK, SLF10165, 10.1mmx10.1mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/catalog/datasheets/inductor_commercial_power_slf10165_en.pdf)
+Inductor TDK_SLF10165
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF12555
+Inductor, TDK, SLF12555, 12.5mmx12.5mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/catalog/datasheets/inductor_commercial_power_slf12555_en.pdf)
+Inductor SLF12555
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF12565
+Inductor, TDK, SLF12565, 12.5mmx12.5mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/catalog/datasheets/inductor_automotive_power_slf12565-h_en.pdf)
+Inductor SLF12565
+0
+2
+2
+Inductor_SMD
+L_TDK_SLF12575
+Inductor, TDK, SLF12575, 12.5mmx12.5mm (Script generated with StandardBox.py) (https://product.tdk.com/info/en/catalog/datasheets/inductor_automotive_power_slf12575-h_en.pdf)
+Inductor SLF12575
+0
+2
+2
+Inductor_SMD
+L_TDK_VLF10040
+Inductor,TDK, TDK-VLP-8040, 8.6mmx8.6mm
+inductor TDK VLP smd VLF10040
+0
+2
+2
+Inductor_SMD
+L_TDK_VLP8040
+Inductor,TDK, TDK-VLP-8040, 8.6mmx8.6mm
+inductor TDK VLP smd VLP8040
+0
+2
+2
+Inductor_SMD
+L_TDK_VLS6045EX_VLS6045AF
+Inductor,TDK, VLS-6045, 6x6x4.5mm, https://product.tdk.com/system/files/dam/doc/product/inductor/inductor/smd/catalog/inductor_commercial_power_vls6045ex_en.pdf
+inductor TDK VLS SMD VLS6045EF VLS6045AF
+0
+2
+2
+Inductor_SMD
+L_TaiTech_TMPC1265_13.5x12.5mm
+Tai Tech TMPC1265 series SMD inductor https://datasheet.lcsc.com/lcsc/2009171439_TAI-TECH-TMPC1265HP-100MG-D_C305223.pdf, 13.5x12.5x6.2mm
+Tai Tech TMPC1265 SMD inductor
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_BK_Array_1206_3216Metric
+Ferrite Bead Array 4x0603, Taiyo Yuden BK Series (see https://www.yuden.co.jp/productdata/catalog/mlci09_e.pdf)
+ferrite bead array
+0
+8
+8
+Inductor_SMD
+L_Taiyo-Yuden_MD-1616
+Inductor, Taiyo Yuden, MD series, Taiyo-Yuden_MD-1616, 1.6mmx1.6mm
+inductor taiyo-yuden md smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_MD-2020
+Inductor, Taiyo Yuden, MD series, Taiyo-Yuden_MD-2020, 2.0mmx2.0mm
+inductor taiyo-yuden md smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_MD-3030
+Inductor, Taiyo Yuden, MD series, Taiyo-Yuden_MD-3030, 3.0mmx3.0mm
+inductor taiyo-yuden md smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_MD-4040
+Inductor, Taiyo Yuden, MD series, Taiyo-Yuden_MD-4040, 4.0mmx4.0mm
+inductor taiyo-yuden md smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_MD-5050
+Inductor, Taiyo Yuden, MD series, Taiyo-Yuden_MD-5050, 5.0mmx5.0mm
+inductor taiyo-yuden md smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-20xx
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-20xx, 2.0mmx2.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-20xx_HandSoldering
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-20xx, 2.0mmx2.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-24xx
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-24xx, 2.4mmx2.4mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-24xx_HandSoldering
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-24xx, 2.4mmx2.4mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-30xx
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-30xx, 3.0mmx3.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-30xx_HandSoldering
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-30xx, 3.0mmx3.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-40xx
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-40xx, 4.0mmx4.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-40xx_HandSoldering
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-40xx, 4.0mmx4.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-50xx
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-50xx, 4.9mmx4.9mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-50xx_HandSoldering
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-50xx, 4.9mmx4.9mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-60xx
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-60xx, 6.0mmx6.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-60xx_HandSoldering
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-60xx, 6.0mmx6.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-80xx
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-80xx, 8.0mmx8.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-80xx_HandSoldering
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-80xx, 8.0mmx8.0mm
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-10050_9.8x10.0mm
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-10050, 9.8mmx10.0mm, https://ds.yuden.co.jp/TYCOMPAS/or/specSheet?pn=NR10050T1R3N
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_Taiyo-Yuden_NR-10050_9.8x10.0mm_HandSoldering
+Inductor, Taiyo Yuden, NR series, Taiyo-Yuden_NR-10050, 9.8mmx10.0mm, https://ds.yuden.co.jp/TYCOMPAS/or/specSheet?pn=NR10050T1R3N
+inductor taiyo-yuden nr smd
+0
+2
+2
+Inductor_SMD
+L_TracoPower_TCK-047_5.2x5.8mm
+Inductor, Traco, TCK-047, 5.2x5.8mm, https://www.tracopower.com/products/tck047.pdf
+inductor smd traco
+0
+2
+2
+Inductor_SMD
+L_TracoPower_TCK-141
+Choke, SMD, 4.0x4.0mm 2.1mm height, https://www.tracopower.com/products/tck141.pdf
+Choke SMD
+0
+2
+2
+Inductor_SMD
+L_Vishay_IFSC-1515AH_4x4x1.8mm
+Low Profile, High Current Inductors (https://www.vishay.com/docs/34295/sc15ah01.pdf)
+SMD Vishay Inductor Low Profile
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHLP-1212
+Inductor, Vishay, IHLP series, 3.0mmx3.0mm
+inductor vishay ihlp smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHLP-1616
+Inductor, Vishay, IHLP series, 4.1mmx4.1mm
+inductor vishay ihlp smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHLP-2020
+Inductor, Vishay, IHLP series, 5.1mmx5.1mm
+inductor vishay ihlp smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHLP-2525
+Inductor, Vishay, IHLP series, 6.3mmx6.3mm
+inductor vishay ihlp smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHLP-4040
+Inductor, Vishay, IHLP series, 10.2mmx10.2mm
+inductor vishay ihlp smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHLP-5050
+Inductor, Vishay, IHLP series, 12.7mmx12.7mm
+inductor vishay ihlp smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHLP-6767
+Inductor, Vishay, IHLP series, 17.0mmx17.0mm
+inductor vishay ihlp smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHSM-3825
+Inductor, Vishay, Vishay_IHSM-3825, http://www.vishay.com/docs/34018/ihsm3825.pdf, 11.2mmx6.3mm
+inductor vishay icsm smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHSM-4825
+Inductor, Vishay, Vishay_IHSM-4825, http://www.vishay.com/docs/34019/ihsm4825.pdf, 13.7mmx6.3mm
+inductor vishay icsm smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHSM-5832
+Inductor, Vishay, Vishay_IHSM-5832, http://www.vishay.com/docs/34020/ihsm5832.pdf, 16.3mmx8.1mm
+inductor vishay icsm smd
+0
+2
+2
+Inductor_SMD
+L_Vishay_IHSM-7832
+Inductor, Vishay, Vishay_IHSM-7832, http://www.vishay.com/docs/34021/ihsm7832.pdf, 19.8mmx8.1mm
+inductor vishay icsm smd
+0
+2
+2
+Inductor_SMD
+L_Walsin_WLFM201209x
+Inductor, Walsin, WLFM201209x, 2.0x1.25x0.9mm, http://www.passivecomponent.com/wp-content/uploads/inductor/WLFM_C_series.pdf
+Inductor ferrite multilayer power
+0
+2
+2
+Inductor_SMD
+L_Walsin_WLFM201609x
+Inductor, Walsin, WLFM201609x, 2.0x1.6x0.9mm, http://www.passivecomponent.com/wp-content/uploads/inductor/WLFM_C_series.pdf
+Inductor ferrite multilayer power
+0
+2
+2
+Inductor_SMD
+L_Walsin_WLFM252009x
+Inductor, Walsin, WLFM252009x, 2.5x2.0x0.9mm, http://www.passivecomponent.com/wp-content/uploads/inductor/WLFM_C_series.pdf
+Inductor ferrite multilayer power
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCF-2013
+7443630070, http://katalog.we-online.de/pbs/datasheet/7443630070.pdf
+inductor shielded wuerth hcf
+0
+3
+2
+Inductor_SMD
+L_Wuerth_HCF-2815
+74436410150, http://katalog.we-online.de/pbs/datasheet/74436410150.pdf
+inductor shielded wuerth hcf
+0
+3
+2
+Inductor_SMD
+L_Wuerth_HCF-2818
+7443640330, http://katalog.we-online.de/pbs/datasheet/7443640330.pdf
+inductor shielded wuerth hcf
+0
+3
+2
+Inductor_SMD
+L_Wuerth_HCI-1030
+Inductor, Wuerth Elektronik, Wuerth_HCI-1030, 10.6mmx10.6mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-1040
+Inductor, Wuerth Elektronik, Wuerth_HCI-1040, 10.2mmx10.2mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-1050
+Inductor, Wuerth Elektronik, Wuerth_HCI-1050, 10.2mmx10.2mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-1335
+Inductor, Wuerth Elektronik, Wuerth_HCI-1335, 12.8mmx12.8mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-1350
+Inductor, Wuerth Elektronik, Wuerth_HCI-1350, 12.8mmx12.8mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-1365
+Inductor, Wuerth Elektronik, Wuerth_HCI-1365, 12.8mmx12.8mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-1890
+Inductor, Wuerth Elektronik, Wuerth_HCI-1890, 18.2mmx18.2mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-2212
+Inductor, Wuerth Elektronik, Wuerth_HCI-2212, 22.5mmx22.0mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-5040
+Inductor, Wuerth Elektronik, Wuerth_HCI-5040, 5.5mmx5.2mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-7030
+Inductor, Wuerth Elektronik, Wuerth_HCI-7030, 6.9mmx6.9mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-7040
+Inductor, Wuerth Elektronik, Wuerth_HCI-7040, 6.9mmx6.9mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCI-7050
+Inductor, Wuerth Elektronik, Wuerth_HCI-7050, 6.9mmx6.9mm
+inductor Wuerth hci smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-1050
+Inductor, Wuerth Elektronik, Wuerth_HCM-1050, 10.2mmx7.0mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-1052
+Inductor, Wuerth Elektronik, Wuerth_HCM-1052, 10.5mmx10.3mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-1070
+Inductor, Wuerth Elektronik, Wuerth_HCM-1070, 10.1mmx7.0mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-1078
+Inductor, Wuerth Elektronik, Wuerth_HCM-1078, 9.4mmx6.2mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-1190
+Inductor, Wuerth Elektronik, Wuerth_HCM-1190, 10.5mmx11.0mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-1240
+Inductor, Wuerth Elektronik, Wuerth_HCM-1240, 10.0mmx11.8mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-1350
+Inductor, Wuerth Elektronik, Wuerth_HCM-1350, 13.5mmx13.3mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-1390
+Inductor, Wuerth Elektronik, Wuerth_HCM-1390, 12.5mmx13.0mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-7050
+Inductor, Wuerth Elektronik, Wuerth_HCM-7050, 7.2mmx7.0mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_HCM-7070
+Inductor, Wuerth Elektronik, Wuerth_HCM-7070, 7.4mmx7.2mm
+inductor Wuerth hcm smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-1610
+Inductor, Wuerth Elektronik, Wuerth_MAPI-1610, 1.6mmx1.6mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-2010
+Inductor, Wuerth Elektronik, Wuerth_MAPI-2010, 2.0mmx1.6mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-2506
+Inductor, Wuerth Elektronik, Wuerth_MAPI-2506, 2.5mmx2.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-2508
+Inductor, Wuerth Elektronik, Wuerth_MAPI-2508, 2.5mmx2.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-2510
+Inductor, Wuerth Elektronik, Wuerth_MAPI-2510, 2.5mmx2.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-2512
+Inductor, Wuerth Elektronik, Wuerth_MAPI-2512, 2.5mmx2.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-3010
+Inductor, Wuerth Elektronik, Wuerth_MAPI-3010, 3.0mmx3.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-3012
+Inductor, Wuerth Elektronik, Wuerth_MAPI-3012, 3.0mmx3.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-3015
+Inductor, Wuerth Elektronik, Wuerth_MAPI-3015, 3.0mmx3.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-3020
+Inductor, Wuerth Elektronik, Wuerth_MAPI-3020, 3.0mmx3.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-4020
+Inductor, Wuerth Elektronik, Wuerth_MAPI-4020, 4.0mmx4.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_MAPI-4030
+Inductor, Wuerth Elektronik, Wuerth_MAPI-4030, 4.0mmx4.0mm
+inductor Wuerth smd
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-DD-Typ-L-Typ-XL-Typ-XXL
+Shielded Coupled Inductor, Wuerth Elektronik, WE-DD, SMD, Typ L, Typ XL, Typ XXL, https://katalog.we-online.com/pbs/datasheet/744874001.pdf
+Choke Coupled Double Inductor SMD Wuerth WE-DD TypL TypXL TypXXL 
+0
+4
+4
+Inductor_SMD
+L_Wuerth_WE-DD-Typ-M-Typ-S
+Shielded Coupled Inductor, Wuerth Elektronik, WE-DD, SMD, Typ M, Typ S, https://katalog.we-online.com/pbs/datasheet/744878001.pdf, https://katalog.we-online.de/pbs/datasheet/744877001.pdf
+Choke Coupled Double Inductor SMD Wuerth WE-DD TypM TypS
+0
+4
+4
+Inductor_SMD
+L_Wuerth_WE-GF-1210
+Unshielded Inductor, Wuerth Elektronik, WE-GF, SMD, 1210, https://www.we-online.de/katalog/datasheet/74476401.pdf
+Unshielded Inductor WE-GF 1210 Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD-Typ-7345
+Shielded Power Inductor, Wuerth Elektronik, WE-PD, SMD, 7345, https://katalog.we-online.com/pbs/datasheet/744777001.pdf
+Choke Shielded Power Inductor WE-PD 7345 Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD-Typ-LS
+Shielded Power Inductor, Wuerth Elektronik, WE-PD, SMD, Typ LS, https://katalog.we-online.com/pbs/datasheet/7447715906.pdf
+Choke Shielded Power Inductor WE-PD TypLS Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD-Typ-LS_Handsoldering
+Shielded Power Inductor, Wuerth Elektronik, WE-PD, SMD, Typ LS, Handsoldering, https://katalog.we-online.com/pbs/datasheet/7447715906.pdf
+Choke Shielded Power Inductor WE-PD TypLS Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD-Typ-M-Typ-S
+Shielded Power Inductor, Wuerth Elektronik, WE-PD, SMT, Typ M, Typ S, https://katalog.we-online.com/pbs/datasheet/744778005.pdf
+Choke Shielded Power Inductor WE-PD TypM TypS Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD-Typ-M-Typ-S_Handsoldering
+Shielded Power Inductor, Wuerth Elektronik, WE-PD, SMT, Typ M, Typ S, Handsoldering, https://katalog.we-online.com/pbs/datasheet/744778005.pdf
+Choke Shielded Power Inductor WE-PD TypM TypS Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD2-Typ-L
+Power Inductor, Wuerth Elektronik, WE-PD2, SMD, Typ L, , https://katalog.we-online.com/pbs/datasheet/74477510.pdf
+Choke Power Inductor WE-PD2 TypL Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD2-Typ-MS
+Power Inductor, Wuerth Elektronik, WE-PD2, SMD, Typ MS, https://katalog.we-online.com/pbs/datasheet/744774022.pdf
+Choke Power Inductor WE-PD2 TypMS Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD2-Typ-XL
+Power Inductor, Wuerth Elektronik, WE-PD2, SMT, Typ XL, https://katalog.we-online.com/pbs/datasheet/744776012.pdf
+Choke Power Inductor WE-PD2 TypXL Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PD4-Typ-X
+Power Inductor, Wuerth Elektronik, WE-PD4, SMT, Typ X, https://katalog.we-online.de/pbs/datasheet/74458001.pdf
+Choke Power Inductor WE-PD4 TypX Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PDF
+Shielded Power Inductor, Wuerth Elektronik, WE-PDF, SMD, https://katalog.we-online.de/pbs/datasheet/7447797022.pdf
+Choke Shielded Power Inductor WE-PDF Wuerth
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-PDF_Handsoldering
+Shielded Power Inductor, Wuerth Elektronik, WE-PDF, SMD, Handsoldering, https://katalog.we-online.de/pbs/datasheet/7447797022.pdf
+Choke Shielded Power Inductor WE-PDF Wuerth Handsoldering
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-TPC-3816
+L_Wuerth_WE-TPC-3816 StepUp generated footprint, http://katalog.we-online.de/pbs/datasheet/7440310047.pdf
+wurth wuerth smd inductor
+0
+2
+2
+Inductor_SMD
+L_Wuerth_WE-XHMI-8080
+Inductor, Wuerth, WE-XHMI 8080, 8.3mmx8.8mm (Script generated with StandardBox.py) (https://www.we-online.com/components/products/datasheet/74439358068.pdf)
+Inductor Wuerth WE-XHMI 8080
+0
+2
+2
+Inductor_SMD
+L_Wurth_WE-CAIR-5910
+WE-CAIR Air coil, https://www.we-online.com/components/products/datasheet/744918254.pdf
+air coil inductor wurth we cair
+0
+2
+2
