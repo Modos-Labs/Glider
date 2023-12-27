@@ -46,7 +46,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.11
+          "min_clearance": 0.15
         }
       },
       "diff_pair_dimensions": [
@@ -116,7 +116,7 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.024999999999999998,
+        "min_copper_edge_clearance": 0.3,
         "min_hole_clearance": 0.0,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.19999999999999998,
@@ -125,7 +125,7 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 0.7,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.19999999999999998,
+        "min_through_hole_diameter": 0.3,
         "min_track_width": 0.09999999999999999,
         "min_via_annular_width": 0.049999999999999996,
         "min_via_diameter": 0.44999999999999996,
@@ -444,7 +444,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.11,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -461,7 +461,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.15,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -474,11 +474,11 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "EPD",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "pcb_color": "rgb(255, 0, 191)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.11,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -495,7 +495,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.15,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -508,11 +508,11 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "SDRAM_A",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "pcb_color": "rgb(103, 255, 0)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.1,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -525,11 +525,11 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "SDRAM_H",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "pcb_color": "rgb(255, 252, 0)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.1,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -542,11 +542,11 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "SDRAM_L",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "pcb_color": "rgb(255, 131, 3)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.1,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -563,7 +563,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.15,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       }
     ],
@@ -571,7 +571,7 @@
       "version": 3
     },
     "net_colors": {
-      "+1V1": "rgb(255, 92, 56)",
+      "+1V0": "rgb(255, 92, 56)",
       "+1V35": "rgb(185, 61, 143)",
       "+3V3": "rgb(179, 228, 50)",
       "+5V": "rgb(255, 122, 107)",
@@ -613,7 +613,7 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
-    "annotate_start_num": 400,
+    "annotate_start_num": 0,
     "drawing": {
       "dashed_lines_dash_length_ratio": 12.0,
       "dashed_lines_gap_length_ratio": 3.0,
@@ -682,6 +682,10 @@
     [
       "80373716-d41f-4f06-92dd-577434075703",
       "dp_in"
+    ],
+    [
+      "d0757a0a-c868-475e-8221-24a5e99d32b9",
+      "mcu"
     ]
   ],
   "text_variables": {}
