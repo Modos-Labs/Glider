@@ -20,11 +20,14 @@
 // SOFTWARE.
 //
 #include <stdint.h>
+#include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 #include "ptn3460.h"
 #include "utils.h"
 #include "edid.h"
+
+#ifdef INPUT_TYPEC
 
 #define PTN3460_I2C_ADDRESS (0x60)
 #define PTN3460_I2C         (i2c0)
@@ -46,13 +49,6 @@ void ptn3460_select_edid_emulation(uint8_t id) {
 
 void ptn3460_load_edid(uint8_t *edid) {
     int result;
-    // Fix checksum in EDID
-    uint8_t checksum = 0;
-    for (int i = 1; i < 128; i++) {
-        checksum += edid[i];
-    }
-    checksum = ~checksum + 1;
-    edid[128] = checksum;
 
     result = i2c_write_blocking(PTN3460_I2C, PTN3460_I2C_ADDRESS,
             edid, 129, false);
@@ -96,7 +92,7 @@ void ptn3460_init(void) {
     printf("PTN3460 up after %d ms\n", ticks);
     // Enable EDID emulation
     ptn3460_select_edid_emulation(0);
-    ptn3460_load_edid(edid);
+    ptn3460_load_edid(edid_get_raw());
 
     //ptn3460_write(0x80, 0x02); // Set AUX reverse
     ptn3460_write(0x81, 0x29); // 18bpp, clock on odd bus, dual channel
@@ -115,3 +111,5 @@ void ptn3460_init(void) {
 bool ptn3460_is_valid(void) {
     return gpio_get(PTN3460_VALID_PIN);
 }
+
+#endif
