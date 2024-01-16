@@ -22,6 +22,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
+#include "pico/sleep.h"
 #include "hardware/i2c.h"
 #include "config.h"
 #include "utils.h"
@@ -30,6 +31,7 @@
 #include "ptn3460.h"
 #include "power.h"
 #include "fpga.h"
+#include "edid.h"
 
 int main()
 {
@@ -40,6 +42,20 @@ int main()
     printf("\n");
     printf("Glider\n");
 
+    // TODO: Unify both input options
+#if defined(INPUT_DVI)
+    power_init();
+    edid_init();
+    power_enable(true);
+
+    //sleep_run_from_xosc();
+    //sleep_goto_dormant_until_edge_high(8);
+    // https://ghubcoder.github.io/posts/awaking-the-pico/
+
+    while (1) {
+        //
+    }
+#elif defined(INPUT_TYPEC)
     int result = tcpm_init(0);
     if (result)
         fatal("Failed to initialize TCPC\n");
@@ -78,6 +94,7 @@ int main()
             printf(dp_valid ? "Input is valid\n" : "Input is invalid\n");
         }
     }
+#endif
 
     return 0;
 }

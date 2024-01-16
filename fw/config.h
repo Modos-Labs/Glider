@@ -24,7 +24,9 @@
 /* BOARD REVISION CONFIGURATION */
 // Eariler revisions are not supported
 //#define BOARD_REV_R0P5
-#define BOARD_REV_R0P6
+//#define BOARD_REV_R0P6
+// Lite version uses DVI instead of Type-C DP Alt-mode
+#define BOARD_REV_RL0P1
 
 /* SCREEN CONFIGURATION */
 
@@ -49,8 +51,15 @@
 /* SET BASED ON PREVIOUS DEFINES, DO NOT MODIFY */
 #if defined(BOARD_REV_R0P5)
 #define POWER_TPS65185
+#define INPUT_TYPEC
 #elif defined(BOARD_REV_R0P6)
 #define POWER_GPIO
+// VCOM measurement is not supported
+#define INPUT_TYPEC
+#elif defined(BOARD_REV_RL0P1)
+#define POWER_GPIO
+#define POWER_GPIO_VCOM_MEASURE
+#define INPUT_DVI
 #else
 #error "Unknown board revision"
 #endif
@@ -122,15 +131,25 @@
 #define SCREEN_VSYNC    10
 #elif defined(SCREEN_1600_1200)
 // 1600x1200 @ 60, 162MHz DMT
-#define SCREEN_CLK      162000
+// #define SCREEN_CLK      162000
+// #define SCREEN_HACT     1600
+// #define SCREEN_VACT     1200
+// #define SCREEN_HBLK     560
+// #define SCREEN_HFP      64
+// #define SCREEN_HSYNC    192
+// #define SCREEN_VBLK     50
+// #define SCREEN_VFP      1
+// #define SCREEN_VSYNC    3
+// 1600x1200 @ 60, 124.488MHz CVT-RB-v2
+#define SCREEN_CLK      124488
 #define SCREEN_HACT     1600
 #define SCREEN_VACT     1200
-#define SCREEN_HBLK     560
-#define SCREEN_HFP      64
-#define SCREEN_HSYNC    192
-#define SCREEN_VBLK     50
-#define SCREEN_VFP      1
-#define SCREEN_VSYNC    3
+#define SCREEN_HBLK     80
+#define SCREEN_HFP      8
+#define SCREEN_HSYNC    32
+#define SCREEN_VBLK     35
+#define SCREEN_VFP      21
+#define SCREEN_VSYNC    8
 #elif defined(SCREEN_1872_1404)
 // 1872x1404 @ 60, 162MHz Custom
 #define SCREEN_CLK      162000

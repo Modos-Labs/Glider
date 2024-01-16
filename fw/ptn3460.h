@@ -21,5 +21,7 @@
 //
 #pragma once
 
+#ifdef INPUT_TYPEC
 void ptn3460_init(void);
 bool ptn3460_is_valid(void);
+#endif
