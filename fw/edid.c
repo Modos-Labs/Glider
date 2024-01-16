@@ -27,11 +27,14 @@
 #include "edid.h"
 #include "config.h"
 
-#ifdef INPUT_DVI
+#if defined(INPUT_DVI)
 #define EDID_I2C_ADDRESS    (0x50)
 #define EDID_I2C            (i2c0)
 #define EDID_I2C_SDA        (0)
 #define EDID_I2C_SCL        (1)
+#define EDID_VID_IN_PARAM   (0x81)  // DVI input
+#elif defined(INPUT_TYPEC)
+#define EDID_VID_IN_PARAM   (0x85)  // DisplayPort input
 #endif
 
 static char edid[129] = {
@@ -44,7 +47,7 @@ static char edid[129] = {
     0x20, // year of manufacture (17)
     0x01, // EDID version (18)
     0x03, // EDID revision (19)
-    0x85, // display parameter (20)
+    EDID_VID_IN_PARAM, // video input parameter (20)
     (SCREEN_SIZE_X / 10), // horizontal screen size in cm (21)
     (SCREEN_SIZE_Y / 10), // vertical screen size in cm (22)
     0x78, // display gamma (23)
@@ -72,7 +75,8 @@ static char edid[129] = {
     (SCREEN_SIZE_Y & 0xff), // Vertical size in mm LSB
     (((SCREEN_SIZE_X >> 8) << 4) | (SCREEN_SIZE_Y >> 8)), // HSIZE MSB | VSIZE LSB
     0x00, // Horizontal border pixels
-    0x00, // Vertical border lines 0x1e,
+    0x00, // Vertical border lines
+    0x1e, // Features bitmap
     // descriptor 2 (72-89) display name
     0x00, 0x00, 0x00, 0xfc, 0x00, 0x50, 0x61, 0x70, 0x65, 0x72, 0x20,
     0x4d, 0x6f, 0x6e, 0x69, 0x74, 0x6f, 0x72,
