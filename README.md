@@ -4,14 +4,18 @@ Open source E-ink monitor with an emphasis on low latency.
 
 Note: This repo only contains the hardware design, the gateware running on the FPGA is our open-source Caster EPDC design, which could be found at [github.com/Modos-Labs/Caster](https://github.com/Modos-Labs/Caster/)
 
-Note: The design is still working in progress. There are a few known bugs that will be fixed in the next revision.
+![block-diagram](blockdiagram.svg)
 
 ## Feature
 
-- FPGA for field upgradable EPD controller design
-- Supports various different Eink/ DES panels
-- Up to 1.6GB/s DDR3-800 buffer memory
-- Up to 224 MPixel/s DisplayPort 1.2 input (2200x1650 @ 60Hz)
+- Xilinx(R) Spartan-6 LX16 FPGA running Caster
+- DDR3-800 framebuffer memory
+- Type-C DisplayPort Alt-Mode video input with on-board PTN3460 DP-LVDS bridge or
+- DVI (via HDMI connector) video input
+- Epaper power supply with up to 1A peak current on +/-15V rail supporting large panels
+- VCOM kick-back voltage measurement support
+- On-board RaspberryPi(R) RP2040 microcontroller for USB communication and firmware upgrade
+- Up to 133MP/s processing rate with dithering enabled, >200MP/s when disabled
 
 ## License
 
