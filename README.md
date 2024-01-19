@@ -2,7 +2,7 @@
 
 Open source E-ink monitor with an emphasis on low latency.
 
-Note: This repo only contains the hardware design, the gateware running on the FPGA is our open-source Caster EPDC design, which could be found at github.com/Modos-Labs/Caster.
+Note: This repo only contains the hardware design, the gateware running on the FPGA is our open-source Caster EPDC design, which could be found at [github.com/Modos-Labs/Caster](https://github.com/Modos-Labs/Caster/)
 
 Note: The design is still working in progress. There are a few known bugs that will be fixed in the next revision.
 
