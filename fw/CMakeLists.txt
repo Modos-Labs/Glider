@@ -25,6 +25,7 @@ pico_sdk_init()
 
 add_executable(fw
         bitstream.c
+        caster.c
         edid.c
         fpga.c
         fusb302.c

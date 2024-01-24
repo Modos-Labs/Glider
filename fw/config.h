@@ -118,6 +118,15 @@
 #define SCREEN_VBLK     29
 #define SCREEN_VFP      3
 #define SCREEN_VSYNC    10
+
+#define TCON_HACT       256
+#define TCON_HBP        2
+#define TCON_HSYNC      2
+#define TCON_HFP        72
+#define TCON_VACT       758
+#define TCON_VBP        3
+#define TCON_VSYNC      1
+#define TCON_VFP        12
 #elif defined(SCREEN_1448_1072)
 // 1448x1072 @ 60, 128.5MHz CVT
 #define SCREEN_CLK      128500
@@ -150,6 +159,15 @@
 #define SCREEN_VBLK     35
 #define SCREEN_VFP      21
 #define SCREEN_VSYNC    8
+
+#define TCON_HACT       400
+#define TCON_HBP        2
+#define TCON_HSYNC      2
+#define TCON_HFP        16
+#define TCON_VACT       1200
+#define TCON_VBP        2
+#define TCON_VSYNC      1
+#define TCON_VFP        12
 #elif defined(SCREEN_1872_1404)
 // 1872x1404 @ 60, 162MHz Custom
 #define SCREEN_CLK      162000

@@ -25,8 +25,14 @@
 #include "config.h"
 
 #if defined(POWER_GPIO)
-#define PWR_EN_GPIO     21
-#define PWR_VCOM_GPIO   22
+#define PWR_EN_GPIO         21
+#define PWR_VCOM_GPIO       22
+
+#if defined(POWER_GPIO_VCOM_MEASURE)
+#define PWR_VCOM_EN_GPIO    28
+#define PWR_VCOM_MEN_GPIO   26
+#define PWR_VCOM_MEA_GPIO   27
+#endif
 
 void power_init(void) {
     gpio_put(PWR_EN_GPIO, 0);
@@ -37,6 +43,21 @@ void power_init(void) {
     // Set period to 256 cycles
     pwm_set_wrap(slice_num, 255);
     pwm_set_gpio_level(PWR_VCOM_GPIO, 127);
+
+    // 0 -3.421V
+    // 127 -2.145V
+    // 255 -0.987V
+
+#if defined(POWER_GPIO_VCOM_MEASURE)
+    gpio_init(PWR_VCOM_EN_GPIO);
+    gpio_put(PWR_VCOM_EN_GPIO, 0);
+    gpio_set_dir(PWR_VCOM_EN_GPIO, GPIO_OUT);
+
+    gpio_init(PWR_VCOM_MEN_GPIO);
+    gpio_put(PWR_VCOM_MEN_GPIO, 1);
+    gpio_set_dir(PWR_VCOM_MEN_GPIO, GPIO_OUT);
+#endif
+
 }
 
 void power_enable(bool en) {

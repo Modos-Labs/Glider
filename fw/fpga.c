@@ -20,6 +20,8 @@
 // SOFTWARE.
 //
 #include "pico/stdlib.h"
+#include <stdio.h>
+#include "utils.h"
 #include "fpga.h"
 #include "bitstream.h"
 
@@ -58,22 +60,66 @@ static void fpga_send_byte(uint8_t byte) {
     }
 }
 
+static void fpga_send_byte_slow(uint8_t byte) {
+    for (int i = 0; i < 8; i++) {
+        gpio_put(FPGA_MOSI, byte & 0x80);
+        delay_loop(20);
+        gpio_put(FPGA_SCLK, 1);
+        delay_loop(20);
+        byte <<= 1;
+        gpio_put(FPGA_SCLK, 0);
+    }
+}
+
+void fpga_write_reg8(uint8_t addr, uint8_t val) {
+    gpio_put(FPGA_CS, 0);
+    fpga_send_byte_slow(addr);
+    fpga_send_byte_slow(val);
+    gpio_put(FPGA_CS, 1);
+}
+
+void fpga_write_reg16(uint8_t addr, uint16_t val) {
+    gpio_put(FPGA_CS, 0);
+    fpga_send_byte_slow(addr);
+    fpga_send_byte_slow(val >> 8);
+    fpga_send_byte_slow(val & 0xff);
+    gpio_put(FPGA_CS, 1);
+}
+
+void fpga_write_bulk(uint8_t addr, uint8_t *buf, int length) {
+    gpio_put(FPGA_CS, 0);
+    fpga_send_byte_slow(addr);
+    for (int i = 0; i < length; i++) {
+        fpga_send_byte_slow(buf[i]);
+    }
+    gpio_put(FPGA_CS, 1);
+}
+
 static void fpga_load_bitstream(uint8_t *stream, int size) {
     gpio_put(FPGA_CS, 0);
     for (int i = 0; i < size; i++) {
         fpga_send_byte(stream[i]);
     }
     gpio_put(FPGA_CS, 1);
-    for (int i = 0; i < 1000; i++) {
-        if (gpio_get(FPGA_DONE) == 1)
-            break;
-        sleep_ms(1);
-    }
-    if (gpio_get(FPGA_DONE) == 0) {
-        fatal("FPGA done does not go high after 1s");
+    printf("FPGA bitstream load done.\n");
+}
+
+static void fpga_wait_done(bool timeout) {
+    if (timeout) {
+        int i;
+        for (i = 0; i < 1000; i++) {
+            if (gpio_get(FPGA_DONE) == 1)
+                break;
+            sleep_ms(1);
+        }
+        if (gpio_get(FPGA_DONE) == 0) {
+            fatal("FPGA done does not go high after 1s");
+        }
+        printf("FPGA is up after %d ms.\n", i);
     }
     else {
-        printf("FPGA bitstream load done.");
+        while (gpio_get(FPGA_DONE) != 1);
+        printf("FPGA is up.\n");
     }
 }
 
@@ -87,6 +133,8 @@ void fpga_init(void) {
     gpio_init_ipu(FPGA_DONE);
     gpio_init_out(FPGA_SUSP, 0);
     
+    gpio_put(FPGA_CS, 1);
+
     // FPGA Reset
     gpio_put(FPGA_PROG, 0);
     sleep_ms(100);
@@ -94,7 +142,14 @@ void fpga_init(void) {
     sleep_ms(100);
 
     // Load bitstream
+#if 1
     fpga_load_bitstream(fpga_bitstream, fpga_bitstream_length);
+    fpga_wait_done(true);
+#else
+    fpga_wait_done(false);
+#endif
+
+
 }
 
 void fpga_suspend(void) {
