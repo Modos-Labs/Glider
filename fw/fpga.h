@@ -24,3 +24,6 @@
 void fpga_init(void);
 void fpga_suspend(void);
 void fpga_resume(void);
+void fpga_write_reg8(uint8_t addr, uint8_t val);
+void fpga_write_reg16(uint8_t addr, uint16_t val);
+void fpga_write_bulk(uint8_t addr, uint8_t *buf, int length);
