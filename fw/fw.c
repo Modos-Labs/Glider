@@ -22,6 +22,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "pico/binary_info.h"
+#include "pico/sleep.h"
 #include "hardware/i2c.h"
 #include "config.h"
 #include "utils.h"
@@ -30,6 +31,8 @@
 #include "ptn3460.h"
 #include "power.h"
 #include "fpga.h"
+#include "edid.h"
+#include "caster.h"
 
 int main()
 {
@@ -40,6 +43,64 @@ int main()
     printf("\n");
     printf("Glider\n");
 
+    // TODO: Unify both input options
+#if defined(INPUT_DVI)
+    power_init();
+    edid_init();
+    power_enable(true);
+
+    //sleep_run_from_xosc();
+    //sleep_goto_dormant_until_edge_high(8);
+    // https://ghubcoder.github.io/posts/awaking-the-pico/
+
+    fpga_init();
+
+    //sleep_ms(5000);
+    //caster_init();
+
+    gpio_init(2);
+    gpio_set_dir(2, GPIO_IN);
+    gpio_pull_up(2);
+
+    int mode_max = 6;
+    int mode = 1;
+    UPDATE_MODE modes[6] = {
+        UM_FAST_MONO_NO_DITHER,
+        UM_FAST_MONO_BAYER,
+        UM_FAST_MONO_BLUE_NOISE,
+        UM_FAST_GREY,
+        UM_AUTO_LUT_NO_DITHER,
+        UM_AUTO_LUT_ERROR_DIFFUSION
+    };
+
+    while (1) {
+        //
+        if (gpio_get(2) == 0) {
+            sleep_ms(20);
+            if (gpio_get(2) == 0) {
+                int i = 0;
+                while (gpio_get(2) == 0) {
+                    i++;
+                    sleep_ms(1);
+                    if (i > 500)
+                        break;
+                }
+                if (i > 500) {
+                    // Long press, clear screen
+                    caster_redraw(0,0,1600,1200);
+                }
+                else {
+                    // Short press, switch mode
+                    mode++;
+                    if (mode >= mode_max) mode = 0;
+                    caster_setmode(0,0,1600,1200,modes[mode]);
+                }
+                while (gpio_get(2) == 0);
+            }
+            while (gpio_get(2) == 0);
+        }
+    }
+#elif defined(INPUT_TYPEC)
     int result = tcpm_init(0);
     if (result)
         fatal("Failed to initialize TCPC\n");
@@ -78,6 +139,7 @@ int main()
             printf(dp_valid ? "Input is valid\n" : "Input is invalid\n");
         }
     }
+#endif
 
     return 0;
 }
