@@ -22,8 +22,8 @@
       "keepouts": true,
       "lockedItems": true,
       "otherItems": false,
-      "pads": false,
-      "text": true,
+      "pads": true,
+      "text": false,
       "tracks": true,
       "vias": true,
       "zones": true
@@ -64,8 +64,14 @@
       35,
       36
     ],
-    "visible_layers": "00090e0_80000007",
+    "visible_layers": "000d0e0_80000007",
     "zone_display_mode": 0
+  },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
   },
   "meta": {
     "filename": "pcb.kicad_prl",
