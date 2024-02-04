@@ -36,6 +36,7 @@
 // #define SCREEN_10_8_INCH
 #define SCREEN_13_3_INCH
 
+// #define SCREEN_600_800
 // #define SCREEN_800_600
 // #define SCREEN_1024_758
 // #define SCREEN_1448_1072
@@ -96,7 +97,18 @@
 #endif
 
 // Screen timing
-#if defined(SCREEN_800_600)
+#if defined(SCREEN_600_800)
+// 600x800 @ 60
+#define SCREEN_CLK      61000
+#define SCREEN_HACT     600
+#define SCREEN_VACT     800
+#define SCREEN_HBLK     600
+#define SCREEN_HFP      64
+#define SCREEN_HSYNC    192
+#define SCREEN_VBLK     48
+#define SCREEN_VFP      1
+#define SCREEN_VSYNC    3
+#elif defined(SCREEN_800_600)
 // 800x600 @ 60, 40MHz DMT
 #define SCREEN_CLK      40000
 #define SCREEN_HACT     800
