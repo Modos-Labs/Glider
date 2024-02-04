@@ -20,3 +20,7 @@ Note: This repo only contains the hardware design, the gateware running on the F
 ## License
 
 The hardware design is released under the CERN Open Source Hardware License strongly-reciprocal variant, CERN-OHL-S. A copy of the license is provided in the source repository. Additionally, user guide of the license is provided on ohwr.org.
+
+The firmware code is licensed under the MIT license with the following exceptions:
+
+The USB PD library is derived from the Chromium OS project and the reclamier labs. The library is licensed under the BSD license.
