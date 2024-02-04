@@ -35,6 +35,7 @@ add_executable(fw
         ptn3460.c
         tcpm_driver.c
         tps65185.c
+        usb_mux.c
         usb_pd_driver.c
         usb_pd_policy.c
         usb_pd_protocol.c

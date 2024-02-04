@@ -1,5 +1,5 @@
 //
-// Copyright 2022 Wenting Zhang <zephray@outlook.com>
+// Copyright 2024 Wenting Zhang <zephray@outlook.com>
 // Copyright 2017 Jason Cerundolo
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,6 +21,7 @@
 // SOFTWARE.
 //
 #include "pico/stdlib.h"
+#include <stdio.h>
 #include "usb_pd_driver.h"
 #include "usb_pd.h"
 
@@ -56,12 +57,13 @@ const int pd_snk_pdo_cnt = ARRAY_SIZE(pd_snk_pdo);
 void pd_set_input_current_limit(int port, uint32_t max_ma,
 	uint32_t supply_voltage)
 {
-
+	printf("Setting input current limit to %d V %d mA\n", supply_voltage, max_ma);
 }
 
 int pd_is_valid_input_voltage(int mv)
 {
-	return 1;
+	printf("Checking valid input voltage %d mV\n", mv);
+	return (mv < 5500);
 }
 
 int pd_snk_is_vbus_provided(int port)

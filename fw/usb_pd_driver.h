@@ -1,5 +1,5 @@
 //
-// Copyright 2022 Wenting Zhang <zephray@outlook.com>
+// Copyright 2024 Wenting Zhang <zephray@outlook.com>
 // Copyright 2017 Jason Cerundolo
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -58,6 +58,9 @@ extern "C" {
 /* Don't automatically change roles */
 #undef CONFIG_USB_PD_INITIAL_DRP_STATE
 #define CONFIG_USB_PD_INITIAL_DRP_STATE PD_DRP_FREEZE
+
+/* Board has mux */
+#define CONFIG_USBC_SS_MUX
 
 /* board specific type-C power constants */
 /*

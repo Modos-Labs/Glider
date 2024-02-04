@@ -1,3 +1,7 @@
+//
+// Copyright 2024 Wenting Zhang <zephray@outlook.com>
+// Copyright 2017 Jason Cerundolo
+//
 /* Copyright (c) 2014 The Chromium OS Authors. All rights reserved.
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file.
@@ -9,6 +13,7 @@
 #include "pico/stdlib.h"
 #include "usb_pd.h"
 #include "usb_pd_tcpm.h"
+#include "usb_mux.h"
 #include "tcpm.h"
 #include "usb_pd_driver.h"
 
@@ -846,7 +851,7 @@ static void handle_vdm_request(int port, int cnt, uint32_t *payload)
 	int rlen = 0;
 	uint32_t *rdata;
 
-	CPRINTF("VDM request");
+	CPRINTF("VDM request\n");
 	if (pd[port].vdm_state == VDM_STATE_BUSY) {
 		/* If UFP responded busy retry after timeout */
 		if (PD_VDO_CMDT(payload[0]) == CMDT_RSP_BUSY) {

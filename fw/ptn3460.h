@@ -23,5 +23,6 @@
 
 #ifdef INPUT_TYPEC
 void ptn3460_init(void);
+void ptn3460_set_aux_polarity(int reverse);
 bool ptn3460_is_valid(void);
 #endif

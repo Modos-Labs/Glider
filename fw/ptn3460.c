@@ -23,6 +23,7 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
+#include "config.h"
 #include "ptn3460.h"
 #include "utils.h"
 #include "edid.h"
@@ -79,7 +80,7 @@ void ptn3460_init(void) {
     gpio_init(PTN3460_VALID_PIN);
     gpio_set_dir(PTN3460_VALID_PIN, GPIO_IN);
     gpio_pull_down(PTN3460_VALID_PIN);
-    sleep_ms(100);
+    sleep_ms(50);
     // wait for HPD to become high
     int ticks = 0;
     while (gpio_get(PTN3460_HPD_PIN) != true) {
@@ -94,18 +95,14 @@ void ptn3460_init(void) {
     ptn3460_select_edid_emulation(0);
     ptn3460_load_edid(edid_get_raw());
 
-    //ptn3460_write(0x80, 0x02); // Set AUX reverse
     ptn3460_write(0x81, 0x29); // 18bpp, clock on odd bus, dual channel
+}
 
-    /*uint8_t buf[2];
-    int result;
-    buf[0] = (uint8_t)0x80;
-    buf[1] = (uint8_t)0x02;
-    result = i2c_write_blocking(PTN3460_I2C, PTN3460_I2C_ADDRESS,
-            buf, 2, false);
-    if (result != 2) {
-        fatal("Failed writing data to PTN3460\n");
-    }*/
+void ptn3460_set_aux_polarity(int reverse) {
+    if (reverse)
+        ptn3460_write(0x80, 0x02); // Enable AUX reverse
+    else
+        ptn3460_write(0x80, 0x00); // Disable AUX reverse
 }
 
 bool ptn3460_is_valid(void) {
