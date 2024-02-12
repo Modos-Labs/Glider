@@ -32,3 +32,4 @@ Lite R0.1
 R0.7
 1. Import DVI TMDS input, newly revised power supply and user button from RL0.1
 2. Connect FPGA to RP2040's hardware SPI
+3. Fix USB Type C mux connection
