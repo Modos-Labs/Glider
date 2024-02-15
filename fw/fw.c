@@ -1,5 +1,5 @@
 //
-// Copyright 2022 Wenting Zhang <zephray@outlook.com>
+// Copyright 2024 Wenting Zhang <zephray@outlook.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -33,6 +33,10 @@
 #include "fpga.h"
 #include "edid.h"
 #include "caster.h"
+#include "usbapp.h"
+
+void osd_task(void); // OSD handling task
+void usb_pd_task(void); // USB PD handling task
 
 int main()
 {
@@ -43,28 +47,50 @@ int main()
     printf("\n");
     printf("Glider\n");
 
-    // TODO: Unify both input options
-#if defined(INPUT_DVI)
     power_init();
+
+#ifdef INPUT_DVI
     edid_init();
-    power_enable(true);
+#endif
 
-    //sleep_run_from_xosc();
-    //sleep_goto_dormant_until_edge_high(8);
-    // https://ghubcoder.github.io/posts/awaking-the-pico/
+#ifdef INPUT_TYPEC
+    int result = tcpm_init(0);
+    if (result)
+        fatal("Failed to initialize TCPC\n");
 
-    fpga_init();
+    // int cc1, cc2;
+    // tcpc_config[0].drv->get_cc(0, &cc1, &cc2);
+    // printf("CC status %d %d\n", cc1, cc2);
 
-    //sleep_ms(5000);
-    //caster_init();
+    ptn3460_init();
+    pd_init(0);
+#endif
 
-    gpio_init(2);
-    gpio_set_dir(2, GPIO_IN);
-    gpio_pull_up(2);
+#ifdef BOARD_HAS_BUTTON
+    gpio_init(BUTTON_GPIO);
+    gpio_set_dir(BUTTON_GPIO, GPIO_IN);
+    gpio_pull_up(BUTTON_GPIO);
+#endif
 
-    int mode_max = 6;
-    int mode = 1;
-    UPDATE_MODE modes[6] = {
+    //fpga_init();
+    //power_enable(true);
+
+    usbapp_init();
+
+    while (1) {
+        osd_task();
+        usb_pd_task();
+        usbapp_task();
+    }
+
+    return 0;
+}
+
+void osd_task(void) {
+#ifdef BOARD_HAS_BUTTON
+    static int mode_max = 6;
+    static int mode = 1;
+    const UPDATE_MODE modes[6] = {
         UM_FAST_MONO_NO_DITHER,
         UM_FAST_MONO_BAYER,
         UM_FAST_MONO_BLUE_NOISE,
@@ -73,73 +99,48 @@ int main()
         UM_AUTO_LUT_ERROR_DIFFUSION
     };
 
-    while (1) {
-        //
-        if (gpio_get(2) == 0) {
-            sleep_ms(20);
-            if (gpio_get(2) == 0) {
-                int i = 0;
-                while (gpio_get(2) == 0) {
-                    i++;
-                    sleep_ms(1);
-                    if (i > 500)
-                        break;
-                }
-                if (i > 500) {
-                    // Long press, clear screen
-                    caster_redraw(0,0,1600,1200);
-                }
-                else {
-                    // Short press, switch mode
-                    mode++;
-                    if (mode >= mode_max) mode = 0;
-                    caster_setmode(0,0,1600,1200,modes[mode]);
-                }
-                while (gpio_get(2) == 0);
+    if (gpio_get(BUTTON_GPIO) == 0) {
+        sleep_ms(20);
+        if (gpio_get(BUTTON_GPIO) == 0) {
+            int i = 0;
+            while (gpio_get(BUTTON_GPIO) == 0) {
+                i++;
+                sleep_ms(1);
+                if (i > 500)
+                    break;
             }
-            while (gpio_get(2) == 0);
+            if (i > 500) {
+                // Long press, clear screen
+                caster_redraw(0,0,1600,1200);
+            }
+            else {
+                // Short press, switch mode
+                mode++;
+                if (mode >= mode_max) mode = 0;
+                caster_setmode(0,0,1600,1200,modes[mode]);
+            }
+            while (gpio_get(BUTTON_GPIO) == 0);
         }
-    }
-#elif defined(INPUT_TYPEC)
-    int result = tcpm_init(0);
-    if (result)
-        fatal("Failed to initialize TCPC\n");
-
-    int cc1, cc2;
-    tcpc_config[0].drv->get_cc(0, &cc1, &cc2);
-    printf("CC status %d %d\n", cc1, cc2);
-
-    gpio_init(10);
-    gpio_put(10, 0);
-    gpio_set_dir(10, GPIO_OUT);
-
-    power_init();
-    power_enable(true); // TODO: should be dependent on DP signal valid
-    fpga_init();
-
-    ptn3460_init();
-    pd_init(0);
-    sleep_ms(50);
-
-    extern int dp_enabled;
-    bool hpd_sent = false;
-    bool dp_valid = false;
-
-    while (1) {
-        // TODO: Implement interrupt
-        fusb302_tcpc_alert(0);
-        pd_run_state_machine(0);
-        if (dp_enabled && !hpd_sent && !pd_is_vdm_busy(0)) {
-            printf("DP enabled\n");
-            pd_send_hpd(0, hpd_high);
-            hpd_sent = true;
-        }
-        if (dp_valid != ptn3460_is_valid()) {
-            dp_valid = ptn3460_is_valid();
-            printf(dp_valid ? "Input is valid\n" : "Input is invalid\n");
-        }
+        while (gpio_get(BUTTON_GPIO) == 0);
     }
 #endif
+}
 
-    return 0;
+void usb_pd_task(void) {
+    extern int dp_enabled;
+    static bool hpd_sent = false;
+    static bool dp_valid = false;
+
+    // TODO: Implement interrupt
+    fusb302_tcpc_alert(0);
+    pd_run_state_machine(0);
+    if (dp_enabled && !hpd_sent && !pd_is_vdm_busy(0)) {
+        printf("DP enabled\n");
+        pd_send_hpd(0, hpd_high);
+        hpd_sent = true;
+    }
+    if (dp_valid != ptn3460_is_valid()) {
+        dp_valid = ptn3460_is_valid();
+        printf(dp_valid ? "Input is valid\n" : "Input is invalid\n");
+    }
 }

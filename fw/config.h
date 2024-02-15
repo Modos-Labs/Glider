@@ -61,6 +61,8 @@
 #define POWER_GPIO
 #define POWER_GPIO_VCOM_MEASURE
 #define INPUT_DVI
+#define BOARD_HAS_BUTTON
+#define BUTTON_GPIO     2
 #else
 #error "Unknown board revision"
 #endif
