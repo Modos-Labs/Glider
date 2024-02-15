@@ -56,27 +56,33 @@ void caster_init(void) {
     // fpga_write_reg8(CSR_CONTROL, 1); // Enable refresh
 }
 
-void caster_load_waveform(uint8_t *waveform, uint8_t frames) {
-    wait();
+static uint8_t is_busy() {
+    uint8_t status = fpga_write_reg8(CSR_STATUS, 0x00);
+    return !!(status & STATUS_OP_QUEUE);
+}
+
+uint8_t caster_load_waveform(uint8_t *waveform, uint8_t frames) {
     fpga_write_reg8(CSR_LUT_FRAME, 0); // Reset value before loading
     fpga_write_reg16(CSR_LUT_ADDR, 0);
     fpga_write_bulk(CSR_LUT_WR, waveform, WAVEFORM_SIZE);
     waveform_frames = frames;
+    return 0;
 }
 
-void caster_redraw(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1) {
-    wait();
+uint8_t caster_redraw(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1) {
+    if (is_busy()) return 1;
     fpga_write_reg16(CSR_OP_LEFT, x0);
     fpga_write_reg16(CSR_OP_TOP, y0);
     fpga_write_reg16(CSR_OP_RIGHT, x1);
     fpga_write_reg16(CSR_OP_BOTTOM, y1);
     fpga_write_reg8(CSR_OP_LENGTH, get_update_frames());
     fpga_write_reg8(CSR_OP_CMD, OP_EXT_REDRAW);
+    return 0;
 }
 
-void caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
+uint8_t caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
         UPDATE_MODE mode) {
-    wait();
+    if (is_busy()) return 1;
     fpga_write_reg16(CSR_OP_LEFT, x0);
     fpga_write_reg16(CSR_OP_TOP, y0);
     fpga_write_reg16(CSR_OP_RIGHT, x1);
@@ -84,4 +90,5 @@ void caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
     fpga_write_reg8(CSR_OP_LENGTH, get_update_frames());
     fpga_write_reg8(CSR_OP_PARAM, (uint8_t)mode);
     fpga_write_reg8(CSR_OP_CMD, OP_EXT_SETMODE);
+    return 0;
 }

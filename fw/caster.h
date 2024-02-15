@@ -52,6 +52,7 @@
 #define CSR_CFG_FBYTES_B2   27
 #define CSR_CFG_FBYTES_B1   28
 #define CSR_CFG_FBYTES_B0   29
+#define CSR_STATUS          32
 // Alias for 16bit registers
 #define CSR_LUT_ADDR        CSR_LUT_ADDR_HI
 #define CSR_OP_LEFT         CSR_OP_LEFT_HI
@@ -89,7 +90,7 @@ typedef enum {
 } UPDATE_MODE;
 
 void caster_init(void);
-void caster_load_waveform(uint8_t *waveform, uint8_t frames);
-void caster_redraw(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
-void caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
+uint8_t caster_load_waveform(uint8_t *waveform, uint8_t frames);
+uint8_t caster_redraw(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
+uint8_t caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
         UPDATE_MODE mode);

@@ -21,5 +21,12 @@
 //
 #pragma once
 
+#define USBCMD_RESET        0x00
+#define USBCMD_POWERDOWN    0x01
+#define USBCMD_POWERUP      0x02
+#define USBCMD_SETINPUT     0x03
+#define USBCMD_REDRAW       0x04
+#define USBCMD_SETMODE      0x05
+
 void usbapp_init(void);
 void usbapp_task(void);
