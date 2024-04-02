@@ -6,14 +6,14 @@
         "apply_defaults_to_fp_fields": false,
         "apply_defaults_to_fp_shapes": false,
         "apply_defaults_to_fp_text": false,
-        "board_outline_line_width": 0.1,
-        "copper_line_width": 0.2,
+        "board_outline_line_width": 0.09999999999999999,
+        "copper_line_width": 0.19999999999999998,
         "copper_text_italic": false,
         "copper_text_size_h": 1.5,
         "copper_text_size_v": 1.5,
         "copper_text_thickness": 0.3,
         "copper_text_upright": false,
-        "courtyard_line_width": 0.05,
+        "courtyard_line_width": 0.049999999999999996,
         "dimension_precision": 4,
         "dimension_units": 3,
         "dimensions": {
@@ -24,7 +24,7 @@
           "text_position": 0,
           "units_format": 1
         },
-        "fab_line_width": 0.1,
+        "fab_line_width": 0.09999999999999999,
         "fab_text_italic": false,
         "fab_text_size_h": 1.0,
         "fab_text_size_v": 1.0,
@@ -119,21 +119,21 @@
         "allow_blind_buried_vias": false,
         "allow_microvias": false,
         "max_error": 0.005,
-        "min_clearance": 0.1524,
+        "min_clearance": 0.15239999999999998,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.075,
         "min_hole_clearance": 0.0,
         "min_hole_to_hole": 0.25,
-        "min_microvia_diameter": 0.2,
-        "min_microvia_drill": 0.1,
+        "min_microvia_diameter": 0.19999999999999998,
+        "min_microvia_drill": 0.09999999999999999,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
-        "min_text_height": 0.8,
+        "min_text_height": 0.7999999999999999,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.1524,
-        "min_via_annular_width": 0.05,
-        "min_via_diameter": 0.6096,
+        "min_track_width": 0.15239999999999998,
+        "min_via_annular_width": 0.049999999999999996,
+        "min_via_diameter": 0.6095999999999999,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
         "solder_mask_to_copper_clearance": 0.005,
@@ -194,26 +194,26 @@
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
-          "corner_radius_percentage": 80,
+          "corner_radius_percentage": 100,
           "corner_style": 1,
           "max_amplitude": 1.0,
-          "min_amplitude": 0.2,
+          "min_amplitude": 0.1,
           "single_sided": false,
-          "spacing": 1.0
+          "spacing": 0.6
         },
         "diff_pair_skew_defaults": {
-          "corner_radius_percentage": 80,
+          "corner_radius_percentage": 100,
           "corner_style": 1,
           "max_amplitude": 1.0,
-          "min_amplitude": 0.2,
+          "min_amplitude": 0.1,
           "single_sided": false,
           "spacing": 0.6
         },
         "single_track_defaults": {
-          "corner_radius_percentage": 80,
+          "corner_radius_percentage": 100,
           "corner_style": 1,
           "max_amplitude": 1.0,
-          "min_amplitude": 0.2,
+          "min_amplitude": 0.1,
           "single_sided": false,
           "spacing": 0.6
         }
@@ -497,7 +497,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "gerber/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -619,7 +619,7 @@
   "sheets": [
     [
       "24530e76-d05f-4501-b152-7c7379698255",
-      ""
+      "Root"
     ]
   ],
   "text_variables": {}

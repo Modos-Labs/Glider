@@ -12190,8 +12190,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "USB_C_Receptacle"
-			(at 29.21 102.87 0)
+		(property "Value" "XUNPU TYPEC-324G-ACP24"
+			(at 27.94 104.14 90)
 			(effects
 				(font
 					(size 1.27 1.27)
