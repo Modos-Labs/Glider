@@ -71,8 +71,42 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
     (void) report_id;
     (void) report_type;
 
-    // echo back anything we received from host
-    tud_hid_report(0, buffer, bufsize);
+    // Process the request
+    uint16_t cmd = (buffer[1] << 8) | buffer[0];
+    uint16_t param = (buffer[3] << 8) | buffer[2];
+    uint16_t x0 = (buffer[5] << 8) | buffer[4];
+    uint16_t y0 = (buffer[7] << 8) | buffer[6];
+    uint16_t x1 = (buffer[9] << 8) | buffer[8];
+    uint16_t y1 = (buffer[11] << 8) | buffer[10];
+    uint16_t id = (buffer[13] << 8) | buffer[12];
+    uint16_t chksum = (buffer[15] << 8) | buffer[14];
+    uint8_t retval = 1;
+    switch (buffer[0]) {
+    case USBCMD_RESET:
+        // reset system
+        (*((volatile uint32_t*)(PPB_BASE + 0x0ED0C))) = 0x5FA0004; // Reset via NVIC
+        break;
+    case USBCMD_POWERDOWN:
+        // TODO
+        break;
+    case USBCMD_POWERUP:
+        // TODO
+        break;
+    case USBCMD_SETINPUT:
+        retval = caster_setinput((uint8_t)param);
+        break;
+    case USBCMD_REDRAW:
+        retval = caster_redraw(x0, y0, x1, y1);
+        break;
+    case USBCMD_SETMODE:
+        retval = caster_setmode(x0, y0, x1, y1, (UPDATE_MODE)param);
+        break;
+    }
+
+    uint8_t txbuf[1];
+    txbuf[0] = retval;
+
+    tud_hid_report(0, txbuf, 1);
 }
 
 void usbapp_task(void) {

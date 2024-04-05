@@ -92,3 +92,9 @@ uint8_t caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
     fpga_write_reg8(CSR_OP_CMD, OP_EXT_SETMODE);
     return 0;
 }
+
+uint8_t caster_setinput(uint8_t input_src) {
+    if (is_busy()) return 1;
+    fpga_write_reg8(CSR_CFG_IN_SRC, input_src);
+    return 0;
+}
