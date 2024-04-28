@@ -25,16 +25,15 @@ pico_sdk_init()
 
 add_executable(fw
         bitstream.c
+        button.c
         caster.c
         edid.c
         fpga.c
         fusb302.c
         fw.c
-        max17135.c
         power.c
         ptn3460.c
         tcpm_driver.c
-        tps65185.c
         usb_mux.c
         usb_pd_driver.c
         usb_pd_policy.c

@@ -23,10 +23,7 @@
 
 /* BOARD REVISION CONFIGURATION */
 // Eariler revisions are not supported
-//#define BOARD_REV_R0P5
-//#define BOARD_REV_R0P6
-// Lite version uses DVI instead of Type-C DP Alt-mode
-#define BOARD_REV_RL0P1
+#define BOARD_REV_R0P7
 
 /* SCREEN CONFIGURATION */
 
@@ -50,17 +47,12 @@
 
 
 /* SET BASED ON PREVIOUS DEFINES, DO NOT MODIFY */
-#if defined(BOARD_REV_R0P5)
-#define POWER_TPS65185
-#define INPUT_TYPEC
-#elif defined(BOARD_REV_R0P6)
-#define POWER_GPIO
-// VCOM measurement is not supported
-#define INPUT_TYPEC
-#elif defined(BOARD_REV_RL0P1)
+#if defined(BOARD_REV_R0P7)
 #define POWER_GPIO
 #define POWER_GPIO_VCOM_MEASURE
-#define INPUT_DVI
+#define INPUT_ADV7611
+#define INPUT_PTN3460
+#define HAS_TYPEC
 #else
 #error "Unknown board revision"
 #endif

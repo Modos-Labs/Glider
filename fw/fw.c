@@ -32,6 +32,7 @@
 #include "power.h"
 #include "fpga.h"
 #include "edid.h"
+#include "button.h"
 #include "caster.h"
 
 int main()
@@ -43,10 +44,28 @@ int main()
     printf("\n");
     printf("Glider\n");
 
-    // TODO: Unify both input options
-#if defined(INPUT_DVI)
+    // Initialize I2C for TCPC/PTN3460/ADV7611 use
+    i2c_init(i2c1, 100*1000);
+    gpio_set_function(2, GPIO_FUNC_I2C);
+    gpio_set_function(3, GPIO_FUNC_I2C);
+    gpio_pull_up(2);
+    gpio_pull_up(3);
+
+    int result = tcpm_init(0);
+    if (result)
+        fatal("Failed to initialize TCPC\n");
+
+    int cc1, cc2;
+    tcpc_config[0].drv->get_cc(0, &cc1, &cc2);
+    printf("CC status %d %d\n", cc1, cc2);
+
     power_init();
     edid_init();
+
+    ptn3460_init();
+    pd_init(0);
+    sleep_ms(50);
+
     power_enable(true);
 
     //sleep_run_from_xosc();
@@ -54,13 +73,9 @@ int main()
     // https://ghubcoder.github.io/posts/awaking-the-pico/
 
     fpga_init();
-
+    button_init();
     //sleep_ms(5000);
     //caster_init();
-
-    gpio_init(2);
-    gpio_set_dir(2, GPIO_IN);
-    gpio_pull_up(2);
 
     int mode_max = 6;
     int mode = 1;
@@ -72,54 +87,6 @@ int main()
         UM_AUTO_LUT_NO_DITHER,
         UM_AUTO_LUT_ERROR_DIFFUSION
     };
-
-    while (1) {
-        //
-        if (gpio_get(2) == 0) {
-            sleep_ms(20);
-            if (gpio_get(2) == 0) {
-                int i = 0;
-                while (gpio_get(2) == 0) {
-                    i++;
-                    sleep_ms(1);
-                    if (i > 500)
-                        break;
-                }
-                if (i > 500) {
-                    // Long press, clear screen
-                    caster_redraw(0,0,1600,1200);
-                }
-                else {
-                    // Short press, switch mode
-                    mode++;
-                    if (mode >= mode_max) mode = 0;
-                    caster_setmode(0,0,1600,1200,modes[mode]);
-                }
-                while (gpio_get(2) == 0);
-            }
-            while (gpio_get(2) == 0);
-        }
-    }
-#elif defined(INPUT_TYPEC)
-    int result = tcpm_init(0);
-    if (result)
-        fatal("Failed to initialize TCPC\n");
-
-    int cc1, cc2;
-    tcpc_config[0].drv->get_cc(0, &cc1, &cc2);
-    printf("CC status %d %d\n", cc1, cc2);
-
-    gpio_init(10);
-    gpio_put(10, 0);
-    gpio_set_dir(10, GPIO_OUT);
-
-    power_init();
-    power_enable(true); // TODO: should be dependent on DP signal valid
-    fpga_init();
-
-    ptn3460_init();
-    pd_init(0);
-    sleep_ms(50);
 
     extern int dp_enabled;
     bool hpd_sent = false;
@@ -138,8 +105,30 @@ int main()
             dp_valid = ptn3460_is_valid();
             printf(dp_valid ? "Input is valid\n" : "Input is invalid\n");
         }
+
+        // Key press logic
+        uint32_t keys = button_scan();
+        if (keys & 0x1) {
+            // First key short press
+        }
+        if (keys & 0x2) {
+            // First key long press
+            // Clear screen
+            caster_redraw(0,0,1600,1200);
+        }
+        if (keys & 0x4) {
+            // Second key short press
+        }
+        if (keys & 0x8) {
+            // Second key long press
+            // Switch mode
+            mode++;
+            if (mode >= mode_max) mode = 0;
+            caster_setmode(0,0,1600,1200,modes[mode]);
+        }
+
+        sleep_ms(1);
     }
-#endif
 
     return 0;
 }

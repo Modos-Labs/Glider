@@ -1,5 +1,5 @@
 //
-// Copyright 2022 Wenting Zhang <zephray@outlook.com>
+// Copyright 2024 Wenting Zhang <zephray@outlook.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,6 +21,5 @@
 //
 #pragma once
 
-void max_init(void);
-void max_set_vcom(uint16_t vcom);
-void max_enable(bool en);
+void button_init();
+uint32_t button_scan();

@@ -29,16 +29,13 @@ const struct tcpc_config_t tcpc_config[CONFIG_USB_PD_PORT_COUNT] = {
   {0, FUSB302_I2C_SLAVE_ADDR, &fusb302_tcpm_drv},
 };
 
-#define TCPC_I2C i2c0
+#define TCPC_I2C i2c1
 #define TCPC_I2C_SDA 0
 #define TCPC_I2C_SCL 1
 
 void tcpc_i2c_init(void) {
-    i2c_init(TCPC_I2C, 100*1000);
-    gpio_set_function(TCPC_I2C_SDA, GPIO_FUNC_I2C);
-    gpio_set_function(TCPC_I2C_SCL, GPIO_FUNC_I2C);
-    gpio_pull_up(TCPC_I2C_SDA);
-    gpio_pull_up(TCPC_I2C_SCL);
+    // Should be initialized at board level init to avoid dependencies between
+    // drivers that need I2C
 }
 
 /* I2C wrapper functions - get I2C port / slave addr from config struct. */
