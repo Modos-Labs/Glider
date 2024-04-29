@@ -2,6 +2,12 @@
 
 This is a list of Eink screens and their key parameters and their compatibilities with Caster/ Glider. The information are gathered from public sources, so they might be incorrect. This is not a complete list of all screens Eink have ever produced or in production. This table is intended for hobbiests buying used screens. If you are designing a product with Eink screen please contact Eink directly.
 
+Other than a few exceptions, only screens without integrated TCON are listed here (in other words, SPI screens are generally not included here). These screens are the main focus of this project anyway.
+
+Screen size is the first 3 numbers in the model number, so it's not listed separately in the table. For example, ED060SC4 is 6.0", ED097OC1 is 9.7", and ES133UT1 is 13.3".
+
+The adapter column refers to the adapter needed for this particular screen, however there is no guarentee that it would work, even if it's listed as tested.
+
 | Model Name | Model Number | FPL Platform | Resolution  | Marketing Name              | R Typ | CR Typ | Year  | Interface | Pin Count | Adapter | Tested? |
 | ---------- | ------------ | ------------ | ----------- | --------------------------- | ----- | ------ | ----- | --------- | --------- | ------- | ------- |
 | ED043WC1   |              | V220         | 800x480     | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        |         |         |
