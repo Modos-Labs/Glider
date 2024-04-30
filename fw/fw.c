@@ -29,6 +29,7 @@
 #include "tcpm_driver.h"
 #include "usb_pd.h"
 #include "ptn3460.h"
+#include "adv7611.h"
 #include "power.h"
 #include "fpga.h"
 #include "edid.h"
@@ -44,6 +45,11 @@ int main()
     printf("\n");
     printf("Glider\n");
 
+#ifdef INPUT_ADV7611
+    // Need to release ADV from reset, otherwise it would hold the I2C bus
+    adv7611_early_init();
+#endif
+
     // Initialize I2C for TCPC/PTN3460/ADV7611 use
     i2c_init(i2c1, 100*1000);
     gpio_set_function(2, GPIO_FUNC_I2C);
@@ -51,6 +57,7 @@ int main()
     gpio_pull_up(2);
     gpio_pull_up(3);
 
+#ifdef HAS_TYPEC
     int result = tcpm_init(0);
     if (result)
         fatal("Failed to initialize TCPC\n");
@@ -58,13 +65,20 @@ int main()
     int cc1, cc2;
     tcpc_config[0].drv->get_cc(0, &cc1, &cc2);
     printf("CC status %d %d\n", cc1, cc2);
+#endif
 
     power_init();
-    edid_init();
 
-    ptn3460_init();
     pd_init(0);
     sleep_ms(50);
+
+    edid_init();
+#ifdef INPUT_PTN3460
+    ptn3460_init();
+#endif
+#ifdef INPUT_ADV7611
+    adv7611_init();
+#endif
 
     power_enable(true);
 
@@ -72,10 +86,10 @@ int main()
     //sleep_goto_dormant_until_edge_high(8);
     // https://ghubcoder.github.io/posts/awaking-the-pico/
 
-    fpga_init();
-    button_init();
-    //sleep_ms(5000);
+    //fpga_init();
     //caster_init();
+
+    //button_init();
 
     int mode_max = 6;
     int mode = 1;
@@ -93,6 +107,7 @@ int main()
     bool dp_valid = false;
 
     while (1) {
+#ifdef HAS_TYPEC
         // TODO: Implement interrupt
         fusb302_tcpc_alert(0);
         pd_run_state_machine(0);
@@ -105,6 +120,7 @@ int main()
             dp_valid = ptn3460_is_valid();
             printf(dp_valid ? "Input is valid\n" : "Input is invalid\n");
         }
+#endif
 
         // Key press logic
         uint32_t keys = button_scan();

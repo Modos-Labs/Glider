@@ -19,45 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
-#include <stdint.h>
-#include <stdio.h>
-#include "pico/stdlib.h"
-#include "hardware/i2c.h"
-#include "config.h"
-#include "ptn3460.h"
-#include "utils.h"
-#include "usb_mux.h"
+#pragma once
 
-#ifdef HAS_TYPEC
-
-#define USBC_ORI_PIN    10
-
-void usb_mux_init(int port) {
-    gpio_init(USBC_ORI_PIN);
-    gpio_set_dir(USBC_ORI_PIN, GPIO_OUT);
-    gpio_put(USBC_ORI_PIN, 0);
-}
-
-void usb_mux_set(int port, enum typec_mux mux_mode,
-		 enum usb_switch usb_config, int polarity) {
-    printf("USB MUX set %s, %d\n",
-        (usb_config == USB_SWITCH_CONNECT) ? "CONNECT" :
-        (usb_config == USB_SWITCH_DISCONNECT) ? "DISCONNECT" : "RESTORE",
-        polarity);
-    if (usb_config == USB_SWITCH_CONNECT) {
-        if (polarity == 0) {
-            // Not flipped
-            printf("Setting orientation to not flipped\n");
-            gpio_put(USBC_ORI_PIN, 1);
-            ptn3460_set_aux_polarity(1);
-        }
-        else {
-            // Flipped
-            printf("Setting orientation to flipped\n");
-            gpio_put(USBC_ORI_PIN, 0);
-            ptn3460_set_aux_polarity(0);
-        }
-    }
-}
-
+#ifdef INPUT_ADV7611
+void adv7611_early_init(void);
+void adv7611_init(void);
+bool adv7611_is_valid(void);
 #endif

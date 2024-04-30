@@ -30,8 +30,6 @@ const struct tcpc_config_t tcpc_config[CONFIG_USB_PD_PORT_COUNT] = {
 };
 
 #define TCPC_I2C i2c1
-#define TCPC_I2C_SDA 0
-#define TCPC_I2C_SCL 1
 
 void tcpc_i2c_init(void) {
     // Should be initialized at board level init to avoid dependencies between
