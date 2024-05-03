@@ -3,7 +3,8 @@ build/
 .DS_Store
 *.bak
 *-backups/
-production/
-gerber/
 #auto_saved_files#
 *.lck
+gerber/
+production/
+fp-info-cache
