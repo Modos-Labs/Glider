@@ -31,16 +31,18 @@
 // #define SCREEN_7_8_INCH
 // #define SCREEN_10_3_INCH
 // #define SCREEN_10_8_INCH
-#define SCREEN_13_3_INCH
+#define SCREEN_11_3_INCH
+// #define SCREEN_13_3_INCH
 
 // #define SCREEN_600_800
 // #define SCREEN_800_600
 // #define SCREEN_1024_758
 // #define SCREEN_1448_1072
-#define SCREEN_1600_1200
+// #define SCREEN_1600_1200
 // #define SCREEN_1872_1404
 // #define SCREEN_1920_1080
 // #define SCREEN_2200_1650
+#define SCREEN_2400_1034
 
 #define SCREEN_MONO
 // #define SCREEN_DES_COLOR
@@ -84,6 +86,10 @@
 #define SCREEN_SIZE_X   270
 #define SCREEN_SIZE_Y   203
 #define SCREEN_ASPECT   SCREEN_ASPECT_4_3
+#elif defined(SCREEN_11_3_INCH)
+#define SCREEN_SIZE_X   264
+#define SCREEN_SIZE_Y   114
+#define SCREEN_ASPECT   SCREEN_ASPECT_16_9
 #else
 #error "Unknown screen size"
 #endif
@@ -205,4 +211,15 @@
 #define SCREEN_VBLK     20
 #define SCREEN_VFP      1
 #define SCREEN_VSYNC    5
+#elif defined(SCREEN_2400_1034)
+// 2400x1034
+#define SCREEN_CLK      159000
+#define SCREEN_HACT     2400
+#define SCREEN_VACT     1034
+#define SCREEN_HBLK     80
+#define SCREEN_HFP      8
+#define SCREEN_HSYNC    32
+#define SCREEN_VBLK     35
+#define SCREEN_VFP      21
+#define SCREEN_VSYNC    8
 #endif

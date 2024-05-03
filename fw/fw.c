@@ -86,10 +86,10 @@ int main()
     //sleep_goto_dormant_until_edge_high(8);
     // https://ghubcoder.github.io/posts/awaking-the-pico/
 
-    //fpga_init();
-    //caster_init();
+    fpga_init();
+    caster_init();
 
-    //button_init();
+    button_init();
 
     int mode_max = 6;
     int mode = 1;
@@ -126,21 +126,21 @@ int main()
         uint32_t keys = button_scan();
         if (keys & 0x1) {
             // First key short press
+            // Clear screen
+            caster_redraw(0,0,2400,1200);
         }
         if (keys & 0x2) {
             // First key long press
-            // Clear screen
-            caster_redraw(0,0,1600,1200);
         }
         if (keys & 0x4) {
             // Second key short press
+             // Switch mode
+            mode++;
+            if (mode >= mode_max) mode = 0;
+            caster_setmode(0,0,2400,1200,modes[mode]);
         }
         if (keys & 0x8) {
             // Second key long press
-            // Switch mode
-            mode++;
-            if (mode >= mode_max) mode = 0;
-            caster_setmode(0,0,1600,1200,modes[mode]);
         }
 
         sleep_ms(1);
