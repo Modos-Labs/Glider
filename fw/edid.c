@@ -27,15 +27,16 @@
 #include "edid.h"
 #include "config.h"
 
-#if defined(INPUT_DVI)
+#ifdef BOARD_USE_EDID_EMU
 #define EDID_I2C_ADDRESS    (0x50)
 #define EDID_I2C            (i2c0)
 #define EDID_I2C_SDA        (0)
 #define EDID_I2C_SCL        (1)
-#define EDID_VID_IN_PARAM   (0x81)  // DVI input
-#elif defined(INPUT_TYPEC)
-#define EDID_VID_IN_PARAM   (0x85)  // DisplayPort input
 #endif
+
+// 0x81 for DVI, 0x85 for DP
+// Always use 0x85 for now, doesn't really matter
+#define EDID_VID_IN_PARAM   (0x85)
 
 static char edid[129] = {
     0x00, // register number, not part of EDID
@@ -90,7 +91,7 @@ static char edid[129] = {
     0x00 // checksum (127)
 };
 
-#ifdef INPUT_DVI
+#ifdef BOARD_USE_EDID_EMU
 static void edid_i2c_slave_handler(i2c_inst_t *i2c, i2c_slave_event_t event) {
     static uint8_t addr = 0;
 
@@ -133,7 +134,7 @@ void edid_init() {
     checksum = ~checksum + 1;
     edid[128] = checksum;
 
-#ifdef INPUT_DVI
+#ifdef BOARD_USE_EDID_EMU
     // DVI models has DDC I2C connected directly to the RP2040
     // EDID ROM emulation is needed
 

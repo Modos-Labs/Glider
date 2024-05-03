@@ -7,8 +7,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 # initalize pico_sdk from installed location
 # (note this can come from environment, CMake cache etc)
-set(PICO_SDK_PATH "/home/wenting/pico/pico-sdk")
-set(PICO_EXTRAS_PATH "/home/wenting/pico/pico-extras")
+#set(PICO_SDK_PATH "/home/wenting/pico/pico-sdk")
+#set(PICO_EXTRAS_PATH "/home/wenting/pico/pico-extras")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
@@ -24,17 +24,17 @@ pico_sdk_init()
 # Add executable. Default name is the project name, version 0.1
 
 add_executable(fw
+        adv7611.c
         bitstream.c
+        button.c
         caster.c
         edid.c
         fpga.c
         fusb302.c
         fw.c
-        max17135.c
         power.c
         ptn3460.c
         tcpm_driver.c
-        tps65185.c
         usb_mux.c
         usb_pd_driver.c
         usb_pd_policy.c

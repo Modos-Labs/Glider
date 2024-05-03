@@ -3,14 +3,17 @@
     "3dviewports": [],
     "design_settings": {
       "defaults": {
-        "board_outline_line_width": 0.049999999999999996,
-        "copper_line_width": 0.19999999999999998,
+        "apply_defaults_to_fp_fields": false,
+        "apply_defaults_to_fp_shapes": false,
+        "apply_defaults_to_fp_text": false,
+        "board_outline_line_width": 0.05,
+        "copper_line_width": 0.2,
         "copper_text_italic": false,
         "copper_text_size_h": 1.5,
         "copper_text_size_v": 1.5,
         "copper_text_thickness": 0.3,
         "copper_text_upright": false,
-        "courtyard_line_width": 0.049999999999999996,
+        "courtyard_line_width": 0.05,
         "dimension_precision": 4,
         "dimension_units": 3,
         "dimensions": {
@@ -21,13 +24,13 @@
           "text_position": 0,
           "units_format": 1
         },
-        "fab_line_width": 0.09999999999999999,
+        "fab_line_width": 0.1,
         "fab_text_italic": false,
         "fab_text_size_h": 1.0,
         "fab_text_size_v": 1.0,
         "fab_text_thickness": 0.15,
         "fab_text_upright": false,
-        "other_line_width": 0.09999999999999999,
+        "other_line_width": 0.1,
         "other_text_italic": false,
         "other_text_size_h": 1.0,
         "other_text_size_v": 1.0,
@@ -42,7 +45,7 @@
         "silk_text_italic": false,
         "silk_text_size_h": 0.7,
         "silk_text_size_v": 0.7,
-        "silk_text_thickness": 0.09999999999999999,
+        "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
@@ -73,6 +76,7 @@
         "duplicate_footprints": "warning",
         "extra_footprint": "warning",
         "footprint": "error",
+        "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "error",
         "hole_clearance": "error",
         "hole_near_hole": "error",
@@ -116,29 +120,26 @@
         "max_error": 0.005,
         "min_clearance": 0.0,
         "min_connection": 0.0,
-        "min_copper_edge_clearance": 0.024999999999999998,
-        "min_hole_clearance": 0.0,
+        "min_copper_edge_clearance": 0.3,
+        "min_hole_clearance": 0.2,
         "min_hole_to_hole": 0.25,
-        "min_microvia_diameter": 0.19999999999999998,
-        "min_microvia_drill": 0.09999999999999999,
+        "min_microvia_diameter": 0.2,
+        "min_microvia_drill": 0.1,
         "min_resolved_spokes": 2,
         "min_silk_clearance": 0.0,
         "min_text_height": 0.7,
         "min_text_thickness": 0.08,
-        "min_through_hole_diameter": 0.19999999999999998,
-        "min_track_width": 0.09999999999999999,
-        "min_via_annular_width": 0.049999999999999996,
-        "min_via_diameter": 0.44999999999999996,
+        "min_through_hole_diameter": 0.3,
+        "min_track_width": 0.1,
+        "min_via_annular_width": 0.05,
+        "min_via_diameter": 0.45,
         "solder_mask_clearance": 0.0,
         "solder_mask_min_width": 0.0,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [
         {
-          "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 5,
-          "td_on_pad_in_zone": false,
           "td_onpadsmd": true,
           "td_onroundshapesonly": false,
           "td_ontrackend": false,
@@ -147,29 +148,35 @@
       ],
       "teardrop_parameters": [
         {
+          "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
           "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
           "td_target_name": "td_round_shape",
           "td_width_to_size_filter_ratio": 0.9
         },
         {
+          "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
           "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
           "td_target_name": "td_rect_shape",
           "td_width_to_size_filter_ratio": 0.9
         },
         {
+          "td_allow_use_two_tracks": true,
           "td_curve_segcount": 0,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
           "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
           "td_target_name": "td_track_end",
           "td_width_to_size_filter_ratio": 0.9
         }
@@ -179,26 +186,66 @@
         0.1,
         0.11,
         0.12,
+        0.127,
         0.13,
         0.15,
         0.2,
         0.3,
         0.5,
         0.6,
-        1.0
+        1.0,
+        1.5,
+        2.0
       ],
+      "tuning_pattern_settings": {
+        "diff_pair_defaults": {
+          "corner_radius_percentage": 100,
+          "corner_style": 0,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.1,
+          "single_sided": false,
+          "spacing": 0.5
+        },
+        "diff_pair_skew_defaults": {
+          "corner_radius_percentage": 50,
+          "corner_style": 0,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.1,
+          "single_sided": false,
+          "spacing": 0.5
+        },
+        "single_track_defaults": {
+          "corner_radius_percentage": 50,
+          "corner_style": 0,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.1,
+          "single_sided": false,
+          "spacing": 0.5
+        }
+      },
       "via_dimensions": [
         {
           "diameter": 0.0,
           "drill": 0.0
         },
         {
-          "diameter": 0.46,
-          "drill": 0.2
+          "diameter": 0.45,
+          "drill": 0.3
+        },
+        {
+          "diameter": 0.8,
+          "drill": 0.35
         }
       ],
       "zones_allow_external_fillets": false,
       "zones_use_no_outline": true
+    },
+    "ipc2581": {
+      "dist": "",
+      "distpn": "",
+      "internal_id": "",
+      "mfg": "",
+      "mpn": ""
     },
     "layer_presets": [],
     "viewports": []
@@ -442,7 +489,7 @@
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.11,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -450,16 +497,16 @@
         "clearance": 0.11,
         "diff_pair_gap": 0.11,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.15,
+        "diff_pair_width": 0.127,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "DP",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.15,
+        "track_width": 0.11,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -472,11 +519,96 @@
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
         "name": "EPD",
-        "pcb_color": "rgb(255, 0, 191)",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 0.11,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.11,
+        "diff_pair_gap": 0.11,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.127,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "LVDS",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.11,
+        "via_diameter": 0.45,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.11,
+        "diff_pair_gap": 0.1,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "POWER",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.45,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.127,
+        "diff_pair_gap": 0.1,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.11,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "SDRAM_A",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.127,
+        "via_diameter": 0.45,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.127,
+        "diff_pair_gap": 0.1,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.11,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "SDRAM_H",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.127,
+        "via_diameter": 0.45,
+        "via_drill": 0.3,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.127,
+        "diff_pair_gap": 0.1,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.11,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "SDRAM_L",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.127,
+        "via_diameter": 0.45,
+        "via_drill": 0.3,
         "wire_width": 6
       },
       {
@@ -488,80 +620,12 @@
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
-        "name": "LVDS",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.15,
-        "via_diameter": 0.45,
-        "via_drill": 0.2,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.1,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.1,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "SDRAM_A",
-        "pcb_color": "rgb(103, 255, 0)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.1,
-        "via_diameter": 0.45,
-        "via_drill": 0.2,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.1,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.1,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "SDRAM_H",
-        "pcb_color": "rgb(255, 252, 0)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.1,
-        "via_diameter": 0.45,
-        "via_drill": 0.2,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.1,
-        "diff_pair_gap": 0.1,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.1,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "SDRAM_L",
-        "pcb_color": "rgb(255, 131, 3)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.1,
-        "via_diameter": 0.45,
-        "via_drill": 0.2,
-        "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.11,
-        "diff_pair_gap": 0.11,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.18,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
         "name": "USB",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.15,
+        "track_width": 0.11,
         "via_diameter": 0.45,
-        "via_drill": 0.2,
+        "via_drill": 0.3,
         "wire_width": 6
       }
     ],
@@ -569,521 +633,79 @@
       "version": 3
     },
     "net_colors": {
-      "+1V1": "rgb(255, 92, 56)",
+      "+1V0": "rgb(255, 92, 56)",
+      "+1V2": "rgb(255, 117, 0)",
       "+1V35": "rgb(185, 61, 143)",
       "+3V3": "rgb(179, 228, 50)",
       "+5V": "rgb(255, 122, 107)",
+      "+5V_EPD": "rgb(255, 37, 28)",
       "GND": "rgb(0, 94, 255)"
     },
     "netclass_assignments": null,
     "netclass_patterns": [
       {
-        "netclass": "DP",
-        "pattern": "/dp_in/DP0N"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/DP0P"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/DP1N"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/DP1P"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/DPAUXN"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/DPAUXP"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/RX1N"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/RX1NC"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/RX1P"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/RX1PC"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/RX2N"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/RX2NC"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/RX2P"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/RX2PC"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/TX1N"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/TX1NC"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/TX1P"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/TX1PC"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/TX2N"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/TX2NC"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/TX2P"
-      },
-      {
-        "netclass": "DP",
-        "pattern": "/dp_in/TX2PC"
+        "netclass": "EPD",
+        "pattern": "/eink/ED*"
       },
       {
         "netclass": "EPD",
-        "pattern": "/eink/ED0"
+        "pattern": "EPDC_*"
+      },
+      {
+        "netclass": "SDRAM_A",
+        "pattern": "/fpga_ddr/DRAM_[A|B|C|O|R|W].*"
       },
       {
         "netclass": "EPD",
-        "pattern": "/eink/ED1"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED10"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED11"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED12"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED13"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED14"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED15"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED2"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED3"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED4"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED5"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED6"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED7"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED8"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ED9"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ESDCLK"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ESDLE"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "/eink/ESDOE"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D0"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D1"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D10"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D11"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D12"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D13"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D14"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D15"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D2"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D3"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D4"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D5"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D6"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D7"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D8"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_D9"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_GDCLK"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_GDOE"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_GDSP"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_SDCE0"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_SDCLK"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_SDLE"
-      },
-      {
-        "netclass": "EPD",
-        "pattern": "EPDC_SDOE"
+        "pattern": "/eink/ES*"
       },
       {
         "netclass": "LVDS",
-        "pattern": "LVDS_EVEN_AN"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_EVEN_AP"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_EVEN_BN"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_EVEN_BP"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_EVEN_CN"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_EVEN_CP"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_ODD_AN"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_ODD_AP"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_ODD_BN"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_ODD_BP"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_ODD_CKN"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_ODD_CKP"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_ODD_CN"
-      },
-      {
-        "netclass": "LVDS",
-        "pattern": "LVDS_ODD_CP"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR0"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR1"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR10"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR11"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR12"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR13"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR14"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR2"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR3"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR4"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR5"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR6"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR7"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR8"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ADDR9"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_BA0"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_BA1"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_BA2"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_CASB"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_CKE"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_CKN"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_CKP"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_CSB"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_ODT"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_RASB"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_RST"
-      },
-      {
-        "netclass": "SDRAM_A",
-        "pattern": "/fpga_ddr/DRAM_WEB"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_DATA10"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_DATA11"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_DATA12"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_DATA13"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_DATA14"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_DATA15"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_DATA8"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_DATA9"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_UDM"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_UDQSN"
-      },
-      {
-        "netclass": "SDRAM_H",
-        "pattern": "/fpga_ddr/DRAM_UDQSP"
+        "pattern": "LVDS*"
       },
       {
         "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_DATA0"
+        "pattern": "/fpga_ddr/DRAM_DATA[0-7]"
       },
       {
         "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_DATA1"
+        "pattern": "/fpga_ddr/DRAM_L*"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_DATA2"
+        "netclass": "SDRAM_H",
+        "pattern": "/fpga_ddr/DRAM_DATA[8-9]"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_DATA3"
+        "netclass": "SDRAM_H",
+        "pattern": "/fpga_ddr/DRAM_DATA1[0-5]"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_DATA4"
+        "netclass": "SDRAM_H",
+        "pattern": "/fpga_ddr/DRAM_U*"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_DATA5"
+        "netclass": "DP",
+        "pattern": "/dp_in/*"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_DATA6"
+        "netclass": "LVDS",
+        "pattern": "*TMDS*"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_DATA7"
+        "netclass": "POWER",
+        "pattern": "+*"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_LDM"
+        "netclass": "POWER",
+        "pattern": "GND"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_LDQSN"
+        "netclass": "POWER",
+        "pattern": "V*"
       },
       {
-        "netclass": "SDRAM_L",
-        "pattern": "/fpga_ddr/DRAM_LDQSP"
+        "netclass": "USB",
+        "pattern": "USB*"
       }
     ]
   },
@@ -1092,14 +714,75 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
+      "plot": "gerber/",
+      "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "pcb.step",
+      "svg": "",
       "vrml": ""
     },
     "page_layout_descr_file": ""
   },
   "schematic": {
-    "annotate_start_num": 400,
+    "annotate_start_num": 0,
+    "bom_fmt_presets": [],
+    "bom_fmt_settings": {
+      "field_delimiter": ",",
+      "keep_line_breaks": false,
+      "keep_tabs": false,
+      "name": "CSV",
+      "ref_delimiter": ",",
+      "ref_range_delimiter": "",
+      "string_delimiter": "\""
+    },
+    "bom_presets": [],
+    "bom_settings": {
+      "exclude_dnp": false,
+      "fields_ordered": [
+        {
+          "group_by": false,
+          "label": "Reference",
+          "name": "Reference",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Value",
+          "name": "Value",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Datasheet",
+          "name": "Datasheet",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Footprint",
+          "name": "Footprint",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Qty",
+          "name": "${QUANTITY}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "DNP",
+          "name": "${DNP}",
+          "show": true
+        }
+      ],
+      "filter_string": "",
+      "group_symbols": true,
+      "name": "Grouped By Value",
+      "sort_asc": true,
+      "sort_field": "Reference"
+    },
+    "connection_grid_size": 50.0,
     "drawing": {
       "dashed_lines_dash_length_ratio": 12.0,
       "dashed_lines_gap_length_ratio": 3.0,
@@ -1115,6 +798,11 @@
       "intersheets_ref_suffix": "",
       "junction_size_choice": 3,
       "label_size_ratio": 0.375,
+      "operating_point_overlay_i_precision": 3,
+      "operating_point_overlay_i_range": "~A",
+      "operating_point_overlay_v_precision": 3,
+      "operating_point_overlay_v_range": "~V",
+      "overbar_offset_ratio": 1.23,
       "pin_symbol_size": 25.0,
       "text_offset_ratio": 0.15
     },
@@ -1140,6 +828,7 @@
     "spice_external_command": "spice \"%I\"",
     "spice_model_current_sheet_as_root": true,
     "spice_save_all_currents": false,
+    "spice_save_all_dissipations": false,
     "spice_save_all_voltages": false,
     "subpart_first_id": 65,
     "subpart_id_separator": 0
@@ -1147,7 +836,7 @@
   "sheets": [
     [
       "4654897e-3e2f-4522-96c3-20b19803c088",
-      ""
+      "Root"
     ],
     [
       "0606a719-6980-4867-837f-aa642737d361",
@@ -1170,8 +859,12 @@
       "dp_in"
     ],
     [
-      "f69cfcc8-f979-4315-84ee-316a84fb66a2",
+      "d0757a0a-c868-475e-8221-24a5e99d32b9",
       "mcu"
+    ],
+    [
+      "1afc3cb7-9ace-435f-9131-835660c51142",
+      "tmds_in"
     ]
   ],
   "text_variables": {}

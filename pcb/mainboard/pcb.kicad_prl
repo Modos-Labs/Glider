@@ -1,12 +1,12 @@
 {
   "board": {
-    "active_layer": 39,
-    "active_layer_preset": "Back Assembly View",
+    "active_layer": 0,
+    "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],
     "hidden_nets": [],
     "high_contrast_mode": 0,
-    "net_color_mode": 1,
+    "net_color_mode": 2,
     "opacity": {
       "images": 0.6,
       "pads": 1.0,
@@ -18,11 +18,11 @@
     "selection_filter": {
       "dimensions": false,
       "footprints": true,
-      "graphics": true,
+      "graphics": false,
       "keepouts": false,
       "lockedItems": true,
       "otherItems": false,
-      "pads": true,
+      "pads": false,
       "text": true,
       "tracks": true,
       "vias": true,
@@ -64,8 +64,14 @@
       35,
       36
     ],
-    "visible_layers": "0015050_00000000",
+    "visible_layers": "ff8ffff_fffffff9",
     "zone_display_mode": 0
+  },
+  "git": {
+    "repo_password": "",
+    "repo_type": "",
+    "repo_username": "",
+    "ssh_key": ""
   },
   "meta": {
     "filename": "pcb.kicad_prl",

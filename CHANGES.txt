@@ -10,3 +10,26 @@ R0.3
 1. Remove on-board 39pin/ 50pin connector, switch to 40pin connector or EPD
 2. Remove DSI input connector
 3. Add DisplayPort to LVDS bridge chip and DisplayPort input
+
+R0.4
+1. Use Type-C input instead of full-size DisplayPort port
+
+R0.5
+1. Switch from MAX17135 PMIC to TPS65185 PMIC
+2. Switch to a different TypeC connector model
+3. Added global current limit
+
+R0.6
+1. Switch to individual DCDCs for Eink power supply
+
+Lite R0.1
+1. Use DVI TMDS input in place of Type-C input and DP bridge
+2. Use DCDC instead of charge pump + zener diode for lower Iq
+3. Add user button
+4. Add VCOM measure capability
+5. Add RP2040 SWD connector
+
+R0.7
+1. Import DVI TMDS input, newly revised power supply and user button from RL0.1
+2. Connect FPGA to RP2040's hardware SPI
+3. Fix USB Type C mux connection

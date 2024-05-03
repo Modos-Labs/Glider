@@ -1105,10 +1105,11 @@ static int dp_config(int port, uint32_t *payload)
 }
 
 const uint32_t vdo_dp_mode[MODE_CNT] =  {
-	VDO_MODE_DP(0,		   /* UFP pin cfg supported : none */
-		    MODE_DP_PIN_C | MODE_DP_PIN_D | MODE_DP_PIN_E | MODE_DP_PIN_F, /* DFP pin cfg supported */
-		    1,		   /* no usb2.0	signalling in AMode */
-		    CABLE_PLUG,	   /* its a plug */
+	VDO_MODE_DP(
+			MODE_DP_PIN_C | MODE_DP_PIN_D, /* UFP pin cfg supported */
+		    0, 				/* DFP pin cfg supported */
+		    0,		    	/* usb2.0 signaling */
+		    CABLE_RECEPTACLE, /* its a receptacle */
 		    MODE_DP_V13,   /* DPv1.3 Support, no Gen2 */
 		    MODE_DP_SNK)   /* Its a sink only */
 };
