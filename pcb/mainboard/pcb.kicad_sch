@@ -5,10 +5,10 @@
 	(uuid "4654897e-3e2f-4522-96c3-20b19803c088")
 	(paper "A4")
 	(title_block
-		(title "Glider Lite")
-		(date "2023-12-24")
-		(rev "R0.7")
-		(company "Copyright 2023 Modos / Engineer: Wenting Zhang")
+		(title "Glider")
+		(date "2024-05-09")
+		(rev "R0.8")
+		(company "Copyright 2024 Wenting Zhang")
 	)
 	(lib_symbols)
 	(text "FPGA DDR Memory"
