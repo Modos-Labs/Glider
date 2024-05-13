@@ -1,12 +1,74 @@
 # Glider
 
-Open source E-ink monitor with an emphasis on low latency.
+Open source Eink monitor with an emphasis on low latency.
 
-Note: This repo only contains the hardware design, the gateware running on the FPGA is our open-source Caster EPDC design, which could be found at [github.com/Modos-Labs/Caster](https://github.com/Modos-Labs/Caster/)
+Note: This repo only contains the hardware design, the gateware running on the FPGA is my open-source [Caster EPDC](https://gitlab.com/zephray/Caster/) design. This README also contains information about the Caster as well.
 
-![block-diagram](blockdiagram.svg)
+![Overall Blockdiagram](assets/glider_overall_block_diagram.svg)
 
-## Feature
+This is a long document, containing not just information about this project, but also pretty much everything I know about Eink. Given it's a bit hard to gather information about Eink online, I think this is the right thing to do. Use the following table of contents to navigate around.
+
+Eink is a registered trademark and brand of E Ink Corporation. All the contents provided in this repo are based on publicly available information online and original research. They are not endorsed by Eink in anyway and they may contain errors and/ or inaccurarcies. 
+
+If you are interested in Eink or any other display technogies, I have a Discord server for that. Feel free to join: https://discord.gg/rtT7euSHQS . (This Discord server is also not endorsed by Eink or any other company. It's not a customer support server.)
+
+## Table of Contents 
+
+- [Overview](#overview)
+    - [Features](#features)
+    - [Hardware](#hardware)
+    - [Components](#components)
+- [Eink Screens](#eink-screens)
+    - [Basic Theory of Operation](#basic-theory-of-operation)
+    - [Advantages and Disadvantages](#advantages-and-disadvantages)
+    - [The Role of Eink Controller](#the-role-of-eink-controller)
+    - [Screen Panel Types](#screen-panel-types)
+    - [Using Screen with Integrated Controller](#using-screen-with-integrated-controller)
+    - [Using Screen without Integrated Controller](#using-screen-without-integrated-controller)
+    - [Understanding Waveform](#understanding-waveform)
+    - [Greyscale Display](#greyscale-display)
+    - [Color Display](#color-display)
+    - [Dithering](#dithering)
+    - [Eink Screen Generations](#eink-screen-generations)
+- [Caster/ Glider Design](#design-of-caster-and-glider)
+    - [Low Latency Drive](#low-latency-drive)
+    - [Hybrid Greyscale Mode](#hybrid-greyscale-mode)
+    - [Limitations](#limitations)
+    - [Hardware Design Decisions]()
+    - [Gateware Architecture](#gateware-architecture)
+    - [Firmware Functions](#firmware-functions)
+    - [Resources Utilization](#resources-utilization)
+- [Building](#building)
+    - [PCB](#pcb)
+    - [FPGA Bitstream](#fpga-bitstream)
+    - [MCU Firmware](#mcu-firmware)
+    - [Working with Waveforms](#working-with-waveforms)
+    - [Compatible Screens](#compatible-screens)
+- [References](#references)
+- [License](#license)
+- [Appendix](#appendix)
+    - [Using Screens without Datasheet](#using-screens-without-datasheet)
+    - [Screen List](#screen-list)
+
+## Overview
+
+### Features
+
+- Complete solution for low-latency/ high-refresh-rate EPD monitor
+- Supports electrophoretics display panels with parallel I/F (Eink(R), SiPix and DES)
+- Supports both monochrome and color-filter-array (such as Kaleido(TM)) based color screen
+- Extremely low processing delay of \<20 us
+- Supports binary, 4-level grayscale, and 16-level grayscale output modes
+- Latency optimized binary and 4-level grayscale driving modes
+- Hybrid automatic binary and 16-level grayscale driving mode
+- Host software runtime controllable regional update and mode switching
+- Hardware bayer dithering, blue-noise dithering, and error-diffusion dithering with no additional latency
+- Controller natively supports FPD-Link (LVDS), DVI (TMDS), and MIPI-DSI input
+- Board level design supports USB-C (USB Type-C DisplayPort Alt Mode) and DVI input
+
+### Hardware
+
+![r0p7_mb](assets/r0p7_mb.jpg)
 
 - Xilinx(R) Spartan-6 LX16 FPGA running Caster
 - DDR3-800 framebuffer memory
@@ -17,17 +79,581 @@ Note: This repo only contains the hardware design, the gateware running on the F
 - On-board RaspberryPi(R) RP2040 microcontroller for USB communication and firmware upgrade
 - Up to 133MP/s processing rate with dithering enabled, >200MP/s when disabled
 
-## Components
+The board is designed with KiCad. You may need the latest stable version of KiCad to open the source file.
 
-This repo hosts the PCB design, firmware source code, and a reference 3D-printable case design.
+### Components
 
-### PCB
+This repo hosts the PCB design, firmware source code, and a reference 3D-printable case design. The RTL code is in a seperate repo: [https://gitlab.com/zephray/Caster/](https://gitlab.com/zephray/Caster/).
 
-The PCB is designed with KiCAD 8.0. To get optimal results, use a 4-layer stack up with 1080 PP layers, but 2313 or 3313 are also acceptable.
+## Eink Screens
 
-There are 2 versions of the mainboard, one full version and a lite version. For now only the full version is being actively worked on. The lite version removes dedicated external decoders for DVI/ DP and removes bulk of the TypeC circuitry to lower the cost. The only video interface being a DVI port feeding directly into the FPGA.
+Eink is the brand of a family of paper-like electrophoretic displays. The underlying technology is invented in the MIT Media Lab between 1995 and 1997 by Barrett Comiskey, J.D. Albert, and Joseph Jacobson. They later founded the E Ink Corporation to commercialize this technology.
 
-### Firmware
+Nowadays they are commonly used on e-readers and electronic shelf labels. You’ve probably seen them on Kindle, or in stores, or maybe in some train stations as well.
+
+| eReader/ Tablets | Electronic Shelf Label | Digital Signage |
+|-|-|-|
+| ![app_ereader](assets/app_ereader.jpg) | ![app_esl](assets/app_esl.jpg) | ![app_signage](assets/app_signage.jpg) |
+
+(Source: https://www.eink.com/application, image copyright Eink corporation)
+
+This section gives an overview of the electrophoretics displays, including the screen panels available and underlying technology. Note this project obviously doesn't and can't support all electrophoretic screens. This documentation also solely focuses on using existing off-the-shelf screen panels rather than the physics or manufacturing process of one.
+
+### Basic Theory of Operation
+
+In the simplest form, you have charged particles with different colors, dispersed in some oil in some transparent container. By applying electric fields the particles can be moved up or down to produce either black or white, or a mixture of that.
+
+![eink-particle](assets/eink_carta.gif)
+
+(Source: https://www.eink.com/tech/detail/How_it_works , copyright Eink Corporation)
+
+There are multiple technologies based on this basic concept, namely Eink’s micro-capsule display, SiPix (now acquired by Eink)’s micro-cup display, and WFT’s DES display. They differs in specifics ways of confining the particles in containers, but otherwise very similar.
+
+The pixels on the screen are typically arranged as a 2D array, driven with TFTs. The pixels are scanned/ driven periodically at a fixed refresh rate, typically ranging from 50Hz to 120Hz. Applying positive voltage on the pixel will typically drive the particles towards the white state, while applying negative voltage will drive the particles towards the black state. This is similar to active matrix TN/IPS LCDs, which also uses 2D TFT arrays and uses electrical fields for changing state. However unlike LCDs, EPDs maintain their state after the electrical field is removed. So unlike LCDs which require continuously refreshing, the EPDs only need to be refreshed till the pixels are fully driven.
+
+In terms of driving the screen panel, depending on the pixel value (1 or 0), each pixel would be driven either with a positive voltage or a negative voltage. A global counter can be used to count the frames elapsed, and stop driving the pixels after a predefined period of time (for example, 100ms). Two framebuffers are typically used for determining if the pixel has changed color or not. If not, then the pixel does not need to be driven.
+
+### Advantages and Disadvantages
+
+In terms of display quality, EPDs are no match for modern IPS LCDs. The following is a comparison table of key parameterics. Specific number would vary depending on the screen used, but should be within the same ballpack.
+
+| | Monochrome EPD | CFA-based Color EPD | Transmissive TFT IPS LCD | Reflective TFT TN LCD |
+|-|-|-|-|-|
+| Contrast Ratio | ~17:1 | ~14:1 | ~1000:1 | ~14:1 |
+| Colors | 16 (Greyscale) | 4096 | 16M | 256 |
+| Color Gamut | N/A | ~1.5% sRGB | ~99.9% sRGB | N/A |
+| Reflectivity | ~45% | ~25% | N/A | ~15% |
+| Response Time | ~150ms | ~150ms | ~10ms | ~15ms |
+
+It has a few advantages. It reflect lights instead of emitting lights, so it generally consumes less power and can be used outdoors, etc. It’s also bistable, means that it retains the image after the power has been removed. Personally, the biggest differentiating factor for me (author of this README) is that it looks like paper.
+
+![rlcd-vs-eink](assets/rlcd_eink.gif)
+
+The image above shows a comparison between reflective TFT LCD (SHARP memory LCD in this case) and Eink. The LCD has a mirror-like texture which changes reflectivity drastically in different angles, while the Eink is more paper-like.
+
+| ZBD LCD | Ch LCD | STN LCD |
+|-|-|-|
+| ![zbd](assets/zbdlcd.jpg) | ![chlcd](assets/chlcd.jpg) | ![stnlcd](assets/stnlcd.jpg) |
+| Bistable, reflective, high contrast, no greyscale, ~10s refresh | Bistable, reflective, lower contrast, up to 32 level greyscale, ~5s refresh | Volatile, reflective, lower contrast, up to 32 level greyscale, ~100ms response |
+
+There are many other reflective or bistable display technologies. They are all interesting displays on their own, but none of them feels like paper (yet).
+
+Overally, there is no single perfect display technology. Each has its own unique strength. Pick the right one for your project.
+
+### The Role of Eink Controller
+
+The Eink controller is in some ways similar to the display controller (DC/ CRTC) + timing controller (TCON) in a typical LCD based system. It takes the raw image data and convert it to signals required to drive the screen.
+
+![eink-controller](assets/eink_controller.svg)
+
+To understand the actual work of an eink controller, start from the basic concept. The color of a pixel can be changed by applying positive or negative voltage for a finite period of time. From the controller’s perspective, depending on the current state of the pixel and the desired state of the pixel, there are 4 possibilities.
+
+| Current State | Target State | Action |
+|-|-|-|
+| Black | Black | No operation |
+| Black | White | Apply positive voltage |
+| White | Black | Apply negative voltage |
+| White | White | No operation |
+
+The controller need to store and maintain the screen state inside of its own buffer memory, so it would typically have a large on-chip SRAM or an off-chip SDRAM controller. The controller should also have a timer to ensure the screen doesn't get overdriven or underdriven.
+
+Controller often use the so-called "[waveform](#understanding-waveform)" to replace the action colume of the previous table. Instead of hardcoding the action for state transition, the actions are stored into a look-up-table (LUT) which can be modified at runtime to allow higher flexibility.
+
+Controllers may also offer more advanced features such as [dithering](#dithering) acceleration, multiple region update, automatic LUT selection, etc.
+
+### Screen Panel Types
+
+As discussed in the previous section, an Eink screen need to be coupled to an Eink controller to function. Aside from that, screen also needs high voltage drivers to drive the TFTs and the pixels. Virtually all E-paper panels use either COG (Chip-on-Glass) or TAB (Tape Auto Bonding) to integrate some chips onto the screen panel itself. Most of the screens available today can be divided into two categories based on whether or not the controller is integrated in:
+
+![screen-types](assets/screen_types.svg)
+
+Here is a non-exhaustive list of the type based on their size: (the size or resolution is not related to or limited by the type, it is just for a certain size, the vendors tend to make them the same type.)
+
+- Screens without controller: 4.3", 6.0", 7.8", 8.0", 9.7", 10.3", 13.3", 25.3", 31.2", 42"
+- Screens with controller: 1.02", 1.54", 2.13", 2.6", 2.9", 3.71", 4.2", 5.65", 5.83", 7.5", 12.48"
+
+One may notice that almost all e-readers/ e-ink cellphones use screens without controller, while almost all e-ink electronic shelf labels (ESL) use screens with controller. This gives some hints about the advantages and disadvantages of two types:
+
+| | Without Controller | With Controller |
+|-|-|-|
+| System Cost | High. A dedicated controller or SoC with integrated contoller is usually required. Needs a dedicated power supply. | Low. Virtually any MCUs could drive the screen directly, and the power supply is integrated in. |
+| Greyscale Levels | Generally 16 (4bpp), up to 32 (5bpp) | Generally 2 (BW only) or 4 (2bpp), with some hack, up to 16 (4bpp) |
+| Refresh Speed | Generally fast (100ms~300ms) for BW. Depends on the screen used and the system architecture | Generally fast (100ms~300ms) for BW if the partial refresh is enabled. Greyscales much slower, BWR or BWY screens would be even slower.
+| Total Update Latency | Generally the same as refresh time. Depends on the system architecture | Slow. Ranging from 100ms to several seconds based on the resolution. |
+
+Please keep in mind the discussion is about off-the-shelf screens you can buy today. These tradeoffs do not necessarily come from the fact the controller is integrated or not.
+
+Note that I mentioned the refresh speed and total update latency. They are different:
+
+The refresh speed refers to the time it takes to start refreshing the screen: from starting seeing screen changing, to the screen finish showing the new content.
+
+The total update latency refers to the latency when the processor needs to update the screen, to the screen finish showing the new content. As you could see, this is the biggest issue for screens with controllers. This is the main reason why they are almost never used on e-readers or cellphones or PC monitors.
+
+![screen-controller-diagram](assets/screen_cntlr.svg)
+
+This diagram illustrates the difference between two. It should be noted that the screens without controller have the flexibility to be driven quickly, but the system designer might not architect the system for low latency.
+
+### Using Screen with Integrated Controller
+
+Screens with integrated controller have almost everything already integrated. Common display panels in this type only need few external capacitors, inductors, and MOSFETs to support the integrated bipolar power supply circuit, then it could be hooked up to MCUs or MPUs using common interfaces like SPI or I2C. There are a lot of driving boards and examples of these screens available online.
+
+### Using Screen without Integrated Controller
+
+This could get complicated. Note I used a lot of "generally" in the previous comparison table because there are many things one could do to drive them. Some of them would certainly impact the performance. The main issue here the controller chip. There are three solutions to drive these screen:
+
+- Using a dedicated controller chip to drive the screen
+- Using an SoC that has an integrated controller
+- Using a fast MCU/SoC to emulate the controller with GPIO (software timing controller)
+
+Then, again here is a comparison between them:
+
+| | Specialized controller chip | SoC with integrated controller | MCU + Software TCON |
+|-|-|-|-|
+| Resolution | UXGA+ | UXGA+ | Limited by MCU RAM. Up to XGA with SRAM, UXGA with PSRAM, UXGA+ with DDR |
+| Greyscale | Up to 32 | Up to 32 | Up to 32 |
+| Partial Update | Yes | Yes | Yes |
+| Total Update Latency | Depends. Could be very close as refresh speed, could be slow like screens with controller | Same as refresh speed | Same as refresh speed if data is internally generated (not streaming from an external device such as a PC) |
+| Suitable Applications | IoT devices, E-readers, cellphones, E-ink monitors. possibly E-ink laptops | Advanced IoT devices, E-readers, cellphones, E-ink typewriters, possibly lower performance E-ink laptops | When using MCU: IoT devices, large ESLs, simple DIY E-readers. When using MPU: Same as SoC with integrated controller |
+
+When using a dedicated controller, it could accept data from external devices. This allows it to be used in various different types of applications. Ranging from IoT devices, ESLs, to PC monitors with relatively fast refresh rate and low latency.
+
+When using SoC or MCU, the display content is generated by the SoC or MCU itself, which ultimately is limited by the capability of the SoC or MCU. Given the current SoCs with E-ink display controllers are usually limited in performance, the application is limited. The same goes for MCU, it does what an MCU could do. You could find ways to stream video data into SoC or MCUs by using USB, camera interface, WiFi, etc., but this might not be optimal.
+
+#### Existing Solutions
+
+- Specialized controller chip
+    - Closed-source
+        - EPSON S1D13xxx: Widely used EPD controller in early E-readers. Proprietary, no documents available. Probably EOL.
+        - IT8951: Used on waveshare EPD Hat. Documents available, works with large EPDs up to 2048x2048. The drawback is the speed as the interface between processor and IT8951 could be slow. This is similar to the situation on screens with integrated controller
+        - T1000: Also known as IT8957, upgraded model of IT8951. It supports even higher resolution. It features higher speed MIPI DSI interface to mitigate the slow speed of IT8951.
+        - Waveshare HDMI driver board: FPGA-based controller. Closed source but easily purchasable, could be integrated into larger projects as a module.
+    - Open-source
+        - This project (Caster + Glider): FPGA-based controller, multiple update modes, ultra low latency processing, wide range of screen support.
+        - https://hackaday.io/project/21607-paperback-a-desktop-epaper-monitor: FPGA-based controller. However, doesn't support partial update mode and slower speed.
+        - https://hackaday.io/project/21168-fpga-eink-controller: FPGA-based controller, supports vendor waveform with reasonable speed.
+- SoC with integrated controller
+    - RK29xx: Fairly old, Cortex-A8 based (RPi 1 level performance), 55nm, EOL
+    - RK3026/RK3028: Fairly old, Cortex-A9 based (RPi 2 level performance), 40nm, EOL
+    - i.MX 50: Fairly old, Cortex-A8 based (RPi 1 level performance), 65nm, in production
+    - i.MX 6ULL: Cortex-A7 based (RPi 1 level performance), 40nm, in production
+    - i.MX 6S/D: Fairly old, Cortex-A9 based (RPi 2-3 level performance), 40nm, in production
+    - i.MX 7S/D: Cortex-A7 based (RPi 2 level performance), 28nm, in production
+    - i.MX 8ULP: Cortex-A35 based (RPi 2 level performance), 28nm FD-SOI, in production
+    - AW B200: Cortex-A53 based (RPi 2 level performance), 28nm, in production
+    - MT8113: Cortex-A53 based (RPi 2 level performance), 12nm, in production
+    - RK3566/RK3568: Cortex-A55 based (RPi 3 level performance), 22nm, in production
+    - RK3576: Cortex-A72 + A53 based (RPi 4-5 level performance), 8nm, in production
+- MCU/SoC + Software TCON
+    - http://essentialscrap.com/eink/waveforms.html: One of the earliest e-ink hack. Limited in performance but still could be used as a reference
+    - NekoCal: One of the earliest e-ink software TCON with greyscale support. Used to be available as a DIY kit. No longer updated, still could be used as a reference
+    - InkPlate 6/10: Commercially available. Based on ESP32.
+    - EPDiy: Based on ESP32, supports a lot of different screens, recommended if want to build some device with ESP32+Eink or embedding it into a larger project.
+
+#### Interface Signals and Timing
+
+The interface signals and timing are fairly similar to LCDs without controller. Following is the list of signals typically found on EPDs:
+
+- GDOE/ MODE: Gate driver output enable
+- GDCLK/ CKV: Gate driver clock (like HSYNC in LCD)
+- GDSP/ SPV: Gate driver start pulse (like VSYNC in LCD)
+- SDCLK/ XCL: Source driver clock (like PCLK in LCD)
+- SDLE/ XLE: Source driver latch enable (like HSYNC in LCD)
+- SDOE/ XOE: Source driver output enable
+- SDCE/ XSTL: Source driver start pulse (like DE in LCD)
+- SD: Source driver data (8-bit or 16-bit)
+
+SD signals goes into the source driver, typically the X direction. GD signals goes into the gate driver, typically the Y direction. It's a 2D array, gate driver selects one line at a time, and the source driver output the voltage for all the pixels in that line.
+
+Conceptually, it's like raster scan on a CRT. To send one field of data, both GD and SD are reset to the start position by using the start pulse signal. Data are then transmitted into the source driver 4 or 8 pixel at a time. Once the line has been fully transmitted, the source driver is reset to the beginning position by start pulse signal, and the gate driver moves to the next line by a pulse on the gate driver clock. Once all lines have been scanned, the entire process repeats for the next field.
+
+One notable difference with LCD is that each pixel is represented by 2 bits. This, however, doesn't mean each pixel is 2bpp or 4-level greyscale. The 2-bit per pixel is used to encode the voltage applied to the pixel:
+
+- 00: No voltage
+- 01: Negative voltage
+- 10: Positive voltage
+- 11: No voltage
+
+Just like CRT/ LCD, ther are also blanking periods in the entire timing (means it's just waiting without active pixel data being sent). They have identical meaning to CRT/ LCD systems:
+
+![display-timings](assets/display-timings.png)
+
+(Source: https://projectf.io/posts/video-timings-vga-720p-1080p/, Copyright Will Green)
+
+The following is a piece of pseudo-code implementing the Eink timing:
+
+```c
+#define DATA_BUS_WIDTH      8 // 8bit wide bus
+#define PIXEL_PER_CYCLE     (DATA_BUS_WIDTH / 2)
+#define VFP     12  // Vertical front porch
+#define VSYNC   1   // Vertical sync length
+#define VBP     2   // Vertical back porch
+#define VACT    758 // Vertical active lines
+#define HFP     72  // Horizontal front porch
+#define HSYNC   2   // Horizontal sync length
+#define HBP     2   // Horizontal back porch
+#define HACT    (1024 / PIXEL_PER_CYCLE)
+
+void pulse_h_clock() {
+    sdclk = 1;
+    sdclk = 0;
+}
+
+void drive_line(bool v_in_act) {
+    sdce = 1;
+    gdclk = 0;
+    for (int i = 0; i < HFP; i++) pulse_h_clock();
+    sdle = 1;
+    gdclk = 1;
+    for (int i = 0; i < HSYNC; i++) pulse_h_clock();
+    sdle = 0;
+    for (int i = 0; i < HBP; i++) pulse_h_clock();
+    if (v_in_act) sdce = 0;
+    for (int i = 0; i < HACT; i++) {
+        send_data();
+        pulse_h_clock();
+    }
+}
+
+void drive_frame() {
+    gdoe = 0;
+    sdoe = 0;
+    gdsp = 1;
+    for (int i = 0; i < VFP; i++) drive_line(false);
+    gdsp = 0;
+    gdoe = 1;
+    sdoe = 1;
+    for (int i = 0; i < VSYNC; i++) drive_line(false);
+    gdsp = 1;
+    for (int i = 0; i < VBP; i++) drive_line(false);
+    for (int i = 0; i < VACT; i++) drive_line(true);
+}
+```
+
+More explanation can be found at [http://essentialscrap.com/eink/index.html](http://essentialscrap.com/eink/index.html)
+
+### Understanding Waveform
+
+The waveform is a look up table for the eink controller to determine how to drive the pixels, mostly useful for greyscale image display, but generally used for binary image display as well.
+
+The look up table has 3 inputs (dimensions): frame number, source grayscale level, destination grayscale level. During the update process, for a certain pixel, the source and destination level stays the same, and the frame number increases each frame. The look up process is done for every pixel every frame. The controller may choose different LUTs depending on the ambient temperature. Mode switching is also implemented by simply switching between different LUTs.
+
+This is essentially what typically eink controller does. For each pixel, look up in the table to determine the voltage to use. Repeat this for a couple of frames with an incrementing frame counter, until all pixels are fully driven.
+
+It should be obvious that the waveform file itself is independent to the resolution as the waveform only cares about single pixel. With an incorrect or un-optimal waveform, the screen should at least display some recognizable image.
+
+#### Waveform Example
+
+There are several sample waveform tables provided in the project repo. Take the GC16 (Greyscale clearing 16-level) waveform of GDEW101C01 as an example: https://github.com/zephray/NekoInk/blob/master/waveform/gdew101_gd/test_M2_T0.csv
+
+Take one line from that file:
+
+```6,13,0,0,0,0,0,0,0,0,0,2,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,0```
+
+This means from greyscale level 6 to level 13, it needs to go through the following sequence. Each number means the operation on that frame, 0 is no-operation, 1 is darken, and 2 is lighten. In this case, there are 38 frames, first 9 frames do nothing, then lighten for 1 frame, darken for 10 frames, lighten for 16 frames, and finally darken for 1 frame and no-operation for the last frame. This is the sequence to change a pixel from level 6 to level 13. Such lookup is done for every pixel on every frame.
+
+For specifics on waveform file formats, check the [Working with Waveforms](#working-with-waveforms) section.
+
+#### Waveform Modes
+
+To give system designers more flexibility, Eink controllers often offers multiple "modes", like binary mode, 16-level grayscale mode, 16-level grayscale mode with reduced flashing, 4-level grayscale mode, etc.
+
+The waveform provided by Eink has many modes. There is a good document from Eink describing the modes:
+
+https://www.waveshare.net/w/upload/c/c4/E-paper-mode-declaration.pdf
+
+It provides a good overview of the modes. I am just going to add some comments.
+
+- GC in the GC16 stands for "greyscale clearing". GC does not stands for greyscale. There are 16-level greyscale modes that aren't called GC16.
+- Officially there is no 32-level greyscale modes (yet). There are 5bit waveforms, which means they internally use 5 bits for each pixel, which potentially allows up to 32-level greyscale, but no such waveform exists (yet).
+- These is no 16 level greyscale modes without flashing. The DU4 is the only greyscale mode that's non-flashing.
+- The GL16 mode, as described, only works for black text on white background. When refreshing greyscale images, the GL16 is similar to the GC16.
+- The GLR16 mode is also called the REGAL mode, and the GLD16 mode is also called as the REGAL-D mode.
+- Eink doesn't even know if it should be spelled as REAGL or REGAL:  Google search "REAGL site:eink.com" and "REGAL site:eink.com" both returned several results.
+- Eink provided waveform usually implements all these modes, however it is not always required. The waveform file may also contain waveform tables in other orders.
+- In terms of the waveform, the waveform for GL16, GLR16, and GLD16 are identical. This is expected, the REGAL requires additional algorithm on the host image processing, and is not a technology based on tweaking the waveform.
+
+#### Waveform Tweaks
+
+Some commercial implementations allow users to reduce the frame count and/ or alter the waveform playback speed, so the user can trade between contrast ratio and frame rate.
+
+### Greyscale Display
+
+Other than full white and full black, with appropriate modulation, Eink screens can also display some levels of greyscale (typically 16).
+
+![greyscale](assets/eink_32g.jpg)
+
+For grayscale display, the basic idea is simple. If the pixel is not fully driven (say only drives for 50ms while it takes 100ms to reach full black/ white), it would stay in a gray state.
+
+There are two ways of achieving this modulation:
+- Modulate the frame time
+- Modulate the number of frames with constant frame rate
+
+Both are possible, as described below
+
+#### Frame Time Modulation
+
+This method changes the drive time by changing the length of a single frame. The screen would only be driven for 15 or 31 frames for 16-level and 32-level greyscale, but the frame time (thus frame rate) is altered to provide the desired driving time. The LUT would be a one dimension look up table, only containing the incremental time required to drive to the next greyscale level. The source/ gate driver output enable line maybe toggled to achieve the desired driving time.
+
+This method doesn't seem to be implemented in any commercial solutions and is significantly slower than the second method. But it certainly works. In fact the 32-level greyscale demo shown in the picture above is achieved using this method.
+
+#### Frame Count Modulation
+
+This method changes the drive time by changing the number of frames being applied to the screen. The screen is still being driven at a constant frame rate. The following is a simplified hypothetical waveform table for achieving 4-level greyscale:
+
+| Previous State | Target State | Frame 0 | Frame 1 | Frame 2 | Frame 3 | Frame 4|
+|-|-|-|-|-|-|-|
+| Black | Black | NOP | NOP| NOP | NOP | NOP |
+| Black | Dark Grey | VPOS | VNEG | VPOS | NOP | NOP |
+| Black | Light Grey | VPOS | VNEG | VPOS | VPOS | NOP |
+| Black | White | VPOS | VNEG | VPOS | VPOS | VPOS |
+
+Note how it alternates between VPOS and VNEG in the beginning. This is often called the "activation phase" to improve contrast ratio. Putting this detail aside, it changes the number of VPOS frames to settle down on different grey levels.
+
+Actual grayscale driving sequence used in the commercial implementation is more complex than that, often involving switching the pixel towards black/white a few times before settling. This design is partially due to the limited time control granularity and other temperature/ manufacturing variance related concerns. Some side-effects of such a driving sequence are that the refreshing process is “flashing”, and is slower compared to displaying only 1-bit binary image.
+
+### Color Display
+
+There are several different technologies that could be used to build full color EPDs. The 2 most common ways are to use a color-filter-array (CFA) or use a multi pigment color display.
+
+#### Color Filter Array
+
+CFA stands for color filter array, which is basically colored glass/ film on top of the screen pixel. This is also the technology used on most color LCDs. Eink Kaleido, Eink Triton and color DES are based on this technology. The main advantage is that it's relative simple to control, and the low level driving is the same with the greyscale panels. Thus it has the same level of refreshing time (100~200ms), and same level of greyscale (16 level translate to 16^3=4096 colors). The draw back is that the CFA filters out some light (due to its colored nature), the screen reflectivity is negatively affected by the CFA. The screen ends up being quite dark. Up to now, most color E-readers uses CFA-based display. This project supports all three major types of CFA-based EPD screens: color DES screen, Eink Triton, and Eink Kaleido.
+
+#### Case Study: GDEW101C01 (CFA-based, DES)
+
+The GDEW101C01 is a 10.1" color DES screen made by Good Display / WeiFeng Tech. It uses CFA to produce color image. As a result, to the eink controller hardware, it's just a normal greyscale panel with bunch of pixels. But the pixels are colored depending on their location due to the CFA. The coloring of the pixels can be either handled by hardware or software.
+
+##### Pixel Arragement
+
+Color DES is a bit different from a typical color TFT LCD in terms of CFA design. Typically on TFT LCDs, one RGB pixel is called a pixel, and each R/G/B component is called as a sub-pixel. On color DES, the sub-pixel is ended up being called as pixel, and each pixel is either red, green, or blue. In display industry, such pixels are more commonly referred as dots.
+
+![subpixel](assets/subpixel.jpg)
+
+Pengo, CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0, via Wikimedia Commons
+
+The actual photo of DES panel under microscope:
+
+![color-des](assets/color_des.jpg)
+
+In the above photo, the DES pixel arrangement is the same as the OLPC XO-1.
+
+This doesn't necessarily mean that the effective resolution needs to be divide by 3. This arrangement is slightly more "efficient" than RGB strip in terms of perceptive resolution. You could find more detailed analysis in the paper Comparing the Effective Resolution of Various RGB Subpixel Layout.
+
+##### Processing image for Color DES
+
+If the image is displayed on color DES without any processing, it would look like a greyscale image. This is similar when you just send the same color value to R/G/B components on a color LCD display.
+
+To get color, send only the color component that correspond to the pixel color.
+
+![pixel-layout](assets/PixelLayoutDiagonal.png)
+(Source: https://wiki.laptop.org/go/File:PixelLayoutDiagonal.png, public domain)
+
+For example, for pixel 01, the pixel on the screen is green. Then only the green component from the frame buffer should be sent to the screen.
+
+To get basic 4096 color image display, this is everything needed. However generally to improve image quality, few more steps are applied:
+
+##### Low pass filtering
+
+The previous described image displaying process is essentially a down-sampling process for each color components: Only 1/3 of the pixel are sent to the screen. Then this becomes a classic signal processing issue: sampling the signal would cause frequency components above Nyquist to fold back to the low frequency part. Or in simpler words, you would see jagged edges/ aliasing, which are things that wasn't present in the original image. To prevent this, low pass filtering (blurring) needs to applied first to the image to remove these high frequency components. The following diagram from OLPC wiki shows a simple way of implementing a such filter:
+
+![pixel-proc](assets/PixelProcDiagonal.png)
+(Source: https://wiki.laptop.org/go/File:PixelProcDiagonal.png, public domain)
+
+#### Multi-Pigment Color Display
+
+Another technology for implemneting color EPD is by using a multi-pigment color display. This is a technology developed initially by SiPix, and further improved by Eink. The basic idea is to use ink particles with different colors inside a single pixel. By applying a sequence of voltages, the ink particles can be arranged to display different colors.
+
+![spectra6](assets/eink_spectra6.jpg)
+
+(Source: https://www.eink.com/tech/detail/How_it_works , copyright Eink Corporation)
+
+Eink has 2 lines of products using this Technology, Eink Gallery and Eink Spectra. The advantage is it's much brighter compared to CFA based solutions. The disadvantage is it's much more difficult to drive, and quite slow: 1st /2nd gen Eink Gallery screen takes 30s (!) to refresh, and Spectra 6 Plus devices takes 7s to refresh. It's possible to trade-in some color saturation for higher speed, though still much slower than CFA based solutions. The specific product lines will be discussed in [Eink Screen Generations](#eink-screen-generations)
+
+### Dithering
+
+Eink and DES panels typically only supports up to 16 level of greyscale with the vendor provided waveform. To improve response time, or to avoid flashing image, binary (1-bit, 2-level) display is also used. Dithering could be applied to produce better image (increasing SNR, in signal processing sense).
+
+The following is applying dithering to a simple black to white gradient. Note the results are not optimal due to limitations in quantization and incorrect gamma correction. But the idea is the same.
+
+| Original | Binary No-dithering | 2 Row Sierra Dithered |
+|-|-|-|
+| ![original](assets/grad_orig.png) | ![nodither](assets/grad_no_dither.png) | ![errordiffusion](assets/grad_ed.png) |
+
+Dithering can help when the screen has native 16-level greyscale as well:
+
+| Original | 16 Level Greyscale No-dithering | 16 Level Greyscale Dithered |
+|-|-|-|
+| ![original](assets/grad_orig.png) | ![nodither](assets/grad_4bpp_nd.png) | ![errordiffusion](assets/grad_4bpp_ed.png) |
+
+As you can see, the non-dithered image loses all the greyscale inbetween, while the dithered version on the right gives illusion of greyscale while only using full black and full white colors.
+
+To understand it further, take the following example:
+
+Say the source image is 30% brightness (or 0.3). This cannot be displayed on a binary screen which can only display 0% (0.0, black) or 100% (1.0, white) brightness. A simple thresholding process is added to determine if the screen should display 0 or 1 by checking the incoming brightness. If it's less than 0.5 then the display brightness is rounded down to 0, otherwise 1. Because 0.3 is always lower than 0.5, the whole screen displays 0 (black).
+
+This is less than ideal. A better way is to set around 30% of the pixel black, while 70% of the pixel white. Different dithering algorithms can be used to achieve this 30/70 distribution. Two common methods used are ordered dithering and error-diffusion dithering, which will be described below.
+
+#### Ordered Dithering
+
+The ordered dithering adds a pre-computed/ fixed texture to the image before the thresholding process. In other words, it basically adds some noise to the image. This may sound weird initially, but it should be easy to see the effect of noise in the example.
+
+Using the example of previously described displaying 30% brightness grey on a binary screen. The goal is let the rounding process to end up in 0 for 30% of the time, and 1 for 70% of the time. This could be achived by adding a noise. In the simplist case, a random number with a uniform distribution between [-0.5, 0.5] is added to the incoming brightness. The brightness has a value of 0.3, when adding this number to the random number, the random number now has a uniform distribution between [-0.2, 0.8]. The threshold is still set to 0.5, and now the probability distribution can be seen as below:
+
+![pdf](assets/dithering_pdf.svg)
+
+The pixel now has 30% chance of being rounded up to 1, and 70% chance of being rounded down to 0. Before dithering, it would always be rounded down to 0.
+
+However, purely random number is generally not the best noise to use. Bayer dithering matrix and blue noise are more commonly used, with the results as illustrated below. The idea is the same, but instead of adding random numbers, pre-computed number from the bayer dithering matrix (array) or blue noise texture (array) is added to the image.
+
+| Random Dithering| Bayer Dithering | Blue-noise Dithering |
+|-|-|-|
+| ![random](assets/grad_rand.png) | ![bayer](assets/grad_bayer.png) | ![bluenoise](assets/grad_bn.png) |
+
+#### Error-Diffusion Dithering
+
+The basic idea is when rounding down the color (selecting the closest color from the 16-level greyscale from 256-level input), the error value (difference) is calculated and added to neighboring pixels (so these error would be considered when processing these pixels later). The whole process is called error-diffusion.
+
+Still using the previous example of 30% brightness image, and assume an extremely simple dither kernel: diffuse all error to the next pixel. Let's see it in action.
+
+In the first pixel, 0.3 (image brightness) is less than 0.5 (threshold), so it's displayed as 0 (black). This introduce a 0.3 error: the displayed color is 0.3 darker than the requested color. So 0.3 is being diffused to the next pixel, hoping the next pixel can correct the error.
+
+Onto the second pixel. The value is 0.3 (image brightness) + 0.3 (diffused error) = 0.6. It's now larger than 0.5 (threshold), so it's displayed as 1 (white). This introduces a -0.4 error: the displayed color is 0.4 brighter than the requested color. -0.4 will be diffused to the next pixel.
+
+The 3rd pixel, the value is now 0.3 - 0.4 = -0.1. This is less than 0.5, and displayed as 0 (black). Error -0.1 is diffused further.
+
+And this process just goes on. With enough pixels, eventually it would yields about 30% of white pixels and 70% of dark pixels.
+
+Similar to how random value is not the best thing to do in ordered dithering, dithering to the right is also less than ideal. It creates very repetitive patterns. I mentioned the word kernel. Error diffusing uses a diffusion kernel, which specifies the target and percentage of the diffused error. There are many classic kernels, such as Floyd–Steinberg, Stucki, and Sierra etc. commonly used for image dithering. They all diffuse to more than 1 pixels to improve the overall look of the image. As shown below, even just diffuse error to 2 pixels (half of the error goes to the pixel on the right, and the rest half of the error goes to the pixel on the bottom) yields much better result:
+
+| Dither to Right | Right and Down | Floyd-Steinberg |
+|-|-|-|
+| ![right](assets/grad_naive.png) | ![rightdown](assets/grad_naive2.png) | ![fs](assets/grad_fs.png) |
+
+
+#### Applying Dithering on CFA-based Color Screens
+
+Dithering can be applied on CFA-based color screens such as Eink Kaleido and color DES screens as well. The following is on a simulated DES screen: (left original is assuming screen has native 24bpp color, still on a simulated screen)
+
+| 16M color DES (does not exist) | 8-color DES | 8-color DES Dithered |
+|-|-|-|
+| ![original](assets/color_8bpp.png) | ![nodither](assets/color_nd.png) | ![errordiffusion](assets/color_ed.png) |
+
+Ordinary dithering kernels don't work too well on color screens. For example, the error-diffusion dithering process pushes/ diffuses error neighboring pixels without considering their color. Ideally it should push/ diffuse the error only to pixels with the same color. This is fairly easy to fix though, by tweaking the kernel it would achieve good results on CFA-based screens as well. (I am going to shamelessly call it Wenting's kernel)
+
+| 16M color DES (does not exist) | 8-color DES naively apply Floyd-Steinberg (wrong) | 8-color DES with Wenting's kernel |
+|-|-|-|
+| ![original](assets/color_8bpp.png) | ![original](assets/color_fs_wrong.png) | ![errordiffusion](assets/color_ed.png) |
+
+
+Of course one can apply bayer-like ordered dithering, blue noise dithering, or dithering on 4096-color mode as well:
+
+| 8-color DES Bayer-like | 8-color DES Blue-noise | 4096-color DES Error-diffusion |
+|-|-|-|
+| ![original](assets/color_bayer.png) | ![original](assets/color_bn.png) | ![errordiffusion](assets/color_4bpp_ed.png) |
+
+It's called bayer because, similar to how naively doing error diffusion doesn't work, the bayer matrix has to be modified to work on color screen.
+
+#### Gamma Correction
+
+Another thing to consider is gamma. The dithering process involves a step of selecting the closest value. However, selecting the closest numerical value is not necessarily mean the closest color. The image typically is in sRGB space, which is non-linear. This causes the simple rounding to pick the wrong color, also calculating the wrong error value. One solution is to work in the linear space. This is also known as gamma-aware dithering. You could read more related info online, for example here: [https://learnopengl.com/Advanced-Lighting/Gamma-Correction](https://learnopengl.com/Advanced-Lighting/Gamma-Correction).
+
+![dither-gamma](assets/dither_gamma.jpg)
+
+The difference is quite evident when dithering down to 1 bit for color screen. Top left is the original image, top right is dithering in the sRGB space, while bottom left is dithering in the linear space.
+
+#### Further Reading
+
+See [https://en.wikipedia.org/wiki/Dither](https://en.wikipedia.org/wiki/Dither) for more information about dithering.
+
+### Eink Screen Generations
+
+Depending on how you count, there are multiple generations of Eink screens commericially available. For monochrome screens before 2023, it's possible to tell the generation by looking at the 6th digit on the serial number:
+
+![eink_serial](assets/eink_serial.jpg)
+
+And use the following table:
+
+| FPL Platform | FPL Code | Marketing Name          | First Introduced |
+| ------------ | -------- | ----------------------- | ---------------- |
+| 2.0          | 0        |                         | 2004             |
+| 2.1          | 1        |                         | ?                |
+| 2.3          | 2        |                         | ?                |
+| V100         | 3        | Vizplex                 | 2007             |
+| V110         | 4        | Vizplex                 | 2008             |
+| V110A        | 5        | Vizplex                 | 2008             |
+| V220         | 6        | Pearl                   | 2010             |
+| V250         | 7        | Pearl                   | ?                |
+| V220E        | 8        | Pearl                   | ?                |
+| V320         | 9, R     | Carta 1.2 / 1000 / 1100 | 2013             |
+| V400         | A, C     | Roadrunner / Carta 1200 | 2021             |
+| V450         |          | Carta 1250              | ?                |
+| ?            |          | Carta 1300              | 2023             |
+
+I will let you to decide how to count the generations.
+
+For the CFA-based screens, the following generations of screens exist:
+
+- Eink Triton: First generation color screen. Uses RGBW glass color filter and square pixel. Underlying screen panel uses Pearl film.
+- Eink Triton 2: 2nd generation color screen. Uses RGB glass color filter and stripe pixel. Underlying screen panel uses Pearl film.
+- Eink Kaleido: 3rd or 2nd gen color screen depending on the definition. Uses RGB color filter. Each pixel is still square, but each color covers 3 pixels. Underlying screen panel uses Carta film.
+- Eink Kaleido Plus: 2nd gen Kaleido. Uses RGB color filter. Each pixel is still square but different configurations exist. Some screens has each color covering 2 pixels, some others have each color covering only 1 pixel. Underlying screen panel uses Carta film.
+- Eink Kaleido 3: 3rd gen Kaleido. Exists many different configurations, ranging from RGBW filter covering 1 pixel per color, to RGB filter covering 3 pixels per color more like the original Kaleido. Underlying screen panel uses Carta 1000/1200/1250/1300 film depending on the model.
+- Eink Kaleido 3 Outdoor: Wide temperature version of Kaleido 3.
+
+As far as I know, all CFA-based color screen panels don't come with integrated controller.
+
+For the multiple-pigment color screens based on SiPix technology, the following generations of screens exist:
+
+(Color abbreviation: B: black, W: white, R: red, Y: yellow, B: blue, C: cyan, M: magenta)
+
+- Eink Spectra 3000: BWR or BWY 3 color screen.
+- Eink Spectra 3100: BWRY 4 color screen.
+- Eink Spectra 3100 Plus：BWRY 4 color screen. Orange display is now possible with driver circuit changes
+- Eink Spectra 6: RYBW 4 color screen. Can reproduce 6 different colors by mixing colors
+- Eink Spectra 6 Plus: RYBW 4 color screen. Still reproduce 6 different colors. Allows faster refresh compare to 6 with driver circuit changes
+- Eink Gallery: CMYW 4 color screen (ACeP).
+- Eink Gallery Plus: CMYW 4 color screen (ACeP).
+- Eink Gallery Palette： CMYW 4 color screen (ACeP). Reproduce 7 different colors.
+- Eink Gallery 3: CMYW 4 color screen (ACeP). Reproduce 12 different colors, much faster than other Gallery screens at the cost of lower saturation and lowr reflectivity
+
+There are both integrated-controller Spectra/Gallery screens and controller-less Spectra/Gallery screens.
+
+Addtional notes regarding the multi-pigment color screens:
+
+- ACeP, or Advanced Color ePaper refers to the CMYW 4 color screen. Is not a product line on its own
+- To be honest, I don't know how many colors can be reproduced on Gallery or Gallery Plus screens based on public information. Eink claims 30000 or 60000 colors in their materials, but they also clarified these numbers refers to color gamut. In other words, they represent color saturation rather than number of different colors can be displayed on screen. Dithering is heavily used to display color image on Gallery screens.
+- It's possible to achieve more colors on Gallery Palette screens. 7 is not a physical limit. 
+
+## Design of Caster and Glider
+
+This section describes the design specific to the Caster and Glider. The following is an overall block diagram showing both hardware and gateware components in the signal chain:
+
+![Overall ABlockdiagram](assets/glider_overall_block_diagram.svg)
+
+### Gateware Architecture
+
+The FPGA gateware is divided into multiple modules. The caster.v is the top-level of the EPDC core design, but several additional components are connected under top.v to form a complete image processing system. Different components are generally inter-connected with synchronous or asynchronous (in case of clock domain crossing) FIFOs.
+
+The top-level design has 3 major clock domains: clk_vi: Input video clock domain, running at ½ pixel rate. clk_epdc: EPDC clock domain, running at ¼ pixel rate. clk_mem: Memory clock domain, running at ¼ memory transfer rate.
+
+To understand how it works, the following is a guided tour around the life cycle of a pixel.
+
+Before an incoming pixel can be processed by the controller, the memif module needs to retrieve the local pixel state from the DDR SDRAM. Once the value is retrieved, it’s pushed into the state readout/ input FIFO (bi_fifo). At/ around the same time, input video stream is pushed into the video input FIFO (vi_fifo).
+
+The EPDC runs a local Eink timing generator for counting pixels and blankings. This timing should be a slightly delayed version of the incoming video timing. Once the local timing generator determines that it needs to output the pixel soon, the EPDC logic pops out one pair of the video input and state readout and starts processing.
+Two values goes through the video processing pipeline:
+
+- Stage 1: This pipeline stage waits for the FIFO to output the data.
+- Stage 2: The 8-bit input image is dithered down to 1-bit and 4-bit at this stage for later use.
+- Stage 3: The waveform lookup is done at this stage for 16-level grayscale modes
+- Stage 4: Based on the pixel state, new state and voltage selection value is determined at this stage.
+- Stage 5: New state is pushed into the state writeback/ out FIFO (bo_fifo) and the voltage selection is sent to the screen.
+
+The memif module later pops out the writeback value from the bo_fifo and writes back to the DDR SDRAM.
+
+The EPDC always processes 4 pixels per clock. For screens with different interface width, a rate adapter is added after the EPDC output. Some logic are duplicated 2 or 4 times (such as the waveform RAM or the pixel decision logic), while some are extended and daisy-chained (such as the error diffusion dithering unit) to achieve the 4 pixels per clock throughput.
+
+### Firmware Functions
 
 The MCU manages house-keeping items as described below. It currently doesn’t use any operating system, but rather relying on a main-loop style operation.
 
@@ -37,42 +663,360 @@ The MCU manages house-keeping items as described below. It currently doesn’t u
 - Video decoder initialization: The FPGA used on the board doesn’t have high speed deserializers to interface with common high speed video interface such as DisplayPort or DVI directly. Instead, dedicated video decoder chips are used on the board. They typically needs initialization before use, and the MCU takes care of this. In this specific design the DP decoder chip also handles AUX P/N line flipping based on the Type-C cable orientation.
 - PC communication: One advantage of the Caster is that update modes and forced update/ clearing can be applied on a per-pixel basis. Software may utilize this to assign different modes to different windows or change update modes depending on the content on the fly. This is done by sending requests to the MCU over USB connection. The MCU runs TinyUSB and present itself as an HID device so it can forward messages between the hos PC and the FPGA.
 
-### Case
+### Low Latency Drive
 
-A reference case design is provided. The case is 3D printable and designed with FreeCAD.
+The Caster implements several techniques for reducing the latency, which will be explained here.
 
-## Pixel Rate Reference
+As described before, the existing basic driving method employs a global counter for looking up the waveform table. This imposes a limit on the global image update rate: the controller only accepts a new incoming image after the previous update is finished. The update usually takes about 100ms, translating to an image rate of 10Hz. Or, in other words, the user needs to potentially wait up to 100ms before the new image is even processed by the controller.
+
+One way to mitigate this issue is by having multiple update regions. For example, imagine the user is typing a and b. In a single region controller design, a is being drawn to the screen immediately, while the b needs to wait 100ms before it gets drawn. If the controller supports multiple regions, it could start drawing the letter b as soon as it’s typed, reducing the latency. This however requires the software to program the controller to correctly set the region to the letter boundary, and re-allocating regions on the fly as the number of regions is generally quite limited (like 4-16).
+
+![caster-pipelined](assets/caster_pipelined_update.svg)
+
+The Caster simply treats every pixel as an individual update region, for maximum flexibility and is transparent to the software.
+
+Another latency optimization technique the Caster implemented is on the pixel that’s already being updated. For example, if the user types the letter a and deletes it right after. With the basic driving method, the controller needs to wait till the letter a is fully displayed before it can erase it. The previously proposed/ implemented regional update doesn’t help here because in this situation it’s about the same pixel so it has to be in the same region. The second technique is early cancellation. If a pixel changes before it’s fully driven, instead of waiting for it to be fully driven, it’s driven towards the requested input state, and the frame counter is updated depending on the newly calculated driving time.
+
+![caster-early-cancel](assets/caster_early_cancel.svg)
+
+By combining both, it’s then possible to implement low latency binary and 4-level grayscale modes. The tradeoff between framerate and contrast ratio is also no longer relevant. Both high frame rate and high contrast ratio are achieved automatically.
+
+### Hybrid Greyscale Mode
+
+As discussed previously, getting [greyscale](#greyscale-display) image on Eink is a sophiscated process, much slower than binary, and shows flashing images during the process. This pose challenges on how to make it useful for the users.
+
+On eReaders, the software could switch between fast and slow modes based on the action. The eReader software may also simply not support things that doesn’t work well on the screen. For example, there might be no scrolling but only whole page flipping. What’s being done on existing eink monitors is throwing the problem back to the user. The user simply need to accept that update is slow, latency is long, and the process is flashing.
+
+What Caster implemented is allowing it to switch between the fast binary mode and slow greyscale mode automatically on a per pixel basis. When the input image is changed, it switches to binary mode and do the update. When the image hasn’t changed for a while, it re-renders the image in greyscale.
+
+### Limitations
+
+The method does come with downsides: it requires much more memory bandwidth to implement. Taking a 1080P panel as an example (roughly 120 Mp/s (million pixels per second) with reduced blanking). With the traditional method, the controller only needs the old pixel state and the new pixel state (4bpp each) to determine the voltage needed, or 8-bit/ 1-byte memory read per pixel. The bandwidth requirement is then 120Mp/s x 1B/pixel = 120MB/s. One single 16-bit SDR-133 SDRAM is more than enough to handle this. The Caster currently stores 16bit state per pixel (for 2 sets of old pixel values and pixel specific timer counters), and the pixel state needs to be updated per frame, so pixel state buffer alone requires 2-byte read and 2-byte write per pixel. It then takes another 0.5-byte per pixel to read the new image value from memory. 120Mp/s x 4.5B/pixel = 540MB/s. A 16-bit DDR-333 memory is then needed to implement this. The Glider hardware uses a DDR3-800 memory to allow even higher resolution. If the controller is not integrated inside an SoC (like our case, the controller is sitting inside the monitor, not part of your PC’s CPU/GPU), it also needs to use actual low latency video interfaces like DVI or DP, instead of simpler but slower interfaces like USB or I80/SPI. This could drive up cost as well. These techniques also don't help with use cases like reading books, so commercial ereader solutions have little reason to spend the extra trouble to implement these.
+
+### Resources Utilization
+
+The following number are for reference only and would vary depending on RTL options and specific target.
+
+- 1704 FF
+- 2531 LUT6
+- 60 KB BRAM
+
+## Building
+
+### PCB
+
+The PCB is designed with KiCAD 8.0. To get optimal results, use a 4-layer stack up with 1080 PP layers, but 2313 or 3313 are also acceptable.
+
+There are 2 versions of the mainboard, one full version and a lite version. For now only the full version is being actively worked on. The lite version removes dedicated external decoders for DVI/ DP and removes bulk of the TypeC circuitry to lower the cost. The only video interface being a DVI port feeding directly into the FPGA.
+
+### FPGA Bitstream
+
+To be written
+
+### MCU Firmware
+
+To be written
+
+### Working with Waveforms
+
+The following section describes the waveform file format and how to use them.
+
+#### Obtaining Waveform
+
+In general, the screen vendor (Eink, Good Display, etc.) should provide the waveform file.
+
+If your screen has a flash chip on it, it's also possible to extract the waveform from a flash dump:
+
+```dd if=somedump.bin of=waveform.wbf bs=1 skip=2182```
+
+If you have access to an application board, it might also be possible to extract the waveform there. For example, if the system uses T1000 controller, the waveform is usually stored in the SPI flash connected to the T1000.
+
+#### Waveform Formats
+
+E-Ink distribute waveforms in the wbf file format. SoC/ Eink controller hardware often require converting the file into vendor-specific file format. Caster/ Glider also uses a specific binary format. This project defines a common human-readable format (Interchangable Waveform Format, IWF) and provides several tools for working with different binary formats and the IWF format.
+
+#### Interchangable Waveform Format
+
+The waveform consists of one descriptor file in iwf extension (ini format) and various lut data files in csv format.
+
+The descriptor contains the follwoing required fields:
+
+- VERISON: the version of the descriptor (should be 2.0)
+- NAME: (optional) original name for the waveform
+- BPP: (optional, default 4) 4 or 5, representing the internal state count used for waveform
+- PREFIX: the filename prefix for actual waveform files
+- MODES: the total modes supported by the waveform
+- TEMPS: the total number of temperature ranges supported by the waveform
+- TxRANGE: the supported temperature in degC, where x is the temperature ID
+- TUPBOUND: (optional) upper bound for temperature range, each range is TxRANGE to Tx+1RANGE (or TUPBOUND in case of the last one)
+- TABLES: total number of LUTs inside the waveform
+- TBxFC: the frame count for the table, where x is the LUT ID
+
+Each mode has its own mode section named [MODEx], where x is the mode ID, containing the following fields:
+
+- NAME: the name for that mode
+- T*TABLE: the table used for the temperature in that mode
+
+There should be a number of LUTs, saved in the filename like PREFIX_TBx.csv, where x is the LUT ID. Each csv file should contain the a LUT like this: lut[src][dst][frame], which means, to transition from src greyscale level to dst greyscale level, at a certain frame in a frame sequence, what voltage should be applied to the screen (0/3: GND / Keep, 1: VNEG / To black, 2: VPOS / To white). Each line contains the frame sequence for one or more source to destination pairs.
+
+For example:
+
+- ```4,7,1,1,1,0,2``` means to transition from greyscale level 4 to greyscale level 7, there should be 5 frames, each applying VNEG VNEG VNEG GND VPOS
+- ```0:14,15,2,2,2``` means to transition from any greyscale level between 0 and 14 to greyscale level 15, there should be 3 frames, each applying VPOS VPOS VPOS
+
+These are provided to only illustrate the file format, they are not valid or meaningful Eink driving sequences.
+
+#### Converting
+
+The following converters are provided in the repo:
+
+- To convert from iwf to fw (iMX6/7 EPDC format): ```./mxc_wvfm_asm v1/v2 input.iwf output.fw```
+- To convert from fw to iwf: ```./mxc_wvfm_dump v1/v2 input.fw output_prefix```
+- To convert from wbf to iwf: ```./wbf_wvfm_dump input.wbf output_prefix```
+
+### Compatible Screens
+
+This project only focuses on driving off-the-shelf active matrix electrophoretics displays without integrated controllers. See [Screen Panels](#screen-panels) for differences between different types of screen panels available. That's being said, this project is compatible with majority of these panels, including sizes from 4.3" up to 13.3", and potentially supporting panels as large as 42" as well (additional power supply required in that case).
+
+#### Screen Adapters
+
+Different screen panels have different connectors. It would take a huge amount of space to have every possible screen connector on the motherboard. Instead, a series of different screen adapters are provided to adapt to screen with different pinouts.
+
+The mainboard natives supports certain 40 pin screens, such as:
+
+- 10.3" 1872x1404: ED103TC1, ES103TC2
+- 10.1" 2232x1680: GDEW101M01, GDEW101C01
+
+To see which adapter might work for your screen, check out the [Appendix 1 - Screen List](#screen-list)
+
+#### Pixel Rate Considerations
 
 The input protocol and processing rate limits the screen model supported.
 
-- Processing rate when dithering enabled: 133 MP/s
-- Processing rate when dithering disabled: 240 MP/s
-- Maximum pixel rate using DVI (with ADV7611): 165 MP/s
-- Maximum pixel rate using DVI (direct deserializer): 105 MP/s
-- Maximum pixel rate using DisplayPort (with PTN3460): 224 MP/s
-- Maximum pixel rate using DisplayPort (with 7-series 6G SerDes): 720 MP/s
-- Maximum pixel rate using MIPI (with 1.05Gbps LVDS): 230 MP/s
+Limit from processing rate (logic and routing delay):
+
+* Processing rate when dithering enabled: 133 MP/s
+* Processing rate when dithering disabled: 280 MP/s
+* Estimated processing rate with 8-wide design: 500 MP/s
+
+Limit from video interface:
+
+* Maximum pixel rate using DVI (with ADV7611): 165 MP/s
+* Maximum pixel rate using DVI (direct deserializer): 105 MP/s
+* Maximum pixel rate using DisplayPort (with PTN3460): 224 MP/s
+* Maximum pixel rate using DisplayPort (with 7-series 6G SerDes): 720 MP/s
+* Maximum pixel rate using MIPI (with 1.05Gbps LVDS): 230 MP/s
+
+Limit from memory interface (assuming 90% BW utilization):
+
+* SDR-166 x16: 60 MP/s
+* SDR-166 x32: 120 MP/s
+* DDR-400 x16: 180 MP/s
+* DDR2/3-667 x16: 300 MP/s
+* DDR2/3-800 x16: 360 MP/s
+* DDR2/3-1066 x16: 480 MP/s
+* DDR2/3-800 x32: 720 MP/s
 
 Common screen resolution peak pixel rate (with CVT-RBv2):
 
-- 1024x758 (6.0") @ 85Hz: 74 MP/s
-- 1448x1072 (6.0") @ 60Hz: 101 MP/s
-- 1448x1072 (6.0") @ 85Hz: 145 MP/s
-- 1600x1200 (13.3") @ 60Hz: 125 MP/s
-- 1600x1200 (13.3") @ 85Hz: 178 MP/s
-- 1872x1404 (10.3") @ 60Hz: 169 MP/s
-- 1872x1404 (10.3") @ 85Hz: 243 MP/s
-- 2200x1650 (13.3") @ 60Hz: 232 MP/s
-- 2200x1650 (13.3") @ 85Hz: 333 MP/s
-- 2560x1600 (12.0") @ 60Hz: 261 MP/s
-- 2560x1600 (12.0") @ 85Hz: 374 MP/s
-- 3200x1800 (25.3") @ 60Hz: 364 MP/s
-- 3200x1800 (25.3") @ 85Hz: 522 MP/s
+* 1024x758 (6.0") @ 85Hz: 74 MP/s
+* 1448x1072 (6.0") @ 60Hz: 101 MP/s
+* 1448x1072 (6.0") @ 85Hz: 145 MP/s
+* 1600x1200 (13.3") @ 60Hz: 125 MP/s
+* 1600x1200 (13.3") @ 85Hz: 178 MP/s
+* 1872x1404 (10.3") @ 60Hz: 169 MP/s
+* 1872x1404 (10.3") @ 85Hz: 243 MP/s
+* 1920x1440 (8.0") @ 60Hz: 177 MP/s
+* 1920x1440 (8.0") @ 85Hz: 255 MP/s
+* 2200x1650 (13.3") @ 60Hz: 232 MP/s
+* 2200x1650 (13.3") @ 85Hz: 333 MP/s
+* 2560x1600 (12.0") @ 60Hz: 261 MP/s
+* 2560x1600 (12.0") @ 85Hz: 374 MP/s
+* 2560x1920 (13.3") @ 60Hz: 313 MP/s
+* 2560x1920 (13.3") @ 85Hz: 449 MP/s
+* 3200x1800 (25.3") @ 60Hz: 364 MP/s
+* 3200x1800 (25.3") @ 85Hz: 522 MP/s
+
+( Calculate yourself: [Video Timings Calculator by Tom Verbeure](https://tomverbeure.github.io/video_timings_calculator) )
+
+Rendering the grayscale requires the screen to be refreshed at 85Hz (85Hz is the Eink supported refresh rate, 60Hz can be made to work with some effort in some cases). Running input refresh rate lower than the internal refresh rate incurs additional processing latency from both source (PC) and monitor due to buffering.
+
+### Case
+
+A reference case design is provided. The case is 3D printable and designed with FreeCAD. Note the design is currently outdated.
+
+## References
+
+Here is a list of helpful references related to driving EPDs:
+
+* Reverse engineering and explanation on driving EPDs: http://essentialscrap.com/eink/index.html
+* An early Eink DIY project with many useful info: http://spritesmods.com/?art=einkdisplay&page=1
+* STM32 Software bit-banging EPD driver with grayscale: https://hackaday.io/project/11537-nekocal-an-e-ink-calendar
+* ESP32 board designed for driving parallel EPDs: https://github.com/vroland/epdiy
+* An early tool for reading Eink's wbf file format: https://github.com/fread-ink/inkwave
+* A more up-to-date Eink's wbf format parser: https://patchwork.kernel.org/project/linux-arm-kernel/patch/20220413221916.50995-2-samuel@sholland.org/
 
 ## License
+
+This document, other than refereneces explicitly given with their corresponding license, is released into public domain.
 
 The hardware design is released under the CERN Open Source Hardware License strongly-reciprocal variant, CERN-OHL-S. A copy of the license is provided in the source repository. Additionally, user guide of the license is provided on ohwr.org.
 
 The firmware code is licensed under the MIT license with the following exceptions:
 
 The USB PD library is derived from the Chromium OS project and the reclamier labs. The library is licensed under the BSD license.
+
+## Appendix
+
+### Using Screens without Datasheet
+
+To be written
+
+### Screen List
+
+This is a list of Eink screens and their key parameters and their compatibilities with Caster/ Glider. The information are gathered from public sources, so they might be incorrect. This is not a complete list of all screens Eink have ever produced or in production. This table is intended for hobbiests buying used screens. If you are designing a product with Eink screen please contact Eink directly.
+
+Other than a few exceptions, only screens without integrated TCON are listed here (in other words, SPI screens are generally not included here). These screens are the main focus of this project anyway.
+
+Screen size is the first 3 numbers in the model number, so it's not listed separately in the table. For example, ED060SC4 is 6.0", ED097OC1 is 9.7", and ES133UT1 is 13.3".
+
+The adapter column refers to the adapter needed for this particular screen, however there is no guarentee that it would work, even if it's listed as tested.
+
+| Model Name | Model Number | FPL Platform | Resolution  | Marketing Name              | R Typ | CR Typ | Year  | Interface | Pin Count | Adapter | Tested? |
+| ---------- | ------------ | ------------ | ----------- | --------------------------- | ----- | ------ | ----- | --------- | --------- | ------- | ------- |
+| ED043WC1   |              | V220         | 800x480     | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        | 39P-C   |         |
+| ED043WC3   | VA3200-DCA   | V220         | 800x480     | Pearl                       |       |        | 2014  | TTL       | 39        | 39P-C   |         |
+| ED043WC5   | VD1405-CGA   | 400          | 800x480     | Carta 1200                  |       |        |       | SPI       |           |         |         |
+| ED047TC1   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2015  | TTL       | 44        |         |         |
+| ED047TC2   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2016  | TTL       | 44        |         |         |
+| ET047TC1   |              | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
+| ED050SC3   |              | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 33        | 33P-A   |         |
+| ED050SU3   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 39        |         |         |
+| ED052TC2   |              | 320          | 960x540     | Carta                       | 45%   | 16:1   | 2016  | TTL       | 40        |         |         |
+| ED052TC4   | VB3300-EBA   | 320          | 1280x720    | Carta 1.2                   | 45%   | 16:1   | 2017  | TTL       | 50        |         |         |
+| EC058TC1   | SA1452-EHA   | 320          | 1440x720    | Kaleido / Carta             | 24%   | 15:1   | 2020  | TTL       | 50        |         |         |
+| ED058TC7   |              | 320          |             | Carta                       |       |        |       | TTL       |           |         |         |
+| ED058TC8   | VB3300-EHB   | 320          | 1440x720    | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060SC1   |              | 2.1          | 800x600     |                             |       |        |       | TTL       | 39        | 39P-B   |         |
+| ED060SC3   |              | V100         | 800x600     | Vizplex                     |       |        |       | TTL       | 39        | 39P-B   |         |
+| ED060SC4   |              | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 39        | 39P-B   |         |
+| ED060SC7   |              | V220E        | 800x600     | Pearl                       | 40%   | 12:1   | 2010  | TTL       | 34        | 34P-B   |         |
+| ED060SCA   |              | V110         | 800x600     | Vizplex                     |       |        |       | TTL       |           |         |         |
+| ED060SCE   |              | V220/V220E   | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-B   |         |
+| ED060SCF   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060SCG   |              | V220E        | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-B   |         |
+| ED060SCN   |              | V220E        | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060SCS   |              |              | 800x600     |                             |       |        |       | TTL       | 34        | 34P-B   |         |
+| ED060SCP   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060SCQ   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       |           |         |         |
+| ED060SCS   |              |              | 800x600     |                             |       |        |       | TTL       |           |         |         |
+| ED060SCT   |              | 320          | 800x600     | Carta                       |       |        |       | TTL       | 34        | 34P-B   |         |
+| ED060SD1   |              | 320          | 800x600     | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060XC3   |              | V220         | 1024x758    | Pearl                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
+| ED060XC5   |              | V220         | 1024x758    | Pearl                       | 35%   | 12:1   | 2011  | TTL       | 34        | 34P-A   |         |
+| ED060XC8   |              | V320         | 1024x758    | Carta                       |       |        |       | TTL       | 35        | 35P-A   | Yes     |
+| ED060XC9   |              |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060XCD   |              | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060XCG   | VD1405-FOA   | 320/400      | 1024x758    | Carta 1000 / 1200           | 40%   | 17:1   | 2020  | TTL       |           |         |         |
+| ED060XCH   | VD1405-FOE   | 400          | 1024x758    | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ED060XD4   |              | 320          | 1024x758    | Carta                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
+| ED060XD6   |              |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060XG1   |              | V110/V220    | 1024x758    | Vizplex / Pearl             | 40%   | 12:1   | 2012  | TTL       |           |         |         |
+| ED060XG2   |              | V220         | 1024x758    | Pearl                       |       |        |       | TTL       |           |         |         |
+| ED060XG3   |              | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060XH2   |              |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060XH7   |              | 320          | 1024x758    | Carta 1.2                   | 45%   | 17:1   | 2015  | TTL       |           |         |         |
+| ED060XH9   | VB3300-FOG   | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060TC1   |              | 320          | 1448x1072   | Carta                       |       |        |       | TTL       | 35        | 35P-A   |         |
+| ED060KC1   |              | 320          | 1448x1072   | Carta                       | 46%   | 17:1   | 2014  | TTL       | 34        | 34P-A   |         |
+| ED060KC4   |              | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KD1   |              | 320          | 1448x1072   | Carta                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
+| ED060KG1   |              | 320          | 1448x1072   | Carta                       | 47%   | 17:1   | 2015  | TTL       | 34        | 34P-A   |         |
+| ED060KH4   |              | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KH6   | VB3300-FOE   | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KHC   |              |              | 1448x1072   |                             |       |        |       | TTL       |           |         |         |
+| EC060KH3   | SA1452-FOA   |              | 1448x1072   | Kaleido                     |       |        |       | TTL       |           |         |         |
+| ED061KC1   | VD1405-FAA   | 400          | 1648x824    | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ED067KC1   | VB3300-FGA   | 320          | 1800x900    | Carta                       | 45%   | 16:1   | 2020  | TTL       | 50        | 50P-B   |         |
+| EC067KC1   | SA1452-FGA   |              | 1800x900    | Kaleido                     |       |        |       | TTL       | 50        | 50P-B   |         |
+| ED068TG1   |              | 320          | 1440x1080   | Carta                       |       |        | <2013 | TTL       |           |         |         |
+| ED068TH1   |              | 320          | 1440x1080   | Carta                       |       |        | <2014 | TTL       |           |         |         |
+| ED068TH3   | VB3300-FHA   | 320          | 1440x1080   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED068KC1   |              | 400SU        | 1648x1236   | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ED068KC5   | VD1405-FHF   | 400          | 1648x1236   | Carta 1200                  | \>44% | \>19:1 |       | TTL       |           |         |         |
+| ED070KC2   |              | 320          | 1680x1264   | Carta 1100                  | \>47% | \>16:1 |       | TTL       |           |         |         |
+| ED070KC3   |              | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
+| ED070KC4   | VD1400-GOC   | 400          | 1680x1264   | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ED070KH1   |              | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
+| EC070KH1   | SC1452-GOA   |              | 1680x1264   | Kaleido Plus                |       |        |       | TTL       |           |         |         |
+| LB071WS1   |              |              | 1024x600    |                             |       | 7:1    |       | TTL       |           |         |         |
+| ET073TC1   |              | V320         | 750x200     | Carta                       |       |        | 2016  | TTL       |           |         |         |
+| ED078KC1   |              |              | 1872x1404   | Carta 1.2                   | 45%   | 16:1   | 2016  | TTL       | 40        | 40P-A   |         |
+| ED078KC2   | VB3300-GHC   | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
+| ED078KH1   |              | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
+| ED078KH3   |              | 320          | 1872x1404   | Carta 1.2                   |       |        |       | TTL       | 40        | 40P-A   |         |
+| ED078KH4   | VB3300-GHB   | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH3   | SC1452-GHA   |              | 1872x1404   | Kaleido Plus                |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH4   | SC1452-GHB   |              | 1872x1404   | Kaleido Plus ?              |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH5   | SC1452-GHC   |              | 1872x1404   | Kaleido Plus ?              |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH6   | SC1452-GHD   |              | 1872x1404   | Kaleido 3                   |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH7   | SC1452-GHE   |              | 1872x1404   | Kaleido 3                   |       |        |       | TTL       | 40        | 40P-A   |         |
+| ED080XC1   |              | V110         | 1024x768    | Vizplex                     |       |        |       | TTL       |           |         |         |
+| ED080TC1   |              | V220         | 1600x1200   | Pearl                       |       |        |       | TTL       |           |         |         |
+| EC080SC2   |              | V250         | 600xRGBx800 | Triton 2                    |       |        |       | TTL       | 40        | 40P-A   | Yes     |
+| ES080KC2   | VD1400-HOB   | 400          | 1920x1440   | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ES080KH1   |              |              |             |                             |       |        |       |           |           |         |         |
+| AC080KH1   | AD1004-HOA   | HAL3         | 1920x1440   | Gallery 3                   |       |        |       | MiniLVDS  |           |         |         |
+| ED097OC1   |              | V110A        | 1200x825    | Vizplex                     | 35%   | 7:1    | 2008  | TTL       | 33        | 33P-A   |         |
+| ED097OC4   |              | V110A/V220   | 1200x825    | Vizplex / Pearl             |       |        |       | TTL       | 33        | 33P-A   |         |
+| ED097OD2   |              | V220         | 1200x825    | Pearl                       |       |        |       | TTL       | 33        | 33P-A   |         |
+| ED097TC1   |              | V220         | 1200x825    | Pearl                       |       |        |       | TTL       | 33        | 33P-A   |         |
+| ED097TC2   | VB3300-JGA   | 320          | 1200x825    | Carta 1.2                   | 42%   | 16:1   | 2016  | TTL       | 33        | 33P-A   |         |
+| EL097TR2   | EA2220-JGB   |              | 1200x825    | Spectra 3000                |       |        |       | TTL       |           |         |         |
+| ED100UC1   | VB3300-KOA   | 320          | 1600x1200   | Carta                       | 45%   | 16:1   | 2020  | TTL       | 40        | DIRECT  |         |
+| ES103TC1   | VB3300-KCA   | 320          | 1872x1404   | Carta 1.2                   | 40%   | 12:1   | 2016  | TTL       | 40        | DIRECT  |         |
+| ED103TC2   | VB3300-KCD   | 320          | 1872x1404   | Carta                       | 43%   | 14:1   | 2019  | TTL       | 40        | DIRECT  |         |
+| ES103TD1   |              | 320          | 1872x1404   | Carta                       |       |        |       | TTL       |           |         |         |
+| ES103TD3   |              | 320          | 1872x1404   | Carta                       |       |        |       | TTL       |           |         |         |
+| EC103TD1   | SA1452-KCC   |              | 1872x1404   | Kaleido                     |       |        |       | TTL       |           |         |         |
+| EC103TH2   | SC1452-KCB   |              | 1872x1404   | Kaleido Plus                |       |        |       | TTL       |           |         |         |
+| EC103KH2   | SC1452-KCD   |              | 2480x1860   | Kaleido 3                   |       |        |       | TTL       |           |         |         |
+| ES107KC1   | VD1400-KGA   | 400          | 2560x1920   | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ES108FC1   |              | 320          | 1920x1080   | Carta                       | 46%   | 16:1   | 2017  | TTL       | 50        | 50P-C   |         |
+| ES108FC2   |              | 320          | 1920x1080   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED113TC1   | VB3300-LCA   | 320          | 2400x1034   | Carta                       | 35%   | 12:1   | 2017  | TTL       | 50        | 50P-A   |         |
+| ED113TC2   | VB3300-LCB   | 320          | 2400x1034   | Carta 1.2                   | 35%   | 12:1   | 2019  | TTL       | 50        | 50P-A   |         |
+| EC113TC1   | SC1452-LCA   |              | 2400x1034   | Kaleido Plus ?              |       |        |       | TTL       | 50        | 50P-A   |         |
+| ED115OC1   |              | V220         | 2760x2070   | Pearl                       | 35%   | 12:1   | 2012  | TTL       | 40        | DIRECT  |         |
+| AC118TC1   | AD1004-LHA   |              |             | Gallery 3                   |       |        |       | MiniLVDS  |           |         |         |
+| ES120MC1   | VD1400-MOA   | 400          | 2560x1600   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
+| ES133UT1   |              | V220         | 1600x1200   | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        | 39P-A   | Yes     |
+| ES133UT2   |              | 320          | 1600x1200   | Carta                       |       |        |       | TTL       | 39        | 39P-A   | Yes     |
+| ES133UE2   |              | 320          | 1600x1200   | Carta                       |       |        |       | TTL       | 39        | 39P-A   |         |
+| ED133UT2   | VB3300-NCB   | 320          | 1600x1200   | Carta 1.2                   | 45%   | 16:1   | 2016  | TTL       | 39        | 39P-A   |         |
+| ED133UT3   | VB3300-NCC   | 320          | 1600x1200   | Carta                       | 45%   | 16:1   | 2019  | TTL       | 39        | 39P-A   |         |
+| ES133TT3   |              | 320          | 2200x1650   | Carta 1.2                   | 40%   | 12:1   | 2016  | TTL       | 39        |         |         |
+| ES133TT5   | VH1948-NCC   | 450          | 2200x1650   | Carta 1250                  |       |        |       | TTL       | 39        |         |         |
+| EC133UJ1   | SD1452-NCB   |              | 1600x1200   | Kaleido 3 Outdoor           |       |        |       | TTL       | 39        | 39P-A   |         |
+| AC133UT1   | AA1020-NCA   |              | 1600x1200   | Gallery / Gallery 4000      | 35%   | 10:1   | 2020  | TTL       | 39        | 39P-A   |         |
+| EL133US1   |              |              | 1600x1200   | Spectra 3000                |       |        |       | TTL       | 39        | 39P-A   | Yes     |
+| EL133UR1   | EA2220-NCC   |              | 1600x1200   | Spectra 3000                | 33%   | 15:1   | 2020  | TTL       | 39        | 39P-A   |         |
+| EL133UF1   | ED2208-NCA   |              | 1600x1200   | Spectra 6                   |       |        |       | QSPI      |           |         |         |
+| ED140TT1   | VB3300-IDA   | 320          | 1440x300    | Carta                       |       |        |       | TTL       |           |         |         |
+| AC253TT1   | AA1020-PEA   |              | 3200x1800   | Gallery Plus / Gallery 4000 | 35%   | 10:1   | 2020  | MiniLVDS  | 51x2      |         |         |
+| EL253EW1   | ED2208-PEA   |              | 3200x1800   | Spectra 6                   |       |        |       | MiniLVDS  |           |         |         |
+| EC253TT1   | SD1452-PEA   |              | 3200x1800   | Kaleido 3 Outdoor           |       |        |       | MiniLVDS  |           |         |         |
+| ED253TT1   | VB3300-PEA   | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
+| ED253TT2   | VB3300-PEB   | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
+| ED253TT3   | VB3300-PEC   | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
+| EL253TV1   | EB2200-PEA   |              | 3200x1800   | Spectra 3100                |       |        |       | MiniLVDS  | 51x2      |         |         |
+| ED280TT1   | VB3300-PHA   | 320          | 3840x1080   | Carta 1.2                   | 40%   | 12:1   | 2020  | MiniLVDS  | 51x2      |         |         |
+| ED312TT2   | VA3200-QAA   | V220         | 2560x1440   | Pearl                       |       |        |       | TTL       | 50x4      |         |         |
+| ED312TT3   | VA3200-QAB   | V220         | 2560x1440   | Pearl                       | 40%   | 12:1   | 2018  | TTL       | 50x4      |         |         |
+| EC312TT2   | SB1452-QAA   |              | 2560x1440   | Triton                      |       |        |       | TTL       | 50x4      |         |         |
+| EL315TW1   | ED2208-QBA   |              | 2560x1440   | Spectra 6                   |       |        |       | QSPI      |           |         |         |
+| ED420TT1   |              | V220         | 2880x2160   | Pearl                       |       |        |       | TTL       | 50x2      |         |         |
+| ED420TT3   | VB3300-RBA   | 320          | 2880x2160   | Carta 1.2                   | 45%   | 16:1   | 2020  | TTL       | 50x2      |         |         |
+| ED420TT5   | VB3300-RBB   | 320          | 2880x2160   | Carta 1.2                   |       |        |       | TTL       | 50x2      |         |         |
+
+Note: Carta 1.2 is also known as Carta 1000. If the table cell says Carta it also likely means Carta 1000 (could be 1100 as well, I don't know for sure).
