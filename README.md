@@ -437,7 +437,7 @@ The actual photo of DES panel under microscope:
 
 In the above photo, the DES pixel arrangement is the same as the OLPC XO-1.
 
-This doesn't necessarily mean that the effective resolution needs to be divide by 3. This arrangement is slightly more "efficient" than RGB strip in terms of perceptive resolution. You could find more detailed analysis in the paper Comparing the Effective Resolution of Various RGB Subpixel Layout.
+Having no subpixel / each pixel only has 1 color doesn't necessarily mean that the effective resolution needs to be divide by 3. This arrangement is slightly more "efficient" than RGB strip in terms of perceptive resolution. You could find more detailed analysis in the paper Comparing the Effective Resolution of Various RGB Subpixel Layout.
 
 ##### Processing image for Color DES
 
