@@ -473,6 +473,8 @@ Another technology for implemneting color EPD is by using a multi-pigment color 
 
 (Source: https://www.eink.com/tech/detail/How_it_works , copyright Eink Corporation)
 
+One major advantage of this solution is it can achieve higher resolution (because it doesn't have a CFA, so no resolution reduction), higher reflectivity (because it doesn't have a CFA, so no light loss), and higher color saturation (because it doesn't have a CFA, no need to play the reflectivity vs saturation trade off game).
+
 Eink has 2 lines of products using this Technology, Eink Gallery and Eink Spectra. The advantage is it's much brighter compared to CFA based solutions. The disadvantage is it's much more difficult to drive, and quite slow: 1st /2nd gen Eink Gallery screen takes 30s (!) to refresh, and Spectra 6 Plus devices takes 7s to refresh. It's possible to trade-in some color saturation for higher speed, though still much slower than CFA based solutions. The specific product lines will be discussed in [Eink Screen Generations](#eink-screen-generations)
 
 ##### What Happened To ACeP?
@@ -486,11 +488,13 @@ The following are purely my own speculation. But I see this as 2 separate decisi
 
 The second one is evident from the EOL noticed linked previously, the 7.3" ACeP screen has a direct replacement of 7.3" Spectra 6 screen. One major drawback of ACeP in digital signage market (as far as I see) is its inability to reproduce the cyan color. This actually means there is no good way to display blue sky on an ACeP screen, not even through dithering, it's simply outside of its color gamut. By changing the base colors used, Eink was able to mitigate this issue in the Spectra 6 product lines.
 
-The first one is more or less speculation. I have two clues for that. One is the fact that Eink is doubling down on digital signage for Spectra 6: [Both 13.3" and 31.5" Spectra 6 screen will have integrated controller](https://www.beck-elektronik.de/en/newsroom/news/article/e-ink-spectratm-6-der-hingucker-des-jahres-2024). This make them much more interesting for the signage applications, but unsuitable for eReader applications. The other is that [the 8" Spectra 6 Plus screen](https://www.ereaderpro.co.uk/en/blogs/news/e-ink-news-eink-technology-has-unveiled-the-new-generation-of-colour-e-paper-technology-e-ink-spectra-6-plus-designed-for-retail-tags-and-advertising-billboards), while using the same backplane as the Gallery 3 ACeP screen, now quote a 7 second refresh time. If Eink still wanted to make a Spectra 6 eReader screen, this 8" backplane would be the one to use given it was used in ACeP product line.
+The first one is more or less speculation. I have two clues for that. One is the fact that Eink is doubling down on digital signage for Spectra 6: [Both 13.3" and 31.5" Spectra 6 screen will have integrated controller](https://www.beck-elektronik.de/en/newsroom/news/article/e-ink-spectratm-6-der-hingucker-des-jahres-2024). This make them much more interesting for the signage applications, but unsuitable for eReader applications. The other is that [the 8" Spectra 6 Plus screen](https://www.ereaderpro.co.uk/en/blogs/news/e-ink-news-eink-technology-has-unveiled-the-new-generation-of-colour-e-paper-technology-e-ink-spectra-6-plus-designed-for-retail-tags-and-advertising-billboards), while using the same backplane as the Gallery 3 ACeP screen, now quote a 7 second refresh time (compared to less than a second on Gallery 3). If Eink still wanted to make a Spectra 6 eReader screen, this 8" backplane would be the one to use given it was used in ACeP product line.
 
 Ojectively, ACeP screen on the Bigme Galy pretty much doesn't make any sense anyway. It suffers from poor reflectivity and poor saturation, to a point where it's not much better than Kaleido (see the previous photo). The difference between the Gallery 3 and Gallery Palette (which is supposed to be a lower end product) is also stunning:
 
 ![acep_comparison](assets/gallery3_gallerypalette.jpg)
+
+(Original illustration copyright MiHoYo)
 
 The one on the left is the Gallery 3 used on eReaders, the one on the right (brighter and more saturated one) is the Gallery Palette used on ESLs. Though to be honest I hacked the right one a bit to display 512 colors opposed to the stock 7 colors. If the Gallery 3 had the same image quality as previous ACeP/ Gallery screens, it would make sense to trade in response time for better image quality. But it doesn't.
 
