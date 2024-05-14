@@ -887,6 +887,11 @@ Here is a list of helpful references related to driving EPDs:
 * An early tool for reading Eink's wbf file format: https://github.com/fread-ink/inkwave
 * A more up-to-date Eink's wbf format parser: https://patchwork.kernel.org/project/linux-arm-kernel/patch/20220413221916.50995-2-samuel@sholland.org/
 
+On the topic of color screen resolution, color mapping, subpixel rendering:
+
+* Klompenhouwer, Michiel A., and Erno H. A. Langendijk. “59.4: Comparing the Effective Resolution of Various RGB Subpixel Layouts.” SID International Symposium Digest of Technical Papers, vol. 39, no. 1, 2008, pp. 907–10, https://doi.org/10.1889/1.3069822.
+* Lai, Chih-chang, and Ching-chih Tsai. “A Modified Stripe-RGBW TFT-LCD with Image-Processing Engine for Mobile Phone Displays.” IEEE Transactions on Consumer Electronics, vol. 53, no. 4, 2007, pp. 1628–33, https://doi.org/10.1109/TCE.2007.4429262.
+
 ## License
 
 This document, other than refereneces explicitly given with their corresponding license, is released into public domain.
