@@ -415,6 +415,12 @@ Actual grayscale driving sequence used in the commercial implementation is more 
 
 There are several different technologies that could be used to build full color EPDs. The 2 most common ways are to use a color-filter-array (CFA) or use a multi pigment color display.
 
+The following picture have the multiple pigment color display (ACeP Gallery 3) on the left, and CFA-based color screen (Kaleido Plus) on the right, displaying the same image.
+
+![gallery3_kaleido](assets/gallery3_kaleido_plus.jpg)
+
+(Original illustration copyright MiHoYo)
+
 #### Color Filter Array
 
 CFA stands for color filter array, which is basically colored glass/ film on top of the screen pixel. This is also the technology used on most color LCDs. Eink Kaleido, Eink Triton and color DES are based on this technology. The main advantage is that it's relative simple to control, and the low level driving is the same with the greyscale panels. Thus it has the same level of refreshing time (100~200ms), and same level of greyscale (16 level translate to 16^3=4096 colors). The draw back is that the CFA filters out some light (due to its colored nature), the screen reflectivity is negatively affected by the CFA. The screen ends up being quite dark. Up to now, most color E-readers uses CFA-based display. This project supports all three major types of CFA-based EPD screens: color DES screen, Eink Triton, and Eink Kaleido.
@@ -468,6 +474,27 @@ Another technology for implemneting color EPD is by using a multi-pigment color 
 (Source: https://www.eink.com/tech/detail/How_it_works , copyright Eink Corporation)
 
 Eink has 2 lines of products using this Technology, Eink Gallery and Eink Spectra. The advantage is it's much brighter compared to CFA based solutions. The disadvantage is it's much more difficult to drive, and quite slow: 1st /2nd gen Eink Gallery screen takes 30s (!) to refresh, and Spectra 6 Plus devices takes 7s to refresh. It's possible to trade-in some color saturation for higher speed, though still much slower than CFA based solutions. The specific product lines will be discussed in [Eink Screen Generations](#eink-screen-generations)
+
+##### What Happened To ACeP?
+
+[ACeP was supposed to the "next big thing" in ereader](https://arstechnica.com/gadgets/2022/04/new-e-ink-gallery-displays-could-finally-make-full-color-e-readers-good/). Back in the end 2022, Eink anounnced that ["Gallery 3 has moved into mass production, with customer products from Bigme, BOOX, iFlyTek, iReader, PocketBook, Readmoo, and AOC coming down the pipeline in 2023 and beyond"](https://www.e-ink-info.com/e-ink-gallery-3-acep-color-epaper-displays-move-mass-production). But 2023 passed with exactly one product, the Bigme Galy, with mixed receptions. Early 2024, it was announced that [Bigme Galy has been discontinued](https://goodereader.com/blog/electronic-readers/bigme-galy-is-discontinued), and [Eink have announced EOL for certain ACeP based products](https://www.ineltek.com/wp-content/uploads/2024/04/EInk_AC073TC1_EOLNoticeLetter_notice_20240401.pdf). It does sound like ACeP is now dead.
+
+The following are purely my own speculation. But I see this as 2 separate decisions:
+
+- There will be no more multi-pigment based display for eReader market
+- ACeP (CMYW) is being replaced with Spectra 6 (RYBW) in other markets
+
+The second one is evident from the EOL noticed linked previously, the 7.3" ACeP screen has a direct replacement of 7.3" Spectra 6 screen. One major drawback of ACeP in digital signage market (as far as I see) is its inability to reproduce the cyan color. This actually means there is no good way to display blue sky on an ACeP screen, not even through dithering, it's simply outside of its color gamut. By changing the base colors used, Eink was able to mitigate this issue in the Spectra 6 product lines.
+
+The first one is more or less speculation. I have two clues for that. One is the fact that Eink is doubling down on digital signage for Spectra 6: [Both 13.3" and 31.5" Spectra 6 screen will have integrated controller](https://www.beck-elektronik.de/en/newsroom/news/article/e-ink-spectratm-6-der-hingucker-des-jahres-2024). This make them much more interesting for the signage applications, but unsuitable for eReader applications. The other is that [the 8" Spectra 6 Plus screen](https://www.ereaderpro.co.uk/en/blogs/news/e-ink-news-eink-technology-has-unveiled-the-new-generation-of-colour-e-paper-technology-e-ink-spectra-6-plus-designed-for-retail-tags-and-advertising-billboards), while using the same backplane as the Gallery 3 ACeP screen, now quote a 7 second refresh time. If Eink still wanted to make a Spectra 6 eReader screen, this 8" backplane would be the one to use given it was used in ACeP product line.
+
+Ojectively, ACeP screen on the Bigme Galy pretty much doesn't make any sense anyway. It suffers from poor reflectivity and poor saturation, to a point where it's not much better than Kaleido (see the previous photo). The difference between the Gallery 3 and Gallery Palette (which is supposed to be a lower end product) is also stunning:
+
+![acep_comparison](assets/gallery3_gallerypalette.jpg)
+
+The one on the left is the Gallery 3 used on eReaders, the one on the right (brighter and more saturated one) is the Gallery Palette used on ESLs. Though to be honest I hacked the right one a bit to display 512 colors opposed to the stock 7 colors. If the Gallery 3 had the same image quality as previous ACeP/ Gallery screens, it would make sense to trade in response time for better image quality. But it doesn't.
+
+So is the ACeP dead? Yes and no. Yes in a sense that we are less likely to see any new ACeP products in the future, and we are also unlikely to see any Spectra 6 based eReader products. No in a sense that ACeP is superseded by Spectra 6, so the technology lives on. Just like how the Pearl replaced the Vizplex, and the Carta replaced the Pearl. Now we have Carta so we don't look back to the older generation of screens. Also, in another sense, there are likely at least thousands of ACeP screens already manufactured but didn't made into the consumer devices. We will probably see these screens in the not too distant future! 
 
 ### Dithering
 
