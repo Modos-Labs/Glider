@@ -83,7 +83,7 @@ The board is designed with KiCad. You may need the latest stable version of KiCa
 
 ### Components
 
-This repo hosts the PCB design, firmware source code, and a reference 3D-printable case design. The RTL code is in a seperate repo: [https://gitlab.com/zephray/Caster/](https://gitlab.com/zephray/Caster/).
+This repo hosts the PCB design, firmware source code, and a reference 3D-printable case design. The RTL code is in a separate repo: [https://gitlab.com/zephray/Caster/](https://gitlab.com/zephray/Caster/).
 
 ## Eink Screens
 
@@ -176,7 +176,7 @@ One may notice that almost all e-readers/ e-ink cellphones use screens without c
 
 | | Without Controller | With Controller |
 |-|-|-|
-| System Cost | High. A dedicated controller or SoC with integrated contoller is usually required. Needs a dedicated power supply. | Low. Virtually any MCUs could drive the screen directly, and the power supply is integrated in. |
+| System Cost | High. A dedicated controller or SoC with integrated controller is usually required. Needs a dedicated power supply. | Low. Virtually any MCUs could drive the screen directly, and the power supply is integrated in. |
 | Greyscale Levels | Generally 16 (4bpp), up to 32 (5bpp) | Generally 2 (BW only) or 4 (2bpp), with some hack, up to 16 (4bpp) |
 | Refresh Speed | Generally fast (100ms~300ms) for BW. Depends on the screen used and the system architecture | Generally fast (100ms~300ms) for BW if the partial refresh is enabled. Greyscales much slower, BWR or BWY screens would be even slower.
 | Total Update Latency | Generally the same as refresh time. Depends on the system architecture | Slow. Ranging from 100ms to several seconds based on the resolution. |
@@ -275,7 +275,7 @@ One notable difference with LCD is that each pixel is represented by 2 bits. Thi
 - 10: Positive voltage
 - 11: No voltage
 
-Just like CRT/ LCD, ther are also blanking periods in the entire timing (means it's just waiting without active pixel data being sent). They have identical meaning to CRT/ LCD systems:
+Just like CRT/ LCD, there are also blanking periods in the entire timing (means it's just waiting without active pixel data being sent). They have identical meaning to CRT/ LCD systems:
 
 ![display-timings](assets/display-timings.png)
 
@@ -431,7 +431,7 @@ CFA stands for color filter array, which is basically colored glass/ film on top
 
 The GDEW101C01 is a 10.1" color DES screen made by Good Display / WeiFeng Tech. It uses CFA to produce color image. As a result, to the eink controller hardware, it's just a normal greyscale panel with bunch of pixels. But the pixels are colored depending on their location due to the CFA. The coloring of the pixels can be either handled by hardware or software.
 
-##### Pixel Arragement
+##### Pixel Arrangement
 
 Color DES is a bit different from a typical color TFT LCD in terms of CFA design. Typically on TFT LCDs, one RGB pixel is called a pixel, and each R/G/B component is called as a sub-pixel. On color DES, the sub-pixel is ended up being called as pixel, and each pixel is either red, green, or blue. In display industry, such pixels are more commonly referred as dots.
 
@@ -528,7 +528,7 @@ Dithering can help when the screen has native 16-level greyscale as well:
 |-|-|-|
 | ![original](assets/grad_orig.png) | ![nodither](assets/grad_4bpp_nd.png) | ![errordiffusion](assets/grad_4bpp_ed.png) |
 
-As you can see, the non-dithered image loses all the greyscale inbetween, while the dithered version on the right gives illusion of greyscale while only using full black and full white colors.
+As you can see, the non-dithered image loses all the greyscale in between, while the dithered version on the right gives illusion of greyscale while only using full black and full white colors.
 
 To understand it further, take the following example:
 
@@ -540,7 +540,7 @@ This is less than ideal. A better way is to set around 30% of the pixel black, w
 
 The ordered dithering adds a pre-computed/ fixed texture to the image before the thresholding process. In other words, it basically adds some noise to the image. This may sound weird initially, but it should be easy to see the effect of noise in the example.
 
-Using the example of previously described displaying 30% brightness grey on a binary screen. The goal is let the rounding process to end up in 0 for 30% of the time, and 1 for 70% of the time. This could be achived by adding a noise. In the simplist case, a random number with a uniform distribution between [-0.5, 0.5] is added to the incoming brightness. The brightness has a value of 0.3, when adding this number to the random number, the random number now has a uniform distribution between [-0.2, 0.8]. The threshold is still set to 0.5, and now the probability distribution can be seen as below:
+Using the example of previously described displaying 30% brightness grey on a binary screen. The goal is let the rounding process to end up in 0 for 30% of the time, and 1 for 70% of the time. This could be achieved by adding a noise. In the simplest case, a random number with a uniform distribution between [-0.5, 0.5] is added to the incoming brightness. The brightness has a value of 0.3, when adding this number to the random number, the random number now has a uniform distribution between [-0.2, 0.8]. The threshold is still set to 0.5, and now the probability distribution can be seen as below:
 
 ![pdf](assets/dithering_pdf.svg)
 
@@ -610,7 +610,7 @@ See [https://en.wikipedia.org/wiki/Dither](https://en.wikipedia.org/wiki/Dither)
 
 ### Eink Screen Generations
 
-Depending on how you count, there are multiple generations of Eink screens commericially available. For monochrome screens before 2023, it's possible to tell the generation by looking at the 6th digit on the serial number:
+Depending on how you count, there are multiple generations of Eink screens commercially available. For monochrome screens before 2023, it's possible to tell the generation by looking at the 6th digit on the serial number:
 
 ![eink_serial](assets/eink_serial.jpg)
 
@@ -661,7 +661,7 @@ For the multiple-pigment color screens based on SiPix technology, the following 
 
 There are both integrated-controller Spectra/Gallery screens and controller-less Spectra/Gallery screens.
 
-Addtional notes regarding the multi-pigment color screens:
+Additional notes regarding the multi-pigment color screens:
 
 - ACeP, or Advanced Color ePaper refers to the CMYW 4 color screen. Is not a product line on its own
 - To be honest, I don't know how many colors can be reproduced on Gallery or Gallery Plus screens based on public information. Eink claims 30000 or 60000 colors in their materials, but they also clarified these numbers refers to color gamut. In other words, they represent color saturation rather than number of different colors can be displayed on screen. Dithering is heavily used to display color image on Gallery screens.
@@ -780,15 +780,15 @@ If you have access to an application board, it might also be possible to extract
 
 #### Waveform Formats
 
-E-Ink distribute waveforms in the wbf file format. SoC/ Eink controller hardware often require converting the file into vendor-specific file format. Caster/ Glider also uses a specific binary format. This project defines a common human-readable format (Interchangable Waveform Format, IWF) and provides several tools for working with different binary formats and the IWF format.
+E-Ink distribute waveforms in the wbf file format. SoC/ Eink controller hardware often require converting the file into vendor-specific file format. Caster/ Glider also uses a specific binary format. This project defines a common human-readable format (Interchangeable Waveform Format, IWF) and provides several tools for working with different binary formats and the IWF format.
 
-#### Interchangable Waveform Format
+#### Interchangeable Waveform Format
 
 The waveform consists of one descriptor file in iwf extension (ini format) and various lut data files in csv format.
 
-The descriptor contains the follwoing required fields:
+The descriptor contains the following required fields:
 
-- VERISON: the version of the descriptor (should be 2.0)
+- VERSION: the version of the descriptor (should be 2.0)
 - NAME: (optional) original name for the waveform
 - BPP: (optional, default 4) 4 or 5, representing the internal state count used for waveform
 - PREFIX: the filename prefix for actual waveform files
@@ -910,7 +910,7 @@ On the topic of color screen resolution, color mapping, subpixel rendering:
 
 ## License
 
-This document, other than refereneces explicitly given with their corresponding license, is released into public domain.
+This document, other than references explicitly given with their corresponding license, is released into public domain.
 
 The hardware design is released under the CERN Open Source Hardware License strongly-reciprocal variant, CERN-OHL-S. A copy of the license is provided in the source repository. Additionally, user guide of the license is provided on ohwr.org.
 
@@ -932,7 +932,7 @@ Other than a few exceptions, only screens without integrated TCON are listed her
 
 Screen size is the first 3 numbers in the model number, so it's not listed separately in the table. For example, ED060SC4 is 6.0", ED097OC1 is 9.7", and ES133UT1 is 13.3".
 
-The adapter column refers to the adapter needed for this particular screen, however there is no guarentee that it would work, even if it's listed as tested.
+The adapter column refers to the adapter needed for this particular screen, however there is no guarantee that it would work, even if it's listed as tested.
 
 | Model Name | Model Number | FPL Platform | Resolution  | Marketing Name              | R Typ | CR Typ | Year  | Interface | Pin Count | Adapter | Tested? |
 | ---------- | ------------ | ------------ | ----------- | --------------------------- | ----- | ------ | ----- | --------- | --------- | ------- | ------- |
