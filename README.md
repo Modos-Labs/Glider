@@ -4,7 +4,7 @@ Open source Eink monitor with an emphasis on low latency.
 
 Note: This repo only contains the hardware design, the gateware running on the FPGA is my open-source [Caster EPDC](https://gitlab.com/zephray/Caster/) design. This README also contains information about the Caster as well.
 
-![Overall Blockdiagram](assets/glider_overall_block_diagram.svg)
+![Hardware Photo](assets/hw_with_screen.jpg)
 
 This is a long document, containing not just information about this project, but also pretty much everything I know about Eink. Given it's a bit hard to gather information about Eink online, I think this is the right thing to do. Use the following table of contents to navigate around.
 
@@ -196,6 +196,8 @@ This diagram illustrates the difference between two. It should be noted that the
 ### Using Screen with Integrated Controller
 
 Screens with integrated controller have almost everything already integrated. Common display panels in this type only need few external capacitors, inductors, and MOSFETs to support the integrated bipolar power supply circuit, then it could be hooked up to MCUs or MPUs using common interfaces like SPI or I2C. There are a lot of driving boards and examples of these screens available online.
+
+To be expanded (TODO)
 
 ### Using Screen without Integrated Controller
 
@@ -477,6 +479,16 @@ One major advantage of this solution is it can achieve higher resolution (becaus
 
 Eink has 2 lines of products using this Technology, Eink Gallery and Eink Spectra. The advantage is it's much brighter compared to CFA based solutions. The disadvantage is it's much more difficult to drive, and quite slow: 1st /2nd gen Eink Gallery screen takes 30s (!) to refresh, and Spectra 6 Plus devices takes 7s to refresh. It's possible to trade-in some color saturation for higher speed, though still much slower than CFA based solutions. The specific product lines will be discussed in [Eink Screen Generations](#eink-screen-generations)
 
+##### How ACeP Waveform Works
+
+To be written (TODO)
+
+##### How to get more colors on ACeP
+
+This is possible with modified waveform.
+
+To be written (TODO)
+
 ##### What Happened To ACeP?
 
 [ACeP was supposed to the "next big thing" in ereader](https://arstechnica.com/gadgets/2022/04/new-e-ink-gallery-displays-could-finally-make-full-color-e-readers-good/). Back in the end 2022, Eink anounnced that ["Gallery 3 has moved into mass production, with customer products from Bigme, BOOX, iFlyTek, iReader, PocketBook, Readmoo, and AOC coming down the pipeline in 2023 and beyond"](https://www.e-ink-info.com/e-ink-gallery-3-acep-color-epaper-displays-move-mass-production). But 2023 passed with exactly one product, the Bigme Galy, with mixed receptions. Early 2024, it was announced that [Bigme Galy has been discontinued](https://goodereader.com/blog/electronic-readers/bigme-galy-is-discontinued), and [Eink have announced EOL for certain ACeP based products](https://www.ineltek.com/wp-content/uploads/2024/04/EInk_AC073TC1_EOLNoticeLetter_notice_20240401.pdf). It does sound like ACeP is now dead.
@@ -724,6 +736,10 @@ What Caster implemented is allowing it to switch between the fast binary mode an
 
 The method does come with downsides: it requires much more memory bandwidth to implement. Taking a 1080P panel as an example (roughly 120 Mp/s (million pixels per second) with reduced blanking). With the traditional method, the controller only needs the old pixel state and the new pixel state (4bpp each) to determine the voltage needed, or 8-bit/ 1-byte memory read per pixel. The bandwidth requirement is then 120Mp/s x 1B/pixel = 120MB/s. One single 16-bit SDR-133 SDRAM is more than enough to handle this. The Caster currently stores 16bit state per pixel (for 2 sets of old pixel values and pixel specific timer counters), and the pixel state needs to be updated per frame, so pixel state buffer alone requires 2-byte read and 2-byte write per pixel. It then takes another 0.5-byte per pixel to read the new image value from memory. 120Mp/s x 4.5B/pixel = 540MB/s. A 16-bit DDR-333 memory is then needed to implement this. The Glider hardware uses a DDR3-800 memory to allow even higher resolution. If the controller is not integrated inside an SoC (like our case, the controller is sitting inside the monitor, not part of your PC’s CPU/GPU), it also needs to use actual low latency video interfaces like DVI or DP, instead of simpler but slower interfaces like USB or I80/SPI. This could drive up cost as well. These techniques also don't help with use cases like reading books, so commercial ereader solutions have little reason to spend the extra trouble to implement these.
 
+### Hardware Design Decisions
+
+To be written (TODO)
+
 ### Resources Utilization
 
 The following number are for reference only and would vary depending on RTL options and specific target.
@@ -742,11 +758,11 @@ There are 2 versions of the mainboard, one full version and a lite version. For 
 
 ### FPGA Bitstream
 
-To be written
+To be written (TODO)
 
 ### MCU Firmware
 
-To be written
+To be written (TODO)
 
 ### Working with Waveforms
 
