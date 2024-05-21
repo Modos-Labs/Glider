@@ -10,6 +10,8 @@ This is a long document, containing not just information about this project, but
 
 Eink is a registered trademark and brand of E Ink Corporation. All the contents provided in this repo are based on publicly available information online and original research. They are not endorsed by Eink in any way and they may contain errors and/ or inaccuracies. 
 
+If you're interested in attaining a board, or the reference monitor, see and subscribe to the [pre-launch page for the Modos Paper Monitor on Crowd Supply](https://www.crowdsupply.com/modos-tech/modos-paper-monitor) for updates.
+
 If you are interested in Eink or any other display technologies, I have a Discord server for that. Feel free to join: https://discord.gg/rtT7euSHQS . (This Discord server is also not endorsed by Eink or any other company. It's not a customer support server.)
 
 ## Table of Contents 
@@ -952,12 +954,16 @@ The adapter column refers to the adapter needed for this particular screen, howe
 
 | Model Name | Model Number | FPL Platform | Resolution  | Marketing Name              | R Typ | CR Typ | Year  | Interface | Pin Count | Adapter | Tested? |
 | ---------- | ------------ | ------------ | ----------- | --------------------------- | ----- | ------ | ----- | --------- | --------- | ------- | ------- |
+| ED038TH1   |              | V320         | 600x600     | Carta                       | 45%   | 17:1   | 2015  | TTL       | 34        | 34P-A   |         |
+| ET040TC1   |              |              | 720x480     | Pearl                       |       |        |       | TTL       |           |         |         |
+| ET040TC2   |              |              | 720x480     | Pearl                       |       |        |       | TTL       |           |         |         |
 | ED043WC1   |              | V220         | 800x480     | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        | 39P-C   |         |
 | ED043WC3   | VA3200-DCA   | V220         | 800x480     | Pearl                       |       |        | 2014  | TTL       | 39        | 39P-C   |         |
 | ED043WC5   | VD1405-CGA   | 400          | 800x480     | Carta 1200                  |       |        |       | SPI       |           |         |         |
 | ED047TC1   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2015  | TTL       | 44        |         |         |
 | ED047TC2   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2016  | TTL       | 44        |         |         |
 | ET047TC1   |              | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
+| ET047TC2   |              | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
 | ED050SC3   |              | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 33        | 33P-A   |         |
 | ED050SU3   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 39        |         |         |
 | ED052TC2   |              | 320          | 960x540     | Carta                       | 45%   | 16:1   | 2016  | TTL       | 40        |         |         |
@@ -1012,8 +1018,9 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED068TG1   |              | 320          | 1440x1080   | Carta                       |       |        | <2013 | TTL       |           |         |         |
 | ED068TH1   |              | 320          | 1440x1080   | Carta                       |       |        | <2014 | TTL       |           |         |         |
 | ED068TH3   | VB3300-FHA   | 320          | 1440x1080   | Carta                       |       |        |       | TTL       |           |         |         |
-| ED068KC1   |              | 400SU        | 1648x1236   | Carta 1200                  |       |        |       | TTL       |           |         |         |
-| ED068KC5   | VD1405-FHF   | 400          | 1648x1236   | Carta 1200                  | \>44% | \>19:1 |       | TTL       |           |         |         |
+| ED068KC1   |              | 400SU        | 1648x1236   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
+| ED068KC3   | VD1405-FHD   | 400          | 1648x1236   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
+| ED068KC5   | VD1405-FHF   | 400          | 1648x1236   | Carta 1200                  | \>44% | \>19:1 |       | TTL       | 40        |         |         |
 | ED070KC2   |              | 320          | 1680x1264   | Carta 1100                  | \>47% | \>16:1 |       | TTL       |           |         |         |
 | ED070KC3   |              | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
 | ED070KC4   | VD1400-GOC   | 400          | 1680x1264   | Carta 1200                  |       |        |       | TTL       |           |         |         |
@@ -1083,7 +1090,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED280TT1   | VB3300-PHA   | 320          | 3840x1080   | Carta 1.2                   | 40%   | 12:1   | 2020  | MiniLVDS  | 51x2      |         |         |
 | ED312TT2   | VA3200-QAA   | V220         | 2560x1440   | Pearl                       |       |        |       | TTL       | 50x4      |         |         |
 | ED312TT3   | VA3200-QAB   | V220         | 2560x1440   | Pearl                       | 40%   | 12:1   | 2018  | TTL       | 50x4      |         |         |
-| EC312TT2   | SB1452-QAA   |              | 2560x1440   | Triton                      |       |        |       | TTL       | 50x4      |         |         |
+| EC312TT2   | SB1452-QAA   | V220         | 2560x1440   | Triton                      |       |        |       | TTL       | 50x4      |         |         |
 | EL315TW1   | ED2208-QBA   |              | 2560x1440   | Spectra 6                   |       |        |       | QSPI      |           |         |         |
 | ED420TT1   |              | V220         | 2880x2160   | Pearl                       |       |        |       | TTL       | 50x2      |         |         |
 | ED420TT3   | VB3300-RBA   | 320          | 2880x2160   | Carta 1.2                   | 45%   | 16:1   | 2020  | TTL       | 50x2      |         |         |
