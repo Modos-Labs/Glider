@@ -5024,7 +5024,7 @@
 	)
 	(global_label "FL_PWM"
 		(shape output)
-		(at 233.68 124.46 0)
+		(at 233.68 104.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5033,7 +5033,7 @@
 		)
 		(uuid "d34e5c36-a47d-44f9-b0d4-0210d8ce6cda")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 337.82 238.76 0)
+			(at 337.82 218.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)

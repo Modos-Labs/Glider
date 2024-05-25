@@ -8486,7 +8486,7 @@
 		)
 		(uuid "fe450efb-ecd5-43ca-b337-0da8e01a3220")
 	)
-	(text "Use\nAMPHENOL_10137065-00021LF\nXUNPU TYPEC-324G-ACP24"
+	(text "Use\nXUNPU TYPEC-324G-ACP24"
 		(exclude_from_sim no)
 		(at 22.86 63.5 0)
 		(effects
@@ -12199,7 +12199,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "footprints:AMPHENOL_10137065-00021LF"
+		(property "Footprint" "footprints:XUNPU_TypeC-324G-ACP24"
 			(at 44.45 93.98 0)
 			(effects
 				(font
@@ -12304,6 +12304,10 @@
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/80373716-d41f-4f06-92dd-577434075703"
+					(reference "J1")
+					(unit 1)
+				)
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/1afc3cb7-9ace-435f-9131-835660c51142"
 					(reference "J1")
 					(unit 1)
 				)
