@@ -5283,7 +5283,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_FFC-FPC:Hirose_FH12-34S-0.5SH_1x34-1MP_P0.50mm_Horizontal"
+		(property "Footprint" "footprints:AXT334124"
 			(at 198.12 96.52 0)
 			(effects
 				(font
