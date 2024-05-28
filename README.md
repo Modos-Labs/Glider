@@ -445,7 +445,7 @@ The actual photo of the DES panel under the microscope:
 
 ![color-des](assets/color_des.jpg)
 
-In the above photo, the DES pixel arrangement is the same as the OLPC XO-1.
+In the above photo, the DES pixel arrangement is the same as the OLPC XO-1. Notably, many Eink's Kaleido 3 (but not all) also uses the same pixel arrangement.
 
 Having no subpixel / each pixel only has 1 color doesn't necessarily mean that the effective resolution needs to be divided by 3. This arrangement is slightly more "efficient" than the RGB strip in terms of perceptive resolution. You can find a more detailed analysis in the paper Comparing the Effective Resolution of Various RGB Subpixel Layout.
 
@@ -501,12 +501,12 @@ To be written (TODO)
 
 The following are purely my speculation. But I see this as 2 separate decisions:
 
-- There will be no more multi-pigment-based displays for the eReader market
+- ~~There will be no more multi-pigment-based displays for the eReader market~~
 - ACeP (CMYW) is being replaced with Spectra 6 (RYBW) in other markets
 
 The second one is evident from the EOL notice linked previously, the 7.3" ACeP screen has a direct replacement of the 7.3" Spectra 6 screen. One major drawback of ACeP in the digital signage market (as far as I see) is its inability to reproduce the cyan color. This actually means there is no good way to display blue sky on an ACeP screen, not even through dithering, it's simply outside of its color gamut. By changing the base colors used, Eink was able to mitigate this issue in the Spectra 6 product lines.
 
-The first one is more or less speculation. I have two clues for that. One is the fact that Eink is doubling down on digital signage for Spectra 6: [Both 13.3" and 31.5" Spectra 6 screens will have integrated controller](https://www.beck-elektronik.de/en/newsroom/news/article/e-ink-spectratm-6-der-hingucker-des-jahres-2024). This make them much more interesting for the signage applications, but unsuitable for eReader applications. The other is that [the 8" Spectra 6 Plus screen](https://www.ereaderpro.co.uk/en/blogs/news/e-ink-news-eink-technology-has-unveiled-the-new-generation-of-colour-e-paper-technology-e-ink-spectra-6-plus-designed-for-retail-tags-and-advertising-billboards), while using the same backplane as the Gallery 3 ACeP screen, now quote a 7 second refresh time (compared to less than a second on Gallery 3). If Eink still wanted to make a Spectra 6 eReader screen, this 8" backplane would be the one to use given it was used in the ACeP product line.
+The first one is more or less speculation. (UPDATE: I WAS WRONG, read on) I have two clues for that. One is the fact that Eink is doubling down on digital signage for Spectra 6: [Both 13.3" and 31.5" Spectra 6 screens will have integrated controller](https://www.beck-elektronik.de/en/newsroom/news/article/e-ink-spectratm-6-der-hingucker-des-jahres-2024). This make them much more interesting for the signage applications, but unsuitable for eReader applications. The other is that [the 8" Spectra 6 Plus screen](https://www.ereaderpro.co.uk/en/blogs/news/e-ink-news-eink-technology-has-unveiled-the-new-generation-of-colour-e-paper-technology-e-ink-spectra-6-plus-designed-for-retail-tags-and-advertising-billboards), while using the same backplane as the Gallery 3 ACeP screen, now quote a 7 second refresh time (compared to less than a second on Gallery 3). If Eink still wanted to make a Spectra 6 eReader screen, this 8" backplane would be the one to use given it was used in the ACeP product line.
 
 Objectively, the ACeP screen on the Bigme Galy pretty much doesn't make any sense anyway. It suffers from poor reflectivity and poor saturation to a point where it's not much better than Kaleido (see the previous photo). The difference between Gallery 3 and Gallery Palette (which is supposed to be a lower-end product) is also stunning:
 
@@ -516,7 +516,10 @@ Objectively, the ACeP screen on the Bigme Galy pretty much doesn't make any sens
 
 The one on the left is the Gallery 3 used on eReaders, and the one on the right (brighter and more saturated one) is the Gallery Palette used on ESLs. Though to be honest I hacked the right one a bit to display 512 colors opposed to the stock 7 colors. If Gallery 3 had the same image quality as previous ACeP/ Gallery screens, it would make sense to trade in response time for better image quality. But it doesn't.
 
-So is the ACeP dead? Yes and no. Yes in the sense that we are less likely to see any new ACeP products in the future, and we are also unlikely to see any Spectra 6-based eReader products. No in the sense that ACeP is superseded by Spectra 6, so the technology lives on. Just like how the Pearl replaced the Vizplex, and the Carta replaced the Pearl. Now we have Carta so we don't look back to the older generation of screens. Also, in another sense, there are likely at least thousands of ACeP screens already manufactured but haven't been made into consumer devices. We will probably see these screens in the not-too-distant future! 
+So is the ACeP dead? Yes and no. ~~Yes in the sense that we are less likely to see any new ACeP products in the future~~, and we are also unlikely to see any Spectra 6-based eReader products. No in the sense that ACeP is superseded by Spectra 6, so the technology lives on. Just like how the Pearl replaced the Vizplex, and the Carta replaced the Pearl. Now we have Carta so we don't look back to the older generation of screens. Also, in another sense, there are likely at least thousands of ACeP screens already manufactured but haven't been made into consumer devices. We will probably see these screens in the not-too-distant future! 
+
+UPDATE: As pointed out in a [reddit post by Disastrous_Analyst_1](https://www.reddit.com/r/eink/comments/1d2j4mv/gallery_3_part_ii/), Eink in their [2023 Annual Report](https://www.eink.com/upload/2024_05_27/47_20240527170208rfrozhGN77.pdf) said that "In 2024, we will provide an upgraded version of the 8-inch advanced color ePaper (Gallery™ 3), aiming to deliver optimized performance and enhanced visual experience for customers. (在 2024 年，我們將進一步提供進階版 8 吋先進彩色電子紙（Gallery ™ 3），期待能提
+供更優化的性能及更好的視覺體驗給客戶)" in V. Operational Highlights, 5.1 Business Activities, 5.1.2 Industrial Overview, 3. Product Developmenet Trends, A. eReader. This means we might be able to see more Gallery 3 (or similar technology) based eReaders in the years to come.
 
 ### Dithering
 
@@ -658,7 +661,7 @@ For the CFA-based screens, the following generations of screens exist:
 - Eink Triton 2: 2nd generation color screen. Uses RGB glass color filter and stripe pixel. The underlying screen panel uses Pearl film.
 - Eink Kaleido: 3rd or 2nd gen color screen depending on the definition. Uses an RGB color filter. Each pixel is still square, but each color covers 3 pixels. The underlying screen panel uses Carta film.
 - Eink Kaleido Plus: 2nd gen Kaleido. Uses an RGB color filter. Each pixel is still square but different configurations exist. Some screens have each color covering 2 pixels, some others have each color covering only 1 pixel. The underlying screen panel uses Carta film.
-- Eink Kaleido 3: 3rd gen Kaleido. There are many different configurations, ranging from RGBW filter covering 1 pixel per color, to RGB filter covering 3 pixels per color more like the original Kaleido. The underlying screen panel uses Carta 1000/1200/1250/1300 film depending on the model.
+- Eink Kaleido 3: 3rd gen Kaleido. There are at least 2 different configurations exist. One features RGB filter covering 1 pixel per color, the other features a 2R/2G/1B configuration, on average 5/3 pixels per color. The underlying screen panel uses Carta 1000/1200/1250/1300 film depending on the model.
 - Eink Kaleido 3 Outdoor: Wide temperature version of Kaleido 3.
 
 As far as I know, all CFA-based color screen panels don't come with an integrated controller.
@@ -672,18 +675,19 @@ For the multiple-pigment color screens based on SiPix technology, the following 
 - Eink Spectra 3100 Plus: BWRY 4 color screen. The orange display is now possible with driver circuit changes
 - Eink Spectra 6: RYBW 4 color screen. Can reproduce 6 different colors by mixing colors
 - Eink Spectra 6 Plus: RYBW 4 color screen. Still reproduces 6 different colors. Allows faster refresh compared to 6 with driver circuit changes
-- Eink Gallery: CMYW 4 color screen (ACeP).
-- Eink Gallery Plus: CMYW 4 color screen (ACeP).
-- Eink Gallery Palette： CMYW 4 color screen (ACeP). Reproduce 7 different colors.
-- Eink Gallery 3: CMYW 4 color screen (ACeP). Reproduce 12 different colors, much faster than other Gallery screens at the cost of lower saturation and lower reflectivity
+- Eink Gallery (also known as Gallery 4000): CMYW 4 color screen (ACeP).
+- Eink Gallery Plus (also known as Gallery 4000): CMYW 4 color screen (ACeP).
+- Eink Gallery Palette (also known as Gallery Palette 4000)： CMYW 4 color screen (ACeP). Reproduce 7 different colors.
+- Eink Gallery 3: CMYW 4 color screen (ACeP). Reproduce around 10 different colors, much faster than other Gallery screens at the cost of lower saturation and lower reflectivity
 
 There are both integrated-controller Spectra/Gallery screens and controller-less Spectra/Gallery screens.
 
 Additional notes regarding the multi-pigment color screens:
 
 - ACeP, or Advanced Color ePaper refers to the CMYW 4 color screen. Is not a product line on its own
-- To be honest, I don't know how many colors can be reproduced on Gallery or Gallery Plus screens based on public information. Eink claims 30000 or 60000 colors in their materials, but they also clarified these numbers refer to color gamut. In other words, they represent color saturation rather than a number of different colors that can be displayed on screen. Dithering is heavily used to display color images on Gallery screens.
-- It's possible to achieve more colors on Gallery Palette screens. 7 is not a physical limit. 
+- To be honest, I don't know how many colors can be reproduced on Gallery or Gallery Plus screens based on public information. The spec sheets for [AC133UT1](https://www.beck-elektronik.de/fileadmin/user_upload/Produkte/BECK_Elektronik/Displays/Downloads/EPD/E-Ink/AC133UT1_Specs.pdf?v=1662907755) suggests it might be 8 colors. Eink claims 32000 or 60000 colors in their materials, but they also clarified these numbers refer to color gamut. In other words, they represent color saturation rather than a number of different colors that can be displayed on screen. Dithering is heavily used to display color images on Gallery screens.
+- It's possible to achieve more colors on Gallery Palette screens. 7 is not a physical limit.
+- The Gallery 4000 rebranding happened in [2020](https://www.linkedin.com/pulse/e-ink-gallery-4000-anna-rybalko/) however Eink never seems to use that name on their website.
 
 ## Design of Caster and Glider
 
