@@ -80,6 +80,8 @@ int main()
     adv7611_init();
 #endif
 
+    //sleep_ms(1000);
+
     power_enable(true);
 
     //sleep_run_from_xosc();
@@ -127,7 +129,7 @@ int main()
         if (keys & 0x1) {
             // First key short press
             // Clear screen
-            caster_redraw(0,0,2400,1200);
+            caster_redraw(0,0,2400,1800);
         }
         if (keys & 0x2) {
             // First key long press
@@ -137,7 +139,7 @@ int main()
              // Switch mode
             mode++;
             if (mode >= mode_max) mode = 0;
-            caster_setmode(0,0,2400,1200,modes[mode]);
+            caster_setmode(0,0,2400,1800,modes[mode]);
         }
         if (keys & 0x8) {
             // Second key long press

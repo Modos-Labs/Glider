@@ -63,21 +63,21 @@ static const uint8_t adv7611_init_1[] = {
     ADV7611_I2C_ADDR,   0xfb, (HDMI_I2C_ADDR << 1),
     ADV7611_I2C_ADDR,   0xfd, (CP_I2C_ADDR << 1),
 
-    ADV7611_I2C_ADDR,   0x01, 0x05, // Prim_mode = 110b HDMI-GR
-    ADV7611_I2C_ADDR,   0x00, 0x13,
-    ADV7611_I2C_ADDR,   0x02, 0xf2, // F8 = YUV, F2 = RGB
-    ADV7611_I2C_ADDR,   0x03, 0x40, // 40 = 444
+    ADV7611_I2C_ADDR,   0x01, 0x06, // Prim_mode = 110b HDMI-GR
+    ADV7611_I2C_ADDR,   0x00, 0x17, // VID-STD: UXGA-R
+    ADV7611_I2C_ADDR,   0x02, 0xf8, // F8 = YUV, F2 = RGB
+    ADV7611_I2C_ADDR,   0x03, 0x40, // 40 = 24bit 444 SDR
     ADV7611_I2C_ADDR,   0x04, 0x42, // P[23:16] V/R, P[15:8] Y/G, P[7:0] U/CrCb/B CLK=28.63636MHz
-    ADV7611_I2C_ADDR,   0x05, 0x28,
-    ADV7611_I2C_ADDR,   0x06, 0xa7,
+    ADV7611_I2C_ADDR,   0x05, 0x28, // Do not insert AV codes
+    ADV7611_I2C_ADDR,   0x06, 0xa6, // VS OUT SEL, F/VS/HS/LLC POL
     ADV7611_I2C_ADDR,   0x0b, 0x44,
     ADV7611_I2C_ADDR,   0x0C, 0x42,
     ADV7611_I2C_ADDR,   0x15, 0x80,
     ADV7611_I2C_ADDR,   0x19, 0x8a,
     ADV7611_I2C_ADDR,   0x33, 0x40,
-    ADV7611_I2C_ADDR,   0x14, 0x3f,
+    ADV7611_I2C_ADDR,   0x14, 0x7f,
     CP_I2C_ADDR,        0xba, 0x01,
-    CP_I2C_ADDR,        0x7c, 0x01,
+    //CP_I2C_ADDR,        0x7c, 0x01,
     KSV_I2C_ADDR,       0x40, 0x81, // DSP_Ctrl4 :00/01 : YUV or RGB; 10 : RAW8; 11 : RAW10
     HDMI_I2C_ADDR,      0x9b, 0x03, // ADI recommanded setting
     HDMI_I2C_ADDR,      0xc1, 0x01, // ADI recommanded setting
@@ -88,13 +88,13 @@ static const uint8_t adv7611_init_1[] = {
     HDMI_I2C_ADDR,      0xc6, 0x01, // ADI recommanded setting
     HDMI_I2C_ADDR,      0xc7, 0x01, // ADI recommanded setting
     HDMI_I2C_ADDR,      0xc8, 0x01, // ADI recommanded setting
-    HDMI_I2C_ADDR,      0xc9, 0x01, // ADI recommanded settin g
+    HDMI_I2C_ADDR,      0xc9, 0x01, // ADI recommanded setting
     HDMI_I2C_ADDR,      0xca, 0x01, // ADI recommanded setting
     HDMI_I2C_ADDR,      0xcb, 0x01, // ADI recommanded setting
     HDMI_I2C_ADDR,      0xcc, 0x01, // ADI recommanded setting
     HDMI_I2C_ADDR,      0x00, 0x00, // Set HDMI input Port A
     HDMI_I2C_ADDR,      0x83, 0xfe, // terminator for Port A
-    HDMI_I2C_ADDR,      0x6f, 0x08, // ADI recommended setting
+    HDMI_I2C_ADDR,      0x6f, 0x0c, // ADI recommended setting
     HDMI_I2C_ADDR,      0x85, 0x1f, // ADI recommended setting
     HDMI_I2C_ADDR,      0x87, 0x70, // ADI recommended setting
     HDMI_I2C_ADDR,      0x8d, 0x04, // LFG

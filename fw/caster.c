@@ -54,6 +54,8 @@ void caster_init(void) {
     // fpga_write_reg8(CSR_CFG_H_BP, TCON_HBP);
     // fpga_write_reg16(CSR_CFG_H_ACT, TCON_HACT);
     // fpga_write_reg8(CSR_CONTROL, 1); // Enable refresh
+    //fpga_write_reg8(CSR_CFG_MINDRV, 0);
+    fpga_write_reg8(CSR_LUT_FRAME, 38);
 }
 
 void caster_load_waveform(uint8_t *waveform, uint8_t frames) {

@@ -52,6 +52,7 @@
 #define CSR_CFG_FBYTES_B2   27
 #define CSR_CFG_FBYTES_B1   28
 #define CSR_CFG_FBYTES_B0   29
+#define CSR_CFG_MINDRV      30
 // Alias for 16bit registers
 #define CSR_LUT_ADDR        CSR_LUT_ADDR_HI
 #define CSR_OP_LEFT         CSR_OP_LEFT_HI

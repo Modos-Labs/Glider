@@ -29,20 +29,24 @@
 
 // #define SCREEN_6_0_INCH
 // #define SCREEN_7_8_INCH
+// #define SCREEN_9_7_INCH
+// #define SCREEN_10_1_INCH
 // #define SCREEN_10_3_INCH
 // #define SCREEN_10_8_INCH
-#define SCREEN_11_3_INCH
-// #define SCREEN_13_3_INCH
+// #define SCREEN_11_3_INCH
+#define SCREEN_13_3_INCH
 
 // #define SCREEN_600_800
 // #define SCREEN_800_600
 // #define SCREEN_1024_758
+// #define SCREEN_1200_825
 // #define SCREEN_1448_1072
-// #define SCREEN_1600_1200
+#define SCREEN_1600_1200
 // #define SCREEN_1872_1404
 // #define SCREEN_1920_1080
 // #define SCREEN_2200_1650
-#define SCREEN_2400_1034
+// #define SCREEN_2232_1680
+//#define SCREEN_2400_1034
 
 #define SCREEN_MONO
 // #define SCREEN_DES_COLOR
@@ -73,6 +77,14 @@
 #elif defined(SCREEN_7_8_INCH)
 #define SCREEN_SIZE_X   158
 #define SCREEN_SIZE_Y   119
+#define SCREEN_ASPECT   SCREEN_ASPECT_4_3
+#elif defined(SCREEN_9_7_INCH)
+#define SCREEN_SIZE_X   203
+#define SCREEN_SIZE_Y   139
+#define SCREEN_ASPECT   SCREEN_ASPECT_4_3
+#elif defined(SCREEN_10_1_INCH)
+#define SCREEN_SIZE_X   203
+#define SCREEN_SIZE_Y   152
 #define SCREEN_ASPECT   SCREEN_ASPECT_4_3
 #elif defined(SCREEN_10_3_INCH)
 #define SCREEN_SIZE_X   209
@@ -137,6 +149,26 @@
 #define TCON_VBP        3
 #define TCON_VSYNC      1
 #define TCON_VFP        12
+#elif defined(SCREEN_1200_825)
+// 1200x832 @ 60, 80.5MHz CVT
+#define SCREEN_CLK      81000
+#define SCREEN_HACT     1200
+#define SCREEN_VACT     832
+#define SCREEN_HBLK     368
+#define SCREEN_HFP      64
+#define SCREEN_HSYNC    120
+#define SCREEN_VBLK     32
+#define SCREEN_VFP      3
+#define SCREEN_VSYNC    10
+
+#define TCON_HACT       300
+#define TCON_HBP        10
+#define TCON_HSYNC      20
+#define TCON_HFP        62
+#define TCON_VACT       832
+#define TCON_VBP        3
+#define TCON_VSYNC      1
+#define TCON_VFP        20
 #elif defined(SCREEN_1448_1072)
 // 1448x1072 @ 60, 128.5MHz CVT
 #define SCREEN_CLK      128500
@@ -159,6 +191,16 @@
 // #define SCREEN_VBLK     50
 // #define SCREEN_VFP      1
 // #define SCREEN_VSYNC    3
+// 1600x1200 @ 60, 130.25MHz CVT-RB
+// #define SCREEN_CLK      130250
+// #define SCREEN_HACT     1600
+// #define SCREEN_VACT     1200
+// #define SCREEN_HBLK     160
+// #define SCREEN_HFP      48
+// #define SCREEN_HSYNC    32
+// #define SCREEN_VBLK     35
+// #define SCREEN_VFP      3
+// #define SCREEN_VSYNC    4
 // 1600x1200 @ 60, 124.488MHz CVT-RB-v2
 #define SCREEN_CLK      124488
 #define SCREEN_HACT     1600
@@ -171,13 +213,13 @@
 #define SCREEN_VSYNC    8
 
 #define TCON_HACT       400
-#define TCON_HBP        2
-#define TCON_HSYNC      2
-#define TCON_HFP        16
+#define TCON_HBP        10
+#define TCON_HSYNC      10
+#define TCON_HFP        120
 #define TCON_VACT       1200
 #define TCON_VBP        2
 #define TCON_VSYNC      1
-#define TCON_VFP        12
+#define TCON_VFP        45
 #elif defined(SCREEN_1872_1404)
 // 1872x1404 @ 60, 162MHz Custom
 #define SCREEN_CLK      162000
@@ -211,6 +253,17 @@
 #define SCREEN_VBLK     20
 #define SCREEN_VFP      1
 #define SCREEN_VSYNC    5
+#elif defined(SCREEN_2232_1680)
+// 2232x1680 @ 50, 198.25MHz Custom
+#define SCREEN_CLK      178000
+#define SCREEN_HACT     2232
+#define SCREEN_VACT     1680
+#define SCREEN_HBLK     80
+#define SCREEN_HFP      8
+#define SCREEN_HSYNC    32
+#define SCREEN_VBLK     35
+#define SCREEN_VFP      21
+#define SCREEN_VSYNC    8
 #elif defined(SCREEN_2400_1034)
 // 2400x1034
 #define SCREEN_CLK      159000
