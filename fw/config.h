@@ -23,7 +23,8 @@
 
 /* BOARD REVISION CONFIGURATION */
 // Eariler revisions are not supported
-#define BOARD_REV_R0P7
+#define BOARD_REV_R0P6
+//#define BOARD_REV_R0P7
 
 /* SCREEN CONFIGURATION */
 
@@ -53,12 +54,61 @@
 
 
 /* SET BASED ON PREVIOUS DEFINES, DO NOT MODIFY */
-#if defined(BOARD_REV_R0P7)
+#if defined(BOARD_REV_R0P6)
+#define POWER_GPIO
+#define INPUT_PTN3460
+#define HAS_TYPEC
+
+#define TYPEC_MB_ORI_INV    1
+#define TYPEC_AUX_ORI_INV   1
+
+#define I2C_SDA     0
+#define I2C_SCL     1
+
+#define TCPC_I2C i2c0
+
+#define FPGA_CS     12
+#define FPGA_MOSI   13
+#define FPGA_MISO   14
+#define FPGA_SCLK   15
+#define FPGA_PROG   17
+#define FPGA_DONE   18
+#define FPGA_SUSP   19
+
+#define PTN3460_I2C         (i2c0)
+#define PTN3460_HPD_PIN     (8)
+#define PTN3460_PDN_PIN     (9)
+#define PTN3460_VALID_PIN   (2)
+
+#elif defined(BOARD_REV_R0P7)
 #define POWER_GPIO
 #define POWER_GPIO_VCOM_MEASURE
 #define INPUT_ADV7611
 #define INPUT_PTN3460
 #define HAS_TYPEC
+#define HAS_BUTTON
+
+#define TYPEC_MB_ORI_INV    0
+#define TYPEC_AUX_ORI_INV   1
+
+#define I2C_SDA     2
+#define I2C_SCL     3
+
+#define TCPC_I2C i2c1
+
+#define FPGA_CS     13
+#define FPGA_MOSI   15
+#define FPGA_MISO   12
+#define FPGA_SCLK   14
+#define FPGA_PROG   17
+#define FPGA_DONE   18
+#define FPGA_SUSP   19
+
+#define PTN3460_I2C         (i2c1)
+#define PTN3460_HPD_PIN     (7)
+#define PTN3460_PDN_PIN     (9)
+#define PTN3460_VALID_PIN   (4)
+
 #else
 #error "Unknown board revision"
 #endif

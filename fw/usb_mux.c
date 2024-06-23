@@ -48,15 +48,13 @@ void usb_mux_set(int port, enum typec_mux mux_mode,
         if (polarity == 0) {
             // Not flipped
             printf("Setting orientation to not flipped\n");
-            gpio_put(USBC_ORI_PIN, 0);
-            ptn3460_set_aux_polarity(1);
         }
         else {
             // Flipped
             printf("Setting orientation to flipped\n");
-            gpio_put(USBC_ORI_PIN, 1);
-            ptn3460_set_aux_polarity(0);
         }
+        gpio_put(USBC_ORI_PIN, polarity ^ TYPEC_MB_ORI_INV);
+        ptn3460_set_aux_polarity(polarity ^ TYPEC_AUX_ORI_INV);
     }
 }
 

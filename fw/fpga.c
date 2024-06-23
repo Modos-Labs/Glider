@@ -22,16 +22,9 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 #include "utils.h"
+#include "config.h"
 #include "fpga.h"
 #include "bitstream.h"
-
-#define FPGA_CS     13
-#define FPGA_MOSI   15
-#define FPGA_MISO   12
-#define FPGA_SCLK   14
-#define FPGA_PROG   17
-#define FPGA_DONE   18
-#define FPGA_SUSP   19
 
 static int fpga_done = 0;
 

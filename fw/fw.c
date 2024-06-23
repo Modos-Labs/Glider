@@ -51,11 +51,11 @@ int main()
 #endif
 
     // Initialize I2C for TCPC/PTN3460/ADV7611 use
-    i2c_init(i2c1, 100*1000);
-    gpio_set_function(2, GPIO_FUNC_I2C);
-    gpio_set_function(3, GPIO_FUNC_I2C);
-    gpio_pull_up(2);
-    gpio_pull_up(3);
+    i2c_init(TCPC_I2C, 100*1000);
+    gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);
+    gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);
+    gpio_pull_up(I2C_SDA);
+    gpio_pull_up(I2C_SCL);
 
 #ifdef HAS_TYPEC
     int result = tcpm_init(0);

@@ -31,10 +31,6 @@
 #ifdef INPUT_PTN3460
 
 #define PTN3460_I2C_ADDRESS (0x60)
-#define PTN3460_I2C         (i2c1)
-#define PTN3460_HPD_PIN     (7)
-#define PTN3460_PDN_PIN     (9)
-#define PTN3460_VALID_PIN   (4)
 
 void ptn3460_select_edid_emulation(uint8_t id) {
     uint8_t buf[2];

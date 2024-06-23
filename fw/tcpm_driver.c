@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
+#include "config.h"
 #include "tcpm_driver.h"
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
@@ -28,8 +29,6 @@
 const struct tcpc_config_t tcpc_config[CONFIG_USB_PD_PORT_COUNT] = {
   {0, FUSB302_I2C_SLAVE_ADDR, &fusb302_tcpm_drv},
 };
-
-#define TCPC_I2C i2c1
 
 void tcpc_i2c_init(void) {
     // Should be initialized at board level init to avoid dependencies between
