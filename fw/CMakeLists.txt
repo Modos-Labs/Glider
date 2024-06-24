@@ -35,10 +35,12 @@ add_executable(fw
         power.c
         ptn3460.c
         tcpm_driver.c
+        usb_descriptors.c
         usb_mux.c
         usb_pd_driver.c
         usb_pd_policy.c
         usb_pd_protocol.c
+        usbapp.c
         utils.c
         )
 
@@ -46,10 +48,14 @@ pico_set_program_name(fw "fw")
 pico_set_program_version(fw "0.1")
 
 pico_enable_stdio_uart(fw 0)
-pico_enable_stdio_usb(fw 1)
+pico_enable_stdio_usb(fw 0)
+
+# Make sure TinyUSB can find tusb_config.h
+target_include_directories(fw PUBLIC
+        ${CMAKE_CURRENT_LIST_DIR})
 
 # Add the standard library to the build
-target_link_libraries(fw pico_stdlib hardware_sleep)
+target_link_libraries(fw pico_stdlib hardware_sleep tinyusb_device tinyusb_board)
 
 # Add any user requested libraries
 target_link_libraries(fw

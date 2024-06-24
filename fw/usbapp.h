@@ -1,5 +1,5 @@
 //
-// Copyright 2022 Wenting Zhang <zephray@outlook.com>
+// Copyright 2024 Wenting Zhang <zephray@outlook.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,9 +21,12 @@
 //
 #pragma once
 
-void fpga_init(void);
-void fpga_suspend(void);
-void fpga_resume(void);
-uint8_t fpga_write_reg8(uint8_t addr, uint8_t val);
-void fpga_write_reg16(uint8_t addr, uint16_t val);
-void fpga_write_bulk(uint8_t addr, uint8_t *buf, int length);
+#define USBCMD_RESET        0x00
+#define USBCMD_POWERDOWN    0x01
+#define USBCMD_POWERUP      0x02
+#define USBCMD_SETINPUT     0x03
+#define USBCMD_REDRAW       0x04
+#define USBCMD_SETMODE      0x05
+
+void usbapp_init(void);
+void usbapp_task(void);
