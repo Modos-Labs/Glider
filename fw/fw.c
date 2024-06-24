@@ -112,7 +112,7 @@ int main()
 }
 
 void osd_task(void) {
-#ifdef BOARD_HAS_BUTTON
+#ifdef HAS_BUTTON
     static int mode_max = 6;
     static int mode = 1;
     const UPDATE_MODE modes[6] = {

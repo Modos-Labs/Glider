@@ -25,6 +25,9 @@
 #include "caster.h"
 #include "tusb.h"
 #include "usb_descriptors.h"
+#include "usbapp.h"
+#include "crc16.h"
+#include "iap.h"
 
 void usbapp_init(void) {
     tusb_init();
@@ -80,11 +83,19 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
     uint16_t y1 = (buffer[11] << 8) | buffer[10];
     uint16_t id = (buffer[13] << 8) | buffer[12];
     uint16_t chksum = (buffer[15] << 8) | buffer[14];
-    uint8_t retval = 1;
-    switch (buffer[0]) {
+
+    uint8_t retval;
+    uint16_t exp_chksum = crc16(buffer, 14);
+    if (chksum != exp_chksum) {
+        retval = USBRET_CHKSUMFAIL;
+        goto returnval;
+    }
+    retval = 1;
+
+    switch (cmd) {
     case USBCMD_RESET:
         // reset system
-        (*((volatile uint32_t*)(PPB_BASE + 0x0ED0C))) = 0x5FA0004; // Reset via NVIC
+        //iap_reset();
         break;
     case USBCMD_POWERDOWN:
         // TODO
@@ -93,7 +104,7 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
         // TODO
         break;
     case USBCMD_SETINPUT:
-        retval = caster_setinput((uint8_t)param);
+        // TODO
         break;
     case USBCMD_REDRAW:
         retval = caster_redraw(x0, y0, x1, y1);
@@ -101,12 +112,27 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
     case USBCMD_SETMODE:
         retval = caster_setmode(x0, y0, x1, y1, (UPDATE_MODE)param);
         break;
+    case USBCMD_USBBOOT:
+        //iap_usbboot();
+        break;
+    case USBCMD_NUKE:
+        //iap_nuke();
+        break;
     }
+    if (retval == 0)
+        retval = USBRET_SUCCESS;
+    else
+        retval = USBRET_GENERALFAIL;
 
-    uint8_t txbuf[1];
+returnval:
+    uint8_t txbuf[16] = {0};
     txbuf[0] = retval;
+    txbuf[2] = buffer[14];
+    txbuf[3] = buffer[15];
+    txbuf[4] = exp_chksum & 0xff;
+    txbuf[5] = (exp_chksum >> 8) & 0xff;
 
-    tud_hid_report(0, txbuf, 1);
+    tud_hid_report(0, txbuf, 16);
 }
 
 void usbapp_task(void) {

@@ -28,10 +28,12 @@ add_executable(fw
         bitstream.c
         button.c
         caster.c
+        crc16.c
         edid.c
         fpga.c
         fusb302.c
         fw.c
+        iap.c
         power.c
         ptn3460.c
         tcpm_driver.c

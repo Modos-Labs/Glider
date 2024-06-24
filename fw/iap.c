@@ -19,20 +19,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
-#pragma once
+#include <stdio.h>
+#include <string.h>
+#include "pico/stdlib.h"
+#include "hardware/flash.h"
+#include "pico/bootrom.h"
+#include "iap.h"
 
-#define USBCMD_RESET        0x00
-#define USBCMD_POWERDOWN    0x01
-#define USBCMD_POWERUP      0x02
-#define USBCMD_SETINPUT     0x03
-#define USBCMD_REDRAW       0x04
-#define USBCMD_SETMODE      0x05
-#define USBCMD_NUKE         0x06
-#define USBCMD_USBBOOT      0x07
+void __no_inline_not_in_flash_func(nuke)() {
+    uint flash_size_bytes;
+#ifndef PICO_FLASH_SIZE_BYTES
+#warning PICO_FLASH_SIZE_BYTES not set, assuming 16M
+    flash_size_bytes = 16 * 1024 * 1024;
+#else
+    flash_size_bytes = PICO_FLASH_SIZE_BYTES;
+#endif
+    flash_range_erase(0, flash_size_bytes);
 
-#define USBRET_GENERALFAIL  0x00
-#define USBRET_CHKSUMFAIL   0x01
-#define USBRET_SUCCESS      0x55
+    // Pop back up as an MSD drive
+    reset_usb_boot(0, 0);
+}
 
-void usbapp_init(void);
-void usbapp_task(void);
+void iap_usbboot(void) {
+    reset_usb_boot(0, 0);
+    __builtin_unreachable();
+}
+
+void iap_reset(void) {
+    (*((volatile uint32_t*)(PPB_BASE + 0x0ED0C))) = 0x5FA0004; // Reset via NVIC
+    __builtin_unreachable();
+}
+
+void iap_nuke(void) {
+    nuke();
+    __builtin_unreachable();
+}
