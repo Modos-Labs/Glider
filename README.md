@@ -419,11 +419,9 @@ The actual grayscale driving sequence used in the commercial implementation is m
 
 There are several different technologies that could be used to build full-color EPDs. The 2 most common ways are to use a color-filter-array (CFA) or use a multi-pigment color display.
 
-The following picture has the multiple pigment color display (ACeP Gallery 3) on the left, and a CFA-based color screen (Kaleido Plus) on the right, displaying the same image.
+The following picture has a CFA-based color screen (Kaleido 3) on the left, and a multiple pigment color display (Spectra 6) on the right, displaying the same image.
 
-![gallery3_kaleido](assets/gallery3_kaleido_plus.jpg)
-
-(Original illustration copyright MiHoYo)
+![sp6vsk3](assets/kaleido3spectra6.jpg)
 
 #### Color Filter Array
 
@@ -483,7 +481,7 @@ Another technology for implementing color EPD is by using a multi-pigment color 
 
 One major advantage of this solution is it can achieve higher resolution (because it doesn't have a CFA, so no resolution reduction), higher reflectivity (because it doesn't have a CFA, so no light loss), and higher color saturation (because it doesn't have a CFA, no need to play the reflectivity vs saturation trade-off game).
 
-Eink has 2 lines of products using this Technology, Eink Gallery and Eink Spectra. The advantage is it's much brighter compared to CFA-based solutions. The disadvantage is it's much more difficult to drive, and quite slow: 1st /2nd gen Eink Gallery screen takes 30s (!) to refresh, and Spectra 6 Plus devices take 7s to refresh. It's possible to trade in some color saturation for higher speed, though still much slower than CFA-based solutions. The specific product lines will be discussed in [Eink Screen Generations](#eink-screen-generations)
+Eink has 2 lines of products using this Technology, Eink Gallery and Eink Spectra. The advantage is it's much brighter compared to CFA-based solutions. The disadvantage is it's much more difficult to drive, and quite slow: 1st /2nd gen Eink Gallery screen takes 30s (!) to refresh, and Spectra 6 Plus devices take 7s to refresh. It's possible to trade in some color saturation for higher speed, though still much slower than CFA-based solutions. The specific product lines will also be discussed in [Eink Screen Generations](#eink-screen-generations)
 
 ##### How ACeP Waveform Works
 
@@ -495,9 +493,25 @@ This is possible with a modified waveform.
 
 To be written (TODO)
 
-##### What Happened To ACeP?
+##### Fast ACeP
 
-[ACeP was supposed to be the "next big thing" in ereader](https://arstechnica.com/gadgets/2022/04/new-e-ink-gallery-displays-could-finally-make-full-color-e-readers-good/). Back in the end 2022, Eink announced that ["Gallery 3 has moved into mass production, with customer products from Bigme, BOOX, iFlyTek, iReader, PocketBook, Readmoo, and AOC coming down the pipeline in 2023 and beyond"](https://www.e-ink-info.com/e-ink-gallery-3-acep-color-epaper-displays-move-mass-production). But 2023 passed with exactly one product, the Bigme Galy, with mixed receptions. Early 2024, it was announced that [Bigme Galy has been discontinued](https://goodereader.com/blog/electronic-readers/bigme-galy-is-discontinued), and [Eink has announced EOL for certain ACeP-based products](https://www.ineltek.com/wp-content/uploads/2024/04/EInk_AC073TC1_EOLNoticeLetter_notice_20240401.pdf). It does sound like ACeP is now dead.
+While ACeP screens have been generally slow to refresh (15-30s), Eink has tried to improve that. In 2022 Eink released their Gallery 3 lines of ACeP screens, which promised sub 1 second update time. [ACeP was supposed to be the "next big thing" in ereader](https://arstechnica.com/gadgets/2022/04/new-e-ink-gallery-displays-could-finally-make-full-color-e-readers-good/). Back in the end 2022, Eink announced that ["Gallery 3 has moved into mass production, with customer products from Bigme, BOOX, iFlyTek, iReader, PocketBook, Readmoo, and AOC coming down the pipeline in 2023 and beyond"](https://www.e-ink-info.com/e-ink-gallery-3-acep-color-epaper-displays-move-mass-production).
+
+How well does it do? Just talking about the screen, it's not looking good. It suffers from poor reflectivity and poor saturation to a point where it's not much better than Kaleido:
+
+![gallery3_kaleido](assets/gallery3_kaleido_plus.jpg)
+
+(Original illustration copyright MiHoYo)
+
+The difference between Gallery 3 and Gallery Palette (which is supposed to be a lower-end product) is also stunning:
+
+![acep_comparison](assets/gallery3_gallerypalette.jpg)
+
+The one on the left is the Gallery 3 used on eReaders, and the one on the right (brighter and more saturated one) is the Gallery Palette used on ESLs. Though to be honest I hacked the right one a bit to display 512 colors opposed to the stock 7 colors. If Gallery 3 had the same image quality as previous ACeP/ Gallery screens, it would make sense to trade in response time for better image quality. But it doesn't.
+
+##### Future of ACeP
+
+While as previously referenced that Eink was hoping to ship lot of Gallery 3 based E-readers in 2023, 2023 passed with exactly one product, the Bigme Galy, with mixed receptions. Early 2024, it was announced that [Bigme Galy has been discontinued](https://goodereader.com/blog/electronic-readers/bigme-galy-is-discontinued), and [Eink has announced EOL for certain ACeP-based products](https://www.ineltek.com/wp-content/uploads/2024/04/EInk_AC073TC1_EOLNoticeLetter_notice_20240401.pdf). It does sound like ACeP is now dead.
 
 The following are purely my speculation. But I see this as 2 separate decisions:
 
@@ -508,18 +522,16 @@ The second one is evident from the EOL notice linked previously, the 7.3" ACeP s
 
 The first one is more or less speculation. (UPDATE: I WAS WRONG, read on) I have two clues for that. One is the fact that Eink is doubling down on digital signage for Spectra 6: [Both 13.3" and 31.5" Spectra 6 screens will have integrated controller](https://www.beck-elektronik.de/en/newsroom/news/article/e-ink-spectratm-6-der-hingucker-des-jahres-2024). This make them much more interesting for the signage applications, but unsuitable for eReader applications. The other is that [the 8" Spectra 6 Plus screen](https://www.ereaderpro.co.uk/en/blogs/news/e-ink-news-eink-technology-has-unveiled-the-new-generation-of-colour-e-paper-technology-e-ink-spectra-6-plus-designed-for-retail-tags-and-advertising-billboards), while using the same backplane as the Gallery 3 ACeP screen, now quote a 7 second refresh time (compared to less than a second on Gallery 3). If Eink still wanted to make a Spectra 6 eReader screen, this 8" backplane would be the one to use given it was used in the ACeP product line.
 
-Objectively, the ACeP screen on the Bigme Galy pretty much doesn't make any sense anyway. It suffers from poor reflectivity and poor saturation to a point where it's not much better than Kaleido (see the previous photo). The difference between Gallery 3 and Gallery Palette (which is supposed to be a lower-end product) is also stunning:
-
-![acep_comparison](assets/gallery3_gallerypalette.jpg)
-
-(Original illustration copyright MiHoYo)
-
-The one on the left is the Gallery 3 used on eReaders, and the one on the right (brighter and more saturated one) is the Gallery Palette used on ESLs. Though to be honest I hacked the right one a bit to display 512 colors opposed to the stock 7 colors. If Gallery 3 had the same image quality as previous ACeP/ Gallery screens, it would make sense to trade in response time for better image quality. But it doesn't.
-
 So is the ACeP dead? Yes and no. ~~Yes in the sense that we are less likely to see any new ACeP products in the future~~, and we are also unlikely to see any Spectra 6-based eReader products. No in the sense that ACeP is superseded by Spectra 6, so the technology lives on. Just like how the Pearl replaced the Vizplex, and the Carta replaced the Pearl. Now we have Carta so we don't look back to the older generation of screens. Also, in another sense, there are likely at least thousands of ACeP screens already manufactured but haven't been made into consumer devices. We will probably see these screens in the not-too-distant future! 
 
 UPDATE: As pointed out in a [reddit post by Disastrous_Analyst_1](https://www.reddit.com/r/eink/comments/1d2j4mv/gallery_3_part_ii/), Eink in their [2023 Annual Report](https://www.eink.com/upload/2024_05_27/47_20240527170208rfrozhGN77.pdf) said that "In 2024, we will provide an upgraded version of the 8-inch advanced color ePaper (Gallery™ 3), aiming to deliver optimized performance and enhanced visual experience for customers. (在 2024 年，我們將進一步提供進階版 8 吋先進彩色電子紙（Gallery ™ 3），期待能提
 供更優化的性能及更好的視覺體驗給客戶)" in V. Operational Highlights, 5.1 Business Activities, 5.1.2 Industrial Overview, 3. Product Developmenet Trends, A. eReader. This means we might be able to see more Gallery 3 (or similar technology) based eReaders in the years to come.
+
+##### Spectra 6
+
+Compared to the Gallery lines, Spectra 6 uses a very similar multiple pigment system. But instead of using cyan, magenta, and yellow as the base colors, Eink switched to use red, yellow, and blue instead. Officially the color gamut volume stays the same, but the contrast ratio gets boosted up to 22:1 from 10:1, mainly due to darker black. Reflectivity stays the same at around 35%, lower than Carta products, but still far better than CFA based ones.
+
+(TODO: Compare image quality between Sp6 and GalleryPlus)
 
 ### Dithering
 
@@ -954,6 +966,16 @@ Other than a few exceptions, only screens without integrated TCON are listed her
 
 Screen size is the first 3 numbers in the model number, so it's not listed separately in the table. For example, ED060SC4 is 6.0", ED097OC1 is 9.7", and ES133UT1 is 13.3".
 
+First 2 letters denotes the screen type:
+
+- ED: Glass monochrome
+- EC: Glass CFA-based color
+- ES: Flexible monochrome (new)
+- ET: Flexible monochrome (old)
+- EQ: Flexible CFA-based color
+- EL: Spectra series BWR/BWYR/RYBW color
+- AC: ACeP CMYW color
+
 The adapter column refers to the adapter needed for this particular screen, however, there is no guarantee that it would work, even if it's listed as tested.
 
 | Model Name | Model Number | FPL Platform | Resolution  | Marketing Name              | R Typ | CR Typ | Year  | Interface | Pin Count | Adapter | Tested? |
@@ -1080,10 +1102,11 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ES133TT3   |              | 320          | 2200x1650   | Carta 1.2                   | 40%   | 12:1   | 2016  | TTL       | 39        |         |         |
 | ES133TT5   | VH1948-NCC   | 450          | 2200x1650   | Carta 1250                  |       |        |       | TTL       | 39        |         |         |
 | EC133UJ1   | SD1452-NCB   |              | 1600x1200   | Kaleido 3 Outdoor           |       |        |       | TTL       | 39        | 39P-A   |         |
+| EQ133ME1   | SC1452-NCC   |              | 2200x1650   | Kaleido 3                   |       |        |       | TTL       | 45        |         |         |
 | AC133UT1   | AA1020-NCA   |              | 1600x1200   | Gallery / Gallery 4000      | 35%   | 10:1   | 2020  | TTL       | 39        | 39P-A   |         |
 | EL133US1   |              |              | 1600x1200   | Spectra 3000                |       |        |       | TTL       | 39        | 39P-A   | Yes     |
 | EL133UR1   | EA2220-NCC   |              | 1600x1200   | Spectra 3000                | 33%   | 15:1   | 2020  | TTL       | 39        | 39P-A   |         |
-| EL133UF1   | ED2208-NCA   |              | 1600x1200   | Spectra 6                   |       |        |       | QSPI      |           |         |         |
+| EL133UF1   | ED2208-NCA   |              | 1600x1200   | Spectra 6                   | 34%   | 22:1   | 2024  | QSPI      | 60        |         |         |
 | ED140TT1   | VB3300-IDA   | 320          | 1440x300    | Carta                       |       |        |       | TTL       |           |         |         |
 | AC253TT1   | AA1020-PEA   |              | 3200x1800   | Gallery Plus / Gallery 4000 | 35%   | 10:1   | 2020  | MiniLVDS  | 51x2      |         |         |
 | EL253EW1   | ED2208-PEA   |              | 3200x1800   | Spectra 6                   |       |        |       | MiniLVDS  |           |         |         |
