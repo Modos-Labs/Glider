@@ -1053,6 +1053,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED097OD2   |              | V220         | 1200x825    | Pearl                       |       |        |       | TTL       | 33        | 33P-A   |         |
 | ED097TC1   |              | V220         | 1200x825    | Pearl                       |       |        |       | TTL       | 33        | 33P-A   |         |
 | ED097TC2   | VB3300-JGA   | 320          | 1200x825    | Carta 1.2                   | 42%   | 16:1   | 2016  | TTL       | 33        | 33P-A   |         |
+| EC097SC3   |              | V250         | 1600x1200   | Triton                      |       |        |       | TTL       | 40        |         |         |
 | EL097TR2   | EA2220-JGB   |              | 1200x825    | Spectra 3000                |       |        |       | TTL       |           |         |         |
 | ED100UC1   | VB3300-KOA   | 320          | 1600x1200   | Carta                       | 45%   | 16:1   | 2020  | TTL       | 40        | DIRECT  |         |
 | ES103TC1   | VB3300-KCA   | 320          | 1872x1404   | Carta 1.2                   | 40%   | 12:1   | 2016  | TTL       | 40        | DIRECT  |         |
