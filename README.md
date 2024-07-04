@@ -421,7 +421,11 @@ There are several different technologies that could be used to build full-color 
 
 The following picture has a CFA-based color screen (Kaleido 3) on the left, and a multiple pigment color display (Spectra 6) on the right, displaying the same image.
 
+![sp6vsk3_2](assets/isabella.jpg)
+
 ![sp6vsk3](assets/kaleido3spectra6.jpg)
+
+(Yes the left one IS a color screen!)
 
 #### Color Filter Array
 
