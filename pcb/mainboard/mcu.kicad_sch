@@ -7149,7 +7149,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C571260"
+		(property "LCSC" ""
 			(at 86.36 58.42 0)
 			(effects
 				(font
@@ -7778,7 +7778,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm"
+		(property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm"
 			(at 91.44 92.71 0)
 			(effects
 				(font

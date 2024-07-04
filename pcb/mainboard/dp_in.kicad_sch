@@ -11895,7 +11895,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7K"
+		(property "Value" "5.1K"
 			(at 213.36 80.01 90)
 			(effects
 				(font
@@ -12307,10 +12307,6 @@
 					(reference "J1")
 					(unit 1)
 				)
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/1afc3cb7-9ace-435f-9131-835660c51142"
-					(reference "J1")
-					(unit 1)
-				)
 			)
 		)
 	)
@@ -12331,7 +12327,7 @@
 				)
 			)
 		)
-		(property "Value" "120"
+		(property "Value" "120R"
 			(at 171.45 137.16 90)
 			(effects
 				(font
@@ -13071,7 +13067,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7K"
+		(property "Value" "5.1K"
 			(at 210.82 69.85 90)
 			(effects
 				(font
@@ -13612,7 +13608,7 @@
 				)
 			)
 		)
-		(property "Value" "120"
+		(property "Value" "120R"
 			(at 171.45 116.84 90)
 			(effects
 				(font

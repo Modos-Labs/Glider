@@ -8464,7 +8464,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm"
+		(property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm"
 			(at 185.42 130.81 0)
 			(effects
 				(font
@@ -10882,7 +10882,7 @@
 				)
 			)
 		)
-		(property "Value" "33"
+		(property "Value" "27R"
 			(at 78.74 152.8064 90)
 			(effects
 				(font

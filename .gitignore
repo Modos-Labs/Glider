@@ -8,3 +8,5 @@ build/
 gerber/
 production/
 fp-info-cache
+fabrication-toolkit-options.json
+*.kicad_sch-bak

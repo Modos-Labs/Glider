@@ -9262,7 +9262,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1K/1%"
+		(property "Value" "5.1K"
 			(at 157.48 149.86 0)
 			(effects
 				(font
@@ -9583,7 +9583,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C105490"
+		(property "LCSC" ""
 			(at 149.86 41.91 0)
 			(effects
 				(font
@@ -9670,7 +9670,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 259.08 143.51 0)
 			(effects
 				(font
@@ -9756,7 +9756,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C105490"
+		(property "LCSC" ""
 			(at 73.66 41.91 0)
 			(effects
 				(font
@@ -10111,7 +10111,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 251.46 143.51 0)
 			(effects
 				(font
@@ -10228,7 +10228,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1N5819WS"
+		(property "Value" "B0530WS"
 			(at 96.52 177.8 90)
 			(effects
 				(font
@@ -10246,7 +10246,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
+		(property "Datasheet" ""
 			(at 93.98 176.53 0)
 			(effects
 				(font
@@ -10891,7 +10891,7 @@
 				)
 			)
 		)
-		(property "Value" "4148WS"
+		(property "Value" "B0530WS"
 			(at 157.48 121.92 0)
 			(effects
 				(font
@@ -10908,7 +10908,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 156.21 124.46 0)
 			(effects
 				(font
@@ -11048,7 +11048,7 @@
 				)
 			)
 		)
-		(property "Value" "4148WS"
+		(property "Value" "B0530WS"
 			(at 157.48 132.08 0)
 			(effects
 				(font
@@ -11065,7 +11065,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 156.21 134.62 0)
 			(effects
 				(font
@@ -12825,7 +12825,7 @@
 				)
 			)
 		)
-		(property "Value" "1N5819WS"
+		(property "Value" "B0530WS"
 			(at 70.1675 67.31 0)
 			(effects
 				(font
@@ -12842,7 +12842,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
+		(property "Datasheet" ""
 			(at 69.85 71.12 0)
 			(effects
 				(font
@@ -13168,7 +13168,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "18pF"
 			(at 91.44 111.76 0)
 			(effects
 				(font
@@ -13419,7 +13419,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C105490"
+		(property "LCSC" ""
 			(at 134.62 41.91 0)
 			(effects
 				(font
@@ -14221,7 +14221,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "18pF"
 			(at 88.9 142.24 0)
 			(effects
 				(font
@@ -14640,7 +14640,7 @@
 				)
 			)
 		)
-		(property "Value" "1N5819WS"
+		(property "Value" "B0530WS"
 			(at 70.1675 100.33 0)
 			(effects
 				(font
@@ -14657,7 +14657,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
+		(property "Datasheet" ""
 			(at 69.85 104.14 0)
 			(effects
 				(font
@@ -14912,7 +14912,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1N5819WS"
+		(property "Value" "B0530WS"
 			(at 144.78 173.6725 90)
 			(effects
 				(font
@@ -14930,7 +14930,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
+		(property "Datasheet" ""
 			(at 142.24 172.72 0)
 			(effects
 				(font
@@ -15048,7 +15048,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4148WS"
+		(property "Value" "B0530WS"
 			(at 127 109.855 90)
 			(effects
 				(font
@@ -15066,7 +15066,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 124.46 107.95 0)
 			(effects
 				(font
@@ -15242,7 +15242,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C105490"
+		(property "LCSC" ""
 			(at 119.38 41.91 0)
 			(effects
 				(font
@@ -15822,7 +15822,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "18pF"
 			(at 88.9 170.18 0)
 			(effects
 				(font
@@ -15926,7 +15926,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 256.54 143.51 0)
 			(effects
 				(font
@@ -16590,7 +16590,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1N5819WS"
+		(property "Value" "B0530WS"
 			(at 96.52 149.5425 90)
 			(effects
 				(font
@@ -16608,7 +16608,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://datasheet.lcsc.com/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
+		(property "Datasheet" ""
 			(at 93.98 148.59 0)
 			(effects
 				(font
@@ -16767,7 +16767,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C105490"
+		(property "LCSC" ""
 			(at 104.14 41.91 0)
 			(effects
 				(font
@@ -17249,7 +17249,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C105490"
+		(property "LCSC" ""
 			(at 88.9 41.91 0)
 			(effects
 				(font
@@ -17759,7 +17759,7 @@
 				)
 			)
 		)
-		(property "Value" "22pF"
+		(property "Value" "18pF"
 			(at 91.44 78.74 0)
 			(effects
 				(font
@@ -17826,7 +17826,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1K/1%"
+		(property "Value" "5.1K"
 			(at 78.74 177.8 0)
 			(effects
 				(font
@@ -18241,7 +18241,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 254 143.51 0)
 			(effects
 				(font

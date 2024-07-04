@@ -1,4 +1,4 @@
-23386015408171976
+23198546477656437
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -8239,20 +8239,6 @@ barreljack switchcraftconxall dc power
 2
 2
 Connector_BarrelJack
-BarrelJack_Wuerth_694102107102_1.0x3.9mm
-Wuerth Elektronik barrel jack connector, SMD, 3.9mm OD, 1.0mm ID, with switch, 18V, 5A, dimensions: 9.3 x 8 x 5.3 mm (L x W x H), datasheet: https://www.farnell.com/datasheets/2130962.pdf
-barrel jack Wuerth Elektronik 694102107102
-0
-4
-3
-Connector_BarrelJack
-BarrelJack_Wuerth_694103107102_1.35x3.9mm
-Wuerth Elektronik barrel jack connector, SMD, 3.9mm OD, 1.35mm ID, with switch, 18V, 5A, dimensions: 9.3 x 8 x 5.3 mm (L x W x H), datasheet: https://www.we-online.com/components/products/datasheet/694103107102.pdf
-barrel jack Wuerth Elektronik 694103107102
-0
-4
-3
-Connector_BarrelJack
 BarrelJack_Wuerth_694106106102_2.0x5.5mm
 Wuerth Elektronik 694106106102 Barrel Jack, 2.0x5.5mm, https://www.we-online.com/components/products/datasheet/694106106102.pdf
 barrel jack Wuerth Elektronik 694106106102
@@ -11402,6 +11388,55 @@ Wuerth FPC 68611214422 connector 12 bottom-side contacts 1.0mm pitch 1.0mm heigh
 0
 14
 13
+Connector_HDMI
+HDMI_A_Amphenol_10029449-x01xLF_Horizontal
+HDMI Type A connector, Amphenol 10029449-001TLF 10029449-001RLF 10029449-101TLF 10029449-101RLF, Right Angle(https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10029449.pdf)
+hdmi right angle
+0
+23
+20
+Connector_HDMI
+HDMI_A_Contact_Technology_HDMI-19APL2_Horizontal
+HDMI Contact Technology Type A http://www.contactswitch.com/en/download.aspx?id=1449
+HDMI Contact Technology Type A
+0
+23
+20
+Connector_HDMI
+HDMI_A_Kycon_KDMIX-SL1-NS-WS-B15_VerticalRightAngle
+HDMI, Type A, Kycon KDMIX-SL1-NS-WS-B15, Vertical Right Angle, http://www.kycon.com/Pub_Eng_Draw/KDMIX-SL1-NS-WS-B15.pdf
+hdmi type a
+0
+23
+20
+Connector_HDMI
+HDMI_A_Molex_208658-1001_Horizontal
+HDMI Molex Type A https://www.molex.com/pdm_docs/sd/2086581001_sd.pdf
+HDMI Molex Type A
+0
+23
+20
+Connector_HDMI
+HDMI_Micro-D_Molex_46765-0x01
+HDMI, Micro, Type D, SMD, 0.4mm pitch, 19 ckt, right angle (http://www.molex.com/pdm_docs/sd/467651301_sd.pdf)
+hdmi micro type d right angle smd
+0
+23
+20
+Connector_HDMI
+HDMI_Micro-D_Molex_46765-1x01
+HDMI, Micro, Type D, THT, 0.4mm pitch, 19 ckt, right angle (http://www.molex.com/pdm_docs/sd/467651301_sd.pdf)
+hdmi micro type d right angle tht
+0
+23
+20
+Connector_HDMI
+HDMI_Micro-D_Molex_46765-2x0x
+HDMI, Micro, Type D, THT/SMD hybrid, 0.4mm pitch, 19 ckt, right angle (http://www.molex.com/pdm_docs/sd/467651301_sd.pdf)
+hdmi micro type d right angle tht smd hybrid 
+0
+23
+20
 Connector_Harting
 Harting_har-flexicon_14110213001xxx_1x02-MP_P2.54mm_Vertical
 Harting har-flexicon series connector, 14110213001xxx (https://b2b.harting.com/files/download/PRD/PDF_TS/1411XX13001XXX_100228421DRW046C.pdf), generated with kicad-footprint-generator
@@ -12291,20 +12326,6 @@ connector Harwin M20 side entry
 0
 40
 40
-Connector_Hirose
-Hirose_BM23FR0.6-16DP-0.35V_2x08_1MP_Vertical
-Hirose BM23 series connector, BM23FR0.6-16DP-0.35V (https://www.hirose.com/fr/product/document?clcode=CL0480-0290-0-95&productname=BM23FR0.6-16DP-0.35V(895)&series=BM23FR&documenttype=2DDrawing&lang=fr&documentid=D164551_en)
-connector Hirose BM23 16pin header
-0
-20
-17
-Connector_Hirose
-Hirose_BM23FR0.6-16DS-0.35V_2x08_P0.35_1MP_Vertical
-Hirose BM23 series connector, BM23FR0.6-16DS-0.35V (https://www.hirose.com/fr/product/document?clcode=CL0480-0295-0-51&productname=BM23FR0.6-16DS-0.35V(51)&series=BM23FR&documenttype=2DDrawing&lang=fr&documentid=D162179_en)
-connector Hirose 16pin receptacle vertical
-0
-20
-17
 Connector_Hirose
 Hirose_BM24_BM24-40DP-2-0.35V_2x20_P0.35mm_PowerPin2_Vertical
 Hirose BM24 series connector, BM24-40DP/2-0.35V (https://www.hirose.com/product/en/download_file/key_name/BM24/category/Catalog/doc_file_id/47680/?file_category_id=4&item_id=50&is_series=1)
@@ -13517,27 +13538,6 @@ SMD vertical IDC box header  2x08 2.54mm double row
 16
 16
 Connector_IDC
-IDC-Header_2x09_P2.54mm_Horizontal
-Through hole IDC box header, 2x09, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
-Through hole horizontal IDC box header THT 2x09 2.54mm double row
-0
-18
-18
-Connector_IDC
-IDC-Header_2x09_P2.54mm_Vertical
-Through hole IDC box header, 2x09, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
-Through hole vertical IDC box header THT 2x09 2.54mm double row
-0
-18
-18
-Connector_IDC
-IDC-Header_2x09_P2.54mm_Vertical_SMD
-SMD IDC box header, 2x09, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://www.tme.eu/Document/4baa0e952ce73e37bc68cf730b541507/T821M114A1S100CEU-B.pdf
-SMD vertical IDC box header  2x09 2.54mm double row
-0
-18
-18
-Connector_IDC
 IDC-Header_2x10-1MP_P2.54mm_Latch6.5mm_Vertical
 Through hole IDC header, 2x10, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, 6.5mm latches, mounting holes, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
 Through hole vertical IDC header THT 2x10 2.54mm double row
@@ -13628,27 +13628,6 @@ SMD vertical IDC box header  2x10 2.54mm double row
 0
 20
 20
-Connector_IDC
-IDC-Header_2x11_P2.54mm_Horizontal
-Through hole IDC box header, 2x11, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
-Through hole horizontal IDC box header THT 2x11 2.54mm double row
-0
-22
-22
-Connector_IDC
-IDC-Header_2x11_P2.54mm_Vertical
-Through hole IDC box header, 2x11, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
-Through hole vertical IDC box header THT 2x11 2.54mm double row
-0
-22
-22
-Connector_IDC
-IDC-Header_2x11_P2.54mm_Vertical_SMD
-SMD IDC box header, 2x11, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://www.tme.eu/Document/4baa0e952ce73e37bc68cf730b541507/T821M114A1S100CEU-B.pdf
-SMD vertical IDC box header  2x11 2.54mm double row
-0
-22
-22
 Connector_IDC
 IDC-Header_2x12-1MP_P2.54mm_Latch6.5mm_Vertical
 Through hole IDC header, 2x12, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, 6.5mm latches, mounting holes, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
@@ -14090,27 +14069,6 @@ SMD vertical IDC box header  2x20 2.54mm double row
 0
 40
 40
-Connector_IDC
-IDC-Header_2x22_P2.54mm_Horizontal
-Through hole IDC box header, 2x22, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
-Through hole horizontal IDC box header THT 2x22 2.54mm double row
-0
-44
-44
-Connector_IDC
-IDC-Header_2x22_P2.54mm_Vertical
-Through hole IDC box header, 2x22, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
-Through hole vertical IDC box header THT 2x22 2.54mm double row
-0
-44
-44
-Connector_IDC
-IDC-Header_2x22_P2.54mm_Vertical_SMD
-SMD IDC box header, 2x22, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://www.tme.eu/Document/4baa0e952ce73e37bc68cf730b541507/T821M114A1S100CEU-B.pdf
-SMD vertical IDC box header  2x22 2.54mm double row
-0
-44
-44
 Connector_IDC
 IDC-Header_2x25-1MP_P2.54mm_Latch6.5mm_Vertical
 Through hole IDC header, 2x25, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, 6.5mm latches, mounting holes, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
@@ -49223,69 +49181,6 @@ Mini USB 2.0 Type B
 0
 9
 6
-Connector_Video
-DVI-D_Molex_74320-4004_Horizontal
-DVI-D Dual Link connector, horizontal, 24 pins, Molex P/N 74320-4004, https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/743/74320/743204004_sd.pdf?inline
-dvi right angle
-0
-26
-25
-Connector_Video
-DVI-I_Molex_74320-1004_Horizontal
-DVI-I Dual Link connector, horizontal, 29 pins, Molex P/N 74320-1004, https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/743/74320/743201004_sd.pdf?inline
-dvi right angle
-0
-32
-30
-Connector_Video
-HDMI_A_Amphenol_10029449-x01xLF_Horizontal
-HDMI Type A connector, Amphenol 10029449-001TLF 10029449-001RLF 10029449-101TLF 10029449-101RLF, Right Angle(https://cdn.amphenol-icc.com/media/wysiwyg/files/drawing/10029449.pdf)
-hdmi right angle
-0
-23
-20
-Connector_Video
-HDMI_A_Contact_Technology_HDMI-19APL2_Horizontal
-HDMI Contact Technology Type A http://www.contactswitch.com/en/download.aspx?id=1449
-HDMI Contact Technology Type A
-0
-23
-20
-Connector_Video
-HDMI_A_Kycon_KDMIX-SL1-NS-WS-B15_VerticalRightAngle
-HDMI, Type A, Kycon KDMIX-SL1-NS-WS-B15, Vertical Right Angle, http://www.kycon.com/Pub_Eng_Draw/KDMIX-SL1-NS-WS-B15.pdf
-hdmi type a
-0
-23
-20
-Connector_Video
-HDMI_A_Molex_208658-1001_Horizontal
-HDMI Molex Type A https://www.molex.com/pdm_docs/sd/2086581001_sd.pdf
-HDMI Molex Type A
-0
-23
-20
-Connector_Video
-HDMI_Micro-D_Molex_46765-0x01
-HDMI, Micro, Type D, SMD, 0.4mm pitch, 19 ckt, right angle (http://www.molex.com/pdm_docs/sd/467651301_sd.pdf)
-hdmi micro type d right angle smd
-0
-23
-20
-Connector_Video
-HDMI_Micro-D_Molex_46765-1x01
-HDMI, Micro, Type D, THT, 0.4mm pitch, 19 ckt, right angle (http://www.molex.com/pdm_docs/sd/467651301_sd.pdf)
-hdmi micro type d right angle tht
-0
-23
-20
-Connector_Video
-HDMI_Micro-D_Molex_46765-2x0x
-HDMI, Micro, Type D, THT/SMD hybrid, 0.4mm pitch, 19 ckt, right angle (http://www.molex.com/pdm_docs/sd/467651301_sd.pdf)
-hdmi micro type d right angle tht smd hybrid 
-0
-23
-20
 Connector_Wago
 Wago_734-132_1x02_P3.50mm_Vertical
 Molex 734 Male header (for PCBs); Straight solder pin 1 x 1 mm, 734-132 , 2 Pins (http://www.farnell.com/datasheets/2157639.pdf), generated with kicad-footprint-generator
@@ -51841,13 +51736,6 @@ Vigortronix VTX-214-010-xxx serie of ACDC converter
 0
 5
 5
-Converter_ACDC
-Converter_ACDC_ZETTLER_ZPI03Sxx00WC_THT
-PCB mounted switching power module, AC input voltage range: 90VAC-264VAC, Class II Construction, https://www.zettlermagnetics.com/pdfs/ZPI03SXX00WC.pdf
-ACDC-Converter 3W ZETTLER ZPI
-0
-4
-4
 Converter_DCDC
 Converter_DCDC_Artesyn_ATA_SMD
 DCDC-Converter, Artesyn, ATA Series, 3W Single and Dual Output, 1500VDC Isolation, 24.0x13.7x8.0mm https://www.artesyn.com/power/assets/ata_series_ds_01apr2015_79c25814fd.pdf https://www.artesyn.com/power/assets/trn_dc-dc_ata_3w_series_releas1430412818_techref.pdf
@@ -52366,20 +52254,6 @@ DCDC-Converter TRACO TMU3 THT SIP-4 3W
 0
 4
 4
-Converter_DCDC
-Converter_DCDC_TRACO_TOS06-05SIL_THT
-DCDC-Converter, TRACO, TOS06-05SIL, 6A, Rev. March 20. 2024 (Script generated with StandardBox.py) (https://www.tracopower.com/products/tos06sil.pdf)
-DCDC-Converter POL TRACO TOS06SIL 2.54MM THT SIP-9 6A
-0
-5
-5
-Converter_DCDC
-Converter_DCDC_TRACO_TOS06-12SIL_THT
-DCDC-Converter, TRACO, TOS06-12SIL, 6A, Rev. March 20. 2024 (Script generated with StandardBox.py) (https://www.tracopower.com/products/tos06sil.pdf)
-DCDC-Converter POL TRACO TOS06SIL 2.54MM THT SIP-9 6A
-0
-5
-5
 Converter_DCDC
 Converter_DCDC_TRACO_TRI1-xxxx_THT
 DCDC-Converter, TRACO, TRI1-xxxx, 1W, Rev. November 13. 2023 (Script generated with StandardBox.py) (https://www.tracopower.com/products/tri1.pdf)
@@ -57204,13 +57078,6 @@ Inductor LMLP
 2
 2
 Inductor_SMD
-L_Abracon_ASPI-0425
-Inductor, Abracon, ASPI-0425, 4.0x4.0x2.5mm, https://abracon.com/Magnetics/new/ASPI-0425.pdf
-Inductor power shielded low-profile
-0
-2
-2
-Inductor_SMD
 L_Abracon_ASPI-0630LR
 smd shielded power inductor https://abracon.com/Magnetics/power/ASPI-0630LR.pdf
 inductor abracon smd shielded
@@ -57228,13 +57095,6 @@ Inductor_SMD
 L_Abracon_ASPI-4030S
 smd shielded power inductor 4x4x3mm, Abracon ASPI-4030S, https://abracon.com/Magnetics/power/ASPI-4030S.pdf
 inductor abracon smd shielded
-0
-2
-2
-Inductor_SMD
-L_Abracon_ASPIAIG-F4020
-Inductor, Abracon, ASPIAIG-F4020, 4.4x4.4x1.9mm, https://abracon.com/Magnetics/power/ASPIAIG-F4020.pdf
-Inductor power shielded
 0
 2
 2
@@ -57291,13 +57151,6 @@ Inductor_SMD
 L_Bourns-SRU8043
 Bourns SRU8043 series SMD inductor
 Bourns SRU8043 SMD inductor
-0
-2
-2
-Inductor_SMD
-L_Bourns_SDR0604
-SMD Power Inductor, https://www.bourns.com/pdfs/SDR0604.pdf
-SMD Power Inductor SDR0604
 0
 2
 2
@@ -58474,13 +58327,6 @@ Inductor_SMD
 L_Ferrocore_DLG-1005
 Ferrocore DLG-1005 unshielded SMD power inductor, 10.0x9.0x5.4mm, https://www.tme.eu/Document/bda580f72a60a2225c2f6576c2740ae1/dlg-0504.pdf
 smd inductor dlg-1005
-0
-2
-2
-Inductor_SMD
-L_KOHERelec_MDA7030
-Inductor, KOHERelec, MDA7030, 7.1x6.6x2.8mm, https://www.lcsc.com/datasheet/lcsc_datasheet_2401252310_KOHERelec-MDA7030-220M_C2847487.pdf
-Inductor high-current power shielded
 0
 2
 2
@@ -67998,26 +67844,12 @@ BGA 361 0.5
 361
 361
 Package_BGA
-ST_UFBGA-59_5x5mm_Layout8x8_P0.5mm
-ST UFBGA-59, 5.0x5.0mm, 59 Ball, 8x8 Layout, 0.5mm Pitch, https://www.st.com/resource/en/datasheet/stm32wba55ug.pdf
-BGA 59 0.5
-0
-59
-59
-Package_BGA
 ST_UFBGA-73_5x5mm_Layout9x9_P0.5mm
 ST UFBGA-73, 5.0x5.0mm, 73 Ball, 9x9 Layout, 0.5mm Pitch, https://www.st.com/resource/en/datasheet/stm32wl54jc.pdf
 BGA 73 0.5
 0
 73
 73
-Package_BGA
-ST_UFBGA-81_5x5mm_Layout9x9_P0.5mm
-ST UFBGA-81, 5.0x5.0mm, 81 Ball, 9x9 Layout, 0.5mm Pitch, https://www.st.com/resource/en/datasheet/stm32u073mb.pdf
-BGA 81 0.5
-0
-81
-81
 Package_BGA
 ST_UFBGA-121_6x6mm_Layout11x11_P0.5mm
 ST UFBGA-121, 6.0x6.0mm, 121 Ball, 11x11 Layout, 0.5mm Pitch, https://www.st.com/resource/en/datasheet/stm32g473pb.pdf
@@ -68880,13 +68712,6 @@ LFCSP 8pin 2x2mm Pitch 0.5mm
 8
 8
 Package_CSP
-LFCSP-10_2x2mm_P0.5mm
-LFCSP, 10 Pin (https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/lfcspcp/cp-10/cp_10_11.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
-LFCSP NoLead
-0
-10
-10
-Package_CSP
 LFCSP-16-1EP_3x3mm_P0.5mm_EP1.3x1.3mm
 LFCSP, 16 Pin (https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/lfcspcp/cp-16/CP_16_21.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
 LFCSP NoLead
@@ -68899,13 +68724,6 @@ LFCSP, 16 Pin (https://www.analog.com/media/en/package-pcb-resources/package/pkg
 LFCSP NoLead
 0
 26
-17
-Package_CSP
-LFCSP-16-1EP_3x3mm_P0.5mm_EP1.5x1.5mm
-LFCSP, 16 Pin (https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/lfcspcp/cp-16/cp_16_27.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
-LFCSP NoLead
-0
-21
 17
 Package_CSP
 LFCSP-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm
@@ -69314,20 +69132,6 @@ CSP 25 0.4
 25
 25
 Package_CSP
-ST_WLCSP-27_2.34x2.55mm_P0.40mm_Stagger
-ST WLCSP-27, ST Die ID 459, 2.34x2.55mm, 27 Ball, X-staggered 9x6 Layout, 0.4mm Pitch, https://www.st.com/resource/en/datasheet/stm32u031g6.pdf
-CSP 27 0.4
-0
-27
-27
-Package_CSP
-ST_WLCSP-27_2.55x2.34mm_P0.40mm_Stagger
-ST WLCSP-27, ST Die ID 459, 2.55x2.34mm, 27 Ball, X-staggered 9x6 Layout, 0.4mm Pitch, https://www.st.com/resource/en/datasheet/stm32u031g6.pdf
-CSP 27 0.4
-0
-27
-27
-Package_CSP
 ST_WLCSP-36_2.58x3.07mm_Layout6x6_P0.4mm
 ST WLCSP-36, ST die ID 464, 2.58x3.07mm, 36 Ball, 6x6 Layout, 0.4mm Pitch, https://www.st.com/resource/en/datasheet/stm32l412t8.pdf
 CSP 36 0.4
@@ -69362,20 +69166,6 @@ CSP 36 0.4
 0
 36
 36
-Package_CSP
-ST_WLCSP-42_2.82x2.93mm_P0.40mm_Stagger
-ST WLCSP-42, ST Die ID 489, 2.82x2.93mm, 42 Ball, X-staggered 12x7 Layout, 0.4mm Pitch, https://www.st.com/resource/en/datasheet/stm32u073rc.pdf
-CSP 42 0.4
-0
-42
-42
-Package_CSP
-ST_WLCSP-42_2.93mmx2.82_P0.40mm_Stagger
-ST WLCSP-42, ST Die ID 489, 2.93x2.82mm, 42 Ball, X-staggered 12x7 Layout, 0.4mm Pitch, https://www.st.com/resource/en/datasheet/stm32u073rc.pdf
-CSP 42 0.4
-0
-42
-42
 Package_CSP
 ST_WLCSP-49_3.15x3.13mm_Layout7x7_P0.4mm
 ST WLCSP-49, ST die ID 468, 3.15x3.13mm, 49 Ball, 7x7 Layout, 0.4mm Pitch, https://www.st.com/resource/en/datasheet/stm32g431c6.pdf
@@ -69608,13 +69398,6 @@ CSP 90 0.4
 90
 90
 Package_CSP
-ST_WLCSP-99_4.42x3.77mm_Layout9x11_P0.35mm
-ST WLCSP-99, ST die ID 415, 4.42x3.77mm, 99 Ball, 11x9 Layout, 0.35mm Pitch, https://www.st.com/resource/en/datasheet/stm32l476vg.pdf
-CSP 99 0.35
-0
-99
-99
-Package_CSP
 ST_WLCSP-100_4.40x4.38mm_Layout10x10_P0.4mm_Offcenter
 ST WLCSP-100, off-center ball grid, ST die ID 495, 4.4x4.38mm, 100 Ball, 10x10 Layout, 0.4mm Pitch, https://www.st.com/resource/en/datasheet/stm32wb55vc.pdf
 CSP 100 0.4
@@ -69656,13 +69439,6 @@ CSP 100 0.4
 0
 100
 100
-Package_CSP
-ST_WLCSP-101_3.86x3.79mm_P0.35mm_Stagger
-ST WLCSP-101, ST Die ID 485, 3.86x3.79mm, 101 Ball, Y-staggered 11x19 Layout, 0.35mm Pitch, https://www.st.com/resource/en/datasheet/stm32h7r3v8.pdf
-CSP 101 0.35
-0
-101
-101
 Package_CSP
 ST_WLCSP-104_Die437
 WLCSP-104, 4.095x5.094mm, 104 Ball, 9x12 Layout, 0.4mm Pitch, http://www.st.com/resource/en/datasheet/stm32l152ze.pdf#page=127
@@ -69789,13 +69565,6 @@ CSP 8 0.5
 0
 8
 8
-Package_CSP
-WLCSP-9_1.21x1.22mm_P0.4mm
-WLCSP-9, 1.21x1.22mm, 9 Ball, 3x3 Layout, 0.4mm Pitch, https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/wlcspcb/cb_9_3.pdf
-CSP 9 0.4
-0
-9
-9
 Package_CSP
 WLCSP-12_1.56x1.56mm_P0.4mm
 WLCSP 12 1.56x1.56 https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMM150-DS001-01.pdf
@@ -69951,13 +69720,6 @@ DFN NoLead
 9
 7
 Package_DFN_QFN
-DFN-6-1EP_2x2mm_P0.5mm_EP0.7x1.6mm
-DFN, 6 Pin (http://www.junmintech.com/UploadFiles/Product/20211129145204_37021.pdf#page=10), generated with kicad-footprint-generator ipc_noLead_generator.py
-DFN NoLead
-0
-9
-7
-Package_DFN_QFN
 DFN-6-1EP_2x2mm_P0.5mm_EP0.61x1.42mm
 DC6 Package; 6-Lead Plastic DFN (2mm x 2mm) (see Linear Technology DFN_6_05-08-1703.pdf)
 DFN 0.5
@@ -70006,13 +69768,6 @@ DFN 0.4
 0
 6
 6
-Package_DFN_QFN
-DFN-8-1EP_1.5x1.5mm_P0.4mm_EP0.7x1.2mm
-DFN, 8 Pin (https://www.kinet-ic.com/uploads/KTD2026-7-04h.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
-DFN NoLead
-0
-13
-9
 Package_DFN_QFN
 DFN-8-1EP_2x2mm_P0.5mm_EP0.6x1.2mm
 DFN, 8 Pin (https://www.onsemi.com/pub/Collateral/506AQ.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
@@ -70320,6 +70075,13 @@ DFN, 12 Pin (https://www.analog.com/media/en/package-pcb-resources/package/pkg_p
 DFN NoLead
 0
 24
+13
+Package_DFN_QFN
+DFN-12-1EP_3x3mm_P0.45mm_EP1.66x2.38mm
+DD Package; 12-Lead Plastic DFN (3mm x 3mm) (see Linear Technology DFN_12_05-08-1725.pdf)
+DFN 0.45
+0
+17
 13
 Package_DFN_QFN
 DFN-12-1EP_3x4mm_P0.5mm_EP1.7x3.3mm
@@ -72939,20 +72701,6 @@ TQFN NoLead
 0
 55
 41
-Package_DFN_QFN
-TQFN-44-1EP_7x7mm_P0.5mm_EP4.7x4.7mm
-TQFN, 44 Pin (https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/tqfn/21-0144.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
-TQFN NoLead T4477+2 T4477+2C T4477+3
-0
-54
-45
-Package_DFN_QFN
-TQFN-44-1EP_7x7mm_P0.5mm_EP4.7x4.7mm_ThermalVias
-TQFN, 44 Pin (https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/tqfn/21-0144.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
-TQFN NoLead T4477+2 T4477+2C T4477+3
-0
-71
-45
 Package_DFN_QFN
 TQFN-48-1EP_7x7mm_P0.5mm_EP5.1x5.1mm
 TQFN, 48 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0144.PDF), generated with kicad-footprint-generator ipc_noLead_generator.py
@@ -75698,20 +75446,6 @@ LSOP 2.54mm 300mil
 8
 8
 Package_DIP
-IXYS_Flatpak-8_6.3x9.7mm_P2.54mm
-IXYS  Flatpak, 8 Pin (https://www.littelfuse.com/media?resourcetype=datasheets&itemid=996c6e8f-cc1b-44f6-811e-251c6e004c56&filename=littelfuse-integrated-circuits-loc112-datasheet), generated with kicad-footprint-generator ipc_gullwing_generator.py
-IXYS Flatpak DIP
-0
-8
-8
-Package_DIP
-IXYS_SMD-8_6.3x9.7mm_P2.54mm
-IXYS  Flatpak, 8 Pin (https://www.littelfuse.com/media?resourcetype=datasheets&itemid=996c6e8f-cc1b-44f6-811e-251c6e004c56&filename=littelfuse-integrated-circuits-loc112-datasheet), generated with kicad-footprint-generator ipc_gullwing_generator.py
-IXYS Flatpak DIP
-0
-8
-8
-Package_DIP
 PowerIntegrations_PDIP-8B
 Power Integrations variant of 8-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils), LongPads, see https://www.power.com/sites/default/files/product-docs/lnk520.pdf
 THT DIP DIL PDIP 2.54mm 7.62mm 300mil LongPads
@@ -78393,13 +78127,6 @@ SO SOIC 2.54
 4
 4
 Package_SO
-SO-5-6_4.55x3.7mm_P1.27mm
-SO, 5 Pin (https://toshiba.semicon-storage.com/us/semiconductor/design-development/package/detail.5pin%20SO6.html), generated with kicad-footprint-generator ipc_gullwing_generator.py
-SO SO TLP2310 Toshiba
-0
-5
-5
-Package_SO
 SO-5_4.4x3.6mm_P1.27mm
 5-Lead Plastic Small Outline (SO), see https://docs.broadcom.com/cs/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition&blobheadername2=Content-Type&blobheadername3=MDT-Type&blobheadervalue1=attachment%3Bfilename%3DIPD-Selection-Guide_AV00-0254EN_030617.pdf&blobheadervalue2=application%2Fx-download&blobheadervalue3=abinary%253B%2Bcharset%253DUTF-8&blobkey=id&blobnocache=true&blobtable=MungoBlobs&blobwhere=1430884105675&ssbinary=true
 SO SOIC 1.27
@@ -78868,13 +78595,6 @@ SOP SO
 0
 24
 24
-Package_SO
-SOP-28_8.4x18.16mm_P1.27mm
-SOP, 28 Pin (https://www.issi.com/WW/pdf/62-65C256AL.pdf#page=12), generated with kicad-footprint-generator ipc_gullwing_generator.py
-SOP SO
-0
-28
-28
 Package_SO
 SOP-44_12.6x28.5mm_P1.27mm
 SOP, 44 Pin (https://www.mxic.com.tw/Lists/Datasheet/Attachments/8177/MX23C6410,%205V,%2064Mb,%20v3.1.pdf#page=5), generated with kicad-footprint-generator ipc_gullwing_generator.py
@@ -79849,13 +79569,6 @@ TSSOP SO
 100
 100
 Package_SO
-Texas_DYY0016A_TSOT-23-16_4.2x2.0mm_P0.5mm
-TSSOP, 16 Pin (https://www.ti.com/lit/ds/symlink/tmux1574.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
-TSSOP SO
-0
-16
-16
-Package_SO
 Texas_HSOP-8-1EP_3.9x4.9mm_P1.27mm
 Texas Instruments HSOP 9, 1.27mm pitch, 3.9x4.9mm body, exposed pad, DDA0008J (http://www.ti.com/lit/ds/symlink/tps5430.pdf)
 HSOP 1.27
@@ -80591,20 +80304,6 @@ WSON-12
 19
 13
 Package_SON
-WSON-12-1EP_3x3mm_P0.5mm_EP1.5x2.5mm
-WSON, 12 Pin (https://www.ti.com/lit/ds/symlink/tps63710.pdf#page=33), generated with kicad-footprint-generator ipc_noLead_generator.py
-WSON NoLead
-0
-17
-13
-Package_SON
-WSON-12-1EP_3x3mm_P0.5mm_EP1.5x2.5mm_ThermalVias
-WSON, 12 Pin (https://www.ti.com/lit/ds/symlink/tps63710.pdf#page=33), generated with kicad-footprint-generator ipc_noLead_generator.py
-WSON NoLead
-0
-24
-13
-Package_SON
 WSON-12-1EP_4x4mm_P0.5mm_EP2.6x3mm
 WSON, 12 Pin (http://www.ti.com/lit/ds/symlink/ldc1312.pdf#page=62), generated with kicad-footprint-generator ipc_noLead_generator.py
 WSON NoLead
@@ -80632,13 +80331,6 @@ WSON-16 3.3 x 1.35mm  Pitch 0.4mm
 0
 20
 17
-Package_SON
-Winbond_USON-8-1EP_3x2mm_P0.5mm_EP0.2x1.6mm
-Winbond  USON, 8 Pin (https://www.lcsc.com/datasheet/lcsc_datasheet_2205122030_Winbond-Elec-W25Q16JVUXIQ_C2843335.pdf#page=66f), generated with kicad-footprint-generator ipc_noLead_generator.py
-Winbond USON NoLead
-0
-10
-9
 Package_SON
 X2SON-8_1.4x1mm_P0.35mm
 X2SON-8 1.4x1mm Pitch0.35mm http://www.ti.com/lit/ds/symlink/pca9306.pdf
@@ -82538,43 +82230,43 @@ TO-100-10_Window Window
 10
 Package_TO_SOT_THT
 TO-126-2_Horizontal_TabDown
-TO-126-2, Horizontal, RM 5.08mm, see https://www.caddock.com/online_catalog/mrktg_lit/MP9000_Series.pdf
+TO-126-2, Horizontal, RM 5.08mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
 TO-126-2 Horizontal RM 5.08mm
 0
 2
 2
 Package_TO_SOT_THT
 TO-126-2_Horizontal_TabUp
-TO-126-2, Horizontal, RM 5.08mm, see https://www.caddock.com/online_catalog/mrktg_lit/MP9000_Series.pdf
+TO-126-2, Horizontal, RM 5.08mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
 TO-126-2 Horizontal RM 5.08mm
 0
 2
 2
 Package_TO_SOT_THT
 TO-126-2_Vertical
-TO-126-2, Vertical, RM 5.08mm, see https://www.caddock.com/online_catalog/mrktg_lit/MP9000_Series.pdf
+TO-126-2, Vertical, RM 5.08mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
 TO-126-2 Vertical RM 5.08mm
 0
 2
 2
 Package_TO_SOT_THT
 TO-126-3_Horizontal_TabDown
-TO-126-3, Horizontal, RM 2.28mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
-TO-126-3 Horizontal RM 2.28mm
+TO-126-3, Horizontal, RM 2.54mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
+TO-126-3 Horizontal RM 2.54mm
 0
 3
 3
 Package_TO_SOT_THT
 TO-126-3_Horizontal_TabUp
-TO-126-3, Horizontal, RM 2.28mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
-TO-126-3 Horizontal RM 2.28mm
+TO-126-3, Horizontal, RM 2.54mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
+TO-126-3 Horizontal RM 2.54mm
 0
 3
 3
 Package_TO_SOT_THT
 TO-126-3_Vertical
-TO-126-3, Vertical, RM 2.28mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
-TO-126-3 Vertical RM 2.28mm
+TO-126-3, Vertical, RM 2.54mm, see https://www.diodes.com/assets/Package-Files/TO126.pdf
+TO-126-3 Vertical RM 2.54mm
 0
 3
 3
@@ -84223,20 +83915,6 @@ Potentiometer vertical Vishay T73YP
 0
 3
 3
-Potentiometer_THT
-Potentiometer_Vishay_T93XA_Horizontal
-Potentiometer, horizontal, Vishay, https://www.vishay.com/docs/51026/t93.pdf, 3/8" x 3/8" x 3/16" (9.7 x 9.8 x 5mm max.)
-Potentiometer horizontal vishay
-0
-3
-3
-Potentiometer_THT
-Potentiometer_Vishay_T93YA_Vertical
-Potentiometer, vertical, Vishay, https://www.vishay.com/docs/51026/t93.pdf
-Potentiometer vertical vishay
-0
-3
-3
 RF
 Skyworks_SKY13575_639LF
 http://www.skyworksinc.com/uploads/documents/SKY13575_639LF_203270D.pdf
@@ -85043,13 +84721,6 @@ Bluetooth BLE NFC
 39
 39
 RF_Module
-MCU_Seeed_ESP32C3
-ESP32C3 Seeed Xiao RF Wifi Shield (https://www.seeedstudio.com/blog/wp-content/uploads/2022/08/Seeed-Studio-XIAO-Series-Package-and-PCB-Design.pdf)
-wifi bluetooth microcontroller
-0
-27
-23
-RF_Module
 MOD-nRF8001
 BLE module, https://www.olimex.com/Products/Modules/RF/MOD-nRF8001/
 BLE module
@@ -85680,20 +85351,6 @@ Omron G5V-2 Relay DPDT
 8
 8
 Relay_THT
-Relay_DPDT_Omron_G6A
-DPDT signal relay, Omron G6A/G6AU, 20x9.9x8.2mm https://omronfs.omron.com/en_US/ecb/products/pdf/en-g6a.pdf
-Omron G6A Relay DPDT
-0
-8
-8
-Relay_THT
-Relay_DPDT_Omron_G6AK
-DPDT signal relay, double-winding latching, Omron G6AK, 20x9.9x8.2mm https://omronfs.omron.com/en_US/ecb/products/pdf/en-g6a.pdf
-Omron G6AK Relay DPDT
-0
-10
-10
-Relay_THT
 Relay_DPDT_Omron_G6H-2
 Omron relay G6H-2, see http://cdn-reichelt.de/documents/datenblatt/C300/G6H%23OMR.pdf
 Omron relay G6H-2
@@ -85855,27 +85512,6 @@ Relay SPDT IM-relay HJR-4102
 6
 6
 Relay_THT
-Relay_SPDT_Hongfa_HF3F-L-xx-1ZL1T
-Hongfa subminature high power latching relay 5, 6, 9, 12, 24, 48VDC. 10A switching current, Form-C https://source.hongfa.com//Api/DownloadPdf/362
-relays Hongfa form-c 1-coil 
-0
-5
-5
-Relay_THT
-Relay_SPDT_Hongfa_HF3F-L-xx-1ZL2T
-Hongfa subminature high power latching relay 5, 6, 9, 12, 24, 48VDC. 10A switching current, Form-C https://source.hongfa.com//Api/DownloadPdf/362
-relays Hongfa form-c 2-coil 
-0
-6
-6
-Relay_THT
-Relay_SPDT_Hongfa_HF3F-L-xx-1ZL2T-R
-Hongfa subminature high power latching relay 5, 6, 9, 12, 24, 48VDC. 10A switching current, reverse polarity, Form-C https://source.hongfa.com//Api/DownloadPdf/362
-relays Hongfa form-c 2-coil reverse-polarity
-0
-6
-6
-Relay_THT
 Relay_SPDT_HsinDa_Y14
 http://www.hsinda.com.tw/upload/file/Y14-20200430135145.pdf
 Relay Y14
@@ -86030,27 +85666,6 @@ Finder 32.21-x300 Relay SPST
 4
 4
 Relay_THT
-Relay_SPST_Hongfa_HF3F-L-xx-1HL1T
-Hongfa subminature high power latching relay 5, 6, 9, 12, 24, 48VDC. 15A switching current, Form-A https://source.hongfa.com//Api/DownloadPdf/362
-relays Hongfa form-a 1-coil 
-0
-4
-4
-Relay_THT
-Relay_SPST_Hongfa_HF3F-L-xx-1HL2T
-Hongfa subminature high power latching relay 5, 6, 9, 12, 24, 48VDC. 15A switching current, Form-A https://source.hongfa.com//Api/DownloadPdf/362
-relays Hongfa form-a 2-coil 
-0
-5
-5
-Relay_THT
-Relay_SPST_Hongfa_HF3F-L-xx-1HL2T-R
-Hongfa subminature high power latching relay 5, 6, 9, 12, 24, 48VDC. 15A switching current, Form-A, reverse polarity, https://source.hongfa.com//Api/DownloadPdf/362
-relays Hongfa form-a 2-coil reverse-polarity
-0
-5
-5
-Relay_THT
 Relay_SPST_Omron-G5Q-1A
 Relay SPST-NO Omron Serie G5Q, http://omronfs.omron.com/en_US/ecb/products/pdf/en-g5q.pdf
 Relay SPST-NO Omron Serie G5Q
@@ -86075,13 +85690,6 @@ Relay_THT
 Relay_SPST_Omron_G5NB
 PCB Power Relay, SPST-NO, 7A (250 VAC), 5A (30 VDC), 20.5x7.2x15.3mm max
 Omron G5NB Relay SPST-NO
-0
-4
-4
-Relay_THT
-Relay_SPST_Omron_G5PZ
-Relay Omron G5PZ, see https://components.omron.com/us-en/sites/components.omron.com.us/files/datasheet_pdf/K320-E1.pdf
-Relay Omron G5PZ
 0
 4
 4
@@ -87563,48 +87171,6 @@ rotary encoder
 7
 6
 Rotary_Encoder
-RotaryEncoder_Bourns_Horizontal_PEL12D-2x16F-Sxxxx
-Rotary encoder with switch and illuminated 4mm shaft, dual-led, https://www.bourns.com/docs/product-datasheets/PEL12D.pdf
-rotary encoder illuminated switch horizontal
-0
-9
-8
-Rotary_Encoder
-RotaryEncoder_Bourns_Horizontal_PEL12D-2x18F-Sxxxx
-Rotary encoder with switch and illuminated 6mm shaft, dual-led, https://www.bourns.com/docs/product-datasheets/PEL12D.pdf
-rotary encoder illuminated switch horizontal
-0
-9
-8
-Rotary_Encoder
-RotaryEncoder_Bourns_Horizontal_PEL12D-2x21F-Sxxxx
-Rotary encoder with switch and illuminated 8mm shaft, dual-led, https://www.bourns.com/docs/product-datasheets/PEL12D.pdf
-rotary encoder illuminated switch horizontal
-0
-9
-8
-Rotary_Encoder
-RotaryEncoder_Bourns_Horizontal_PEL12D-2x25S-Sxxxx
-Rotary encoder with switch and illuminated shaft, dual-led, https://www.bourns.com/docs/product-datasheets/PEL12D.pdf
-rotary encoder illuminated switch horizontal
-0
-9
-8
-Rotary_Encoder
-RotaryEncoder_Bourns_Horizontal_PEL12D-2x26F-Sxxxx
-Rotary encoder with switch and illuminated 13mm shaft, dual-led, https://www.bourns.com/docs/product-datasheets/PEL12D.pdf
-rotary encoder illuminated switch horizontal
-0
-9
-8
-Rotary_Encoder
-RotaryEncoder_Bourns_Horizontal_PEL12D-2x31F-Sxxxx
-Rotary encoder with switch and illuminated 18mm shaft, dual-led, https://www.bourns.com/docs/product-datasheets/PEL12D.pdf
-rotary encoder illuminated switch horizontal
-0
-9
-8
-Rotary_Encoder
 RotaryEncoder_Bourns_Vertical_PEC12R-3x17F-Nxxxx
 Bourns rotary encoder, PEC12R, without switch, with bushing, vertical shaft, 17.5mm shaft, https://www.bourns.com/docs/product-datasheets/pec12r.pdf
 rotary encoder
@@ -87618,20 +87184,6 @@ rotary encoder
 0
 7
 6
-Rotary_Encoder
-RotaryEncoder_Bourns_Vertical_PEL12D-4x25S-Sxxxx
-Rotary encoder with switch and illuminated 13mm shaft, dual-led, https://www.bourns.com/docs/product-datasheets/PEL12D.pdf
-rotary encoder illuminated switch vertical
-0
-9
-8
-Rotary_Encoder
-RotaryEncoder_Bourns_Vertical_PEL12D-4xxxF-Sxxxx
-Rotary encoder with switch and illuminated 4,6,8,13,18mm shaft, dual-led, https://www.bourns.com/docs/product-datasheets/PEL12D.pdf
-rotary encoder illuminated switch vertical
-0
-9
-8
 Sensor
 ASAIR_AM2302_P2.54mm_Lead2.75mm_TabDown
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/AM2302.pdf
@@ -89319,160 +88871,6 @@ Wuerth WR-TBL Series 3114 terminal block pitch 7.62mm
 0
 2
 2
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-2P_1x02_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-2P, 2 pins, pitch 2.54mm, size 5.58x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-2P pitch 2.54mm size 5.58x6.5mm^2 drill 1.2mm pad 2mm
-0
-2
-2
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-3P_1x03_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-3P, 3 pins, pitch 2.54mm, size 8.12x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-3P pitch 2.54mm size 8.12x6.5mm^2 drill 1.2mm pad 2mm
-0
-3
-3
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-4P_1x04_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-4P, 4 pins, pitch 2.54mm, size 10.7x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-4P pitch 2.54mm size 10.7x6.5mm^2 drill 1.2mm pad 2mm
-0
-4
-4
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-5P_1x05_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-5P, 5 pins, pitch 2.54mm, size 13.2x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-5P pitch 2.54mm size 13.2x6.5mm^2 drill 1.2mm pad 2mm
-0
-5
-5
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-6P_1x06_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-6P, 6 pins, pitch 2.54mm, size 15.7x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-6P pitch 2.54mm size 15.7x6.5mm^2 drill 1.2mm pad 2mm
-0
-6
-6
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-7P_1x07_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-7P, 7 pins, pitch 2.54mm, size 18.3x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-7P pitch 2.54mm size 18.3x6.5mm^2 drill 1.2mm pad 2mm
-0
-7
-7
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-8P_1x08_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-8P, 8 pins, pitch 2.54mm, size 20.8x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-8P pitch 2.54mm size 20.8x6.5mm^2 drill 1.2mm pad 2mm
-0
-8
-8
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-9P_1x09_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-9P, 9 pins, pitch 2.54mm, size 23.4x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-9P pitch 2.54mm size 23.4x6.5mm^2 drill 1.2mm pad 2mm
-0
-9
-9
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-10P_1x10_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-10P, 10 pins, pitch 2.54mm, size 25.9x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-10P pitch 2.54mm size 25.9x6.5mm^2 drill 1.2mm pad 2mm
-0
-10
-10
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-11P_1x11_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-11P, 11 pins, pitch 2.54mm, size 28.4x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-11P pitch 2.54mm size 28.4x6.5mm^2 drill 1.2mm pad 2mm
-0
-11
-11
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-12P_1x12_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-12P, 12 pins, pitch 2.54mm, size 31x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-12P pitch 2.54mm size 31x6.5mm^2 drill 1.2mm pad 2mm
-0
-12
-12
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-13P_1x13_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-13P, 13 pins, pitch 2.54mm, size 33.5x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-13P pitch 2.54mm size 33.5x6.5mm^2 drill 1.2mm pad 2mm
-0
-13
-13
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-14P_1x14_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-14P, 14 pins, pitch 2.54mm, size 36.1x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-14P pitch 2.54mm size 36.1x6.5mm^2 drill 1.2mm pad 2mm
-0
-14
-14
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-15P_1x15_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-15P, 15 pins, pitch 2.54mm, size 38.6x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-15P pitch 2.54mm size 38.6x6.5mm^2 drill 1.2mm pad 2mm
-0
-15
-15
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-16P_1x16_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-16P, 16 pins, pitch 2.54mm, size 41.1x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-16P pitch 2.54mm size 41.1x6.5mm^2 drill 1.2mm pad 2mm
-0
-16
-16
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-17P_1x17_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-17P, 17 pins, pitch 2.54mm, size 43.7x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-17P pitch 2.54mm size 43.7x6.5mm^2 drill 1.2mm pad 2mm
-0
-17
-17
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-18P_1x18_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-18P, 18 pins, pitch 2.54mm, size 46.2x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-18P pitch 2.54mm size 46.2x6.5mm^2 drill 1.2mm pad 2mm
-0
-18
-18
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-19P_1x19_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-19P, 19 pins, pitch 2.54mm, size 48.8x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-19P pitch 2.54mm size 48.8x6.5mm^2 drill 1.2mm pad 2mm
-0
-19
-19
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-20P_1x20_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-20P, 20 pins, pitch 2.54mm, size 51.3x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-20P pitch 2.54mm size 51.3x6.5mm^2 drill 1.2mm pad 2mm
-0
-20
-20
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-21P_1x21_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-21P, 21 pins, pitch 2.54mm, size 53.8x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-21P pitch 2.54mm size 53.8x6.5mm^2 drill 1.2mm pad 2mm
-0
-21
-21
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-22P_1x22_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-22P, 22 pins, pitch 2.54mm, size 56.4x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-22P pitch 2.54mm size 56.4x6.5mm^2 drill 1.2mm pad 2mm
-0
-22
-22
-TerminalBlock
-TerminalBlock_Xinya_XY308-2.54-23P_1x23_P2.54mm_Horizontal
-Terminal Block Xinya XY308-2.54-23P, 23 pins, pitch 2.54mm, size 58.9x6.5mm^2, drill diameter 1.2mm, pad diameter 2mm, see http://www.xinyaelectronic.com/product/xy308-254, script-generated using https://gitlab.com/kicad/libraries/kicad-footprint-generator/-/tree/master/scripts/TerminalBlock_Xinya
-THT Terminal Block Xinya XY308-2.54-23P pitch 2.54mm size 58.9x6.5mm^2 drill 1.2mm pad 2mm
-0
-23
-23
 TerminalBlock
 TerminalBlock_bornier-2_P5.08mm
 simple 2-pin terminal block, pitch 5.08mm, revamped version of bornier2
