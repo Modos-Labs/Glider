@@ -455,7 +455,19 @@ Having no subpixel / each pixel only has 1 color doesn't necessarily mean that t
 
 If the image is displayed on color DES without any processing, it would look like a greyscale image. This is similar to when you just send the same color value to R/G/B components on a color LCD.
 
-To get color, send only the color component that corresponds to the pixel color.
+To get color, there are 2 possible solutions:
+- Treat 4 pixels as a group of a single pixel, and each physical pixel is now considered as a subpixel.
+- Treat each pixel as an independent pixel, but send only the color component that corresponds to the pixel color.
+
+Depending on how you classify pixel and subpixel, the 2nd method can also be viewed as a mean of 2X supersampling subpixel rendering.
+
+In general the 2nd method offers better resolution especially in text:
+
+| Method 1 | Method 2 |
+|-|-|
+| ![des_without_spr](assets/des_without_spr.png) | ![des_with_spr](assets/des_with_spr.png) |
+
+The following discussion are all about the 2nd method: render at full resolution, but only use 1 color component for each pixel.
 
 ![pixel-layout](assets/PixelLayoutDiagonal.png)
 (Source: https://wiki.laptop.org/go/File:PixelLayoutDiagonal.png, public domain)
