@@ -1052,7 +1052,8 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED060KH6   | VB3300-FOE   | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
 | ED060KHC   |              |              | 1448x1072   |                             |       |        |       | TTL       |           |         |         |
 | ED060KHE   | VD1405-FOH   |              | 1448x1072   | Carta 1300                  |       |        |       | TTL       | 34        | 34P-A   |         |
-| EC060KH3   | SA1452-FOA   |              | 1448x1072   | Kaleido                     |       |        |       | TTL       |           |         |         |
+| EC060KH1   | SA1452-FOA   |              | 1448x1072   | Kaleido                     | 20%   | 16:1   | 2019  | TTL       | 34        | 34P-A   |         |
+| EC060KH3   | SC1452-FOA   |              | 1448x1072   | Kaleido Plus                | 20%   | 14:1   | 2021  | TTL       | 34        | 34P-A   |         |
 | EC060KH5   | SC1452-FOD   |              | 1448x1072   | Kaleido 3                   |       |        |       | TTL       | 34        | 34P-A   |         |
 | ED061KC1   | VD1405-FAA   | 400          | 1648x824    | Carta 1200                  |       |        |       | TTL       |           |         |         |
 | ED067KC1   | VB3300-FGA   | 320          | 1800x900    | Carta                       | 45%   | 16:1   | 2020  | TTL       | 50        | 50P-B   |         |
