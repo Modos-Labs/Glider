@@ -5,10 +5,10 @@
 	(uuid "2b11a276-2b0a-4653-b2ba-18cc4c92042b")
 	(paper "A4")
 	(title_block
-		(title "Caster EPDC")
-		(date "2022-07-03")
-		(rev "R0.4")
-		(company "Copyright 2022 Modos / Engineer: Wenting Zhang")
+		(title "Glider")
+		(date "2024-05-09")
+		(rev "R0.8")
+		(company "Copyright 2024 Wenting Zhang")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -9493,7 +9493,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 228.6 148.59 0)
 			(effects
 				(font
@@ -9713,7 +9713,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 190.5 130.81 0)
 			(effects
 				(font
@@ -9932,7 +9932,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 190.5 148.59 0)
 			(effects
 				(font
@@ -10846,7 +10846,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 215.9 130.81 0)
 			(effects
 				(font
@@ -11067,7 +11067,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 215.9 148.59 0)
 			(effects
 				(font
@@ -11962,7 +11962,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 241.3 130.81 0)
 			(effects
 				(font
@@ -12244,7 +12244,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 203.2 148.59 0)
 			(effects
 				(font
@@ -12724,7 +12724,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 228.6 130.81 0)
 			(effects
 				(font
@@ -12942,7 +12942,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C105490"
+		(property "LCSC" ""
 			(at 121.92 44.45 0)
 			(effects
 				(font
@@ -13028,7 +13028,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C105490"
+		(property "LCSC" ""
 			(at 106.68 44.45 0)
 			(effects
 				(font
@@ -13314,7 +13314,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 254 130.81 0)
 			(effects
 				(font
@@ -13679,7 +13679,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 177.8 148.59 0)
 			(effects
 				(font
@@ -14553,7 +14553,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C39313"
+		(property "LCSC" ""
 			(at 220.98 81.28 0)
 			(effects
 				(font
@@ -15596,7 +15596,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 203.2 130.81 0)
 			(effects
 				(font
@@ -16616,7 +16616,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C880414"
+		(property "LCSC" ""
 			(at 177.8 130.81 0)
 			(effects
 				(font

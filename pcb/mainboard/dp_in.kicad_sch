@@ -5,10 +5,10 @@
 	(uuid "d29e38d1-ad15-4eb2-9fc2-14600ab2e7c6")
 	(paper "A4")
 	(title_block
-		(title "Caster EPDC")
-		(date "2022-07-03")
-		(rev "R0.4")
-		(company "Copyright 2022 Modos / Engineer: Wenting Zhang")
+		(title "Glider")
+		(date "2024-05-09")
+		(rev "R0.8")
+		(company "Copyright 2024 Wenting Zhang")
 	)
 	(lib_symbols
 		(symbol "Analog_Switch:CBTL02043A"
@@ -8486,7 +8486,7 @@
 		)
 		(uuid "fe450efb-ecd5-43ca-b337-0da8e01a3220")
 	)
-	(text "Use\nAMPHENOL_10137065-00021LF\nXUNPU TYPEC-324G-ACP24"
+	(text "Use\nXUNPU TYPEC-324G-ACP24"
 		(exclude_from_sim no)
 		(at 22.86 63.5 0)
 		(effects
@@ -11895,7 +11895,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7K"
+		(property "Value" "5.1K"
 			(at 213.36 80.01 90)
 			(effects
 				(font
@@ -12199,7 +12199,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "footprints:AMPHENOL_10137065-00021LF"
+		(property "Footprint" "footprints:XUNPU_TypeC-324G-ACP24"
 			(at 44.45 93.98 0)
 			(effects
 				(font
@@ -12327,7 +12327,7 @@
 				)
 			)
 		)
-		(property "Value" "120"
+		(property "Value" "120R"
 			(at 171.45 137.16 90)
 			(effects
 				(font
@@ -13067,7 +13067,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7K"
+		(property "Value" "5.1K"
 			(at 210.82 69.85 90)
 			(effects
 				(font
@@ -13608,7 +13608,7 @@
 				)
 			)
 		)
-		(property "Value" "120"
+		(property "Value" "120R"
 			(at 171.45 116.84 90)
 			(effects
 				(font
