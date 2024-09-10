@@ -21,6 +21,7 @@
 //
 #include <stdio.h>
 #include "pico/stdlib.h"
+#include "config.h"
 #include "button.h"
 
 #define BTN1	6
@@ -33,6 +34,7 @@
 #define RELEASE_THRESHOLD		20
 
 void button_init() {
+#ifdef HAS_BUTTON
     gpio_init(BTN1);
     gpio_set_dir(BTN1, GPIO_IN);
     gpio_pull_up(BTN1);
@@ -40,6 +42,7 @@ void button_init() {
     gpio_init(BTN2);
     gpio_set_dir(BTN2, GPIO_IN);
     gpio_pull_up(BTN2);
+#endif
 }
 
 // Scan a single key, ID is the key number from 0, gpio is pin number
@@ -119,8 +122,12 @@ static uint32_t button_scan_single(int id, int gpio) {
 }
 
 uint32_t button_scan() {
+#ifdef HAS_BUTTON
 	uint32_t btn1 = button_scan_single(0, BTN1);
 	uint32_t btn2 = button_scan_single(1, BTN2);
 	uint32_t retval = (btn1 & 0x3) | ((btn2 & 0x3) << 2);
 	return retval;
+#else
+	return 0;
+#endif
 }

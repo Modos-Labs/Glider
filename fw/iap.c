@@ -19,43 +19,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 //
-#include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 #include "pico/stdlib.h"
-#include "hardware/i2c.h"
-#include "config.h"
-#include "ptn3460.h"
-#include "utils.h"
-#include "usb_mux.h"
+#include "hardware/flash.h"
+#include "pico/bootrom.h"
+#include "iap.h"
 
-#ifdef HAS_TYPEC
-
-#define USBC_ORI_PIN    10
-
-void usb_mux_init(int port) {
-    gpio_init(USBC_ORI_PIN);
-    gpio_set_dir(USBC_ORI_PIN, GPIO_OUT);
-    gpio_put(USBC_ORI_PIN, 0);
-}
-
-void usb_mux_set(int port, enum typec_mux mux_mode,
-		 enum usb_switch usb_config, int polarity) {
-    printf("USB MUX set %s, %d\n",
-        (usb_config == USB_SWITCH_CONNECT) ? "CONNECT" :
-        (usb_config == USB_SWITCH_DISCONNECT) ? "DISCONNECT" : "RESTORE",
-        polarity);
-    if (usb_config == USB_SWITCH_CONNECT) {
-        if (polarity == 0) {
-            // Not flipped
-            printf("Setting orientation to not flipped\n");
-        }
-        else {
-            // Flipped
-            printf("Setting orientation to flipped\n");
-        }
-        gpio_put(USBC_ORI_PIN, polarity ^ TYPEC_MB_ORI_INV);
-        ptn3460_set_aux_polarity(polarity ^ TYPEC_AUX_ORI_INV);
-    }
-}
-
+void __no_inline_not_in_flash_func(nuke)() {
+    uint flash_size_bytes;
+#ifndef PICO_FLASH_SIZE_BYTES
+#warning PICO_FLASH_SIZE_BYTES not set, assuming 16M
+    flash_size_bytes = 16 * 1024 * 1024;
+#else
+    flash_size_bytes = PICO_FLASH_SIZE_BYTES;
 #endif
+    flash_range_erase(0, flash_size_bytes);
+
+    // Pop back up as an MSD drive
+    reset_usb_boot(0, 0);
+}
+
+void iap_usbboot(void) {
+    reset_usb_boot(0, 0);
+    __builtin_unreachable();
+}
+
+void iap_reset(void) {
+    (*((volatile uint32_t*)(PPB_BASE + 0x0ED0C))) = 0x5FA0004; // Reset via NVIC
+    __builtin_unreachable();
+}
+
+void iap_nuke(void) {
+    nuke();
+    __builtin_unreachable();
+}

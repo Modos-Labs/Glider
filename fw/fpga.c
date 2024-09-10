@@ -22,16 +22,9 @@
 #include "pico/stdlib.h"
 #include <stdio.h>
 #include "utils.h"
+#include "config.h"
 #include "fpga.h"
 #include "bitstream.h"
-
-#define FPGA_CS     13
-#define FPGA_MOSI   15
-#define FPGA_MISO   12
-#define FPGA_SCLK   14
-#define FPGA_PROG   17
-#define FPGA_DONE   18
-#define FPGA_SUSP   19
 
 static int fpga_done = 0;
 
@@ -60,22 +53,31 @@ static void fpga_send_byte(uint8_t byte) {
     }
 }
 
-static void fpga_send_byte_slow(uint8_t byte) {
+static uint8_t fpga_send_byte_slow(uint8_t byte) {
+    uint8_t rxbyte;
     for (int i = 0; i < 8; i++) {
         gpio_put(FPGA_MOSI, byte & 0x80);
         delay_loop(20);
+        rxbyte |= gpio_get(FPGA_MISO);
         gpio_put(FPGA_SCLK, 1);
         delay_loop(20);
         byte <<= 1;
+        rxbyte <<= 1;
         gpio_put(FPGA_SCLK, 0);
     }
+    delay_loop(20);
+    rxbyte |= gpio_get(FPGA_MISO);
+    gpio_put(FPGA_SCLK, 1);
+    return rxbyte;
 }
 
-void fpga_write_reg8(uint8_t addr, uint8_t val) {
+uint8_t fpga_write_reg8(uint8_t addr, uint8_t val) {
+    uint8_t oldval;
     gpio_put(FPGA_CS, 0);
     fpga_send_byte_slow(addr);
-    fpga_send_byte_slow(val);
+    oldval = fpga_send_byte_slow(val);
     gpio_put(FPGA_CS, 1);
+    return oldval;
 }
 
 void fpga_write_reg16(uint8_t addr, uint16_t val) {
