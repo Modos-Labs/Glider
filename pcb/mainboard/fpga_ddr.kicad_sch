@@ -7406,7 +7406,7 @@
 		(uuid "a7e017c0-5cf5-4a96-9be1-36afdf4ab152")
 	)
 	(junction
-		(at 160.02 53.34)
+		(at 160.02 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ab4a0640-fbef-4ebf-93a0-30fcadfd2b6a")
@@ -8795,7 +8795,7 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 53.34) (xy 160.02 53.34)
+			(xy 137.16 48.26) (xy 160.02 48.26)
 		)
 		(stroke
 			(width 0)
@@ -11385,7 +11385,7 @@
 	)
 	(symbol
 		(lib_id "symbols:+DRAM_VREF")
-		(at 160.02 53.34 0)
+		(at 160.02 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11393,7 +11393,7 @@
 		(dnp no)
 		(uuid "31a9b2ff-f553-4c7a-8904-c98ca20780c9")
 		(property "Reference" "#PWR0104"
-			(at 160.02 57.15 0)
+			(at 160.02 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11402,7 +11402,7 @@
 			)
 		)
 		(property "Value" "+DRAM_VREF"
-			(at 160.401 48.9458 0)
+			(at 160.401 43.8658 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11410,7 +11410,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 53.34 0)
+			(at 160.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11419,7 +11419,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 53.34 0)
+			(at 160.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11428,7 +11428,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 160.02 53.34 0)
+			(at 160.02 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12404,7 +12404,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 160.02 57.15 0)
+		(at 160.02 52.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12412,7 +12412,7 @@
 		(dnp no)
 		(uuid "6a401427-bea9-40d8-8108-9eba43c385c0")
 		(property "Reference" "C68"
-			(at 162.941 55.9816 0)
+			(at 162.941 50.9016 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12421,7 +12421,7 @@
 			)
 		)
 		(property "Value" "220nF"
-			(at 162.941 58.293 0)
+			(at 162.941 53.213 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12430,7 +12430,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 160.9852 60.96 0)
+			(at 160.9852 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12439,7 +12439,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 160.02 57.15 0)
+			(at 160.02 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12448,7 +12448,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 160.02 57.15 0)
+			(at 160.02 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12457,7 +12457,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 160.02 57.15 0)
+			(at 160.02 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12466,7 +12466,7 @@
 			)
 		)
 		(property "Ref.Price" "0.0036"
-			(at 160.02 57.15 0)
+			(at 160.02 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12578,7 +12578,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 160.02 60.96 0)
+		(at 160.02 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12586,7 +12586,7 @@
 		(dnp no)
 		(uuid "77659daf-19ad-4e08-be0b-5ab0003c7d99")
 		(property "Reference" "#PWR0105"
-			(at 160.02 67.31 0)
+			(at 160.02 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12595,7 +12595,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 160.147 65.3542 0)
+			(at 160.147 60.2742 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12603,7 +12603,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 60.96 0)
+			(at 160.02 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12612,7 +12612,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 60.96 0)
+			(at 160.02 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12621,7 +12621,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 160.02 60.96 0)
+			(at 160.02 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)

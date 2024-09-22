@@ -13,7 +13,7 @@
 	(lib_symbols)
 	(text "FPGA DDR Memory"
 		(exclude_from_sim no)
-		(at 35.56 67.31 0)
+		(at 35.56 55.88 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -22,7 +22,7 @@
 		)
 		(uuid "36b30dff-23e2-4ed9-971b-1df779950e92")
 	)
-	(text "Power Supply"
+	(text "Logic Power Supply"
 		(exclude_from_sim no)
 		(at 35.56 33.02 0)
 		(effects
@@ -35,7 +35,7 @@
 	)
 	(text "USB Type-C Input"
 		(exclude_from_sim no)
-		(at 35.56 78.74 0)
+		(at 35.56 67.31 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -46,7 +46,7 @@
 	)
 	(text "Microcontroller"
 		(exclude_from_sim no)
-		(at 35.56 101.6 0)
+		(at 35.56 90.17 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -55,9 +55,20 @@
 		)
 		(uuid "b67963c3-f29b-47c7-8922-33e72e8d5f68")
 	)
+	(text "Display Power Supply"
+		(exclude_from_sim no)
+		(at 35.56 113.03 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "c810364d-274b-403c-bcb5-e296db772196")
+	)
 	(text "Display"
 		(exclude_from_sim no)
-		(at 35.56 55.88 0)
+		(at 35.56 101.6 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -66,7 +77,7 @@
 		)
 		(uuid "d2b3e5ed-56f7-4162-ab02-9bde306dbf5a")
 	)
-	(text "I2C Addresses\n0100010 FUSB302B\n1100000 PTN3460BS\n1001100 ADV7611"
+	(text "I2C Addresses\n0100010 FUSB302B\n1100000 PTN3460BS\n1001100 ADV7611\n1000000 INA3221 #0\n1000001 INA3221 #1"
 		(exclude_from_sim no)
 		(at 33.02 185.42 0)
 		(effects
@@ -90,7 +101,7 @@
 	)
 	(text "TMDS Input"
 		(exclude_from_sim no)
-		(at 35.56 90.17 0)
+		(at 35.56 78.74 0)
 		(effects
 			(font
 				(size 2.54 2.54)
@@ -98,6 +109,44 @@
 			(justify left bottom)
 		)
 		(uuid "fbc25d2d-afe2-4ffb-9abb-3b9e35c79f93")
+	)
+	(sheet
+		(at 33.02 96.52)
+		(size 53.34 6.35)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "02c99cce-90c7-4b15-8db7-b6bbe4991aa8")
+		(property "Sheetname" "epd"
+			(at 33.02 95.8084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "epd.kicad_sch"
+			(at 33.02 103.4546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(page "7")
+				)
+			)
+		)
 	)
 	(sheet
 		(at 33.02 27.94)
@@ -138,7 +187,7 @@
 		)
 	)
 	(sheet
-		(at 33.02 85.09)
+		(at 33.02 73.66)
 		(size 53.34 6.35)
 		(fields_autoplaced yes)
 		(stroke
@@ -150,7 +199,7 @@
 		)
 		(uuid "1afc3cb7-9ace-435f-9131-835660c51142")
 		(property "Sheetname" "tmds_in"
-			(at 33.02 84.3784 0)
+			(at 33.02 72.9484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -159,7 +208,7 @@
 			)
 		)
 		(property "Sheetfile" "tmds_in.kicad_sch"
-			(at 33.02 92.0246 0)
+			(at 33.02 80.5946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -170,7 +219,7 @@
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(page "8")
+					(page "6")
 				)
 			)
 		)
@@ -214,7 +263,7 @@
 		)
 	)
 	(sheet
-		(at 33.02 73.66)
+		(at 33.02 62.23)
 		(size 53.34 6.35)
 		(fields_autoplaced yes)
 		(stroke
@@ -226,44 +275,6 @@
 		)
 		(uuid "80373716-d41f-4f06-92dd-577434075703")
 		(property "Sheetname" "dp_in"
-			(at 33.02 72.9484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "dp_in.kicad_sch"
-			(at 33.02 80.5946 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(page "5")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 33.02 62.23)
-		(size 53.34 6.35)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "866a5b4a-453a-413a-94a2-5e610f40d8dd")
-		(property "Sheetname" "fpga_ddr"
 			(at 33.02 61.5184 0)
 			(effects
 				(font
@@ -272,7 +283,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "fpga_ddr.kicad_sch"
+		(property "Sheetfile" "dp_in.kicad_sch"
 			(at 33.02 69.1646 0)
 			(effects
 				(font
@@ -300,8 +311,8 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "b1d5941d-0481-47a2-a434-0b8e587a166a")
-		(property "Sheetname" "eink"
+		(uuid "866a5b4a-453a-413a-94a2-5e610f40d8dd")
+		(property "Sheetname" "fpga_ddr"
 			(at 33.02 50.0884 0)
 			(effects
 				(font
@@ -310,7 +321,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "eink.kicad_sch"
+		(property "Sheetfile" "fpga_ddr.kicad_sch"
 			(at 33.02 57.7346 0)
 			(effects
 				(font
@@ -328,7 +339,7 @@
 		)
 	)
 	(sheet
-		(at 33.02 96.52)
+		(at 33.02 85.09)
 		(size 53.34 6.35)
 		(fields_autoplaced yes)
 		(stroke
@@ -340,7 +351,7 @@
 		)
 		(uuid "d0757a0a-c868-475e-8221-24a5e99d32b9")
 		(property "Sheetname" "mcu"
-			(at 33.02 95.8084 0)
+			(at 33.02 84.3784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -349,7 +360,7 @@
 			)
 		)
 		(property "Sheetfile" "mcu.kicad_sch"
-			(at 33.02 103.4546 0)
+			(at 33.02 92.0246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -360,7 +371,45 @@
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(page "6")
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 33.02 107.95)
+		(size 53.34 6.35)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f7612365-fe83-4eab-8da6-6b707d906062")
+		(property "Sheetname" "epd_power"
+			(at 33.02 107.2384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "epd_power.kicad_sch"
+			(at 33.02 114.8846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(page "8")
 				)
 			)
 		)

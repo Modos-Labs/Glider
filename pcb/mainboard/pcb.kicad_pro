@@ -818,7 +818,7 @@
       "group_symbols": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "Footprint"
+      "sort_field": "Reference"
     },
     "connection_grid_size": 50.0,
     "drawing": {
@@ -885,10 +885,6 @@
       "fpga"
     ],
     [
-      "b1d5941d-0481-47a2-a434-0b8e587a166a",
-      "eink"
-    ],
-    [
       "866a5b4a-453a-413a-94a2-5e610f40d8dd",
       "fpga_ddr"
     ],
@@ -903,6 +899,14 @@
     [
       "1afc3cb7-9ace-435f-9131-835660c51142",
       "tmds_in"
+    ],
+    [
+      "02c99cce-90c7-4b15-8db7-b6bbe4991aa8",
+      "epd"
+    ],
+    [
+      "f7612365-fe83-4eab-8da6-6b707d906062",
+      "epd_power"
     ]
   ],
   "text_variables": {}
