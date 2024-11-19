@@ -2263,7 +2263,7 @@
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-    (model "${KIPRJMOD}/../common/footprints.pretty/WSON8-6x5.STEP"
+    (model "${KIPRJMOD}/../pcb_common/footprints.pretty/WSON8-6x5.STEP"
       (offset (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -5528,7 +5528,7 @@
       (net 1 "GND") (pinfunction "SHIELD") (pintype "passive") (tstamp 9f3201ef-2768-458d-abdf-99ce7cbe899a))
     (pad "S1" thru_hole oval (at 4.32 1.05 90) (size 1 1.6) (drill oval 0.6 1.2) (layers "*.Cu" "*.Mask")
       (net 1 "GND") (pinfunction "SHIELD") (pintype "passive") (tstamp 128f4ced-7260-4c37-b993-a95df879f7bb))
-    (model "${KIPRJMOD}/../common/footprints.pretty/HRO  TYPE-C-31-M-12.step"
+    (model "${KIPRJMOD}/../pcb_common/footprints.pretty/HRO  TYPE-C-31-M-12.step"
       (offset (xyz -4.47 -3.65 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))
@@ -10702,7 +10702,7 @@
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
-    (model "${KIPRJMOD}/../common/footprints.pretty/SM03B-SRSS-TB(LF)(SN).STEP"
+    (model "${KIPRJMOD}/../pcb_common/footprints.pretty/SM03B-SRSS-TB(LF)(SN).STEP"
       (offset (xyz 0 1.3 0))
       (scale (xyz 1 1 1))
       (rotate (xyz -90 0 0))

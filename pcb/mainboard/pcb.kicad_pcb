@@ -9156,7 +9156,7 @@
 			(pintype "passive")
 			(uuid "05bfe7a7-7b83-46b9-bbde-c9b89e55b77b")
 		)
-		(model "${KIPRJMOD}/../common/footprints.pretty/EVQPU-LC-02K.STEP"
+		(model "${KIPRJMOD}/../pcb_common/footprints.pretty/EVQPU-LC-02K.STEP"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -9525,7 +9525,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../common/footprints.pretty/WSON8-6x5.STEP"
+		(model "${KIPRJMOD}/../pcb_common/footprints.pretty/WSON8-6x5.STEP"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -23270,7 +23270,7 @@
 			(pintype "passive")
 			(uuid "4a716320-b53f-4005-a263-0ef7b50678a4")
 		)
-		(model "${KIPRJMOD}/../common/footprints.pretty/467651301.stp"
+		(model "${KIPRJMOD}/../pcb_common/footprints.pretty/467651301.stp"
 			(offset
 				(xyz -5 -3.2 0)
 			)
@@ -34997,7 +34997,7 @@
 			(pintype "passive")
 			(uuid "44dec822-28ce-4405-882b-23af4280163f")
 		)
-		(model "${KIPRJMOD}/../common/footprints.pretty/10137065-00021LF.step"
+		(model "${KIPRJMOD}/../pcb_common/footprints.pretty/10137065-00021LF.step"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -39937,7 +39937,7 @@
 			(pintype "passive")
 			(uuid "fb7cfb48-a939-4e82-b2d0-f08977d0ef4b")
 		)
-		(model "${KIPRJMOD}/../common/footprints.pretty/EVQPU-LC-02K.STEP"
+		(model "${KIPRJMOD}/../pcb_common/footprints.pretty/EVQPU-LC-02K.STEP"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -53799,7 +53799,7 @@
 				(xyz 0 0 0)
 			)
 		)
-		(model "${KIPRJMOD}/../common/footprints.pretty/SM03B-SRSS-TB(LF)(SN).STEP"
+		(model "${KIPRJMOD}/../pcb_common/footprints.pretty/SM03B-SRSS-TB(LF)(SN).STEP"
 			(offset
 				(xyz 0 1.3 0)
 			)

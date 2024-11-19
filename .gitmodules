@@ -1,0 +1,3 @@
+[submodule "pcb/pcb_common"]
+	path = pcb/pcb_common
+	url = git@gitlab.com:zephray/pcb_common.git
