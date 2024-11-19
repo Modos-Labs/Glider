@@ -4646,6 +4646,10 @@
 		(uuid "fe89e0eb-94df-42a9-b077-c2642da6678b")
 	)
 	(no_connect
+		(at 91.44 162.56)
+		(uuid "233c6c4c-b64e-4f49-b6a2-3e529dab2835")
+	)
+	(no_connect
 		(at 91.44 160.02)
 		(uuid "27475ea0-4349-469d-94da-89fedfd46245")
 	)
@@ -5652,16 +5656,6 @@
 			(type default)
 		)
 		(uuid "5ccd9c65-71f9-4d28-9ba7-f9ede7fe31aa")
-	)
-	(wire
-		(pts
-			(xy 88.9 162.56) (xy 91.44 162.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5d44b71e-9ec1-4cd0-bd7f-5793b574f4ff")
 	)
 	(wire
 		(pts
@@ -7798,7 +7792,7 @@
 			)
 		)
 	)
-	(global_label "I2C_SCL"
+	(global_label "I2C1_SCL"
 		(shape input)
 		(at 165.1 111.76 0)
 		(effects
@@ -7885,7 +7879,7 @@
 			)
 		)
 	)
-	(global_label "I2C_SDA"
+	(global_label "I2C1_SDA"
 		(shape bidirectional)
 		(at 165.1 114.3 0)
 		(effects
@@ -7919,27 +7913,6 @@
 		(uuid "91742cc8-3dc8-45bb-92c0-ea46d4a5511b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 59.0823 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "ADV_INT"
-		(shape output)
-		(at 88.9 162.56 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a5d59c67-023e-42cd-bc19-e52bbd68f65c")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 77.5848 162.4806 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8280,8 +8253,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04")
-		(at 78.74 101.6 90)
-		(mirror x)
+		(at 78.74 99.06 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8289,7 +8261,7 @@
 		(dnp no)
 		(uuid "17caa72b-fe0e-45f8-b8c5-26268559421a")
 		(property "Reference" "RN9"
-			(at 74.93 102.87 90)
+			(at 74.93 97.79 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8298,7 +8270,7 @@
 			)
 		)
 		(property "Value" "33R / 4D02WGF330JTCE"
-			(at 86.36 106.68 90)
+			(at 86.36 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8308,7 +8280,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 78.74 108.585 90)
+			(at 78.74 92.075 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8317,7 +8289,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 101.6 0)
+			(at 78.74 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8326,7 +8298,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 101.6 0)
+			(at 78.74 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8723,8 +8695,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04")
-		(at 78.74 91.44 90)
-		(mirror x)
+		(at 78.74 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8732,7 +8703,7 @@
 		(dnp no)
 		(uuid "2bd5e124-8350-420c-90a3-4df1b5f45e21")
 		(property "Reference" "RN11"
-			(at 74.93 92.71 90)
+			(at 74.93 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8741,7 +8712,7 @@
 			)
 		)
 		(property "Value" "33R / 4D02WGF330JTCE"
-			(at 86.36 81.28 90)
+			(at 86.36 99.06 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8751,7 +8722,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 78.74 98.425 90)
+			(at 78.74 81.915 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8760,7 +8731,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 91.44 0)
+			(at 78.74 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8769,7 +8740,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 91.44 0)
+			(at 78.74 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8953,7 +8924,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "401f59d7-183e-4464-a71f-7552356d2427")
 		(property "Reference" "#PWR0128"
 			(at 124.46 49.53 0)
@@ -8964,12 +8934,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+1V8"
-			(at 124.46 40.64 0)
+		(property "Value" "+1V8_VID"
+			(at 121.92 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -9019,7 +8990,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "40658a1f-8d3a-4af5-9292-ad78a5ef582e")
 		(property "Reference" "#PWR0127"
 			(at 119.38 49.53 0)
@@ -9030,12 +9000,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+3V3"
-			(at 119.38 40.64 0)
+		(property "Value" "+3V3_VID"
+			(at 111.76 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -9079,8 +9050,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04")
-		(at 78.74 121.92 90)
-		(mirror x)
+		(at 78.74 119.38 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9088,7 +9058,7 @@
 		(dnp no)
 		(uuid "4c8b3298-85da-4565-a76d-621eac5abc6c")
 		(property "Reference" "RN12"
-			(at 74.93 123.19 90)
+			(at 74.93 118.11 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9097,7 +9067,7 @@
 			)
 		)
 		(property "Value" "33R / 4D02WGF330JTCE"
-			(at 86.36 127 90)
+			(at 86.36 114.3 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9107,7 +9077,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 78.74 128.905 90)
+			(at 78.74 112.395 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9116,7 +9086,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 121.92 0)
+			(at 78.74 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9125,7 +9095,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 121.92 0)
+			(at 78.74 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9442,8 +9412,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04")
-		(at 78.74 81.28 90)
-		(mirror x)
+		(at 78.74 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9451,7 +9420,7 @@
 		(dnp no)
 		(uuid "669a8903-f14a-4278-9bc0-dcffc0e55419")
 		(property "Reference" "RN10"
-			(at 74.93 82.55 90)
+			(at 74.93 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9460,7 +9429,7 @@
 			)
 		)
 		(property "Value" "33R / 4D02WGF330JTCE"
-			(at 86.36 86.36 90)
+			(at 86.36 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9470,7 +9439,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 78.74 88.265 90)
+			(at 78.74 71.755 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9479,7 +9448,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 81.28 0)
+			(at 78.74 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9488,7 +9457,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 81.28 0)
+			(at 78.74 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9731,8 +9700,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04")
-		(at 78.74 144.78 90)
-		(mirror x)
+		(at 78.74 142.24 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9740,7 +9708,7 @@
 		(dnp no)
 		(uuid "89899bd8-e393-4ea4-aa7f-e38d383ff211")
 		(property "Reference" "RN7"
-			(at 74.93 146.05 90)
+			(at 74.93 140.97 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9749,7 +9717,7 @@
 			)
 		)
 		(property "Value" "33R / 4D02WGF330JTCE"
-			(at 87.503 143.2052 90)
+			(at 87.503 143.8148 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9759,7 +9727,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 78.74 151.765 90)
+			(at 78.74 135.255 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9768,7 +9736,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 144.78 0)
+			(at 78.74 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9777,7 +9745,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 144.78 0)
+			(at 78.74 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10013,8 +9981,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04")
-		(at 78.74 111.76 90)
-		(mirror x)
+		(at 78.74 109.22 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10022,7 +9989,7 @@
 		(dnp no)
 		(uuid "8ee783fe-5419-49d1-ae5c-4eb6ad17504d")
 		(property "Reference" "RN8"
-			(at 74.93 113.03 90)
+			(at 74.93 107.95 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10031,7 +9998,7 @@
 			)
 		)
 		(property "Value" "33R / 4D02WGF330JTCE"
-			(at 86.36 101.6 90)
+			(at 86.36 119.38 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10041,7 +10008,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 78.74 118.745 90)
+			(at 78.74 102.235 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10050,7 +10017,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 111.76 0)
+			(at 78.74 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10059,7 +10026,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 111.76 0)
+			(at 78.74 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11003,8 +10970,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Pack04")
-		(at 78.74 132.08 90)
-		(mirror x)
+		(at 78.74 129.54 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11012,7 +10978,7 @@
 		(dnp no)
 		(uuid "dea75635-19a1-4eee-b39f-4c7294b23f85")
 		(property "Reference" "RN13"
-			(at 74.93 133.35 90)
+			(at 74.93 128.27 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11021,7 +10987,7 @@
 			)
 		)
 		(property "Value" "33R / 4D02WGF330JTCE"
-			(at 86.36 121.92 90)
+			(at 86.36 139.7 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11031,7 +10997,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_Array_Convex_4x0402"
-			(at 78.74 139.065 90)
+			(at 78.74 122.555 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11040,7 +11006,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 78.74 132.08 0)
+			(at 78.74 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11049,7 +11015,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 132.08 0)
+			(at 78.74 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)

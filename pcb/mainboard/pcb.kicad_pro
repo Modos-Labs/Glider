@@ -5,7 +5,7 @@
       "defaults": {
         "apply_defaults_to_fp_fields": false,
         "apply_defaults_to_fp_shapes": false,
-        "apply_defaults_to_fp_text": false,
+        "apply_defaults_to_fp_text": true,
         "board_outline_line_width": 0.05,
         "copper_line_width": 0.2,
         "copper_text_italic": false,
@@ -59,7 +59,19 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "courtyards_overlap|95730001|53470001|744bff58-9015-4f0f-8809-1063deeb7f95|d197e4d2-be2e-4f2b-8c58-0f1aef454d09",
+        "courtyards_overlap|95730001|59070001|491da7bc-7866-41e8-8bad-8f6b08583b40|908d1f70-db1b-4897-9fde-96ae028ca312",
+        "courtyards_overlap|95730001|64670001|a37ebca3-da51-4bb4-9069-2a03b8aa589f|eda4ac82-3171-4185-9019-e0e145537876",
+        "courtyards_overlap|95730001|70270001|c0d56a8e-dc1d-461e-8dd2-e2beda79aff9|f18c5c94-eac4-4fbe-9860-d52f4658bc34",
+        "courtyards_overlap|95730001|75870001|2830d3e4-2c53-4b84-abc7-02d1660dd522|5227631f-e8ec-4954-a4e5-8f009cec89b6",
+        "courtyards_overlap|95730001|81470001|15ddb1b1-3a04-4758-9321-96a4f46c9d6d|62e3d4df-abb9-4c7c-afdf-fa62bb049712",
+        "courtyards_overlap|95730001|87070001|47d9c7b7-d1c4-401d-9c81-05d6768c6fb5|b9cbfaac-9465-4f71-b28a-022ddaa9fa35",
+        "courtyards_overlap|95730001|92670001|1786376b-023f-4d50-b907-041d88ecb5c5|d1e09d9a-91c0-43ad-b333-f00aa07bbab6",
+        "hole_clearance|149150000|71169250|cfe82e12-c921-420c-811b-37b9492ceea0|cdaf3155-e750-44b3-a8ed-2f9a3a00c529",
+        "hole_clearance|149150000|78629250|567646cc-9265-4a7f-9e58-fc6b579191ac|3db9f5aa-4bf5-4350-b32f-e25b3b29bcaa",
+        "hole_clearance|149795000|77914250|567646cc-9265-4a7f-9e58-fc6b579191ac|feb490f7-2016-4f0e-83ea-5f9bb22904a5"
+      ],
       "meta": {
         "version": 2
       },
@@ -191,7 +203,9 @@
         0.13,
         0.15,
         0.2,
+        0.25,
         0.3,
+        0.4,
         0.5,
         0.6,
         1.0,
@@ -513,9 +527,9 @@
       {
         "bus_width": 12,
         "clearance": 0.11,
-        "diff_pair_gap": 0.25,
+        "diff_pair_gap": 0.11,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
+        "diff_pair_width": 0.127,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -563,7 +577,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.127,
+        "clearance": 0.11,
         "diff_pair_gap": 0.1,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.11,
@@ -580,7 +594,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.127,
+        "clearance": 0.11,
         "diff_pair_gap": 0.1,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.11,
@@ -597,7 +611,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.127,
+        "clearance": 0.11,
         "diff_pair_gap": 0.1,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.11,
@@ -635,6 +649,8 @@
     },
     "net_colors": {
       "+1V0": "rgb(255, 92, 56)",
+      "+1V0_PL": "rgb(216, 223, 0)",
+      "+1V0_PS": "rgb(255, 139, 0)",
       "+1V2": "rgb(255, 117, 0)",
       "+1V35": "rgb(185, 61, 143)",
       "+3V3": "rgb(179, 228, 50)",
@@ -699,10 +715,6 @@
       {
         "netclass": "POWER",
         "pattern": "GND"
-      },
-      {
-        "netclass": "POWER",
-        "pattern": "V*"
       },
       {
         "netclass": "USB",
@@ -812,6 +824,12 @@
           "label": "Description",
           "name": "Description",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "desc",
+          "name": "desc",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -881,8 +899,12 @@
       "power"
     ],
     [
-      "35d2a4e1-1cb2-4b6c-a7fb-e3a9449d4ff3",
-      "fpga"
+      "66384eed-ff93-476f-8d90-45a9ae16ca47",
+      "fpga_config"
+    ],
+    [
+      "e8b4e009-795b-493b-81e1-c1f35fceb75f",
+      "fpga_io"
     ],
     [
       "866a5b4a-453a-413a-94a2-5e610f40d8dd",
@@ -891,10 +913,6 @@
     [
       "80373716-d41f-4f06-92dd-577434075703",
       "dp_in"
-    ],
-    [
-      "d0757a0a-c868-475e-8221-24a5e99d32b9",
-      "mcu"
     ],
     [
       "1afc3cb7-9ace-435f-9131-835660c51142",
@@ -907,6 +925,10 @@
     [
       "f7612365-fe83-4eab-8da6-6b707d906062",
       "epd_power"
+    ],
+    [
+      "1092a313-b264-4540-98b4-864a49d6a44e",
+      "power_mon"
     ]
   ],
   "text_variables": {}
