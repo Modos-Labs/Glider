@@ -1070,6 +1070,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED070KH1   |              | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
 | EC070KH1   | SC1452-GOA   |              | 1680x1264   | Kaleido Plus                |       |        |       | TTL       |           |         |         |
 | LB071WS1   |              |              | 1024x600    |                             |       | 7:1    |       | TTL       |           |         |         |
+| EC071KC2   | SC1452-GAB   |              | 1680x1264   | Kaleido ? + IGZO            |       |        | 2024? |           | 60        |         |         |
 | ET073TC1   |              | V320         | 750x200     | Carta                       |       |        | 2016  | TTL       |           |         |         |
 | ED078KC1   |              |              | 1872x1404   | Carta 1.2                   | 45%   | 16:1   | 2016  | TTL       | 40        | 40P-A   |         |
 | ED078KC2   | VB3300-GHC   | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
