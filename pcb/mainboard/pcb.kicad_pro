@@ -929,6 +929,10 @@
     [
       "1092a313-b264-4540-98b4-864a49d6a44e",
       "power_mon"
+    ],
+    [
+      "5f589a85-47ef-4b9c-90f9-dfdcb1c7f590",
+      "mcu"
     ]
   ],
   "text_variables": {}
