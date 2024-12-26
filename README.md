@@ -1034,6 +1034,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED060XC5   |              | V220         | 1024x758    | Pearl                       | 35%   | 12:1   | 2011  | TTL       | 34        | 34P-A   |         |
 | ED060XC8   |              | V320         | 1024x758    | Carta                       |       |        |       | TTL       | 35        | 35P-A   | Yes     |
 | ED060XC9   |              |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060XCA   |              |              | 1024x758    | Spectra 3000                |       |        |       | TTL       | 34        | 34P-A   |         |
 | ED060XCD   |              | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
 | ED060XCG   | VD1405-FOA   | 320/400      | 1024x758    | Carta 1000 / 1200           | 40%   | 17:1   | 2020  | TTL       |           |         |         |
 | ED060XCH   | VD1405-FOE   | 400          | 1024x758    | Carta 1200                  |       |        |       | TTL       |           |         |         |
