@@ -999,6 +999,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED038TH1   |              | V320         | 600x600     | Carta                       | 45%   | 17:1   | 2015  | TTL       | 34        | 34P-A   |         |
 | ET040TC1   |              |              | 720x480     | Pearl                       |       |        |       | TTL       |           |         |         |
 | ET040TC2   |              |              | 720x480     | Pearl                       |       |        |       | TTL       |           |         |         |
+| ET040TC3   |              |              | 720x480     | Pearl                       |       |        |       | TTL       | 40        |         |         |
 | ED043WC1   |              | V220         | 800x480     | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        | 39P-C   |         |
 | ED043WC3   | VA3200-DCA   | V220         | 800x480     | Pearl                       |       |        | 2014  | TTL       | 39        | 39P-C   |         |
 | ED043WC5   | VD1405-CGA   | 400          | 800x480     | Carta 1200                  |       |        |       | SPI       |           |         |         |
@@ -1028,6 +1029,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED060SCS   |              |              | 800x600     |                             |       |        |       | TTL       |           |         |         |
 | ED060SCT   |              | 320          | 800x600     | Carta                       |       |        |       | TTL       | 34        | 34P-B   |         |
 | ED060SD1   |              | 320          | 800x600     | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060SH2   |              | 320          | 800x600     | Carta                       |       |        |       | TTL       | 35        |         |         |
 | ED060XC3   |              | V220         | 1024x758    | Pearl                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
 | ED060XC5   |              | V220         | 1024x758    | Pearl                       | 35%   | 12:1   | 2011  | TTL       | 34        | 34P-A   |         |
 | ED060XC8   |              | V320         | 1024x758    | Carta                       |       |        |       | TTL       | 35        | 35P-A   | Yes     |
@@ -1058,12 +1060,14 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED061KC1   | VD1405-FAA   | 400          | 1648x824    | Carta 1200                  |       |        |       | TTL       |           |         |         |
 | ED067KC1   | VB3300-FGA   | 320          | 1800x900    | Carta                       | 45%   | 16:1   | 2020  | TTL       | 50        | 50P-B   |         |
 | EC067KC1   | SA1452-FGA   |              | 1800x900    | Kaleido                     |       |        |       | TTL       | 50        | 50P-B   |         |
+| ED068OG1   |              | V220         | 1440x1080   | Pearl                       |       |        | <2014 | TTL       |           |         |         |
 | ED068TG1   |              | 320          | 1440x1080   | Carta                       |       |        | <2013 | TTL       |           |         |         |
 | ED068TH1   |              | 320          | 1440x1080   | Carta                       |       |        | <2014 | TTL       |           |         |         |
 | ED068TH3   | VB3300-FHA   | 320          | 1440x1080   | Carta                       |       |        |       | TTL       |           |         |         |
 | ED068KC1   |              | 400SU        | 1648x1236   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
 | ED068KC3   | VD1405-FHD   | 400          | 1648x1236   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
 | ED068KC5   | VD1405-FHF   | 400          | 1648x1236   | Carta 1200                  | \>44% | \>19:1 |       | TTL       | 40        |         |         |
+| ET068SC1   |              |              | 800x600     |                             |       | 14:1   | 2018  | TTL       |           |         |         |
 | ED070KC2   |              | 320          | 1680x1264   | Carta 1100                  | \>47% | \>16:1 |       | TTL       |           |         |         |
 | ED070KC3   |              | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
 | ED070KC4   | VD1400-GOC   | 400          | 1680x1264   | Carta 1200                  |       |        |       | TTL       |           |         |         |
@@ -1102,6 +1106,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ES103TD3   |              | 320          | 1872x1404   | Carta                       |       |        |       | TTL       |           |         |         |
 | EC103TD1   | SA1452-KCC   |              | 1872x1404   | Kaleido                     |       |        |       | TTL       |           |         |         |
 | EC103TH2   | SC1452-KCB   |              | 1872x1404   | Kaleido Plus                |       |        |       | TTL       |           |         |         |
+| ED103KC1   | VD1400-KCF   | 400          | 2480x1860   | Carta 1200                  |       |        |       | TTL       | 61        |         |         |
 | EC103KH2   | SC1452-KCD   |              | 2480x1860   | Kaleido 3                   |       |        |       | TTL       |           |         |         |
 | ES107KC1   | VD1400-KGA   | 400          | 2560x1920   | Carta 1200                  |       |        |       | TTL       |           |         |         |
 | ES108FC1   |              | 320          | 1920x1080   | Carta                       | 46%   | 16:1   | 2017  | TTL       | 50        | 50P-C   |         |
