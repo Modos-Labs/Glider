@@ -60,14 +60,6 @@
         }
       ],
       "drc_exclusions": [
-        "courtyards_overlap|95730001|53470001|744bff58-9015-4f0f-8809-1063deeb7f95|d197e4d2-be2e-4f2b-8c58-0f1aef454d09",
-        "courtyards_overlap|95730001|59070001|491da7bc-7866-41e8-8bad-8f6b08583b40|908d1f70-db1b-4897-9fde-96ae028ca312",
-        "courtyards_overlap|95730001|64670001|a37ebca3-da51-4bb4-9069-2a03b8aa589f|eda4ac82-3171-4185-9019-e0e145537876",
-        "courtyards_overlap|95730001|70270001|c0d56a8e-dc1d-461e-8dd2-e2beda79aff9|f18c5c94-eac4-4fbe-9860-d52f4658bc34",
-        "courtyards_overlap|95730001|75870001|2830d3e4-2c53-4b84-abc7-02d1660dd522|5227631f-e8ec-4954-a4e5-8f009cec89b6",
-        "courtyards_overlap|95730001|81470001|15ddb1b1-3a04-4758-9321-96a4f46c9d6d|62e3d4df-abb9-4c7c-afdf-fa62bb049712",
-        "courtyards_overlap|95730001|87070001|47d9c7b7-d1c4-401d-9c81-05d6768c6fb5|b9cbfaac-9465-4f71-b28a-022ddaa9fa35",
-        "courtyards_overlap|95730001|92670001|1786376b-023f-4d50-b907-041d88ecb5c5|d1e09d9a-91c0-43ad-b333-f00aa07bbab6",
         "hole_clearance|149150000|71169250|cfe82e12-c921-420c-811b-37b9492ceea0|cdaf3155-e750-44b3-a8ed-2f9a3a00c529",
         "hole_clearance|149150000|78629250|567646cc-9265-4a7f-9e58-fc6b579191ac|3db9f5aa-4bf5-4350-b32f-e25b3b29bcaa",
         "hole_clearance|149795000|77914250|567646cc-9265-4a7f-9e58-fc6b579191ac|feb490f7-2016-4f0e-83ea-5f9bb22904a5"
@@ -719,6 +711,10 @@
       {
         "netclass": "USB",
         "pattern": "USB*"
+      },
+      {
+        "netclass": "POWER",
+        "pattern": "-*"
       }
     ]
   },
@@ -731,14 +727,14 @@
       "pos_files": "",
       "specctra_dsn": "",
       "step": "pcb.step",
-      "svg": "",
+      "svg": "./",
       "vrml": ""
     },
     "page_layout_descr_file": ""
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "",
+    "bom_export_filename": "bom.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -769,7 +765,7 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -784,22 +780,16 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "DNP",
           "name": "${DNP}",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
-        },
-        {
-          "group_by": false,
-          "label": "LCSC",
-          "name": "LCSC",
-          "show": true
         },
         {
           "group_by": false,

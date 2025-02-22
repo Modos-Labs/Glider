@@ -7993,6 +7993,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 78.74 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "89cb656a-7a38-499a-99a7-925daa3c53f6")
 		)
@@ -8080,6 +8089,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 78.74 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "61455a9b-1c06-4002-a89f-3b3dccb392cb")
 		)
@@ -8114,7 +8132,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "28.63636MHz"
+		(property "Value" "24MHz"
 			(at 213.36 132.08 90)
 			(effects
 				(font
@@ -8142,6 +8160,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 185.42 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 185.42 130.81 0)
 			(effects
 				(font
@@ -8226,6 +8253,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 191.77 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "0033f234-9de7-4d43-adf2-bffd00e7ce06")
 		)
@@ -8287,6 +8323,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 195.58 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 195.58 52.07 0)
 			(effects
 				(font
@@ -8357,6 +8402,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 191.77 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 191.77 137.16 0)
 			(effects
 				(font
@@ -8492,6 +8546,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 78.74 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 78.74 88.9 0)
 			(effects
 				(font
@@ -8645,6 +8708,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 88.9 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 88.9 52.07 0)
 			(effects
 				(font
@@ -8853,6 +8925,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 78.74 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "822b0d77-902b-418d-be16-5f9310083c7c")
 		)
@@ -8940,6 +9021,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 109.22 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6870cf16-8043-4955-b550-de4ea905dda9")
 		)
@@ -9001,6 +9091,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 144.78 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 144.78 52.07 0)
 			(effects
 				(font
@@ -9078,6 +9177,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 134.62 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e5293928-d8cf-439b-a671-1a12701985b5")
 		)
@@ -9137,6 +9245,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 204.47 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 204.47 109.22 0)
 			(effects
 				(font
@@ -9207,6 +9324,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 78.74 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 78.74 78.74 0)
 			(effects
 				(font
@@ -9433,6 +9559,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 175.26 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "11fe98fb-2b45-4705-a6a8-e46ca33122bd")
 		)
@@ -9495,6 +9630,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 78.74 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 78.74 142.24 0)
 			(effects
 				(font
@@ -9583,6 +9727,15 @@
 			)
 		)
 		(property "Description" "HDMI 1.4+ type D connector"
+			(at 231.14 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 231.14 91.44 0)
 			(effects
 				(font
@@ -9714,6 +9867,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 205.74 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "549c7945-2e26-47c9-ba8f-8b3575227fae")
 		)
@@ -9776,6 +9938,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 78.74 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 78.74 109.22 0)
 			(effects
 				(font
@@ -9934,6 +10105,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 223.52 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2078c49b-f4d3-4491-b765-f627c666cd33")
 		)
@@ -9995,6 +10175,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 165.1 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 165.1 52.07 0)
 			(effects
 				(font
@@ -10139,6 +10328,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 58.42 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ac4c2cae-ccbd-4454-87cd-c7011d463e4b")
 		)
@@ -10208,6 +10406,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 185.42 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e7b4c3f1-c4e0-4fcd-ba07-27992d230e21")
 		)
@@ -10267,6 +10474,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 233.68 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 135.89 0)
 			(effects
 				(font
@@ -10401,6 +10617,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 198.12 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 198.12 88.9 0)
 			(effects
 				(font
@@ -10567,6 +10792,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 172.72 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7baadd54-c537-4812-b348-96f5ec90a6b3")
 		)
@@ -10699,6 +10933,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 78.74 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "fbfc2ccd-3a3e-4d0b-8c7b-1f8e277f3bd6")
 		)
@@ -10760,6 +11003,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 154.94 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 154.94 52.07 0)
 			(effects
 				(font
@@ -10830,6 +11082,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 78.74 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 78.74 129.54 0)
 			(effects
 				(font
@@ -10918,6 +11179,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 124.46 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 124.46 119.38 0)
 			(effects
 				(font
@@ -11184,6 +11454,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 99.06 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b9ec1cca-4ad7-46b7-81c7-40b1f3921dd4")
 		)
@@ -11244,6 +11523,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 198.12 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 198.12 71.12 0)
 			(effects
 				(font
@@ -11337,6 +11625,15 @@
 			)
 		)
 		(property "Description" ""
+			(at 68.58 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 68.58 52.07 0)
 			(effects
 				(font

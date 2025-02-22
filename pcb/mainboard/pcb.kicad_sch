@@ -494,7 +494,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 36.8299 90)
 			(effects
 				(font
@@ -530,6 +530,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 233.68 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ca5d6d4a-c4dd-4ef0-bc24-a62ed6deacce")
 		)
@@ -537,6 +546,82 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
 					(reference "H6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 254 134.62 270)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "07dcb3e4-3c05-4f6e-9a4c-cdd49836b382")
+		(property "Reference" "H23"
+			(at 257.81 133.3499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ICSRC6508-030SFR"
+			(at 257.81 135.8899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "footprints:ICSRC6508-030SFR"
+			(at 254 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 254 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 254 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 254 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "07e63b4d-4f75-49c4-8aba-f4e291614242")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(reference "H23")
 					(unit 1)
 				)
 			)
@@ -561,7 +646,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 158.7499 90)
 			(effects
 				(font
@@ -597,6 +682,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 233.68 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "be8b2669-dffc-457c-9ba3-0d6ab6ba2e40")
 		)
@@ -604,6 +698,82 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
 					(reference "H22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 254 149.86 270)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1ba5efcf-c165-4669-bebe-35b69dd5eb67")
+		(property "Reference" "H25"
+			(at 257.81 148.5899 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ICSRC6508-030SFR"
+			(at 257.81 151.1299 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "footprints:ICSRC6508-030SFR"
+			(at 254 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 254 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 254 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 254 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e8b68df8-bc64-4bc6-87e5-9a21a97a25d9")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(reference "H25")
 					(unit 1)
 				)
 			)
@@ -693,7 +863,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 151.1299 90)
 			(effects
 				(font
@@ -721,6 +891,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 149.86 0)
 			(effects
 				(font
@@ -861,6 +1040,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 254 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b9820f5e-fdd1-40d1-9826-4a2b582a1a8c")
 		)
@@ -892,7 +1080,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 29.2099 90)
 			(effects
 				(font
@@ -920,6 +1108,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 27.94 0)
 			(effects
 				(font
@@ -959,7 +1156,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 143.5099 90)
 			(effects
 				(font
@@ -987,6 +1184,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 142.24 0)
 			(effects
 				(font
@@ -1054,6 +1260,15 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
+			(at 254 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 254 96.52 0)
 			(effects
 				(font
@@ -1155,7 +1370,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 113.0299 90)
 			(effects
 				(font
@@ -1183,6 +1398,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 111.76 0)
 			(effects
 				(font
@@ -1222,7 +1446,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 90.1699 90)
 			(effects
 				(font
@@ -1258,6 +1482,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 233.68 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "00658a5a-4d36-491a-8319-966b30276418")
 		)
@@ -1265,6 +1498,71 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
 					(reference "H13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 251.46 142.24 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5f9a8f23-49ef-46f2-b233-d7909c04014b")
+		(property "Reference" "#PWR0200"
+			(at 245.11 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 247.0658 142.367 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 251.46 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "632e8257-a97b-4f9a-b7b6-dba698106310")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(reference "#PWR0200")
 					(unit 1)
 				)
 			)
@@ -1354,7 +1652,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 105.4099 90)
 			(effects
 				(font
@@ -1382,6 +1680,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 104.14 0)
 			(effects
 				(font
@@ -1457,6 +1764,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 254 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1387e693-f692-4981-8a8f-76fdaa28ac07")
 		)
@@ -1488,7 +1804,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 135.8899 90)
 			(effects
 				(font
@@ -1516,6 +1832,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 134.62 0)
 			(effects
 				(font
@@ -1685,7 +2010,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 97.7899 90)
 			(effects
 				(font
@@ -1713,6 +2038,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 96.52 0)
 			(effects
 				(font
@@ -1853,6 +2187,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 254 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "66a739ba-f0ba-4604-a61c-34b48fae5aa6")
 		)
@@ -1931,6 +2274,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 251.46 157.48 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "92fd22cc-6d65-48c4-98c0-f0dfd1fc73ab")
+		(property "Reference" "#PWR0204"
+			(at 245.11 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 247.0658 157.607 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 251.46 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a3a1f842-e6ad-4d93-b182-30edbb09966f")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(reference "#PWR0204")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:Fiducial")
 		(at 254 73.66 0)
 		(unit 1)
@@ -1977,6 +2385,15 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
+			(at 254 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 254 73.66 0)
 			(effects
 				(font
@@ -2041,6 +2458,15 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
+			(at 254 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 254 81.28 0)
 			(effects
 				(font
@@ -2207,7 +2633,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 67.3099 90)
 			(effects
 				(font
@@ -2235,6 +2661,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 66.04 0)
 			(effects
 				(font
@@ -2310,6 +2745,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 254 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
@@ -2366,6 +2810,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 254 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 254 43.18 0)
 			(effects
 				(font
@@ -2517,6 +2970,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 254 142.24 270)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "aef84d16-5c8f-4e98-82ab-10ba973767ea")
+		(property "Reference" "H24"
+			(at 257.81 140.9699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ICSRC6508-030SFR"
+			(at 257.81 143.5099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "footprints:ICSRC6508-030SFR"
+			(at 254 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 254 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 254 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 254 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "334062d5-4f05-417c-95bb-01cf4ac27dda")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(reference "H24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 231.14 142.24 270)
 		(unit 1)
@@ -2600,7 +3129,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 82.5499 90)
 			(effects
 				(font
@@ -2628,6 +3157,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 81.28 0)
 			(effects
 				(font
@@ -2667,7 +3205,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 120.6499 90)
 			(effects
 				(font
@@ -2695,6 +3233,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 119.38 0)
 			(effects
 				(font
@@ -2781,6 +3328,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 251.46 134.62 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b64b10b0-ab3c-4f42-9cdf-a02cdef674a9")
+		(property "Reference" "#PWR091"
+			(at 245.11 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 247.0658 134.747 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 251.46 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dad103e6-52f8-4ce8-82fa-7f174899ea31")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(reference "#PWR091")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 233.68 50.8 270)
 		(unit 1)
@@ -2799,7 +3411,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 52.0699 90)
 			(effects
 				(font
@@ -2835,6 +3447,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 233.68 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "19f1bb32-f4fc-4a24-b5f5-c0fb87623b82")
 		)
@@ -2842,6 +3463,71 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
 					(reference "H8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 251.46 149.86 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b88ceb9c-01bf-4bed-93b8-cc1540f7c142")
+		(property "Reference" "#PWR0203"
+			(at 245.11 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 247.0658 149.987 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 251.46 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 251.46 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 251.46 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8fba547e-a875-49c3-b89c-baca2c9b02e9")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(reference "#PWR0203")
 					(unit 1)
 				)
 			)
@@ -2866,7 +3552,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 74.9299 90)
 			(effects
 				(font
@@ -2894,6 +3580,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 73.66 0)
 			(effects
 				(font
@@ -3099,10 +3794,95 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 254 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
 					(reference "FID1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 254 157.48 270)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cfe7a9a4-8272-478d-8cfc-1629de6d1faa")
+		(property "Reference" "H26"
+			(at 257.81 156.2099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "ICSRC6508-030SFR"
+			(at 257.81 158.7499 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "footprints:ICSRC6508-030SFR"
+			(at 254 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 254 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 254 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 254 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9dcf3ca1-3962-4934-b643-3a16a3d68b24")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(reference "H26")
 					(unit 1)
 				)
 			)
@@ -3257,7 +4037,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 128.2699 90)
 			(effects
 				(font
@@ -3285,6 +4065,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 127 0)
 			(effects
 				(font
@@ -3324,7 +4113,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 44.4499 90)
 			(effects
 				(font
@@ -3352,6 +4141,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 43.18 0)
 			(effects
 				(font
@@ -3492,6 +4290,15 @@
 				(hide yes)
 			)
 		)
+		(property "desc" ""
+			(at 254 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
@@ -3520,7 +4327,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Shield"
+		(property "Value" "ICSRC6508-030SFR"
 			(at 237.49 59.6899 90)
 			(effects
 				(font
@@ -3548,6 +4355,15 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
+			(at 233.68 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 233.68 58.42 0)
 			(effects
 				(font

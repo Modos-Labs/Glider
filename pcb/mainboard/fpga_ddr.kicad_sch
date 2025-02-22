@@ -9964,7 +9964,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.001"
 			(at 184.15 93.98 0)
 			(effects
 				(font
@@ -9973,7 +9973,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.001"
+		(property "desc" ""
 			(at 184.15 93.98 0)
 			(effects
 				(font
@@ -10051,7 +10051,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0025"
 			(at 248.92 140.97 0)
 			(effects
 				(font
@@ -10060,7 +10060,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0025"
+		(property "desc" ""
 			(at 248.92 140.97 0)
 			(effects
 				(font
@@ -10203,7 +10203,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0009"
 			(at 238.76 118.11 0)
 			(effects
 				(font
@@ -10212,7 +10212,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0009"
+		(property "desc" ""
 			(at 238.76 118.11 0)
 			(effects
 				(font
@@ -10290,7 +10290,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 190.5 158.75 0)
 			(effects
 				(font
@@ -10299,7 +10299,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 190.5 158.75 0)
 			(effects
 				(font
@@ -10377,7 +10377,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 175.26 36.83 0)
 			(effects
 				(font
@@ -10386,7 +10386,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 175.26 36.83 0)
 			(effects
 				(font
@@ -10464,7 +10464,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0006"
 			(at 177.8 118.11 0)
 			(effects
 				(font
@@ -10473,7 +10473,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0006"
+		(property "desc" ""
 			(at 177.8 118.11 0)
 			(effects
 				(font
@@ -10551,7 +10551,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0023"
 			(at 264.16 153.67 0)
 			(effects
 				(font
@@ -10560,7 +10560,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0023"
+		(property "desc" ""
 			(at 264.16 153.67 0)
 			(effects
 				(font
@@ -10703,7 +10703,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 160.02 138.43 0)
 			(effects
 				(font
@@ -10712,7 +10712,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 160.02 138.43 0)
 			(effects
 				(font
@@ -10855,7 +10855,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 170.18 138.43 0)
 			(effects
 				(font
@@ -10864,7 +10864,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 170.18 138.43 0)
 			(effects
 				(font
@@ -10942,7 +10942,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0006"
 			(at 187.96 118.11 0)
 			(effects
 				(font
@@ -10951,7 +10951,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0006"
+		(property "desc" ""
 			(at 187.96 118.11 0)
 			(effects
 				(font
@@ -11094,7 +11094,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 180.34 138.43 0)
 			(effects
 				(font
@@ -11103,7 +11103,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 180.34 138.43 0)
 			(effects
 				(font
@@ -11181,7 +11181,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 111.76 49.53 0)
 			(effects
 				(font
@@ -11190,7 +11190,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 111.76 49.53 0)
 			(effects
 				(font
@@ -11268,7 +11268,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0301"
 			(at 220.98 158.75 0)
 			(effects
 				(font
@@ -11277,7 +11277,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0301"
+		(property "desc" ""
 			(at 220.98 158.75 0)
 			(effects
 				(font
@@ -11550,7 +11550,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0007"
 			(at 97.79 43.18 0)
 			(effects
 				(font
@@ -11559,7 +11559,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0007"
+		(property "desc" ""
 			(at 97.79 43.18 0)
 			(effects
 				(font
@@ -11702,7 +11702,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 111.76 181.61 0)
 			(effects
 				(font
@@ -11711,7 +11711,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 111.76 181.61 0)
 			(effects
 				(font
@@ -11789,7 +11789,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 210.82 138.43 0)
 			(effects
 				(font
@@ -11798,7 +11798,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 210.82 138.43 0)
 			(effects
 				(font
@@ -12069,7 +12069,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "3.2405"
 			(at 220.98 22.86 0)
 			(effects
 				(font
@@ -12078,7 +12078,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "3.2405"
+		(property "desc" ""
 			(at 220.98 22.86 0)
 			(effects
 				(font
@@ -12503,7 +12503,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0006"
 			(at 251.46 118.11 0)
 			(effects
 				(font
@@ -12512,7 +12512,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0006"
+		(property "desc" ""
 			(at 251.46 118.11 0)
 			(effects
 				(font
@@ -12590,7 +12590,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0301"
 			(at 220.98 138.43 0)
 			(effects
 				(font
@@ -12599,7 +12599,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0301"
+		(property "desc" ""
 			(at 220.98 138.43 0)
 			(effects
 				(font
@@ -12677,7 +12677,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0025"
 			(at 248.92 153.67 0)
 			(effects
 				(font
@@ -12686,7 +12686,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0025"
+		(property "desc" ""
 			(at 248.92 153.67 0)
 			(effects
 				(font
@@ -12829,7 +12829,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 210.82 158.75 0)
 			(effects
 				(font
@@ -12838,7 +12838,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 210.82 158.75 0)
 			(effects
 				(font
@@ -12916,7 +12916,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 200.66 158.75 0)
 			(effects
 				(font
@@ -12925,7 +12925,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 200.66 158.75 0)
 			(effects
 				(font
@@ -13003,7 +13003,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 200.66 138.43 0)
 			(effects
 				(font
@@ -13012,7 +13012,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 200.66 138.43 0)
 			(effects
 				(font
@@ -13111,7 +13111,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c16dcf34-f7c0-42aa-854f-43d19eeaa80e")
-		(property "Reference" "U5"
+		(property "Reference" "U1"
 			(at 44.45 104.1399 0)
 			(effects
 				(font
@@ -13129,7 +13129,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:Xilinx_FTG256"
 			(at 68.58 111.76 0)
 			(effects
 				(font
@@ -13147,6 +13147,15 @@
 			)
 		)
 		(property "Description" "Spartan 6 LX 16 XC6SLX16-FTG256"
+			(at 63.5 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
 			(at 63.5 104.14 0)
 			(effects
 				(font
@@ -13926,7 +13935,7 @@
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/866a5b4a-453a-413a-94a2-5e610f40d8dd"
-					(reference "U5")
+					(reference "U1")
 					(unit 4)
 				)
 			)
@@ -13986,7 +13995,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 185.42 36.83 0)
 			(effects
 				(font
@@ -13995,7 +14004,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 185.42 36.83 0)
 			(effects
 				(font
@@ -14203,7 +14212,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 180.34 158.75 0)
 			(effects
 				(font
@@ -14212,7 +14221,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 180.34 158.75 0)
 			(effects
 				(font
@@ -14290,7 +14299,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 190.5 138.43 0)
 			(effects
 				(font
@@ -14299,7 +14308,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 190.5 138.43 0)
 			(effects
 				(font
@@ -14377,7 +14386,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0023"
 			(at 264.16 140.97 0)
 			(effects
 				(font
@@ -14386,7 +14395,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0023"
+		(property "desc" ""
 			(at 264.16 140.97 0)
 			(effects
 				(font
@@ -14529,7 +14538,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 170.18 158.75 0)
 			(effects
 				(font
@@ -14538,7 +14547,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 170.18 158.75 0)
 			(effects
 				(font
@@ -14746,7 +14755,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0165"
 			(at 238.76 146.05 0)
 			(effects
 				(font
@@ -14755,7 +14764,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0165"
+		(property "desc" ""
 			(at 238.76 146.05 0)
 			(effects
 				(font
@@ -14963,7 +14972,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "Ref.Price" "0.0036"
 			(at 160.02 158.75 0)
 			(effects
 				(font
@@ -14972,7 +14981,7 @@
 				(hide yes)
 			)
 		)
-		(property "Ref.Price" "0.0036"
+		(property "desc" ""
 			(at 160.02 158.75 0)
 			(effects
 				(font
