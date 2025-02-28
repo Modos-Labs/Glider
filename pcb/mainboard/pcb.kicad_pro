@@ -59,11 +59,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "hole_clearance|149150000|71169250|cfe82e12-c921-420c-811b-37b9492ceea0|cdaf3155-e750-44b3-a8ed-2f9a3a00c529",
-        "hole_clearance|149150000|78629250|567646cc-9265-4a7f-9e58-fc6b579191ac|3db9f5aa-4bf5-4350-b32f-e25b3b29bcaa",
-        "hole_clearance|149795000|77914250|567646cc-9265-4a7f-9e58-fc6b579191ac|feb490f7-2016-4f0e-83ea-5f9bb22904a5"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },

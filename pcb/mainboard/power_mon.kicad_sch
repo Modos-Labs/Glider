@@ -6319,8 +6319,8 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V2"
-			(at 85.09 109.22 0)
+		(property "Value" "+5V_DCDC"
+			(at 87.63 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)

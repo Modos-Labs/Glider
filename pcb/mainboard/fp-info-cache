@@ -1,4 +1,4 @@
-24561016580907290
+24569747338056726
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -98819,35 +98819,42 @@ HX-TS5208A
 4
 2
 footprints
-Hirose_FH12-12S-0.5SH_1x12-1MP_P0.50mm_Horizontal_Reversed
+Hirose_FH12-12S-0.5SH_1x12-1MP_P0.50mm_Horizontal_Mirrored
 Hirose FH12, FFC/FPC connector, FH12-12S-0.5SH, 12 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
 connector Hirose FH12 horizontal
 0
 14
 13
 footprints
-Hirose_FH12-20S-0.5SH_1x20-1MP_P0.50mm_Horizontal_Reversed
+Hirose_FH12-20S-0.5SH_1x20-1MP_P0.50mm_Horizontal_Mirrored
 Hirose FH12, FFC/FPC connector, FH12-20S-0.5SH, 20 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
 connector Hirose FH12 horizontal
 0
 22
 21
 footprints
-Hirose_FH12-30S-0.5SH_1x30-1MP_P0.50mm_Horizontal_Reversed
+Hirose_FH12-30S-0.5SH_1x30-1MP_P0.50mm_Horizontal_Mirrored
 Hirose FH12, FFC/FPC connector, FH12-30S-0.5SH, 30 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
 connector Hirose FH12 horizontal
 0
 32
 31
 footprints
-Hirose_FH12-40S-0.5SH_1x40-1MP_P0.50mm_Horizontal_Reversed
+Hirose_FH12-36S-0.5SH_1x36-1MP_P0.50mm_Horizontal_Mirrored
+Hirose FH12, FFC/FPC connector, FH12-36S-0.5SH, 36 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose FH12 horizontal
+0
+38
+37
+footprints
+Hirose_FH12-40S-0.5SH_1x40-1MP_P0.50mm_Horizontal_Mirrored
 Hirose FH12, FFC/FPC connector, FH12-40S-0.5SH, 40 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
 connector Hirose FH12 horizontal
 0
 42
 41
 footprints
-Hirose_FH12-45S-0.5SH_1x45-1MP_P0.50mm_Horizontal_Reversed
+Hirose_FH12-45S-0.5SH_1x45-1MP_P0.50mm_Horizontal_Mirrored
 Hirose FH12, FFC/FPC connector, FH12-45S-0.5SH, 45 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
 connector Hirose FH12 horizontal
 0
@@ -98987,11 +98994,32 @@ connector Molex  top entry
 8
 7
 footprints
+Molex_5025983993
+
+
+0
+41
+41
+footprints
 PJ-327E
 
 
 0
 5
+4
+footprints
+PRT_1.25MM_4PIN_HOR_SMD
+
+
+0
+6
+5
+footprints
+PRT_1.25MM_4PIN_VER_DIP
+
+
+0
+4
 4
 footprints
 Potentiometer_Bourns_TC33X_Vertical
@@ -99063,6 +99091,13 @@ SIQ-02FVS3_L
 0
 8
 5
+footprints
+SW_3.2X4.2X2.5_XKB_TS_1145A_C_A_HIGHDENSITY
+
+
+0
+4
+2
 footprints
 TE_5-2069716-3_1x40-1MP_P0.5mm_Horizontal
 TE FPC connector, 40 top-side contacts, 0.5mm pitch, SMT, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1734839%7FC%7Fpdf%7FEnglish%7FENG_CD_1734839_C_C_1734839.pdf%7F4-1734839-0

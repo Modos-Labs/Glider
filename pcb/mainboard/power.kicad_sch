@@ -10644,7 +10644,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1004d747-1afa-4d9e-b402-457f6b806ce2")
 		(property "Reference" "#PWR0106"
 			(at 96.52 46.99 0)
@@ -10655,12 +10654,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V2"
-			(at 96.52 38.1 0)
+		(property "Value" "+5V_DCDC"
+			(at 91.44 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -14246,7 +14246,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "79fa91bb-156c-4638-b811-02cc5d2470f4")
 		(property "Reference" "#PWR0107"
 			(at 106.68 46.99 0)
@@ -14257,12 +14256,13 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V2"
-			(at 106.68 38.1 0)
+		(property "Value" "+5V_DCDC"
+			(at 102.87 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -15619,7 +15619,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Changjiang_FNR3012S"
+		(property "Footprint" "Inductor_SMD:L_Changjiang_FNR4020S"
 			(at 63.5 27.94 0)
 			(effects
 				(font
@@ -16304,7 +16304,7 @@
 				)
 			)
 		)
-		(property "Value" "51K/1%"
+		(property "Value" "100K/1%"
 			(at 95.25 48.26 90)
 			(effects
 				(font
@@ -17557,7 +17557,7 @@
 				)
 			)
 		)
-		(property "Value" "51K/1%"
+		(property "Value" "22K/1%"
 			(at 86.36 57.15 90)
 			(effects
 				(font

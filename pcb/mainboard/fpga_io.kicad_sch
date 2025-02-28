@@ -6190,7 +6190,7 @@
 		)
 		(uuid "bca8bf46-bb66-409f-9a13-15c9d9ef292d")
 	)
-	(global_label "EPDC_D1N"
+	(global_label "EPDC_D5N"
 		(shape output)
 		(at 218.44 124.46 0)
 		(fields_autoplaced yes)
@@ -6234,7 +6234,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D1P"
+	(global_label "EPDC_D5P"
 		(shape output)
 		(at 218.44 127 0)
 		(fields_autoplaced yes)
@@ -6278,7 +6278,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D8P"
+	(global_label "EPDC_D0P"
 		(shape output)
 		(at 218.44 104.14 0)
 		(fields_autoplaced yes)
@@ -6322,7 +6322,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D3N"
+	(global_label "EPDC_D7N"
 		(shape output)
 		(at 218.44 139.7 0)
 		(fields_autoplaced yes)
@@ -6498,7 +6498,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D0P"
+	(global_label "EPDC_D4P"
 		(shape output)
 		(at 218.44 116.84 0)
 		(fields_autoplaced yes)
@@ -6520,7 +6520,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D3P"
+	(global_label "EPDC_D7P"
 		(shape output)
 		(at 218.44 142.24 0)
 		(fields_autoplaced yes)
@@ -6608,7 +6608,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D6P"
+	(global_label "EPDC_D11P"
 		(shape output)
 		(at 218.44 91.44 0)
 		(fields_autoplaced yes)
@@ -6620,7 +6620,7 @@
 		)
 		(uuid "5c80de71-00c0-4031-ad4b-55c2222d4b41")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.1013 91.44 0)
+			(at 232.3108 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6740,7 +6740,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D10P"
+	(global_label "EPDC_D2P"
 		(shape output)
 		(at 218.44 134.62 0)
 		(fields_autoplaced yes)
@@ -6752,7 +6752,7 @@
 		)
 		(uuid "686343a6-d2bc-40d0-8ae1-4871433b05cc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.3108 134.62 0)
+			(at 231.1013 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6806,7 +6806,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_CLKP"
+	(global_label "EPDC_D10P"
 		(shape output)
 		(at 218.44 86.36 0)
 		(fields_autoplaced yes)
@@ -6818,7 +6818,7 @@
 		)
 		(uuid "6d4065bc-f722-490f-9527-ce3507ef43dc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.1899 86.36 0)
+			(at 232.3108 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6850,7 +6850,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D11N"
+	(global_label "EPDC_D3N"
 		(shape output)
 		(at 218.44 147.32 0)
 		(fields_autoplaced yes)
@@ -6862,7 +6862,7 @@
 		)
 		(uuid "733f3a39-46a6-4596-a199-8420da9dfe61")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.3713 147.32 0)
+			(at 231.1618 147.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6938,7 +6938,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D8N"
+	(global_label "EPDC_D0N"
 		(shape output)
 		(at 218.44 106.68 0)
 		(fields_autoplaced yes)
@@ -6960,7 +6960,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D5N"
+	(global_label "EPDC_D9N"
 		(shape output)
 		(at 218.44 101.6 0)
 		(fields_autoplaced yes)
@@ -7004,7 +7004,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D9N"
+	(global_label "EPDC_D1N"
 		(shape output)
 		(at 218.44 93.98 0)
 		(fields_autoplaced yes)
@@ -7048,7 +7048,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_CLKN"
+	(global_label "EPDC_D10N"
 		(shape output)
 		(at 218.44 83.82 0)
 		(fields_autoplaced yes)
@@ -7060,7 +7060,7 @@
 		)
 		(uuid "9adbfa21-72f3-40e1-ba01-2e7b23ee326f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.2504 83.82 0)
+			(at 232.3713 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7092,7 +7092,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D5P"
+	(global_label "EPDC_D9P"
 		(shape output)
 		(at 218.44 99.06 0)
 		(fields_autoplaced yes)
@@ -7136,7 +7136,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D2N"
+	(global_label "EPDC_D6N"
 		(shape output)
 		(at 218.44 129.54 0)
 		(fields_autoplaced yes)
@@ -7180,7 +7180,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D0N"
+	(global_label "EPDC_D4N"
 		(shape output)
 		(at 218.44 114.3 0)
 		(fields_autoplaced yes)
@@ -7202,7 +7202,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D2P"
+	(global_label "EPDC_D6P"
 		(shape output)
 		(at 218.44 132.08 0)
 		(fields_autoplaced yes)
@@ -7290,7 +7290,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D4N"
+	(global_label "EPDC_D8N"
 		(shape output)
 		(at 218.44 76.2 0)
 		(fields_autoplaced yes)
@@ -7378,7 +7378,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D7N"
+	(global_label "EPDC_CLKN"
 		(shape output)
 		(at 218.44 109.22 0)
 		(fields_autoplaced yes)
@@ -7390,7 +7390,7 @@
 		)
 		(uuid "d3f2c716-df3d-4911-8979-32e726c9baa8")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.1618 109.22 0)
+			(at 232.2504 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7422,7 +7422,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D6N"
+	(global_label "EPDC_D11N"
 		(shape output)
 		(at 218.44 88.9 0)
 		(fields_autoplaced yes)
@@ -7434,7 +7434,7 @@
 		)
 		(uuid "d68a12fa-8d8d-442f-877c-325c80c6e751")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.1618 88.9 0)
+			(at 232.3713 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7466,7 +7466,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D9P"
+	(global_label "EPDC_D1P"
 		(shape output)
 		(at 218.44 96.52 0)
 		(fields_autoplaced yes)
@@ -7532,7 +7532,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D4P"
+	(global_label "EPDC_D8P"
 		(shape output)
 		(at 218.44 73.66 0)
 		(fields_autoplaced yes)
@@ -7598,7 +7598,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D7P"
+	(global_label "EPDC_CLKP"
 		(shape output)
 		(at 218.44 111.76 0)
 		(fields_autoplaced yes)
@@ -7610,7 +7610,7 @@
 		)
 		(uuid "f560769c-1e5e-408c-9220-6c58a5604094")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.1013 111.76 0)
+			(at 232.1899 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7620,7 +7620,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D11P"
+	(global_label "EPDC_D3P"
 		(shape output)
 		(at 218.44 144.78 0)
 		(fields_autoplaced yes)
@@ -7632,7 +7632,7 @@
 		)
 		(uuid "f604af2e-17bd-4f87-87e1-673ca656110e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.3108 144.78 0)
+			(at 231.1013 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7664,7 +7664,7 @@
 			)
 		)
 	)
-	(global_label "EPDC_D10N"
+	(global_label "EPDC_D2N"
 		(shape output)
 		(at 218.44 137.16 0)
 		(fields_autoplaced yes)
@@ -7676,7 +7676,7 @@
 		)
 		(uuid "feac25f1-d438-4426-b0ba-6ca2deb2e8a1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 232.3713 137.16 0)
+			(at 231.1618 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
