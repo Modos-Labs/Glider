@@ -4,6 +4,12 @@
 	(generator_version "8.0")
 	(uuid "2443cd5b-a18c-4188-a9dd-0ff2bb462f1d")
 	(paper "A4")
+	(title_block
+		(title "Glider")
+		(date "2025-04-18")
+		(rev "R0.13")
+		(company "Copyright 2025 Wenting Zhang")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers hide)
@@ -2903,7 +2909,7 @@
 				)
 			)
 		)
-		(property "Value" "100K"
+		(property "Value" "100K/1%"
 			(at 233.68 93.98 90)
 			(effects
 				(font
@@ -3552,7 +3558,7 @@
 				)
 			)
 		)
-		(property "Value" "1M"
+		(property "Value" "1M/1%"
 			(at 233.68 73.66 90)
 			(effects
 				(font
@@ -3826,7 +3832,7 @@
 				)
 			)
 		)
-		(property "Value" "100K"
+		(property "Value" "100K/1%"
 			(at 220.98 73.66 90)
 			(effects
 				(font
@@ -4099,7 +4105,7 @@
 				)
 			)
 		)
-		(property "Value" "50mR"
+		(property "Value" "20mR"
 			(at 74.93 147.32 90)
 			(effects
 				(font
@@ -4176,7 +4182,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 132.461 91.313 0)
 			(effects
 				(font
@@ -4572,7 +4578,7 @@
 				)
 			)
 		)
-		(property "Value" "50mR"
+		(property "Value" "20mR"
 			(at 74.93 101.6 90)
 			(effects
 				(font
@@ -4649,7 +4655,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 132.461 144.653 0)
 			(effects
 				(font
@@ -4726,7 +4732,7 @@
 				)
 			)
 		)
-		(property "Value" "100K"
+		(property "Value" "100K/1%"
 			(at 233.68 104.14 90)
 			(effects
 				(font
@@ -4933,7 +4939,7 @@
 				)
 			)
 		)
-		(property "Value" "1M"
+		(property "Value" "1M/1%"
 			(at 215.9 132.08 0)
 			(effects
 				(font
@@ -5729,7 +5735,7 @@
 				)
 			)
 		)
-		(property "Value" "100K"
+		(property "Value" "100K/1%"
 			(at 215.9 144.78 0)
 			(effects
 				(font
@@ -5805,7 +5811,7 @@
 				)
 			)
 		)
-		(property "Value" "50mR"
+		(property "Value" "20mR"
 			(at 74.93 109.22 90)
 			(effects
 				(font
@@ -5881,7 +5887,7 @@
 				)
 			)
 		)
-		(property "Value" "50mR"
+		(property "Value" "20mR"
 			(at 74.93 154.94 90)
 			(effects
 				(font
@@ -6089,7 +6095,7 @@
 				)
 			)
 		)
-		(property "Value" "1M"
+		(property "Value" "1M/1%"
 			(at 220.98 93.98 90)
 			(effects
 				(font
@@ -6165,7 +6171,7 @@
 				)
 			)
 		)
-		(property "Value" "1M"
+		(property "Value" "1M/1%"
 			(at 233.68 83.82 90)
 			(effects
 				(font
@@ -6242,7 +6248,7 @@
 				)
 			)
 		)
-		(property "Value" "50mR"
+		(property "Value" "20mR"
 			(at 74.93 48.26 90)
 			(effects
 				(font
@@ -6384,7 +6390,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 226.441 144.653 0)
 			(effects
 				(font
@@ -6462,7 +6468,7 @@
 				)
 			)
 		)
-		(property "Value" "50mR"
+		(property "Value" "20mR"
 			(at 74.93 40.64 90)
 			(effects
 				(font
@@ -6538,7 +6544,7 @@
 				)
 			)
 		)
-		(property "Value" "50mR"
+		(property "Value" "20mR"
 			(at 74.93 93.98 90)
 			(effects
 				(font
@@ -6614,7 +6620,7 @@
 				)
 			)
 		)
-		(property "Value" "100K"
+		(property "Value" "100K/1%"
 			(at 220.98 83.82 90)
 			(effects
 				(font
@@ -6821,7 +6827,7 @@
 				)
 			)
 		)
-		(property "Value" "50mR"
+		(property "Value" "20mR"
 			(at 74.93 55.88 90)
 			(effects
 				(font
@@ -6963,7 +6969,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 132.461 37.973 0)
 			(effects
 				(font
@@ -7105,7 +7111,7 @@
 				)
 			)
 		)
-		(property "Value" "1M"
+		(property "Value" "1M/1%"
 			(at 220.98 104.14 90)
 			(effects
 				(font

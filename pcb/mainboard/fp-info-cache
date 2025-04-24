@@ -1,4 +1,4 @@
-24569747338056726
+24583697963333340
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -98595,6 +98595,13 @@ Varistor VF
 2
 2
 footprints
+8P_2.54
+
+
+0
+8
+8
+footprints
 120220-0204
 
 
@@ -98798,6 +98805,13 @@ FPC_30
 30
 30
 footprints
+HDMI_C_GT-HD006A-CGNGX
+
+
+0
+23
+20
+footprints
 HDMI_Micro-D_Molex_46765-1x01_MOD
 HDMI, Micro, Type D, THT, 0.4mm pitch, 19 ckt, right angle (http://www.molex.com/pdm_docs/sd/467651301_sd.pdf)
 hdmi micro type d right angle tht
@@ -98840,6 +98854,13 @@ connector Hirose FH12 horizontal
 32
 31
 footprints
+Hirose_FH12-32S-0.5SH_1x32-1MP_P0.50mm_Horizontal_Mirrored
+Hirose FH12, FFC/FPC connector, FH12-32S-0.5SH, 32 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose FH12 horizontal
+0
+34
+33
+footprints
 Hirose_FH12-36S-0.5SH_1x36-1MP_P0.50mm_Horizontal_Mirrored
 Hirose FH12, FFC/FPC connector, FH12-36S-0.5SH, 36 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
 connector Hirose FH12 horizontal
@@ -98860,6 +98881,13 @@ connector Hirose FH12 horizontal
 0
 47
 46
+footprints
+Hirose_FH12-50S-0.5SH_1x50-1MP_P0.50mm_Horizontal_Mirrored
+Hirose FH12, FFC/FPC connector, FH12-50S-0.5SH, 50 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose FH12 horizontal
+0
+52
+51
 footprints
 ICSRC6508-030SFR
 
@@ -99162,6 +99190,13 @@ USB C Type-C Receptacle Hybrid
 28
 25
 footprints
+USB_C_Receptacle_GT-USB-7007A
+
+
+0
+30
+25
+footprints
 VQFN-24-1EP_4x4mm_P0.5mm_EP2.45x2.45mm_0.3ThermalVias
 VQFN, 24 Pin (http://www.ti.com/lit/ds/symlink/msp430f1101a.pdf), generated with kicad-footprint-generator ipc_noLead_generator.py
 VQFN NoLead
@@ -99182,6 +99217,27 @@ BGA 256 1 FT256 FTG256
 0
 256
 256
+footprints
+Xunpu_FPC-05F-16PH20_1x16-1MP_P0.50mm_Horizontal
+Hirose FH12, FFC/FPC connector, FH12-50S-0.5SH, 50 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose FH12 horizontal
+0
+18
+17
+footprints
+Xunpu_FPC-05F-50PH20_1x50-1MP_P0.50mm_Horizontal
+Hirose FH12, FFC/FPC connector, FH12-50S-0.5SH, 50 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose FH12 horizontal
+0
+52
+51
+footprints
+Xunpu_FPC-05F-50PH20_1x50-1MP_P0.50mm_Horizontal_Mirrored
+Hirose FH12, FFC/FPC connector, FH12-50S-0.5SH, 50 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose FH12 horizontal
+0
+52
+51
 footprints
 YTC1P-4520
 

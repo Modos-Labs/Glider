@@ -720,9 +720,9 @@
       "idf": "",
       "netlist": "",
       "plot": "gerber/",
-      "pos_files": "",
+      "pos_files": "./",
       "specctra_dsn": "",
-      "step": "pcb.step",
+      "step": "mb_r0p13_250414.step",
       "svg": "./",
       "vrml": ""
     },
@@ -919,6 +919,10 @@
     [
       "5f589a85-47ef-4b9c-90f9-dfdcb1c7f590",
       "mcu"
+    ],
+    [
+      "8794da7a-9bf3-41c0-ac71-83d1542b2b5a",
+      "user_ext"
     ]
   ],
   "text_variables": {}

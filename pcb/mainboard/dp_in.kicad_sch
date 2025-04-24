@@ -6,9 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Glider")
-		(date "2024-05-09")
-		(rev "R0.8")
-		(company "Copyright 2024 Wenting Zhang")
+		(date "2025-04-18")
+		(rev "R0.13")
+		(company "Copyright 2025 Wenting Zhang")
 	)
 	(lib_symbols
 		(symbol "Analog_Switch:CBTL02043A"
@@ -8171,17 +8171,6 @@
 		)
 		(uuid "fe450efb-ecd5-43ca-b337-0da8e01a3220")
 	)
-	(text "Use\nXUNPU TYPEC-324G-ACP24"
-		(exclude_from_sim no)
-		(at 22.86 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "0799c236-2478-471c-8aad-ee9b4b05bfeb")
-	)
 	(text "SBU reverse is handled by PTN3460"
 		(exclude_from_sim no)
 		(at 86.36 144.78 0)
@@ -8205,7 +8194,7 @@
 		(uuid "14ba396a-b91b-4f88-8b58-28ef6db6dc0b")
 	)
 	(label "SBU1"
-		(at 27.94 50.8 0)
+		(at 27.94 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8403,7 +8392,7 @@
 		(uuid "90238d7f-bb40-4526-b39b-160d5ca224fd")
 	)
 	(label "SBU2"
-		(at 27.94 58.42 0)
+		(at 27.94 60.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8513,7 +8502,7 @@
 		(uuid "be8fae54-6101-4fef-b089-499a678e4f2c")
 	)
 	(label "CC2"
-		(at 27.94 60.96 0)
+		(at 27.94 50.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9301,7 +9290,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 208.661 111.633 0)
 			(effects
 				(font
@@ -9641,7 +9630,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 112.649 90)
 			(effects
 				(font
@@ -9951,7 +9940,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 208.661 152.273 0)
 			(effects
 				(font
@@ -10029,7 +10018,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 120.65 96.52 0)
 			(effects
 				(font
@@ -10482,7 +10471,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 93.091 60.833 0)
 			(effects
 				(font
@@ -10560,7 +10549,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 120.269 90)
 			(effects
 				(font
@@ -10859,7 +10848,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 115.189 90)
 			(effects
 				(font
@@ -11067,7 +11056,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 208.661 131.953 0)
 			(effects
 				(font
@@ -11145,7 +11134,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 197.231 152.273 0)
 			(effects
 				(font
@@ -11223,7 +11212,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 127.889 90)
 			(effects
 				(font
@@ -11433,7 +11422,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 122.809 90)
 			(effects
 				(font
@@ -11613,7 +11602,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1K"
+		(property "Value" "5.1K/1%"
 			(at 218.44 82.55 90)
 			(effects
 				(font
@@ -11792,7 +11781,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 138.049 90)
 			(effects
 				(font
@@ -11870,7 +11859,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "XUNPU TYPEC-324G-ACP24"
+		(property "Value" "GT-USB-7007A"
 			(at 27.94 116.84 90)
 			(effects
 				(font
@@ -11879,7 +11868,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "footprints:XUNPU_TypeC-324G-ACP24"
+		(property "Footprint" "footprints:USB_C_Receptacle_GT-USB-7007A"
 			(at 44.45 106.68 0)
 			(effects
 				(font
@@ -12016,7 +12005,7 @@
 				)
 			)
 		)
-		(property "Value" "120R"
+		(property "Value" "120R@100M"
 			(at 176.53 149.86 90)
 			(effects
 				(font
@@ -12093,7 +12082,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 197.231 111.633 0)
 			(effects
 				(font
@@ -12171,7 +12160,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 185.801 111.633 0)
 			(effects
 				(font
@@ -12249,7 +12238,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 107.569 90)
 			(effects
 				(font
@@ -12393,7 +12382,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 130.429 90)
 			(effects
 				(font
@@ -12602,7 +12591,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 185.801 152.273 0)
 			(effects
 				(font
@@ -12679,7 +12668,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1K"
+		(property "Value" "5.1K/1%"
 			(at 215.9 72.39 90)
 			(effects
 				(font
@@ -12756,7 +12745,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 105.029 90)
 			(effects
 				(font
@@ -13095,7 +13084,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 95.123 135.509 90)
 			(effects
 				(font
@@ -13239,7 +13228,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 197.231 131.953 0)
 			(effects
 				(font
@@ -13317,7 +13306,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 185.801 131.953 0)
 			(effects
 				(font
@@ -13460,7 +13449,7 @@
 				)
 			)
 		)
-		(property "Value" "120R"
+		(property "Value" "120R@100M"
 			(at 176.53 129.54 90)
 			(effects
 				(font

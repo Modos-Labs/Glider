@@ -6,9 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Glider")
-		(date "2024-05-09")
-		(rev "R0.8")
-		(company "Copyright 2024 Wenting Zhang")
+		(date "2025-04-18")
+		(rev "R0.13")
+		(company "Copyright 2025 Wenting Zhang")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -6390,6 +6390,12 @@
 		(uuid "224392d7-2790-4764-ab66-2dbd4c30afe8")
 	)
 	(junction
+		(at 121.92 116.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "232a852e-35e5-47db-9029-bbf58b7167a8")
+	)
+	(junction
 		(at 185.42 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6400,12 +6406,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "26a882b2-c4c2-4c32-8075-55ac47c24798")
-	)
-	(junction
-		(at 142.24 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "27eecf13-f16c-4201-a1b2-788c7fdf76b1")
 	)
 	(junction
 		(at 231.14 91.44)
@@ -6472,12 +6472,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3a3ad931-176d-4468-a675-90a73d84394b")
-	)
-	(junction
-		(at 121.92 172.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3afe04fd-df54-4886-9da3-00811d71232e")
 	)
 	(junction
 		(at 190.5 132.08)
@@ -6684,22 +6678,10 @@
 		(uuid "916670b9-f925-4add-86c5-9648152d866e")
 	)
 	(junction
-		(at 121.92 88.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "92d49ffc-7dc9-4fbb-8957-886b8d477065")
-	)
-	(junction
 		(at 60.96 180.34)
 		(diameter 0.9144)
 		(color 0 0 0 0)
 		(uuid "9411e47c-472e-43ce-9b31-a898c962faee")
-	)
-	(junction
-		(at 121.92 144.78)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "955a5878-71bf-4c70-9275-688d6d62ed7b")
 	)
 	(junction
 		(at 43.18 43.18)
@@ -6768,6 +6750,12 @@
 		(uuid "ab01cbb8-d732-4336-b367-a3b3e926946f")
 	)
 	(junction
+		(at 121.92 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b01fc9ea-c8aa-4a5a-aa43-fc265c2f2d75")
+	)
+	(junction
 		(at 241.3 124.46)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6814,12 +6802,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bd819444-f8f3-4450-a03c-65a48fabeb49")
-	)
-	(junction
-		(at 121.92 116.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bf09603e-b9b5-4310-8079-3720b085fafe")
 	)
 	(junction
 		(at 142.24 45.72)
@@ -6888,6 +6870,12 @@
 		(uuid "e0d9d47a-264d-4bbd-b503-0bdaa63c1ee1")
 	)
 	(junction
+		(at 121.92 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e5f21d61-46e4-41e6-b1d7-13659c435a3f")
+	)
+	(junction
 		(at 60.96 124.46)
 		(diameter 0.9144)
 		(color 0 0 0 0)
@@ -6910,6 +6898,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ed545453-2222-48cc-8425-431b94f7a8cf")
+	)
+	(junction
+		(at 121.92 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ee1d44fb-1408-4983-a74c-128c0340d9a8")
 	)
 	(junction
 		(at 185.42 60.96)
@@ -7063,16 +7057,6 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 53.34) (xy 142.24 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "06f84478-2114-457c-921b-ac737d26d85e")
-	)
-	(wire
-		(pts
 			(xy 66.04 172.72) (xy 68.58 172.72)
 		)
 		(stroke
@@ -7170,16 +7154,6 @@
 			(type default)
 		)
 		(uuid "10fc73cb-1efa-4c9b-9b79-7dc478c6346d")
-	)
-	(wire
-		(pts
-			(xy 157.48 45.72) (xy 142.24 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "11a716ad-c87b-4dff-b2d8-81bc2526508f")
 	)
 	(wire
 		(pts
@@ -8353,16 +8327,6 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 53.34) (xy 27.94 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8eb5c0f2-0da4-4a6d-9391-47db643e8685")
-	)
-	(wire
-		(pts
 			(xy 27.94 68.58) (xy 33.02 68.58)
 		)
 		(stroke
@@ -8483,7 +8447,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 45.72) (xy 27.94 43.18)
+			(xy 27.94 43.18) (xy 27.94 58.42)
 		)
 		(stroke
 			(width 0)
@@ -10410,31 +10374,31 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 121.92 92.71 180)
+		(at 50.8 120.65 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "04dc40dd-fcc3-4822-8568-9465f4be1528")
-		(property "Reference" "C155"
-			(at 127 91.44 0)
+		(uuid "06e34d68-645b-4cf2-b4f9-a88cc9ecd415")
+		(property "Reference" "C1"
+			(at 43.18 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "10uF/10V"
-			(at 127 93.98 0)
+		(property "Value" "22uF/10V"
+			(at 43.18 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 120.9548 88.9 0)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 49.8348 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10443,7 +10407,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 121.92 92.71 0)
+			(at 50.8 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10452,7 +10416,16 @@
 			)
 		)
 		(property "Description" ""
-			(at 121.92 92.71 0)
+			(at 50.8 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0165"
+			(at 50.8 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10461,7 +10434,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 121.92 92.71 0)
+			(at 50.8 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10470,15 +10443,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "a9065e6f-ada8-4e52-a545-576e8a4fcd4b")
+			(uuid "48d5254e-f82c-426e-afb0-5bee073ff724")
 		)
 		(pin "2"
-			(uuid "b1a2556c-7b7d-4056-b985-5b3bec3380a7")
+			(uuid "3c94f38c-9f62-4377-b980-dec438500ba0")
 		)
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C155")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -10567,7 +10540,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 194.31 129.54 0)
 			(effects
 				(font
@@ -10851,7 +10824,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 88.9 138.43 90)
 			(effects
 				(font
@@ -10905,82 +10878,6 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "C65")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 121.92 176.53 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1b507186-1882-4eaf-a552-47ca6e87a2b2")
-		(property "Reference" "C15"
-			(at 127 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 127 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 120.9548 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 121.92 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 121.92 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 121.92 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5f186703-0fe6-497c-ad1c-7d007436a101")
-		)
-		(pin "2"
-			(uuid "cb39fd56-0fc7-4c43-9249-3b80bfd5cf94")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -11047,6 +10944,91 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 50.8 92.71 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2126e358-bd51-40a6-978c-e51beed79d69")
+		(property "Reference" "C151"
+			(at 43.18 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22uF/10V"
+			(at 43.18 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 49.8348 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 50.8 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0165"
+			(at 50.8 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 50.8 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed12f7b4-1e39-4348-9e66-0e58dcfc5543")
+		)
+		(pin "2"
+			(uuid "d409dfbc-bd19-4bf7-ae8a-68907a02bc5f")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C151")
 					(unit 1)
 				)
 			)
@@ -11327,7 +11309,7 @@
 				)
 			)
 		)
-		(property "Value" "150K/1%"
+		(property "Value" "22K/1%"
 			(at 106.68 129.54 0)
 			(effects
 				(font
@@ -11404,7 +11386,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 166.37 152.4 0)
 			(effects
 				(font
@@ -11468,82 +11450,6 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "C19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 27.94 49.53 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2cc14e34-8af8-4992-8704-1cd5c4da1b4a")
-		(property "Reference" "R125"
-			(at 25.4 53.34 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "0.5R"
-			(at 25.4 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 29.718 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 27.94 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 27.94 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 27.94 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "20362775-d534-4b39-a85e-2ed372d4372e")
-		)
-		(pin "2"
-			(uuid "73bab083-bb6a-4047-9ddc-d2e37fefab4c")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "R125")
 					(unit 1)
 				)
 			)
@@ -11633,7 +11539,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 232.41 129.54 0)
 			(effects
 				(font
@@ -11811,7 +11717,7 @@
 				)
 			)
 		)
-		(property "Value" "47pF"
+		(property "Value" "18pF/50V"
 			(at 116.84 149.86 0)
 			(effects
 				(font
@@ -11865,6 +11771,91 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "C66")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 50.8 176.53 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "31233eaf-5e24-410b-b20d-41c97bc7477c")
+		(property "Reference" "C2"
+			(at 43.18 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22uF/10V"
+			(at 43.18 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 49.8348 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 50.8 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0165"
+			(at 50.8 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 50.8 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "26cffc0d-2c99-43f4-b105-3f865b28a3d2")
+		)
+		(pin "2"
+			(uuid "1d8152fd-469f-4a2b-9e6a-3ee368643e2b")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -12096,7 +12087,7 @@
 				)
 			)
 		)
-		(property "Value" "47pF"
+		(property "Value" "18pF/50V"
 			(at 116.84 177.8 0)
 			(effects
 				(font
@@ -12150,6 +12141,91 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 50.8 148.59 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "41a0b1a5-a948-409f-913d-43c46d36ad37")
+		(property "Reference" "C27"
+			(at 43.18 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22uF/10V"
+			(at 43.18 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 49.8348 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 50.8 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 50.8 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0165"
+			(at 50.8 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 50.8 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f07766e8-d4a9-4b40-aa23-ec02956690cd")
+		)
+		(pin "2"
+			(uuid "131a0f0f-414a-404b-b997-90ed8212feda")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -12346,6 +12422,93 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "#PWR015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 121.92 176.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4a8e01fa-1e24-43a9-bb6d-1c0f9853ad76")
+		(property "Reference" "C155"
+			(at 125.73 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF/6.3V"
+			(at 123.19 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 122.8852 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0036"
+			(at 121.92 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 121.92 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "03278afa-d454-4b07-9e41-04b4d6789cde")
+		)
+		(pin "2"
+			(uuid "f25b2059-b760-48ef-bd30-e06a48da8d72")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C155")
 					(unit 1)
 				)
 			)
@@ -12580,6 +12743,93 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 121.92 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "51c271df-f366-42ab-9559-62b693c824fe")
+		(property "Reference" "C67"
+			(at 125.73 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF/6.3V"
+			(at 123.19 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 122.8852 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0036"
+			(at 121.92 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 121.92 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "74e6171b-59b0-433e-9e64-d3b688962f26")
+		)
+		(pin "2"
+			(uuid "baee4c0b-eee0-4824-bfd4-1a9316d691c3")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C67")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 101.6 176.53 180)
 		(unit 1)
@@ -12673,7 +12923,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 179.07 152.4 0)
 			(effects
 				(font
@@ -12760,7 +13010,7 @@
 				)
 			)
 		)
-		(property "Value" "47uF/10V"
+		(property "Value" "22uF/10V"
 			(at 99.06 55.88 90)
 			(effects
 				(font
@@ -12846,7 +13096,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 166.37 129.54 0)
 			(effects
 				(font
@@ -12932,7 +13182,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 88.9 82.55 90)
 			(effects
 				(font
@@ -13308,7 +13558,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 55.88 121.92 0)
 			(effects
 				(font
@@ -13427,82 +13677,6 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "#PWR0140")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 50.8 176.53 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "654b0fec-e1b8-4c18-8060-22ffbbd82428")
-		(property "Reference" "C2"
-			(at 45.72 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 45.72 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 49.8348 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 50.8 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 50.8 176.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2b324d5c-0519-4c5d-a5f8-733024ee154a")
-		)
-		(pin "2"
-			(uuid "d97a9c4c-67d1-4c80-9a49-d0c67260844b")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -13634,158 +13808,6 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "#PWR098")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 50.8 120.65 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6ac50b9b-4e4a-455a-9e47-869793cf34a1")
-		(property "Reference" "C1"
-			(at 45.72 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 45.72 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 49.8348 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 50.8 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 50.8 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d3a5e803-e160-4f4d-8151-89e7921ef58e")
-		)
-		(pin "2"
-			(uuid "ab73a083-ece1-4c12-bb07-16ce614981ab")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 121.92 120.65 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6b059492-8737-41c1-9008-ff2ed671b9e0")
-		(property "Reference" "C14"
-			(at 127 119.38 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 127 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 120.9548 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 121.92 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 121.92 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 121.92 120.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d472af31-3458-498d-a9f8-0390ee418e6f")
-		)
-		(pin "2"
-			(uuid "ce6d55f2-882d-4b50-8be6-5a5b8a9c2d40")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -14093,7 +14115,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 179.07 129.54 0)
 			(effects
 				(font
@@ -14157,82 +14179,6 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "C20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 121.92 148.59 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "798a3c61-000c-48fb-9c2e-ad839336e065")
-		(property "Reference" "C67"
-			(at 127 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 127 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 120.9548 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 121.92 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 121.92 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 121.92 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "27c90152-1176-48d5-b11d-662799a9b0d9")
-		)
-		(pin "2"
-			(uuid "ad89f2ab-5d2e-472a-862b-013633ebda44")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C67")
 					(unit 1)
 				)
 			)
@@ -14386,7 +14332,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 88.9 110.49 90)
 			(effects
 				(font
@@ -14799,7 +14745,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 55.88 93.98 0)
 			(effects
 				(font
@@ -14860,7 +14806,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 157.48 49.53 0)
+		(at 142.24 49.53 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -14869,100 +14815,14 @@
 		(dnp no)
 		(uuid "8badcfef-3651-4c6a-937e-d1281ed021ae")
 		(property "Reference" "C103"
-			(at 165.1 48.26 0)
+			(at 149.86 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "47uF/10V"
-			(at 165.1 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 158.4452 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 157.48 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 157.48 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Ref.Price" "0.0165"
-			(at 157.48 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 157.48 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "56af7885-7827-4b32-a339-b6ea6dad0837")
-		)
-		(pin "2"
-			(uuid "7920ebfb-fd2b-4251-aef2-ebec4ef9e0a4")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C103")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 142.24 49.53 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8c0e4116-facd-48a2-9a8e-871f9c8c23cf")
-		(property "Reference" "C17"
-			(at 147.32 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
+		(property "Value" "22uF/10V"
 			(at 149.86 50.8 0)
 			(effects
 				(font
@@ -14970,7 +14830,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 143.2052 45.72 0)
 			(effects
 				(font
@@ -15016,15 +14876,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "1dba5dc9-6518-4e24-8000-a1c8fcaa47f9")
+			(uuid "56af7885-7827-4b32-a339-b6ea6dad0837")
 		)
 		(pin "2"
-			(uuid "75e46acd-d30e-4770-b6e7-51d309c6ad7b")
+			(uuid "7920ebfb-fd2b-4251-aef2-ebec4ef9e0a4")
 		)
 		(instances
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C17")
+					(reference "C103")
 					(unit 1)
 				)
 			)
@@ -15047,7 +14907,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 55.88 149.86 0)
 			(effects
 				(font
@@ -15200,7 +15060,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 219.71 152.4 0)
 			(effects
 				(font
@@ -15287,7 +15147,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 219.71 129.54 0)
 			(effects
 				(font
@@ -15351,92 +15211,6 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "C57")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 91.44 62.23 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "90bcbfd2-5fff-4d8f-b661-4ea318ca0234")
-		(property "Reference" "C96"
-			(at 93.98 66.04 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 93.98 55.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 92.4052 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 91.44 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 91.44 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Ref.Price" "0.0165"
-			(at 91.44 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 91.44 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "996c3671-8fb8-4e5d-8e15-d24f3a291229")
-		)
-		(pin "2"
-			(uuid "e903573f-cb9e-494e-bd38-41b70d35d0c2")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C96")
 					(unit 1)
 				)
 			)
@@ -15589,6 +15363,92 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "L1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 91.44 62.23 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "96d140c4-609d-4448-b9d4-c294bdd760c0")
+		(property "Reference" "C96"
+			(at 93.98 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22uF/10V"
+			(at 93.98 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 92.4052 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 91.44 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 91.44 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0165"
+			(at 91.44 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 91.44 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "320d3533-2119-4c38-8814-9f1e5cbeae77")
+		)
+		(pin "2"
+			(uuid "265a3acb-d32f-4b87-8e9b-1f9ec024334f")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C96")
 					(unit 1)
 				)
 			)
@@ -15974,92 +15834,6 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 78.74 62.23 0)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a0aaff00-d1a2-4271-8383-af937e0a8b8f")
-		(property "Reference" "C94"
-			(at 81.28 66.04 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 81.28 55.88 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 79.7052 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 78.74 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 78.74 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Ref.Price" "0.0165"
-			(at 78.74 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 78.74 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "901d50bd-81f4-44f7-8630-554c43bccbcf")
-		)
-		(pin "2"
-			(uuid "977a1938-e609-4718-95ef-4f8525e0ed7a")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C94")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
 		(at 60.96 176.53 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -16075,7 +15849,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 55.88 177.8 0)
 			(effects
 				(font
@@ -16218,7 +15992,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 194.31 152.4 0)
 			(effects
 				(font
@@ -16304,7 +16078,7 @@
 				)
 			)
 		)
-		(property "Value" "100K/1%"
+		(property "Value" "470K/1%"
 			(at 95.25 48.26 90)
 			(effects
 				(font
@@ -16358,6 +16132,92 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "R123")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 78.74 62.23 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a9c4b091-e23d-4cab-b065-97403cc7e86c")
+		(property "Reference" "C94"
+			(at 81.28 66.04 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22uF/10V"
+			(at 81.28 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 79.7052 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 78.74 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 78.74 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0165"
+			(at 78.74 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 78.74 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4055803b-3733-45b8-92da-05eacd5668b0")
+		)
+		(pin "2"
+			(uuid "7fa3ea7d-5bde-41d6-8ccd-62f16570d7b7")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C94")
 					(unit 1)
 				)
 			)
@@ -16447,7 +16307,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 83.82 35.56 0)
 			(effects
 				(font
@@ -16501,6 +16361,93 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
 					(reference "C101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 121.92 92.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ae7b7e7c-5d9d-4954-9fdb-7e9c469d061d")
+		(property "Reference" "C14"
+			(at 125.73 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF/6.3V"
+			(at 123.19 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 122.8852 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0036"
+			(at 121.92 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 121.92 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2f7c02e6-d173-445f-b249-438f7491dc0c")
+		)
+		(pin "2"
+			(uuid "00360a7c-4134-4f02-ba12-59c29c871724")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -16654,7 +16601,7 @@
 				)
 			)
 		)
-		(property "Value" "47pF"
+		(property "Value" "18pF/50V"
 			(at 116.84 121.92 0)
 			(effects
 				(font
@@ -16796,7 +16743,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 245.11 129.54 0)
 			(effects
 				(font
@@ -16867,6 +16814,93 @@
 	)
 	(symbol
 		(lib_id "Device:C")
+		(at 121.92 120.65 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c35ab3fb-1930-46cb-a536-c35eb0daf99a")
+		(property "Reference" "C15"
+			(at 125.73 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF/6.3V"
+			(at 123.19 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 122.8852 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 121.92 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 121.92 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ref.Price" "0.0036"
+			(at 121.92 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 121.92 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c87da8e5-ef70-47ea-bdb7-923f28ebbe97")
+		)
+		(pin "2"
+			(uuid "009e4755-800e-4470-afa2-d93c2cdc8666")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
 		(at 111.76 92.71 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -16882,7 +16916,7 @@
 				)
 			)
 		)
-		(property "Value" "47pF"
+		(property "Value" "18pF/50V"
 			(at 116.84 93.98 0)
 			(effects
 				(font
@@ -17100,7 +17134,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 207.01 152.4 0)
 			(effects
 				(font
@@ -17318,7 +17352,7 @@
 				)
 			)
 		)
-		(property "Value" "1uF/50V"
+		(property "Value" "100nF/50V"
 			(at 45.72 55.88 90)
 			(effects
 				(font
@@ -17326,7 +17360,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 42.2148 58.42 0)
 			(effects
 				(font
@@ -17395,7 +17429,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 207.01 129.54 0)
 			(effects
 				(font
@@ -17481,7 +17515,7 @@
 				)
 			)
 		)
-		(property "Value" "680K/1%"
+		(property "Value" "100K/1%"
 			(at 106.68 121.92 0)
 			(effects
 				(font
@@ -17557,7 +17591,7 @@
 				)
 			)
 		)
-		(property "Value" "22K/1%"
+		(property "Value" "100K/1%"
 			(at 86.36 57.15 90)
 			(effects
 				(font
@@ -18031,158 +18065,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 50.8 148.59 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f3eabc5a-fd3a-428f-901d-c4183130c343")
-		(property "Reference" "C27"
-			(at 45.72 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 45.72 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 49.8348 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 50.8 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 50.8 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c25a7366-7bbd-4c00-98b6-13098d960b59")
-		)
-		(pin "2"
-			(uuid "1a9ed65b-cad6-40d7-8128-55e92d2bae74")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C27")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 50.8 92.71 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f44250a3-1e03-47e2-bc16-54ed7b71cfe6")
-		(property "Reference" "C151"
-			(at 45.72 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10uF/10V"
-			(at 45.72 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 49.8348 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 50.8 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 50.8 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 50.8 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7a9def23-c6b3-479a-a988-13d1521ca6d4")
-		)
-		(pin "2"
-			(uuid "c215b732-8d04-4566-a3ff-024638fea9e2")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/0606a719-6980-4867-837f-aa642737d361"
-					(reference "C151")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 101.6 156.21 180)
 		(unit 1)
@@ -18275,7 +18157,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 43.18 35.56 0)
 			(effects
 				(font
@@ -18443,7 +18325,7 @@
 				)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 88.9 166.37 90)
 			(effects
 				(font

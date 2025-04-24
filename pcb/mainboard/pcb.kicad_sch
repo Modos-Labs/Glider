@@ -6,9 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Glider")
-		(date "2024-05-09")
-		(rev "R0.8")
-		(company "Copyright 2024 Wenting Zhang")
+		(date "2025-04-18")
+		(rev "R0.13")
+		(company "Copyright 2025 Wenting Zhang")
 	)
 	(lib_symbols
 		(symbol "Mechanical:Fiducial"
@@ -344,6 +344,17 @@
 		)
 		(uuid "88ec681c-6ed9-4f0f-a391-f81c986245d0")
 	)
+	(text "User Extension"
+		(exclude_from_sim no)
+		(at 35.56 134.62 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "92785cab-de4e-40c3-a776-089977420204")
+	)
 	(text "Display Power Supply"
 		(exclude_from_sim no)
 		(at 35.56 104.14 0)
@@ -366,7 +377,7 @@
 		)
 		(uuid "d2b3e5ed-56f7-4162-ab02-9bde306dbf5a")
 	)
-	(text "I2C Addresses\n0100010 FUSB302B\n1100000 PTN3460BS\n1001100 ADV7611\n1010110 STM32 BL\n\n1000000 INA3221 #0\n1000001 INA3221 #1"
+	(text "I2C Addresses\n0100010 FUSB302B\n1100000 PTN3460BS\n1001100 ADV7611\n\n1000000 INA3221 #0\n1000001 INA3221 #1"
 		(exclude_from_sim no)
 		(at 33.02 185.42 0)
 		(effects
@@ -412,7 +423,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 149.86 270)
+		(at 248.92 127 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -420,7 +431,7 @@
 		(dnp no)
 		(uuid "035e2319-a573-4ff4-b7b6-4dae4cb7050c")
 		(property "Reference" "#PWR0324"
-			(at 224.79 149.86 0)
+			(at 242.57 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -429,7 +440,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 149.987 0)
+			(at 244.5258 127.127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -437,7 +448,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 149.86 0)
+			(at 248.92 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -446,7 +457,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 149.86 0)
+			(at 248.92 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -455,7 +466,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 149.86 0)
+			(at 248.92 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -477,7 +488,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 35.56 270)
+		(at 251.46 27.94 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -486,7 +497,7 @@
 		(fields_autoplaced yes)
 		(uuid "0677c202-45d5-4cf6-b7eb-42b8aa48519e")
 		(property "Reference" "H6"
-			(at 237.49 34.2899 90)
+			(at 255.27 26.6699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -495,7 +506,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 36.8299 90)
+			(at 255.27 29.2099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -504,7 +515,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 35.56 0)
+			(at 251.46 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -513,7 +524,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 35.56 0)
+			(at 251.46 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -522,7 +533,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 35.56 0)
+			(at 251.46 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -531,7 +542,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 35.56 0)
+			(at 251.46 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -553,7 +564,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 254 134.62 270)
+		(at 251.46 142.24 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -562,7 +573,7 @@
 		(fields_autoplaced yes)
 		(uuid "07dcb3e4-3c05-4f6e-9a4c-cdd49836b382")
 		(property "Reference" "H23"
-			(at 257.81 133.3499 90)
+			(at 255.27 140.9699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -571,7 +582,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 257.81 135.8899 90)
+			(at 255.27 143.5099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -580,7 +591,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 254 134.62 0)
+			(at 251.46 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -589,7 +600,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 134.62 0)
+			(at 251.46 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -598,7 +609,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 254 134.62 0)
+			(at 251.46 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -607,7 +618,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 134.62 0)
+			(at 251.46 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -629,7 +640,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 157.48 270)
+		(at 251.46 134.62 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -638,7 +649,7 @@
 		(fields_autoplaced yes)
 		(uuid "0fa95ce0-b65d-4803-b48b-b36b4b1e7693")
 		(property "Reference" "H22"
-			(at 237.49 156.2099 90)
+			(at 255.27 133.3499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -647,7 +658,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 158.7499 90)
+			(at 255.27 135.8899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -656,7 +667,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 157.48 0)
+			(at 251.46 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -665,7 +676,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 157.48 0)
+			(at 251.46 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -674,7 +685,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 157.48 0)
+			(at 251.46 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -683,7 +694,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 157.48 0)
+			(at 251.46 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -705,7 +716,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 254 149.86 270)
+		(at 251.46 149.86 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -714,7 +725,7 @@
 		(fields_autoplaced yes)
 		(uuid "1ba5efcf-c165-4669-bebe-35b69dd5eb67")
 		(property "Reference" "H25"
-			(at 257.81 148.5899 90)
+			(at 255.27 148.5899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -723,7 +734,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 257.81 151.1299 90)
+			(at 255.27 151.1299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -732,7 +743,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 254 149.86 0)
+			(at 251.46 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -741,7 +752,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 149.86 0)
+			(at 251.46 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -750,7 +761,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 254 149.86 0)
+			(at 251.46 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -759,7 +770,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 149.86 0)
+			(at 251.46 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -781,7 +792,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 119.38 270)
+		(at 248.92 96.52 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -789,7 +800,7 @@
 		(dnp no)
 		(uuid "1ecb9f27-779a-4deb-9081-2f6bac78f2a6")
 		(property "Reference" "#PWR041"
-			(at 224.79 119.38 0)
+			(at 242.57 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -798,7 +809,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 119.507 0)
+			(at 244.5258 96.647 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -806,7 +817,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 119.38 0)
+			(at 248.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -815,7 +826,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 119.38 0)
+			(at 248.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -824,7 +835,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 119.38 0)
+			(at 248.92 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -846,7 +857,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 149.86 270)
+		(at 251.46 127 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -855,7 +866,7 @@
 		(fields_autoplaced yes)
 		(uuid "26f34cb2-bdac-4164-9188-9b316e6486a3")
 		(property "Reference" "H21"
-			(at 237.49 148.5899 90)
+			(at 255.27 125.7299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -864,7 +875,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 151.1299 90)
+			(at 255.27 128.2699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -873,7 +884,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 149.86 0)
+			(at 251.46 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -882,7 +893,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 149.86 0)
+			(at 251.46 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -891,7 +902,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 149.86 0)
+			(at 251.46 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -900,7 +911,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 149.86 0)
+			(at 251.46 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -922,7 +933,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 127 270)
+		(at 248.92 104.14 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -930,7 +941,7 @@
 		(dnp no)
 		(uuid "341d073f-74e7-4138-ac15-316c9d5e801f")
 		(property "Reference" "#PWR045"
-			(at 224.79 127 0)
+			(at 242.57 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -939,7 +950,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 127.127 0)
+			(at 244.5258 104.267 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -947,7 +958,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 127 0)
+			(at 248.92 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -956,7 +967,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 127 0)
+			(at 248.92 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -965,7 +976,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 127 0)
+			(at 248.92 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -987,7 +998,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 254 27.94 270)
+		(at 220.98 20.32 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -996,7 +1007,7 @@
 		(fields_autoplaced yes)
 		(uuid "3fdbf959-da69-44a8-bae4-c361eea1f5a9")
 		(property "Reference" "H1"
-			(at 257.81 26.6699 90)
+			(at 224.79 19.0499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1005,7 +1016,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 257.81 29.2099 90)
+			(at 224.79 21.5899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1014,7 +1025,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 254 27.94 0)
+			(at 220.98 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1023,7 +1034,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 27.94 0)
+			(at 220.98 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1032,7 +1043,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 254 27.94 0)
+			(at 220.98 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1041,7 +1052,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 27.94 0)
+			(at 220.98 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1063,7 +1074,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 27.94 270)
+		(at 251.46 20.32 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1072,7 +1083,7 @@
 		(fields_autoplaced yes)
 		(uuid "4542d64c-65ae-4bb1-8a62-64e54da0547c")
 		(property "Reference" "H5"
-			(at 237.49 26.6699 90)
+			(at 255.27 19.0499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1081,7 +1092,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 29.2099 90)
+			(at 255.27 21.5899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1090,7 +1101,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 27.94 0)
+			(at 251.46 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1099,7 +1110,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 27.94 0)
+			(at 251.46 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1108,7 +1119,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 27.94 0)
+			(at 251.46 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1117,7 +1128,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 27.94 0)
+			(at 251.46 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1139,7 +1150,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 142.24 270)
+		(at 251.46 119.38 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1148,7 +1159,7 @@
 		(fields_autoplaced yes)
 		(uuid "49b04355-ec45-40ce-9a97-718aa6ddfa8b")
 		(property "Reference" "H20"
-			(at 237.49 140.9699 90)
+			(at 255.27 118.1099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1157,7 +1168,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 143.5099 90)
+			(at 255.27 120.6499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1166,7 +1177,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 142.24 0)
+			(at 251.46 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1175,7 +1186,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 142.24 0)
+			(at 251.46 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1184,7 +1195,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 142.24 0)
+			(at 251.46 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1193,7 +1204,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 142.24 0)
+			(at 251.46 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1215,7 +1226,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 254 96.52 0)
+		(at 220.98 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1224,7 +1235,7 @@
 		(fields_autoplaced yes)
 		(uuid "49f32118-a449-43c8-96df-87db79f00235")
 		(property "Reference" "FID6"
-			(at 256.54 95.2499 0)
+			(at 223.52 80.0099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1233,7 +1244,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 256.54 97.7899 0)
+			(at 223.52 82.5499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1242,7 +1253,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 254 96.52 0)
+			(at 220.98 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1251,7 +1262,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 96.52 0)
+			(at 220.98 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1260,7 +1271,7 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
-			(at 254 96.52 0)
+			(at 220.98 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1269,7 +1280,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 96.52 0)
+			(at 220.98 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1288,7 +1299,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 58.42 270)
+		(at 248.92 50.8 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1296,7 +1307,7 @@
 		(dnp no)
 		(uuid "49fccc4b-03bd-48b3-b840-893e073a70eb")
 		(property "Reference" "#PWR0185"
-			(at 224.79 58.42 0)
+			(at 242.57 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1305,7 +1316,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 58.547 0)
+			(at 244.5258 50.927 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1313,7 +1324,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 58.42 0)
+			(at 248.92 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1322,7 +1333,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 58.42 0)
+			(at 248.92 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1331,7 +1342,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 58.42 0)
+			(at 248.92 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1353,7 +1364,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 111.76 270)
+		(at 251.46 88.9 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1362,7 +1373,7 @@
 		(fields_autoplaced yes)
 		(uuid "5062411c-0f83-4522-b618-ad9dc0e5fcd6")
 		(property "Reference" "H16"
-			(at 237.49 110.4899 90)
+			(at 255.27 87.6299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1371,7 +1382,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 113.0299 90)
+			(at 255.27 90.1699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1380,7 +1391,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 111.76 0)
+			(at 251.46 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1389,7 +1400,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 111.76 0)
+			(at 251.46 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1398,7 +1409,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 111.76 0)
+			(at 251.46 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1407,7 +1418,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 111.76 0)
+			(at 251.46 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1429,7 +1440,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 88.9 270)
+		(at 251.46 66.04 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1438,7 +1449,7 @@
 		(fields_autoplaced yes)
 		(uuid "59ee61a7-cb6d-4e7b-b9d9-25c422d073fd")
 		(property "Reference" "H13"
-			(at 237.49 87.6299 90)
+			(at 255.27 64.7699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1447,7 +1458,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 90.1699 90)
+			(at 255.27 67.3099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1456,7 +1467,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 88.9 0)
+			(at 251.46 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1465,7 +1476,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 88.9 0)
+			(at 251.46 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1474,7 +1485,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 88.9 0)
+			(at 251.46 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1483,7 +1494,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 88.9 0)
+			(at 251.46 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1504,138 +1515,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 251.46 142.24 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5f9a8f23-49ef-46f2-b233-d7909c04014b")
-		(property "Reference" "#PWR0200"
-			(at 245.11 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 247.0658 142.367 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 251.46 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 251.46 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 251.46 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "632e8257-a97b-4f9a-b7b6-dba698106310")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(reference "#PWR0200")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 231.14 73.66 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "68f19db3-d497-402f-bf72-6ad7ddf23edd")
-		(property "Reference" "#PWR0187"
-			(at 224.79 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 226.7458 73.787 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 231.14 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 231.14 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 231.14 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ba5c6cd0-f573-48aa-9b2d-55c9343eea0b")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(reference "#PWR0187")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 104.14 270)
+		(at 251.46 81.28 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1644,7 +1525,7 @@
 		(fields_autoplaced yes)
 		(uuid "6b242e68-c5dd-406e-bed6-26075ddb7859")
 		(property "Reference" "H15"
-			(at 237.49 102.8699 90)
+			(at 255.27 80.0099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1653,7 +1534,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 105.4099 90)
+			(at 255.27 82.5499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1662,7 +1543,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 104.14 0)
+			(at 251.46 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1671,7 +1552,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 104.14 0)
+			(at 251.46 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1680,7 +1561,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 104.14 0)
+			(at 251.46 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1689,7 +1570,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 104.14 0)
+			(at 251.46 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1711,7 +1592,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 254 50.8 270)
+		(at 220.98 35.56 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1720,7 +1601,7 @@
 		(fields_autoplaced yes)
 		(uuid "6bf1eefc-34a5-47bf-8ecf-3d072ffcae8e")
 		(property "Reference" "H4"
-			(at 257.81 49.5299 90)
+			(at 224.79 34.2899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1729,7 +1610,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 257.81 52.0699 90)
+			(at 224.79 36.8299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1738,7 +1619,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 254 50.8 0)
+			(at 220.98 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1747,7 +1628,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 50.8 0)
+			(at 220.98 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1756,7 +1637,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 254 50.8 0)
+			(at 220.98 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1765,7 +1646,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 50.8 0)
+			(at 220.98 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1787,7 +1668,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 134.62 270)
+		(at 251.46 111.76 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1796,7 +1677,7 @@
 		(fields_autoplaced yes)
 		(uuid "74cd857d-79e2-4df1-8d44-1f9fa4130923")
 		(property "Reference" "H19"
-			(at 237.49 133.3499 90)
+			(at 255.27 110.4899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1805,7 +1686,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 135.8899 90)
+			(at 255.27 113.0299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1814,7 +1695,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 134.62 0)
+			(at 251.46 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1823,7 +1704,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 134.62 0)
+			(at 251.46 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1832,7 +1713,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 134.62 0)
+			(at 251.46 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1841,7 +1722,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 134.62 0)
+			(at 251.46 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1863,7 +1744,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 43.18 270)
+		(at 248.92 35.56 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1871,7 +1752,7 @@
 		(dnp no)
 		(uuid "77c73916-f947-40e0-834f-dfc87fae8943")
 		(property "Reference" "#PWR0178"
-			(at 224.79 43.18 0)
+			(at 242.57 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1880,7 +1761,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 43.307 0)
+			(at 244.5258 35.687 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1888,7 +1769,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 43.18 0)
+			(at 248.92 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1897,7 +1778,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 43.18 0)
+			(at 248.92 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1906,7 +1787,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 43.18 0)
+			(at 248.92 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1928,7 +1809,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 81.28 270)
+		(at 248.92 58.42 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1936,7 +1817,7 @@
 		(dnp no)
 		(uuid "8246c024-0d8a-440e-9423-1e605373884e")
 		(property "Reference" "#PWR0188"
-			(at 224.79 81.28 0)
+			(at 242.57 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1945,7 +1826,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 81.407 0)
+			(at 244.5258 58.547 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1953,7 +1834,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 81.28 0)
+			(at 248.92 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1962,7 +1843,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 81.28 0)
+			(at 248.92 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1971,7 +1852,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 81.28 0)
+			(at 248.92 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1993,7 +1874,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 96.52 270)
+		(at 251.46 73.66 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -2002,7 +1883,7 @@
 		(fields_autoplaced yes)
 		(uuid "877ac51d-653a-4906-91f0-46fc71221866")
 		(property "Reference" "H14"
-			(at 237.49 95.2499 90)
+			(at 255.27 72.3899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2011,7 +1892,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 97.7899 90)
+			(at 255.27 74.9299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2020,7 +1901,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 96.52 0)
+			(at 251.46 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2029,7 +1910,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 96.52 0)
+			(at 251.46 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2038,7 +1919,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 96.52 0)
+			(at 251.46 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2047,7 +1928,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 96.52 0)
+			(at 251.46 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2069,7 +1950,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 251.46 27.94 270)
+		(at 218.44 20.32 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2077,7 +1958,7 @@
 		(dnp no)
 		(uuid "89529875-5364-44c3-8feb-50f1c95e8b19")
 		(property "Reference" "#PWR0193"
-			(at 245.11 27.94 0)
+			(at 212.09 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2086,7 +1967,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 247.0658 28.067 0)
+			(at 214.0458 20.447 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2094,7 +1975,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 27.94 0)
+			(at 218.44 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2103,7 +1984,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 27.94 0)
+			(at 218.44 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2112,7 +1993,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 251.46 27.94 0)
+			(at 218.44 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2133,84 +2014,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 254 35.56 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8aac68ee-14f1-46ba-982b-402e9c6bfb94")
-		(property "Reference" "H2"
-			(at 257.81 34.2899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 257.81 36.8299 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 254 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 254 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 254 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 254 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "66a739ba-f0ba-4604-a61c-34b48fae5aa6")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(reference "H2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 231.14 104.14 270)
+		(at 248.92 81.28 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2218,7 +2023,7 @@
 		(dnp no)
 		(uuid "8da63259-4a50-4654-a8bd-082df2f429c4")
 		(property "Reference" "#PWR0191"
-			(at 224.79 104.14 0)
+			(at 242.57 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2227,7 +2032,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 104.267 0)
+			(at 244.5258 81.407 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2235,7 +2040,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 104.14 0)
+			(at 248.92 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2244,7 +2049,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 104.14 0)
+			(at 248.92 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2253,7 +2058,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 104.14 0)
+			(at 248.92 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2275,7 +2080,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 251.46 157.48 270)
+		(at 248.92 157.48 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2283,7 +2088,7 @@
 		(dnp no)
 		(uuid "92fd22cc-6d65-48c4-98c0-f0dfd1fc73ab")
 		(property "Reference" "#PWR0204"
-			(at 245.11 157.48 0)
+			(at 242.57 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2292,7 +2097,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 247.0658 157.607 0)
+			(at 244.5258 157.607 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2300,7 +2105,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 157.48 0)
+			(at 248.92 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2309,7 +2114,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 157.48 0)
+			(at 248.92 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2318,7 +2123,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 251.46 157.48 0)
+			(at 248.92 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2340,7 +2145,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 254 73.66 0)
+		(at 220.98 58.42 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2349,7 +2154,7 @@
 		(fields_autoplaced yes)
 		(uuid "931d2d45-6c0e-4a0e-ae14-49a13146f012")
 		(property "Reference" "FID3"
-			(at 256.54 72.3899 0)
+			(at 223.52 57.1499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2358,7 +2163,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 256.54 74.9299 0)
+			(at 223.52 59.6899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2367,7 +2172,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 254 73.66 0)
+			(at 220.98 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2376,7 +2181,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 73.66 0)
+			(at 220.98 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2385,7 +2190,7 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
-			(at 254 73.66 0)
+			(at 220.98 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2394,7 +2199,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 73.66 0)
+			(at 220.98 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2413,7 +2218,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 254 81.28 0)
+		(at 220.98 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2422,7 +2227,7 @@
 		(fields_autoplaced yes)
 		(uuid "932379ad-1a83-4026-8fa1-b43934246ecc")
 		(property "Reference" "FID4"
-			(at 256.54 80.0099 0)
+			(at 223.52 64.7699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2431,7 +2236,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 256.54 82.5499 0)
+			(at 223.52 67.3099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2440,7 +2245,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 254 81.28 0)
+			(at 220.98 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2449,7 +2254,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 81.28 0)
+			(at 220.98 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2458,7 +2263,7 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
-			(at 254 81.28 0)
+			(at 220.98 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2467,7 +2272,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 81.28 0)
+			(at 220.98 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2486,7 +2291,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 27.94 270)
+		(at 248.92 20.32 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2494,7 +2299,7 @@
 		(dnp no)
 		(uuid "97595298-48c6-4a5b-8349-ce5304314db1")
 		(property "Reference" "#PWR089"
-			(at 224.79 27.94 0)
+			(at 242.57 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2503,7 +2308,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 28.067 0)
+			(at 244.5258 20.447 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2511,7 +2316,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 27.94 0)
+			(at 248.92 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2520,7 +2325,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 27.94 0)
+			(at 248.92 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2529,7 +2334,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 27.94 0)
+			(at 248.92 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2551,7 +2356,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 251.46 43.18 270)
+		(at 218.44 27.94 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2559,7 +2364,7 @@
 		(dnp no)
 		(uuid "9972593c-80f0-4ccc-ad5c-7eedc2160614")
 		(property "Reference" "#PWR0198"
-			(at 245.11 43.18 0)
+			(at 212.09 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2568,7 +2373,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 247.0658 43.307 0)
+			(at 214.0458 28.067 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2576,7 +2381,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 43.18 0)
+			(at 218.44 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2585,7 +2390,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 43.18 0)
+			(at 218.44 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2594,7 +2399,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 251.46 43.18 0)
+			(at 218.44 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2615,84 +2420,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 66.04 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9d76e41c-c9e0-4804-94e8-46764fbb8764")
-		(property "Reference" "H10"
-			(at 237.49 64.7699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 67.3099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 233.68 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 233.68 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 233.68 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b6468c32-077e-48b2-b5cc-1ef12173452b")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(reference "H10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 254 88.9 0)
+		(at 220.98 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2701,7 +2430,7 @@
 		(fields_autoplaced yes)
 		(uuid "a2881708-3242-45a8-9e79-ec0c7328144e")
 		(property "Reference" "FID5"
-			(at 256.54 87.6299 0)
+			(at 223.52 72.3899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2710,7 +2439,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 256.54 90.1699 0)
+			(at 223.52 74.9299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2719,7 +2448,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 254 88.9 0)
+			(at 220.98 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2728,7 +2457,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 88.9 0)
+			(at 220.98 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2737,7 +2466,7 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
-			(at 254 88.9 0)
+			(at 220.98 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2746,7 +2475,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 88.9 0)
+			(at 220.98 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2765,7 +2494,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 254 43.18 270)
+		(at 220.98 27.94 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -2774,7 +2503,7 @@
 		(fields_autoplaced yes)
 		(uuid "a57ae92a-7162-4ce6-ae08-4289b9e89942")
 		(property "Reference" "H3"
-			(at 257.81 41.9099 90)
+			(at 224.79 26.6699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2783,7 +2512,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 257.81 44.4499 90)
+			(at 224.79 29.2099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2792,7 +2521,7 @@
 			)
 		)
 		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_DIN965_Pad"
-			(at 254 43.18 0)
+			(at 220.98 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2801,7 +2530,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 43.18 0)
+			(at 220.98 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2810,7 +2539,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 254 43.18 0)
+			(at 220.98 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2819,7 +2548,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 43.18 0)
+			(at 220.98 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2841,72 +2570,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 66.04 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a589dbec-7916-489b-aa2c-77783a5d3d05")
-		(property "Reference" "#PWR0186"
-			(at 224.79 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 226.7458 66.167 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 231.14 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 231.14 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 231.14 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f966d7ff-0d53-4c2e-a43a-d32ab9a1057a")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(reference "#PWR0186")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 231.14 157.48 270)
+		(at 248.92 134.62 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2914,7 +2578,7 @@
 		(dnp no)
 		(uuid "aeb4dad4-7ffb-43ac-b586-ef92129f5f9c")
 		(property "Reference" "#PWR0325"
-			(at 224.79 157.48 0)
+			(at 242.57 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2923,7 +2587,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 157.607 0)
+			(at 244.5258 134.747 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2931,7 +2595,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 157.48 0)
+			(at 248.92 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2940,7 +2604,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 157.48 0)
+			(at 248.92 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2949,7 +2613,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 157.48 0)
+			(at 248.92 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2970,84 +2634,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 254 142.24 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "aef84d16-5c8f-4e98-82ab-10ba973767ea")
-		(property "Reference" "H24"
-			(at 257.81 140.9699 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ICSRC6508-030SFR"
-			(at 257.81 143.5099 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 254 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 254 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 254 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 254 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "334062d5-4f05-417c-95bb-01cf4ac27dda")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(reference "H24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 231.14 142.24 270)
+		(at 248.92 119.38 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3055,7 +2643,7 @@
 		(dnp no)
 		(uuid "b0d028ce-bc6f-4e1c-b4f0-963bfedfc10a")
 		(property "Reference" "#PWR0308"
-			(at 224.79 142.24 0)
+			(at 242.57 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3064,7 +2652,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 142.367 0)
+			(at 244.5258 119.507 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3072,7 +2660,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 142.24 0)
+			(at 248.92 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3081,7 +2669,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 142.24 0)
+			(at 248.92 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3090,7 +2678,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 142.24 0)
+			(at 248.92 119.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3112,7 +2700,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 81.28 270)
+		(at 251.46 58.42 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -3121,7 +2709,7 @@
 		(fields_autoplaced yes)
 		(uuid "b1429cfe-d157-4991-b6e6-9d8bffebb0ae")
 		(property "Reference" "H12"
-			(at 237.49 80.0099 90)
+			(at 255.27 57.1499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3130,7 +2718,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 82.5499 90)
+			(at 255.27 59.6899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3139,7 +2727,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 81.28 0)
+			(at 251.46 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3148,7 +2736,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 81.28 0)
+			(at 251.46 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3157,7 +2745,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 81.28 0)
+			(at 251.46 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3166,7 +2754,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 81.28 0)
+			(at 251.46 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3188,7 +2776,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 119.38 270)
+		(at 251.46 96.52 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -3197,7 +2785,7 @@
 		(fields_autoplaced yes)
 		(uuid "b1ec4920-8b3f-47a3-b3bd-8db52278f821")
 		(property "Reference" "H17"
-			(at 237.49 118.1099 90)
+			(at 255.27 95.2499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3206,7 +2794,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 120.6499 90)
+			(at 255.27 97.7899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3215,7 +2803,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 119.38 0)
+			(at 251.46 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3224,7 +2812,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 119.38 0)
+			(at 251.46 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3233,7 +2821,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 119.38 0)
+			(at 251.46 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3242,7 +2830,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 119.38 0)
+			(at 251.46 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3264,72 +2852,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 251.46 35.56 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b52896aa-2981-4df0-9695-56e6b466a1c1")
-		(property "Reference" "#PWR0197"
-			(at 245.11 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 247.0658 35.687 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 251.46 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 251.46 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 251.46 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b68a1e25-c4b5-498b-abcd-33c63838427f")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(reference "#PWR0197")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 251.46 134.62 270)
+		(at 248.92 142.24 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3337,7 +2860,7 @@
 		(dnp no)
 		(uuid "b64b10b0-ab3c-4f42-9cdf-a02cdef674a9")
 		(property "Reference" "#PWR091"
-			(at 245.11 134.62 0)
+			(at 242.57 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3346,7 +2869,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 247.0658 134.747 0)
+			(at 244.5258 142.367 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3354,7 +2877,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 134.62 0)
+			(at 248.92 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3363,7 +2886,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 134.62 0)
+			(at 248.92 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3372,7 +2895,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 251.46 134.62 0)
+			(at 248.92 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3394,7 +2917,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 50.8 270)
+		(at 251.46 43.18 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -3403,7 +2926,7 @@
 		(fields_autoplaced yes)
 		(uuid "b6f3033c-aed3-419f-819d-f36cdb75f26d")
 		(property "Reference" "H8"
-			(at 237.49 49.5299 90)
+			(at 255.27 41.9099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3412,7 +2935,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 52.0699 90)
+			(at 255.27 44.4499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3421,7 +2944,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 50.8 0)
+			(at 251.46 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3430,7 +2953,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 50.8 0)
+			(at 251.46 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3439,7 +2962,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 50.8 0)
+			(at 251.46 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3448,7 +2971,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 50.8 0)
+			(at 251.46 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3470,7 +2993,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 251.46 149.86 270)
+		(at 248.92 149.86 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3478,7 +3001,7 @@
 		(dnp no)
 		(uuid "b88ceb9c-01bf-4bed-93b8-cc1540f7c142")
 		(property "Reference" "#PWR0203"
-			(at 245.11 149.86 0)
+			(at 242.57 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3487,7 +3010,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 247.0658 149.987 0)
+			(at 244.5258 149.987 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3495,7 +3018,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 149.86 0)
+			(at 248.92 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3504,7 +3027,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 149.86 0)
+			(at 248.92 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3513,7 +3036,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 251.46 149.86 0)
+			(at 248.92 149.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3534,84 +3057,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 73.66 270)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c325d95d-86ae-4750-9d6b-c9d6c5a29214")
-		(property "Reference" "H11"
-			(at 237.49 72.3899 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 74.9299 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 233.68 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole with connection"
-			(at 233.68 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 233.68 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d3483dec-9108-4396-b50c-66f3bcb005a6")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
-					(reference "H11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
-		(at 251.46 50.8 270)
+		(at 218.44 35.56 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3619,7 +3066,7 @@
 		(dnp no)
 		(uuid "c605a1e5-39d1-4b56-a0b7-6680aa47e130")
 		(property "Reference" "#PWR0199"
-			(at 245.11 50.8 0)
+			(at 212.09 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3628,7 +3075,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 247.0658 50.927 0)
+			(at 214.0458 35.687 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3636,7 +3083,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 50.8 0)
+			(at 218.44 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3645,7 +3092,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 50.8 0)
+			(at 218.44 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3654,7 +3101,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 251.46 50.8 0)
+			(at 218.44 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3676,7 +3123,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 111.76 270)
+		(at 248.92 88.9 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3684,7 +3131,7 @@
 		(dnp no)
 		(uuid "c7ce71fd-870d-4fa9-abff-418ff4918696")
 		(property "Reference" "#PWR0192"
-			(at 224.79 111.76 0)
+			(at 242.57 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3693,7 +3140,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 111.887 0)
+			(at 244.5258 89.027 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3701,7 +3148,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 111.76 0)
+			(at 248.92 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3710,7 +3157,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 111.76 0)
+			(at 248.92 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3719,7 +3166,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 111.76 0)
+			(at 248.92 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3741,7 +3188,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 254 58.42 0)
+		(at 220.98 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3750,7 +3197,7 @@
 		(fields_autoplaced yes)
 		(uuid "cd853cc9-71a2-4b39-bfac-84f3c0773593")
 		(property "Reference" "FID1"
-			(at 256.54 57.1499 0)
+			(at 223.52 41.9099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3759,7 +3206,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 256.54 59.6899 0)
+			(at 223.52 44.4499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3768,7 +3215,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 254 58.42 0)
+			(at 220.98 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3777,7 +3224,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 58.42 0)
+			(at 220.98 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3786,7 +3233,7 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
-			(at 254 58.42 0)
+			(at 220.98 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3795,7 +3242,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 58.42 0)
+			(at 220.98 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3814,7 +3261,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 254 157.48 270)
+		(at 251.46 157.48 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -3823,7 +3270,7 @@
 		(fields_autoplaced yes)
 		(uuid "cfe7a9a4-8272-478d-8cfc-1629de6d1faa")
 		(property "Reference" "H26"
-			(at 257.81 156.2099 90)
+			(at 255.27 156.2099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3832,7 +3279,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 257.81 158.7499 90)
+			(at 255.27 158.7499 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3841,7 +3288,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 254 157.48 0)
+			(at 251.46 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3850,7 +3297,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 157.48 0)
+			(at 251.46 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3859,7 +3306,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 254 157.48 0)
+			(at 251.46 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3868,7 +3315,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 157.48 0)
+			(at 251.46 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3890,7 +3337,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 35.56 270)
+		(at 248.92 27.94 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3898,7 +3345,7 @@
 		(dnp no)
 		(uuid "d214ead3-3439-47b9-85c9-3adb9e7ff986")
 		(property "Reference" "#PWR0177"
-			(at 224.79 35.56 0)
+			(at 242.57 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3907,7 +3354,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 35.687 0)
+			(at 244.5258 28.067 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3915,7 +3362,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 35.56 0)
+			(at 248.92 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3924,7 +3371,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 35.56 0)
+			(at 248.92 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3933,7 +3380,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 35.56 0)
+			(at 248.92 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3955,7 +3402,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 134.62 270)
+		(at 248.92 111.76 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3963,7 +3410,7 @@
 		(dnp no)
 		(uuid "d496dc38-bdc6-4c5a-b1ee-036e516e122b")
 		(property "Reference" "#PWR0307"
-			(at 224.79 134.62 0)
+			(at 242.57 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3972,7 +3419,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 134.747 0)
+			(at 244.5258 111.887 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3980,7 +3427,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 134.62 0)
+			(at 248.92 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3989,7 +3436,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 134.62 0)
+			(at 248.92 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3998,7 +3445,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 134.62 0)
+			(at 248.92 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4020,7 +3467,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 127 270)
+		(at 251.46 104.14 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -4029,7 +3476,7 @@
 		(fields_autoplaced yes)
 		(uuid "d55b5b29-7ea9-4679-bc69-18e2d96ec17a")
 		(property "Reference" "H18"
-			(at 237.49 125.7299 90)
+			(at 255.27 102.8699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4038,7 +3485,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 128.2699 90)
+			(at 255.27 105.4099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4047,7 +3494,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 127 0)
+			(at 251.46 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4056,7 +3503,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 127 0)
+			(at 251.46 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4065,7 +3512,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 127 0)
+			(at 251.46 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4074,7 +3521,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 127 0)
+			(at 251.46 104.14 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4096,7 +3543,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 43.18 270)
+		(at 251.46 35.56 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -4105,7 +3552,7 @@
 		(fields_autoplaced yes)
 		(uuid "d7f2c6ce-32f9-4bb7-b9b4-e3d195e6b51a")
 		(property "Reference" "H7"
-			(at 237.49 41.9099 90)
+			(at 255.27 34.2899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4114,7 +3561,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 44.4499 90)
+			(at 255.27 36.8299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4123,7 +3570,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 43.18 0)
+			(at 251.46 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4132,7 +3579,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 43.18 0)
+			(at 251.46 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4141,7 +3588,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 43.18 0)
+			(at 251.46 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4150,7 +3597,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 43.18 0)
+			(at 251.46 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4172,7 +3619,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 50.8 270)
+		(at 248.92 43.18 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4180,7 +3627,7 @@
 		(dnp no)
 		(uuid "da125dcf-a4c1-4c94-b737-ffaf57d37ea1")
 		(property "Reference" "#PWR0184"
-			(at 224.79 50.8 0)
+			(at 242.57 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4189,7 +3636,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 50.927 0)
+			(at 244.5258 43.307 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4197,7 +3644,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 50.8 0)
+			(at 248.92 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4206,7 +3653,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 50.8 0)
+			(at 248.92 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4215,7 +3662,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 50.8 0)
+			(at 248.92 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4237,7 +3684,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:Fiducial")
-		(at 254 66.04 0)
+		(at 220.98 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4246,7 +3693,7 @@
 		(fields_autoplaced yes)
 		(uuid "e5b9c72e-7916-42ca-ae71-595b39de35ee")
 		(property "Reference" "FID2"
-			(at 256.54 64.7699 0)
+			(at 223.52 49.5299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4255,7 +3702,7 @@
 			)
 		)
 		(property "Value" "Fiducial"
-			(at 256.54 67.3099 0)
+			(at 223.52 52.0699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4264,7 +3711,7 @@
 			)
 		)
 		(property "Footprint" "Fiducial:Fiducial_1mm_Mask2mm"
-			(at 254 66.04 0)
+			(at 220.98 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4273,7 +3720,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 254 66.04 0)
+			(at 220.98 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4282,7 +3729,7 @@
 			)
 		)
 		(property "Description" "Fiducial Marker"
-			(at 254 66.04 0)
+			(at 220.98 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4291,7 +3738,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 254 66.04 0)
+			(at 220.98 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4310,7 +3757,7 @@
 	)
 	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
-		(at 233.68 58.42 270)
+		(at 251.46 50.8 270)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -4319,7 +3766,7 @@
 		(fields_autoplaced yes)
 		(uuid "ee3684bf-92f4-41c9-b3eb-5da756f071b4")
 		(property "Reference" "H9"
-			(at 237.49 57.1499 90)
+			(at 255.27 49.5299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4328,7 +3775,7 @@
 			)
 		)
 		(property "Value" "ICSRC6508-030SFR"
-			(at 237.49 59.6899 90)
+			(at 255.27 52.0699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4337,7 +3784,7 @@
 			)
 		)
 		(property "Footprint" "footprints:ICSRC6508-030SFR"
-			(at 233.68 58.42 0)
+			(at 251.46 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4346,7 +3793,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 233.68 58.42 0)
+			(at 251.46 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4355,7 +3802,7 @@
 			)
 		)
 		(property "Description" "Mounting Hole with connection"
-			(at 233.68 58.42 0)
+			(at 251.46 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4364,7 +3811,7 @@
 			)
 		)
 		(property "desc" ""
-			(at 233.68 58.42 0)
+			(at 251.46 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4386,7 +3833,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 96.52 270)
+		(at 248.92 73.66 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4394,7 +3841,7 @@
 		(dnp no)
 		(uuid "f88d4333-f373-407f-8832-7cb05590fa1d")
 		(property "Reference" "#PWR0190"
-			(at 224.79 96.52 0)
+			(at 242.57 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4403,7 +3850,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 96.647 0)
+			(at 244.5258 73.787 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4411,7 +3858,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 96.52 0)
+			(at 248.92 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4420,7 +3867,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 96.52 0)
+			(at 248.92 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4429,7 +3876,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 96.52 0)
+			(at 248.92 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4451,7 +3898,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 88.9 270)
+		(at 248.92 66.04 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4459,7 +3906,7 @@
 		(dnp no)
 		(uuid "f9940005-0f6c-4f6e-9a84-88e51bd38186")
 		(property "Reference" "#PWR0189"
-			(at 224.79 88.9 0)
+			(at 242.57 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4468,7 +3915,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 226.7458 89.027 0)
+			(at 244.5258 66.167 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4476,7 +3923,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 88.9 0)
+			(at 248.92 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4485,7 +3932,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 88.9 0)
+			(at 248.92 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4494,7 +3941,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 231.14 88.9 0)
+			(at 248.92 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4814,6 +4261,44 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
 					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 33.02 129.54)
+		(size 53.34 5.08)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8794da7a-9bf3-41c0-ac71-83d1542b2b5a")
+		(property "Sheetname" "user_ext"
+			(at 33.02 128.8284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "user_extension.kicad_sch"
+			(at 33.02 135.2046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088"
+					(page "12")
 				)
 			)
 		)

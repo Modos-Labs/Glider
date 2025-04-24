@@ -4,6 +4,12 @@
 	(generator_version "8.0")
 	(uuid "54240d57-dbdb-4d8a-9384-27566f33d89f")
 	(paper "A4")
+	(title_block
+		(title "Glider")
+		(date "2025-04-18")
+		(rev "R0.13")
+		(company "Copyright 2025 Wenting Zhang")
+	)
 	(lib_symbols
 		(symbol "Device:C"
 			(pin_numbers hide)
@@ -6216,16 +6222,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 58.42) (xy 93.98 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9444d4fa-a315-4272-bc3a-31e18a59d165")
-	)
-	(wire
-		(pts
 			(xy 175.26 31.75) (xy 175.26 29.21)
 		)
 		(stroke
@@ -6336,7 +6332,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 58.42) (xy 83.82 58.42)
+			(xy 83.82 58.42) (xy 96.52 58.42)
 		)
 		(stroke
 			(width 0)
@@ -6466,16 +6462,6 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 76.2) (xy 93.98 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e76d9978-ac74-4e11-ba8c-94bb4dc47eab")
-	)
-	(wire
-		(pts
 			(xy 175.26 58.42) (xy 190.5 58.42)
 		)
 		(stroke
@@ -6596,7 +6582,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 76.2) (xy 83.82 76.2)
+			(xy 83.82 76.2) (xy 96.52 76.2)
 		)
 		(stroke
 			(width 0)
@@ -7421,7 +7407,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 209.55 86.36 0)
 			(effects
 				(font
@@ -8330,94 +8316,6 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 90.17 58.42 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "13175278-5586-4de3-a7a8-59c3c00345f9")
-		(property "Reference" "R106"
-			(at 93.8784 60.452 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 83.947 60.452 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 90.17 60.198 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 90.17 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Ref.Price" "0.0006"
-			(at 90.17 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 90.17 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5d376f99-fd91-49fd-91b5-a40732005d6d")
-		)
-		(pin "2"
-			(uuid "ec76720e-607a-49f8-802b-767dc689806d")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/66384eed-ff93-476f-8d90-45a9ae16ca47"
-					(reference "R106")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
 		(at 185.42 35.56 0)
 		(mirror y)
 		(unit 1)
@@ -8587,7 +8485,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 196.85 147.32 0)
 			(effects
 				(font
@@ -8674,7 +8572,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 209.55 127 0)
 			(effects
 				(font
@@ -8827,7 +8725,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 224.79 147.32 0)
 			(effects
 				(font
@@ -8914,7 +8812,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 196.85 127 0)
 			(effects
 				(font
@@ -9001,7 +8899,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 209.55 106.68 0)
 			(effects
 				(font
@@ -9155,7 +9053,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1K"
+		(property "Value" "5.1K/1%"
 			(at 179.07 36.83 0)
 			(effects
 				(font
@@ -9308,7 +9206,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 224.79 86.36 0)
 			(effects
 				(font
@@ -9395,7 +9293,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 237.49 86.36 0)
 			(effects
 				(font
@@ -9482,7 +9380,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 196.85 86.36 0)
 			(effects
 				(font
@@ -9569,7 +9467,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 237.49 106.68 0)
 			(effects
 				(font
@@ -9722,7 +9620,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 237.49 147.32 0)
 			(effects
 				(font
@@ -9809,7 +9707,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 209.55 147.32 0)
 			(effects
 				(font
@@ -9896,7 +9794,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 224.79 127 0)
 			(effects
 				(font
@@ -9966,94 +9864,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 90.17 76.2 270)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "810c22d7-5321-45ab-b641-6e93a9eac289")
-		(property "Reference" "R107"
-			(at 93.8784 78.232 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "0R"
-			(at 83.947 78.232 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 90.17 77.978 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 90.17 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 90.17 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Ref.Price" "0.0006"
-			(at 90.17 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "desc" ""
-			(at 90.17 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f4710397-517e-4b66-a541-95b02798df9a")
-		)
-		(pin "2"
-			(uuid "b867022f-9516-4e52-8cb3-df54157e3760")
-		)
-		(instances
-			(project "pcb"
-				(path "/4654897e-3e2f-4522-96c3-20b19803c088/66384eed-ff93-476f-8d90-45a9ae16ca47"
-					(reference "R107")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 195.58 105.41 0)
 		(unit 1)
@@ -10071,7 +9881,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 196.85 106.68 0)
 			(effects
 				(font
@@ -10224,7 +10034,7 @@
 				)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 210.82 53.34 0)
 			(effects
 				(font
@@ -10368,7 +10178,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 250.19 127 0)
 			(effects
 				(font
@@ -10455,7 +10265,7 @@
 				)
 			)
 		)
-		(property "Value" "5.1K"
+		(property "Value" "5.1K/1%"
 			(at 179.07 68.58 0)
 			(effects
 				(font
@@ -10607,7 +10417,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 250.19 86.36 0)
 			(effects
 				(font
@@ -10761,7 +10571,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "4.7uF"
+		(property "Value" "4.7uF/6.3V"
 			(at 224.79 106.68 0)
 			(effects
 				(font
@@ -10848,7 +10658,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470nF"
+		(property "Value" "470nF/25V"
 			(at 237.49 127 0)
 			(effects
 				(font
@@ -12106,7 +11916,7 @@
 				)
 			)
 		)
-		(property "Value" "27R"
+		(property "Value" "33R/1%"
 			(at 255.27 54.61 90)
 			(effects
 				(font

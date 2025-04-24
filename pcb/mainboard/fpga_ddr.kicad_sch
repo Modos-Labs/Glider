@@ -6,9 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Glider")
-		(date "2024-05-09")
-		(rev "R0.8")
-		(company "Copyright 2024 Wenting Zhang")
+		(date "2025-04-18")
+		(rev "R0.13")
+		(company "Copyright 2025 Wenting Zhang")
 	)
 	(lib_symbols
 		(symbol "Device:C"
@@ -10254,7 +10254,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 193.421 159.893 0)
 			(effects
 				(font
@@ -10341,7 +10341,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 178.181 37.973 0)
 			(effects
 				(font
@@ -10428,7 +10428,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5.1K"
+		(property "Value" "5.1K/1%"
 			(at 179.578 119.253 0)
 			(effects
 				(font
@@ -10515,7 +10515,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 267.081 154.813 0)
 			(effects
 				(font
@@ -10667,7 +10667,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 162.941 139.573 0)
 			(effects
 				(font
@@ -10819,7 +10819,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 173.101 139.573 0)
 			(effects
 				(font
@@ -10906,7 +10906,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5.1K"
+		(property "Value" "5.1K/1%"
 			(at 189.738 119.253 0)
 			(effects
 				(font
@@ -11058,7 +11058,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 183.261 139.573 0)
 			(effects
 				(font
@@ -11145,7 +11145,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 114.681 50.673 0)
 			(effects
 				(font
@@ -11232,7 +11232,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 223.901 159.893 0)
 			(effects
 				(font
@@ -11666,7 +11666,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 114.681 182.753 0)
 			(effects
 				(font
@@ -11753,7 +11753,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 213.741 139.573 0)
 			(effects
 				(font
@@ -12467,7 +12467,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "5.1K"
+		(property "Value" "5.1K/1%"
 			(at 253.238 119.253 0)
 			(effects
 				(font
@@ -12554,7 +12554,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 223.901 139.573 0)
 			(effects
 				(font
@@ -12793,7 +12793,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 213.741 159.893 0)
 			(effects
 				(font
@@ -12880,7 +12880,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 203.581 159.893 0)
 			(effects
 				(font
@@ -12967,7 +12967,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 203.581 139.573 0)
 			(effects
 				(font
@@ -13959,7 +13959,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 188.341 37.973 0)
 			(effects
 				(font
@@ -14176,7 +14176,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 183.261 159.893 0)
 			(effects
 				(font
@@ -14263,7 +14263,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "470nF/25V"
 			(at 193.421 139.573 0)
 			(effects
 				(font
@@ -14350,7 +14350,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100nF/50V"
 			(at 267.081 142.113 0)
 			(effects
 				(font
@@ -14502,7 +14502,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 173.101 159.893 0)
 			(effects
 				(font
@@ -14719,7 +14719,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "47uF/6.3V"
+		(property "Value" "22uF/6.3V"
 			(at 241.681 147.193 0)
 			(effects
 				(font
@@ -14936,7 +14936,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 162.941 159.893 0)
 			(effects
 				(font

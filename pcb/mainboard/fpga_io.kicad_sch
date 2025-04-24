@@ -4,6 +4,12 @@
 	(generator_version "8.0")
 	(uuid "48b54f09-f89d-4ed3-9775-65124d4ce77c")
 	(paper "A4")
+	(title_block
+		(title "Glider")
+		(date "2025-04-18")
+		(rev "R0.13")
+		(company "Copyright 2025 Wenting Zhang")
+	)
 	(lib_symbols
 		(symbol "Device:LED"
 			(pin_numbers hide)
@@ -5650,6 +5656,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 119.38) (xy 114.3 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50716722-c426-4148-8044-64164d612326")
+	)
+	(wire
+		(pts
 			(xy 119.38 50.8) (xy 114.3 50.8)
 		)
 		(stroke
@@ -6973,6 +6989,28 @@
 		(uuid "881ee330-0a60-4aa2-b656-028473409235")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 231.1618 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "GCLK"
+		(shape input)
+		(at 119.38 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8914c844-c68b-4420-9dc3-fcfd3c885f88")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 126.6312 119.3006 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9657,8 +9695,8 @@
 				)
 			)
 		)
-		(property "Value" "1K"
-			(at 199.39 160.02 90)
+		(property "Value" "10K/1%"
+			(at 194.31 165.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)

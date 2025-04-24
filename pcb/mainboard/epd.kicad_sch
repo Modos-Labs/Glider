@@ -4,6 +4,12 @@
 	(generator_version "8.0")
 	(uuid "4ef2e862-7ccc-4cb7-8647-31267e134984")
 	(paper "A4")
+	(title_block
+		(title "Glider")
+		(date "2025-04-18")
+		(rev "R0.13")
+		(company "Copyright 2025 Wenting Zhang")
+	)
 	(lib_symbols
 		(symbol "Connector_Generic_MountingPin:Conn_01x16_MountingPin"
 			(pin_names
@@ -4827,7 +4833,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 111.76 156.21 90)
 			(effects
 				(font
@@ -4980,7 +4986,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 111.76 151.13 90)
 			(effects
 				(font
@@ -5862,7 +5868,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 111.76 44.45 90)
 			(effects
 				(font
@@ -5959,7 +5965,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_FFC-FPC:Hirose_FH12-16S-0.5SH_1x16-1MP_P0.50mm_Horizontal"
+		(property "Footprint" "footprints:Xunpu_FPC-05F-16PH20_1x16-1MP_P0.50mm_Horizontal"
 			(at 208.28 81.28 0)
 			(effects
 				(font
@@ -6074,7 +6080,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_FFC-FPC:Hirose_FH12-50S-0.5SH_1x50-1MP_P0.50mm_Horizontal"
+		(property "Footprint" "footprints:Xunpu_FPC-05F-50PH20_1x50-1MP_P0.50mm_Horizontal"
 			(at 139.7 104.14 0)
 			(effects
 				(font
@@ -6281,7 +6287,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 111.76 153.67 90)
 			(effects
 				(font
@@ -6368,7 +6374,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 111.76 39.37 90)
 			(effects
 				(font
@@ -6520,7 +6526,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 111.76 49.53 90)
 			(effects
 				(font
@@ -6607,7 +6613,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "220nF"
+		(property "Value" "100nF/50V"
 			(at 111.76 161.29 90)
 			(effects
 				(font
