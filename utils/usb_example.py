@@ -45,8 +45,8 @@ def crc16(data: bytes):
     return crc
 
 def send_cmd():
-    vid = 0xcafe
-    pid = 0x4004
+    vid = 0x0483
+    pid = 0x5750
 
     h = hid.device()
     h.open(vid, pid)
