@@ -1652,7 +1652,7 @@ void pd_init(int port);
  * to iterate through the state machine. It uses get_time() to 
  * determine what actions to take each call. 
  */
-void pd_run_state_machine(int port);
+int pd_run_state_machine(int port);
 
 /* --- Protocol layer functions --- */
 

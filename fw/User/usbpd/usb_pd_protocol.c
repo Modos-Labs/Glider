@@ -2179,7 +2179,7 @@ void pd_init(int port)
 #endif
 }
 
-void pd_run_state_machine(int port)
+int pd_run_state_machine(int port)
 {
 #ifdef CONFIG_USB_PD_REV30
 	/* send any pending messages */
@@ -3470,6 +3470,8 @@ void pd_run_state_machine(int port)
 		timeout = 5*MSEC_US;
 	}
 #endif /* CONFIG_USB_PD_DUAL_ROLE */
+
+	return timeout;
 }
 
 #ifdef CONFIG_USB_PD_DUAL_ROLE

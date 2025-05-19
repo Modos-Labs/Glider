@@ -25,6 +25,7 @@
 #include "app.h"
 
 static SemaphoreHandle_t isr_sem = NULL;
+bool dp_ready = false;
 
 void usbpd_isr(void) {
     BaseType_t context_switch = pdFALSE;
@@ -49,19 +50,25 @@ portTASK_FUNCTION(usb_pd_task, pvParameters) {
     syslog_printf("CC status %d %d\n", cc1, cc2);
     pd_init(0);
     sleep_ms(50);
+    int timeout = 0;
     while (1) {
-        BaseType_t rtos_result = xSemaphoreTake(isr_sem, pdMS_TO_TICKS(50));
+        BaseType_t rtos_result = xSemaphoreTake(isr_sem, pdMS_TO_TICKS(timeout/1000));
 //        if (rtos_result) {
 //            syslog_printf("FUSB302 interrupt");
 //            //fusb302_tcpc_alert(0);
 //        }
-        fusb302_tcpc_alert(0);
-        pd_run_state_machine(0);
-        if (dp_enabled && !hpd_sent && !pd_is_vdm_busy(0)) {
-            syslog_printf("DP enabled\n");
-            pd_send_hpd(0, hpd_high);
-            hpd_sent = true;
-        }
+        do {
+            fusb302_tcpc_alert(0);
+            timeout = pd_run_state_machine(0);
+            if (dp_enabled && !hpd_sent && !pd_is_vdm_busy(0)) {
+                syslog_printf("DP enabled\n");
+                pd_send_hpd(0, hpd_high);
+                hpd_sent = true;
+                dp_ready = true;
+            }
+//            vTaskDelay(pdMS_TO_TICKS(5));
+            //xSemaphoreTake(isr_sem, 0); // Clear semaphore
+        } while (gpio_get(TCPC_INT) == 0);
     }
 
     while (1) {

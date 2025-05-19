@@ -22,5 +22,7 @@
 //
 #pragma once
 
+extern bool dp_ready;
+
 void usbpd_isr(void);
 portTASK_FUNCTION(usb_pd_task, pvParameters);
