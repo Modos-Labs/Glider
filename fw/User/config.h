@@ -47,6 +47,7 @@ typedef struct {
     uint8_t tcon_hsync;
     uint8_t tcon_hbp;
     uint16_t tcon_hact;
+    uint8_t mirror;
 } config_t;
 
 extern config_t config;

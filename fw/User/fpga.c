@@ -139,19 +139,23 @@ static void fpga_wait_done(bool timeout) {
     }
 }
 
-void fpga_init(void) {
-    // Initialize FPGA pins
-    gpio_put(FPGA_CS, 1);
-
+void fpga_reset(void) {
     // FPGA Reset
     gpio_put(FPGA_PROG, 0);
     sleep_ms(2);
     gpio_put(FPGA_PROG, 1);
     sleep_ms(10);
+}
+
+void fpga_init(const char *fn) {
+    // Initialize FPGA pins
+    gpio_put(FPGA_CS, 1);
+
+    fpga_reset();
 
     // Load bitstream
 #if 1
-    fpga_load_bitstream("fpga.bit");
+    fpga_load_bitstream(fn);
     fpga_wait_done(true);
 #else
     //fpga_wait_done(false);

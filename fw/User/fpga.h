@@ -22,7 +22,8 @@
 //
 #pragma once
 
-void fpga_init(void);
+void fpga_init(const char *fn);
+void fpga_reset(void);
 void fpga_suspend(void);
 void fpga_resume(void);
 uint8_t fpga_write_reg8(uint8_t addr, uint8_t val);

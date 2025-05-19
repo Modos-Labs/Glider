@@ -70,6 +70,7 @@
 #define FUSB302_I2C_ADDR    (0x22)
 #define INA3221_0_I2C_ADDR  (0x40)
 #define INA3221_1_I2C_ADDR  (0x41)
+#define INA3221_2_I2C_ADDR  (0x42)
 
 // ADV7611 Sub addresses, make sure they don't conflict with anything else!
 #define CEC_I2C_ADDR        (0x3F) // Default 0x40(0x80)

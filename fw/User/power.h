@@ -22,6 +22,25 @@
 //
 #pragma once
 
+typedef enum {
+    // Rails with both voltage and current monitoring
+    RAIL_5VES,
+    RAIL_5VEG,
+    RAIL_3V3,
+    RAIL_1V8VID,
+    RAIL_3V3VID,
+    RAIL_5V2FL,
+    RAIL_1V35,
+    RAIL_1V2,
+    // Rails with only voltage monitoring
+    RAIL_VP,
+    RAIL_VGH,
+    RAIL_VBUS,
+    RAIL_VCOM,
+    RAIL_VN,
+    RAIL_VGL,
+} power_rail_t;
+
 void power_off(void);
 void power_on(void);
 void power_on_epd(void);
@@ -31,4 +50,7 @@ void power_set_vgh(float vgh);
 void power_on_fl(void);
 void power_off_fl(void);
 void power_set_fl_brightness(uint8_t val);
+float power_get_rail_voltage(power_rail_t rail);
+float power_get_rail_current(power_rail_t rail);
+void power_get_rail_power(power_rail_t rail, float *cur, float *avg, float *max);
 portTASK_FUNCTION(power_monitor_task, pvParameters);

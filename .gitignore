@@ -10,3 +10,5 @@ production/
 fp-info-cache
 fabrication-toolkit-options.json
 *.kicad_sch-bak
+# MCUXpresso files
+Debug/

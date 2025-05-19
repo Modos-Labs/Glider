@@ -81,10 +81,8 @@ static portTASK_FUNCTION(startup_task, pvParameters) {
     edid_init();
     adv7611_early_init(); // Must be before PTN3460 to release RST and I2C bus
     ptn3460_early_init(); // Let PTN3460 starts internal bootup process
-    fpga_init();
     adv7611_init();
     ptn3460_init();
-    caster_init(); // must be after adv7611 as it's the clock source for CSR interface
     power_set_vcom(config.vcom); // Move out from here
     power_set_vgh(config.vgh);
     ui_init();
@@ -101,7 +99,7 @@ static portTASK_FUNCTION(startup_task, pvParameters) {
         NULL, UI_TASK_PRIORITY, &ui_task_handle);
     xTaskCreate(key_scan_task, "KeyScanTask", KEY_SCAN_TASK_STACK_SIZE,
         NULL, KEY_SCAN_TASK_PRIORITY, &key_scan_task_handle);
-    xTaskCreate(power_monitor_task, "PowerMonitorTask", POWER_MON_TASK_STACK_SIZE,
+    xTaskCreate(power_monitor_task, "PowerMonTask", POWER_MON_TASK_STACK_SIZE,
         NULL, POWER_MON_TASK_PRIORITY, &power_mon_task_handle);
 
     vTaskPrioritySet(NULL, STARTUP_TASK_LOW_PRIORITY);

@@ -112,10 +112,10 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
         // TODO
         break;
     case USBCMD_REDRAW:
-        //retval = caster_redraw(x0, y0, x1, y1);
+        retval = caster_redraw(x0, y0, x1, y1);
         break;
     case USBCMD_SETMODE:
-        //retval = caster_setmode(x0, y0, x1, y1, (UPDATE_MODE)param);
+        retval = caster_setmode(x0, y0, x1, y1, (update_mode_t)param);
         break;
     case USBCMD_USBBOOT:
         //iap_usbboot();

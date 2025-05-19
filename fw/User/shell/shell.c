@@ -67,30 +67,32 @@ typedef struct
 SHELL_FUNC( shell_help );
 SHELL_FUNC( shell_ver );
 SHELL_FUNC( shell_syslog );
+SHELL_FUNC( shell_stacks );
 SHELL_FUNC( shell_test );
 SHELL_FUNC( shell_i2c_probe );
-SHELL_FUNC( shell_fl );
 SHELL_FUNC( shell_recv );
 SHELL_FUNC( shell_send );
 SHELL_FUNC( shell_df );
-SHELL_FUNC( shell_dump );
-SHELL_FUNC( shell_fdump );
+SHELL_FUNC( shell_format );
+SHELL_FUNC( shell_rm );
 SHELL_FUNC( shell_setvolt );
 SHELL_FUNC( shell_setcfg );
+SHELL_FUNC( shell_sensor );
 
 SHELL_HELP( help );
 SHELL_HELP( ver );
 SHELL_HELP( syslog );
+SHELL_HELP( stacks );
 SHELL_HELP( test );
 SHELL_HELP( i2c_probe );
-SHELL_HELP( fl );
 SHELL_HELP( recv );
 SHELL_HELP( send );
 SHELL_HELP( df );
-SHELL_HELP( dump );
-SHELL_HELP( fdump );
+SHELL_HELP( format );
+SHELL_HELP( rm );
 SHELL_HELP( setvolt );
 SHELL_HELP( setcfg );
+SHELL_HELP( sensor );
 
 //static const SHELL_COMMAND shell_commands[] =
 const SHELL_COMMAND shell_commands[] =
@@ -98,16 +100,17 @@ const SHELL_COMMAND shell_commands[] =
   { "help", shell_help },
   { "ver", shell_ver },
   { "syslog", shell_syslog },
+  { "stacks", shell_stacks },
   { "test", shell_test },
   { "i2c_probe", shell_i2c_probe },
-  { "fl", shell_fl },
   { "recv", shell_recv },
   { "send", shell_send },
   { "df", shell_df },
-  { "dump", shell_dump },
-  { "fdump", shell_fdump },
+  { "format", shell_format },
+  { "rm", shell_rm },
   { "setvolt", shell_setvolt },
   { "setcfg", shell_setcfg },
+  { "sensor", shell_sensor },
   { "exit", NULL },
   { NULL, NULL }
 };
@@ -117,16 +120,17 @@ static const SHELL_HELP_DATA shell_help_data[] =
   SHELL_INFO( help ),
   SHELL_INFO( ver ),
   SHELL_INFO( syslog ),
+  SHELL_INFO( stacks ),
   SHELL_INFO( test ),
   SHELL_INFO( i2c_probe ),
-  SHELL_INFO( fl ),
   SHELL_INFO( recv ),
   SHELL_INFO( send ),
   SHELL_INFO( df ),
-  SHELL_INFO( dump ),
-  SHELL_INFO( fdump ),
+  SHELL_INFO( format ),
+  SHELL_INFO( rm ),
   SHELL_INFO( setvolt ),
   SHELL_INFO( setcfg ),
+  SHELL_INFO( sensor ),
   { NULL, NULL, NULL }
 };
 

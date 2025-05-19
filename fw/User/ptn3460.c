@@ -82,3 +82,7 @@ void ptn3460_set_aux_polarity(int reverse) {
     else
         ptn3460_write(0x80, 0x00); // Disable AUX reverse
 }
+
+void ptn3460_powerdown(void) {
+    gpio_put(DP_PDN, 0);
+}

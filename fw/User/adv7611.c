@@ -46,18 +46,18 @@ static const uint8_t adv7611_init_1[] = {
     ADV7611_I2C_ADDR,   0x01, 0x06, // Prim_mode = 110b HDMI-GR
     ADV7611_I2C_ADDR,   0x00, 0x16, // VID-STD: UXGA (for default clock)
     ADV7611_I2C_ADDR,   0x02, 0xf2, // F8 = YUV, F2 = RGB
-    ADV7611_I2C_ADDR,   0x03, 0x40, // 40 = 24bit 444 SDR
-    ADV7611_I2C_ADDR,   0x04, 0x46, // P[23:16] V/R, P[15:8] Y/G, P[7:0] U/CrCb/B CLK=24MHz
+    ADV7611_I2C_ADDR,   0x03, 0x60, // 40 = 24bit 444 DDR
+    ADV7611_I2C_ADDR,   0x04, 0x66, // P[23:16] V/R, P[15:8] Y/G, P[7:0] U/CrCb/B CLK=24MHz
     ADV7611_I2C_ADDR,   0x05, 0x28, // Do not insert AV codes
     ADV7611_I2C_ADDR,   0x06, 0xa6, // VS OUT SEL, F/VS/HS/LLC POL
     ADV7611_I2C_ADDR,   0x0b, 0x44,
-    ADV7611_I2C_ADDR,   0x0C, 0x42,
+    ADV7611_I2C_ADDR,   0x0c, 0x42,
     ADV7611_I2C_ADDR,   0x15, 0x80,
-    ADV7611_I2C_ADDR,   0x19, 0x8a, // Enable LLC DLL
+    ADV7611_I2C_ADDR,   0x19, 0x94, // Enable LLC DLL
     ADV7611_I2C_ADDR,   0x33, 0x40,
-    ADV7611_I2C_ADDR,   0x14, 0x7f,
+    ADV7611_I2C_ADDR,   0x14, 0x37, // 37
     CP_I2C_ADDR,        0xba, 0x00, // Disable free run
-    //HDMI_I2C_ADDR,      0xbf, 0x01, // Bypass CP
+    HDMI_I2C_ADDR,      0xbf, 0x01, // Bypass CP
     CP_I2C_ADDR,        0x6c, 0x00, // ADI required setting
     KSV_I2C_ADDR,       0x40, 0x81, // DSP_Ctrl4 :00/01 : YUV or RGB; 10 : RAW8; 11 : RAW10
     HDMI_I2C_ADDR,      0x9b, 0x03, // ADI required setting
@@ -84,7 +84,7 @@ static const uint8_t adv7611_init_1[] = {
     HDMI_I2C_ADDR,      0x57, 0xda, // ADI required setting
     HDMI_I2C_ADDR,      0x58, 0x01, // ADI required setting
     HDMI_I2C_ADDR,      0x03, 0x98, // Set DIS_I2C_ZERO_COMPR 0x03[7]=1
-    HDMI_I2C_ADDR,      0x4c, 0x44, // Set NEW_VS_PARAM 0x44[2]=1
+    HDMI_I2C_ADDR,      0x4c, 0x40, // Set NEW_VS_PARAM 0x44[2]=0
     HDMI_I2C_ADDR,      0x75, 0x10,
 };
 
@@ -131,7 +131,7 @@ uint8_t adv7611_read_reg(uint8_t addr, uint8_t reg) {
     return val;
 }
 
-void adv7611_early_init() {
+void adv7611_early_init(void) {
     // Initialize IO, reset ADV7611 and allocate I2C addresses
     // So it won't conflict with other ICs
     gpio_put(DEC_RST, 1);
@@ -141,7 +141,7 @@ void adv7611_early_init() {
     gpio_put(DEC_RST, 1);
 }
 
-void adv7611_init() {
+void adv7611_init(void) {
     adv7611_send_init_seq(adv7611_init_0, sizeof(adv7611_init_0) / 3);
     adv7611_send_init_seq(adv7611_init_1, sizeof(adv7611_init_1) / 3);
 
@@ -151,4 +151,12 @@ void adv7611_init() {
     adv7611_send_init_seq(adv7611_init_2, sizeof(adv7611_init_2) / 3);
 
     syslog_printf("ADV7611 initialization done\n");
+}
+
+void adv7611_powerdown(void) {
+    uint8_t buf[2];
+    buf[0] = 0x0c;
+    buf[1] = 0x62; // Power down
+    int result;
+    result = pal_i2c_write_payload(ADV7611_I2C, ADV7611_I2C_ADDR, buf, 2);
 }
