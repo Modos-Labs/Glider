@@ -5,7 +5,7 @@
       "defaults": {
         "apply_defaults_to_fp_fields": false,
         "apply_defaults_to_fp_shapes": false,
-        "apply_defaults_to_fp_text": false,
+        "apply_defaults_to_fp_text": true,
         "board_outline_line_width": 0.05,
         "copper_line_width": 0.2,
         "copper_text_italic": false,
@@ -80,6 +80,7 @@
         "footprint_type_mismatch": "error",
         "hole_clearance": "error",
         "hole_near_hole": "error",
+        "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
         "item_on_disabled_layer": "error",
@@ -121,7 +122,7 @@
         "min_clearance": 0.0,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.3,
-        "min_hole_clearance": 0.2,
+        "min_hole_clearance": 0.15,
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
@@ -190,7 +191,9 @@
         0.13,
         0.15,
         0.2,
+        0.25,
         0.3,
+        0.4,
         0.5,
         0.6,
         1.0,
@@ -512,9 +515,9 @@
       {
         "bus_width": 12,
         "clearance": 0.11,
-        "diff_pair_gap": 0.25,
+        "diff_pair_gap": 0.11,
         "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
+        "diff_pair_width": 0.127,
         "line_style": 0,
         "microvia_diameter": 0.3,
         "microvia_drill": 0.1,
@@ -562,7 +565,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.127,
+        "clearance": 0.11,
         "diff_pair_gap": 0.1,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.11,
@@ -579,7 +582,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.127,
+        "clearance": 0.11,
         "diff_pair_gap": 0.1,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.11,
@@ -596,7 +599,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.127,
+        "clearance": 0.11,
         "diff_pair_gap": 0.1,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.11,
@@ -634,6 +637,8 @@
     },
     "net_colors": {
       "+1V0": "rgb(255, 92, 56)",
+      "+1V0_PL": "rgb(216, 223, 0)",
+      "+1V0_PS": "rgb(255, 139, 0)",
       "+1V2": "rgb(255, 117, 0)",
       "+1V35": "rgb(185, 61, 143)",
       "+3V3": "rgb(179, 228, 50)",
@@ -700,12 +705,12 @@
         "pattern": "GND"
       },
       {
-        "netclass": "POWER",
-        "pattern": "V*"
-      },
-      {
         "netclass": "USB",
         "pattern": "USB*"
+      },
+      {
+        "netclass": "POWER",
+        "pattern": "-*"
       }
     ]
   },
@@ -715,16 +720,17 @@
       "idf": "",
       "netlist": "",
       "plot": "gerber/",
-      "pos_files": "",
+      "pos_files": "./",
       "specctra_dsn": "",
-      "step": "pcb.step",
-      "svg": "",
+      "step": "mb_r0p13_250414.step",
+      "svg": "./",
       "vrml": ""
     },
     "page_layout_descr_file": ""
   },
   "schematic": {
     "annotate_start_num": 0,
+    "bom_export_filename": "bom.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -755,7 +761,7 @@
           "group_by": false,
           "label": "Datasheet",
           "name": "Datasheet",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -770,15 +776,51 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "DNP",
           "name": "${DNP}",
-          "show": true
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Ref.Price",
+          "name": "Ref.Price",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "desc",
+          "name": "desc",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "Grouped By Value",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -843,12 +885,12 @@
       "power"
     ],
     [
-      "35d2a4e1-1cb2-4b6c-a7fb-e3a9449d4ff3",
-      "fpga"
+      "66384eed-ff93-476f-8d90-45a9ae16ca47",
+      "fpga_config"
     ],
     [
-      "b1d5941d-0481-47a2-a434-0b8e587a166a",
-      "eink"
+      "e8b4e009-795b-493b-81e1-c1f35fceb75f",
+      "fpga_io"
     ],
     [
       "866a5b4a-453a-413a-94a2-5e610f40d8dd",
@@ -859,12 +901,28 @@
       "dp_in"
     ],
     [
-      "d0757a0a-c868-475e-8221-24a5e99d32b9",
+      "1afc3cb7-9ace-435f-9131-835660c51142",
+      "tmds_in"
+    ],
+    [
+      "02c99cce-90c7-4b15-8db7-b6bbe4991aa8",
+      "epd"
+    ],
+    [
+      "f7612365-fe83-4eab-8da6-6b707d906062",
+      "epd_power"
+    ],
+    [
+      "1092a313-b264-4540-98b4-864a49d6a44e",
+      "power_mon"
+    ],
+    [
+      "5f589a85-47ef-4b9c-90f9-dfdcb1c7f590",
       "mcu"
     ],
     [
-      "1afc3cb7-9ace-435f-9131-835660c51142",
-      "tmds_in"
+      "8794da7a-9bf3-41c0-ac71-83d1542b2b5a",
+      "user_ext"
     ]
   ],
   "text_variables": {}
