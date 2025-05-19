@@ -115,6 +115,7 @@ static uint32_t button_scan_single(int id, bool pressed) {
 uint32_t button_scan() {
     uint32_t btn1 = button_scan_single(0, gpio_get(BTN1) == BTN_PRESSED_LEVEL);
     uint32_t btn2 = button_scan_single(1, gpio_get(BTN2) == BTN_PRESSED_LEVEL);
-    uint32_t retval = (btn1 & 0x3) | ((btn2 & 0x3) << 2);
+    uint32_t btn3 = button_scan_single(2, gpio_get(BTN3) == BTN_PRESSED_LEVEL);
+    uint32_t retval = (btn1 & 0x3) | ((btn2 & 0x3) << 2) | ((btn3 & 0x3) << 4);
     return retval;
 }

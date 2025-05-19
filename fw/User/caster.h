@@ -38,7 +38,7 @@
 #define CSR_OP_PARAM        12
 #define CSR_OP_LENGTH       13
 #define CSR_OP_CMD          14
-#define CSR_CONTROL         15
+#define CSR_ENABLE          15
 #define CSR_CFG_V_FP        16
 #define CSR_CFG_V_SYNC      17
 #define CSR_CFG_V_BP        18
@@ -53,7 +53,21 @@
 #define CSR_CFG_FBYTES_B1   28
 #define CSR_CFG_FBYTES_B0   29
 #define CSR_CFG_MINDRV      30
-#define CSR_STATUS          32
+#define CSR_OSD_EN          31
+#define CSR_OSD_LEFT_HI     32
+#define CSR_OSD_LEFT_LO     33
+#define CSR_OSD_RIGHT_HI    34
+#define CSR_OSD_RIGHT_LO    35
+#define CSR_OSD_TOP_HI      36
+#define CSR_OSD_TOP_LO      37
+#define CSR_OSD_BOTTOM_HI   38
+#define CSR_OSD_BOTTOM_LO   39
+#define CSR_OSD_ADDR_HI     40
+#define CSR_OSD_ADDR_LO     41
+#define CSR_OSD_WR          42
+#define CSR_CFG_MIRROR      43
+#define CSR_STATUS          128
+#define CSR_ID0             129
 // Alias for 16bit registers
 #define CSR_LUT_ADDR        CSR_LUT_ADDR_HI
 #define CSR_OP_LEFT         CSR_OP_LEFT_HI
@@ -62,6 +76,11 @@
 #define CSR_OP_BOTTOM       CSR_OP_BOTTOM_HI
 #define CSR_CFG_V_ACT       CSR_CFG_V_ACT_HI
 #define CSR_CFG_H_ACT       CSR_CFG_H_ACT_HI
+#define CSR_OSD_LEFT        CSR_OSD_LEFT_HI
+#define CSR_OSD_RIGHT       CSR_OSD_RIGHT_HI
+#define CSR_OSD_TOP         CSR_OSD_TOP_HI
+#define CSR_OSD_BOTTOM      CSR_OSD_BOTTOM_HI
+#define CSR_OSD_ADDR        CSR_OSD_ADDR_HI
 
 // Commands
 #define OP_EXT_REDRAW       0
@@ -95,3 +114,5 @@ uint8_t caster_load_waveform(uint8_t *waveform, uint8_t frames);
 uint8_t caster_redraw(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
 uint8_t caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
     update_mode_t mode);
+uint8_t caster_osd_send_buf(uint8_t *buf);
+uint8_t caster_osd_set_enable(bool en);

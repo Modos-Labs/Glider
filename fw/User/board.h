@@ -27,9 +27,10 @@
 #define LED_GRN         GPIOE, GPIO_PIN_0
 #define LED_RED         GPIOE, GPIO_PIN_1
 
-#define BTNCNT          2
-#define BTN1            GPIOB, GPIO_PIN_8
+#define BTNCNT          3
+#define BTN1            GPIOE, GPIO_PIN_4
 #define BTN2            GPIOB, GPIO_PIN_5
+#define BTN3            GPIOE, GPIO_PIN_3
 
 #define BTN_PRESSED_LEVEL   1 // Active high
 

@@ -31,8 +31,8 @@ static uint8_t waveform_frames;
 static uint8_t get_update_frames(void) {
     // Should be worst case time to clear/ update a frame
     //uint8_t min_time = 10; // Minimum time for non-LUT modes
-    // actually, just always return 1s
-    return 60;
+    // actually, just always return 0.5s
+    return 16;
 }
 
 static void wait(void) {
@@ -53,9 +53,15 @@ void caster_init(void) {
     fpga_write_reg8(CSR_CFG_FBYTES_B0, frame_bytes & 0xff);
     fpga_write_reg8(CSR_CFG_FBYTES_B1, (frame_bytes >> 8) & 0xff);
     fpga_write_reg8(CSR_CFG_FBYTES_B2, (frame_bytes >> 16) & 0xff);
-    fpga_write_reg8(CSR_CONTROL, 1); // Enable refresh
-    //fpga_write_reg8(CSR_CFG_MINDRV, 0);
+    fpga_write_reg8(CSR_CFG_MINDRV, 2);
     fpga_write_reg8(CSR_LUT_FRAME, 38);
+    fpga_write_reg16(CSR_OSD_LEFT, 0);
+    fpga_write_reg16(CSR_OSD_RIGHT, 256/4);
+    fpga_write_reg16(CSR_OSD_TOP, 0);
+    fpga_write_reg16(CSR_OSD_BOTTOM, 128);
+    fpga_write_reg8(CSR_OSD_EN, 0);
+    fpga_write_reg8(CSR_CFG_MIRROR, config.mirror);
+    fpga_write_reg8(CSR_ENABLE, 1); // Enable refresh
 }
 
 static uint8_t is_busy() {
@@ -72,7 +78,7 @@ uint8_t caster_load_waveform(uint8_t *waveform, uint8_t frames) {
 }
 
 uint8_t caster_redraw(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1) {
-    if (is_busy()) return 1;
+    //if (is_busy()) return 1;
     fpga_write_reg16(CSR_OP_LEFT, x0);
     fpga_write_reg16(CSR_OP_TOP, y0);
     fpga_write_reg16(CSR_OP_RIGHT, x1);
@@ -84,7 +90,7 @@ uint8_t caster_redraw(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1) {
 
 uint8_t caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
         update_mode_t mode) {
-    if (is_busy()) return 1;
+    //if (is_busy()) return 1;
     fpga_write_reg16(CSR_OP_LEFT, x0);
     fpga_write_reg16(CSR_OP_TOP, y0);
     fpga_write_reg16(CSR_OP_RIGHT, x1);
@@ -98,5 +104,16 @@ uint8_t caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
 uint8_t caster_setinput(uint8_t input_src) {
 //    if (is_busy()) return 1;
 //    fpga_write_reg8(CSR_CFG_IN_SRC, input_src);
+    return 0;
+}
+
+uint8_t caster_osd_send_buf(uint8_t *buf) {
+    fpga_write_reg16(CSR_OSD_ADDR, 0);
+    fpga_write_bulk(CSR_OSD_WR, buf, 4096);
+    return 0;
+}
+
+uint8_t caster_osd_set_enable(bool en) {
+    fpga_write_reg8(CSR_OSD_EN, en);
     return 0;
 }
