@@ -880,10 +880,15 @@ This project only focuses on driving off-the-shelf active matrix electrophoretic
 
 Different screen panels have different connectors. It would take a huge amount of space to have every possible screen connector on the motherboard. Instead, a series of different screen adapters are provided to adapt to the screen with different pinouts.
 
-The mainboard natives support certain 40-pin screens, such as:
+The motherboard uses a 50pin + 16pin connector. A single 50pin connector is enough for 8/16-bit screens, the 16 pin connector additionally adds support for LVDS screens and 32-bit/ 64-bit screens.
 
-- 10.3" 1872x1404: ED103TC1, ES103TC2
-- 10.1" 2232x1680: GDEW101M01, GDEW101C01
+Mega adapter 1: Most common screens
+
+- 33P-A: ED097OC1-4/TC1
+- 34P-A: ED060XC3/XD4/XG1 etc.
+- 39P-A: ED133UT1-3 ED050SU3 etc.
+- 40P-A/B: ED078KC1 ED103TC2 etc. (A inserts with contact facing down, B inserts with contact facing up)
+- 50P-A: ED113TC1
 
 To see which adapter might work for your screen, check out the [Appendix 1 - Screen List](#screen-list)
 
@@ -1006,7 +1011,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED043WC5   | VD1405-CGA   | 400          | 800x480     | Carta 1200                  |       |        |       | SPI       |           |         |         |
 | ED043WH1   |              | V220         |             | Pearl                       |       |        |       | TTL       | 40        |         |         |
 | ED047TC1   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2015  | TTL       | 44        |         |         |
-| ED047TC2   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2016  | TTL       | 44        |         |         |
+| ED047TC2   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2016  | TTL       | 40        |         |         |
 | ET047TC1   |              | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
 | ET047TC2   |              | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
 | ED050SC3   |              | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 33        | 33P-A   |         |
