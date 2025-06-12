@@ -1000,161 +1000,170 @@ First 2 letters denotes the screen type:
 
 The adapter column refers to the adapter needed for this particular screen, however, there is no guarantee that it would work, even if it's listed as tested.
 
-| Model Name | Model Number | FPL Platform | Resolution  | Marketing Name              | R Typ | CR Typ | Year  | Interface | Pin Count | Adapter | Tested? |
-| ---------- | ------------ | ------------ | ----------- | --------------------------- | ----- | ------ | ----- | --------- | --------- | ------- | ------- |
-| ED038TH1   |              | V320         | 600x600     | Carta                       | 45%   | 17:1   | 2015  | TTL       | 34        | 34P-A   |         |
-| ET040TC1   |              |              | 720x480     | Pearl                       |       |        |       | TTL       |           |         |         |
-| ET040TC2   |              |              | 720x480     | Pearl                       |       |        |       | TTL       |           |         |         |
-| ET040TC3   |              |              | 720x480     | Pearl                       |       |        |       | TTL       | 40        |         |         |
-| ED043WC1   |              | V220         | 800x480     | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        | 39P-C   |         |
-| ED043WC3   | VA3200-DCA   | V220         | 800x480     | Pearl                       |       |        | 2014  | TTL       | 39        | 39P-C   |         |
-| ED043WC5   | VD1405-CGA   | 400          | 800x480     | Carta 1200                  |       |        |       | SPI       |           |         |         |
-| ED043WH1   |              | V220         |             | Pearl                       |       |        |       | TTL       | 40        |         |         |
-| ED047TC1   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2015  | TTL       | 44        |         |         |
-| ED047TC2   |              | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2016  | TTL       | 40        |         |         |
-| ET047TC1   |              | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
-| ET047TC2   |              | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
-| ED050SC3   |              | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 33        | 33P-A   |         |
-| ED050SC5   |              | V100         | 800x600     | Vizplex                     |       |        |       | TTL       |           |         |         |
-| ED050SU1   |              | V110         | 800x600     | Vizplex                     |       |        |       | TTL       |           |         |         |
-| ED050SU3   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 39        | 39P-A   | Yes     |
-| ED052TC2   |              | 320          | 960x540     | Carta                       | 45%   | 16:1   | 2016  | TTL       | 40        |         |         |
-| ED052TC4   | VB3300-EBA   | 320          | 1280x720    | Carta 1.2                   | 45%   | 16:1   | 2017  | TTL       | 50        |         |         |
-| EC058TC1   | SA1452-EHA   | 320          | 1440x720    | Kaleido / Carta             | 24%   | 15:1   | 2020  | TTL       | 50        |         |         |
-| ED058TC7   |              | 320          |             | Carta                       |       |        |       | TTL       |           |         |         |
-| ED058TC8   | VB3300-EHB   | 320          | 1440x720    | Carta                       |       |        |       | TTL       |           |         |         |
-| ED060SC1   |              | 2.1          | 800x600     |                             |       |        |       | TTL       | 39        | 39P-B   |         |
-| ED060SC3   |              | V100         | 800x600     | Vizplex                     |       |        |       | TTL       | 39        | 39P-B   |         |
-| ED060SC4   |              | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 39        | 39P-B   |         |
-| ED060SC7   |              | V220E        | 800x600     | Pearl                       | 40%   | 12:1   | 2010  | TTL       | 34        | 34P-B   |         |
-| ED060SCA   |              | V110         | 800x600     | Vizplex                     |       |        |       | TTL       |           |         |         |
-| ED060SCE   |              | V220/V220E   | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-B   |         |
-| ED060SCF   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
-| ED060SCG   |              | V220E        | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-B   |         |
-| ED060SCN   |              | V220E        | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
-| ED060SCS   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-B   |         |
-| ED060SCP   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
-| ED060SCQ   |              | V220         | 800x600     | Pearl                       |       |        |       | TTL       |           |         |         |
-| ED060SCS   |              |              | 800x600     |                             |       |        |       | TTL       |           |         |         |
-| ED060SCT   |              | 320          | 800x600     | Carta                       |       |        |       | TTL       | 34        | 34P-B   |         |
-| ED060SD1   |              | 320          | 800x600     | Carta                       |       |        |       | TTL       |           |         |         |
-| ED060SH2   |              | 320          | 800x600     | Carta                       |       |        |       | TTL       | 35        |         |         |
-| ED060XC3   |              | V220         | 1024x758    | Pearl                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
-| ED060XC5   |              | V220         | 1024x758    | Pearl                       | 35%   | 12:1   | 2011  | TTL       | 34        | 34P-A   |         |
-| ED060XC8   |              | V320         | 1024x758    | Carta                       |       |        |       | TTL       | 35        | 35P-A   | Yes     |
-| ED060XC9   |              |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
-| ED060XCA   |              |              | 1024x758    | Spectra 3000                |       |        |       | TTL       | 34        | 34P-A   |         |
-| ED060XCD   |              | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
-| ED060XCG   | VD1405-FOA   | 320/400      | 1024x758    | Carta 1000 / 1200           | 40%   | 17:1   | 2020  | TTL       |           |         |         |
-| ED060XCH   | VD1405-FOE   | 400          | 1024x758    | Carta 1200                  |       |        |       | TTL       |           |         |         |
-| ED060XD4   |              | 320          | 1024x758    | Carta                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
-| ED060XD6   |              |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
-| ED060XG1   |              | V110/V220    | 1024x758    | Vizplex / Pearl             | 40%   | 12:1   | 2012  | TTL       |           |         |         |
-| ED060XG2   |              | V220         | 1024x758    | Pearl                       |       |        |       | TTL       |           |         |         |
-| ED060XG3   |              | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
-| ED060XH2   |              |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
-| ED060XH7   |              | 320          | 1024x758    | Carta 1.2                   | 45%   | 17:1   | 2015  | TTL       |           |         |         |
-| ED060XH9   | VB3300-FOG   | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
-| ED060TC1   |              | 320          | 1448x1072   | Carta                       |       |        |       | TTL       | 35        | 35P-A   |         |
-| ED060KC1   |              | 320          | 1448x1072   | Carta                       | 46%   | 17:1   | 2014  | TTL       | 34        | 34P-A   |         |
-| ED060KC4   |              | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
-| ED060KD1   |              | 320          | 1448x1072   | Carta                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
-| ED060KG1   |              | 320          | 1448x1072   | Carta                       | 47%   | 17:1   | 2015  | TTL       | 34        | 34P-A   |         |
-| ED060KH4   |              | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
-| ED060KH6   | VB3300-FOE   | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
-| ED060KHC   |              |              | 1448x1072   |                             |       |        |       | TTL       |           |         |         |
-| ED060KHE   | VD1405-FOH   |              | 1448x1072   | Carta 1300                  |       |        |       | TTL       | 34        | 34P-A   |         |
-| EC060KH1   | SA1452-FOA   |              | 1448x1072   | Kaleido                     | 20%   | 16:1   | 2019  | TTL       | 34        | 34P-A   |         |
-| EC060KH3   | SC1452-FOA   |              | 1448x1072   | Kaleido Plus                | 20%   | 14:1   | 2021  | TTL       | 34        | 34P-A   |         |
-| EC060KH5   | SC1452-FOD   |              | 1448x1072   | Kaleido 3                   |       |        |       | TTL       | 34        | 34P-A   |         |
-| ED061KC1   | VD1405-FAA   | 400          | 1648x824    | Carta 1200                  |       |        |       | TTL       |           |         |         |
-| ED067KC1   | VB3300-FGA   | 320          | 1800x900    | Carta                       | 45%   | 16:1   | 2020  | TTL       | 50        | 50P-B   |         |
-| EC067KC1   | SA1452-FGA   |              | 1800x900    | Kaleido                     |       |        |       | TTL       | 50        | 50P-B   |         |
-| ED068OG1   |              | V220         | 1440x1080   | Pearl                       |       |        | <2014 | TTL       |           |         |         |
-| ED068TG1   |              | 320          | 1440x1080   | Carta                       |       |        | <2013 | TTL       |           |         |         |
-| ED068TH1   |              | 320          | 1440x1080   | Carta                       |       |        | <2014 | TTL       |           |         |         |
-| ED068TH3   | VB3300-FHA   | 320          | 1440x1080   | Carta                       |       |        |       | TTL       |           |         |         |
-| ED068KC1   |              | 400SU        | 1648x1236   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
-| ED068KC3   | VD1405-FHD   | 400          | 1648x1236   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
-| ED068KC5   | VD1405-FHF   | 400          | 1648x1236   | Carta 1200                  | \>44% | \>19:1 |       | TTL       | 40        |         |         |
-| ET068SC1   |              |              | 800x600     |                             |       | 14:1   | 2018  | TTL       |           |         |         |
-| ED070KC2   |              | 320          | 1680x1264   | Carta 1100                  | \>47% | \>16:1 |       | TTL       |           |         |         |
-| ED070KC3   |              | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
-| ED070KC4   | VD1400-GOC   | 400          | 1680x1264   | Carta 1200                  |       |        |       | TTL       |           |         |         |
-| ED070KH1   |              | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
-| EC070KH1   | SC1452-GOA   |              | 1680x1264   | Kaleido Plus                |       |        |       | TTL       |           |         |         |
-| LB071WS1   |              |              | 1024x600    |                             |       | 7:1    |       | TTL       |           |         |         |
-| EC071KC2   | SC1452-GAB   |              | 1680x1264   | Kaleido ? + IGZO            |       |        | 2024? |           | 60        |         |         |
-| ET073TC1   |              | V320         | 750x200     | Carta                       |       |        | 2016  | TTL       |           |         |         |
-| ED078KC1   |              |              | 1872x1404   | Carta 1.2                   | 45%   | 16:1   | 2016  | TTL       | 40        | 40P-A   |         |
-| ED078KC2   | VB3300-GHC   | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
-| ED078KH1   |              | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
-| ED078KH3   |              | 320          | 1872x1404   | Carta 1.2                   |       |        |       | TTL       | 40        | 40P-A   |         |
-| ED078KH4   | VB3300-GHB   | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
-| EC078KH3   | SC1452-GHA   |              | 1872x1404   | Kaleido Plus                |       |        |       | TTL       | 40        | 40P-A   |         |
-| EC078KH4   | SC1452-GHB   |              | 1872x1404   | Kaleido Plus ?              |       |        |       | TTL       | 40        | 40P-A   |         |
-| EC078KH5   | SC1452-GHC   |              | 1872x1404   | Kaleido Plus ?              |       |        |       | TTL       | 40        | 40P-A   |         |
-| EC078KH6   | SC1452-GHD   |              | 1872x1404   | Kaleido 3                   |       |        |       | TTL       | 40        | 40P-A   |         |
-| EC078KH7   | SC1452-GHE   |              | 1872x1404   | Kaleido 3                   |       |        |       | TTL       | 40        | 40P-A   |         |
-| ED080XC1   |              | V110         | 1024x768    | Vizplex                     |       |        |       | TTL       |           |         |         |
-| ED080TC1   |              | V220         | 1600x1200   | Pearl                       |       |        |       | TTL       | 40        | 40P-A   | Yes     |
-| EC080SC2   |              | V250         | 600xRGBx800 | Triton 2                    |       |        |       | TTL       | 40        | 40P-A   | Yes     |
-| ES080KC2   | VD1400-HOB   | 400          | 1920x1440   | Carta 1200                  |       |        |       | TTL       |           |         |         |
-| ES080KH1   |              |              |             |                             |       |        |       |           |           |         |         |
-| AC080KH1   | AD1004-HOA   | HAL3         | 1920x1440   | Gallery 3                   |       |        |       | MiniLVDS  |           |         |         |
-| ED097OC1   |              | V110A        | 1200x825    | Vizplex                     | 35%   | 7:1    | 2008  | TTL       | 33        | 33P-A   |         |
-| ED097OC4   |              | V110A/V220   | 1200x825    | Vizplex / Pearl             |       |        |       | TTL       | 33        | 33P-A   |         |
-| ED097OD2   |              | V220         | 1200x825    | Pearl                       |       |        |       | TTL       | 33        | 33P-A   |         |
-| ED097TC1   |              | V220         | 1200x825    | Pearl                       |       |        |       | TTL       | 33        | 33P-A   |         |
-| ED097TC2   | VB3300-JGA   | 320          | 1200x825    | Carta 1.2                   | 42%   | 16:1   | 2016  | TTL       | 33        | 33P-A   |         |
-| EC097SC3   |              | V250         | 1600x1200   | Triton                      |       |        |       | TTL       | 40        |         |         |
-| EL097TR2   | EA2220-JGB   |              | 1200x825    | Spectra 3000                |       |        |       | TTL       |           |         |         |
-| ED100UC1   | VB3300-KOA   | 320          | 1600x1200   | Carta                       | 45%   | 16:1   | 2020  | TTL       | 40        | DIRECT  |         |
-| ES103TC1   | VB3300-KCA   | 320          | 1872x1404   | Carta 1.2                   | 40%   | 12:1   | 2016  | TTL       | 40        | DIRECT  |         |
-| ED103TC2   | VB3300-KCD   | 320          | 1872x1404   | Carta                       | 43%   | 14:1   | 2019  | TTL       | 40        | DIRECT  |         |
-| ES103TD1   |              | 320          | 1872x1404   | Carta                       |       |        |       | TTL       |           |         |         |
-| ES103TD3   |              | 320          | 1872x1404   | Carta                       |       |        |       | TTL       |           |         |         |
-| EC103TD1   | SA1452-KCC   |              | 1872x1404   | Kaleido                     |       |        |       | TTL       |           |         |         |
-| EC103TH2   | SC1452-KCB   |              | 1872x1404   | Kaleido Plus                |       |        |       | TTL       |           |         |         |
-| ED103KC1   | VD1400-KCF   | 400          | 2480x1860   | Carta 1200                  |       |        |       | TTL       | 61        |         |         |
-| EC103KH2   | SC1452-KCD   |              | 2480x1860   | Kaleido 3                   |       |        |       | TTL       |           |         |         |
-| ES107KC1   | VD1400-KGA   | 400          | 2560x1920   | Carta 1300                  |       |        |       | TTL       |           |         |         |
-| ES108FC1   |              | 320          | 1920x1080   | Carta                       | 46%   | 16:1   | 2017  | TTL       | 50        | 50P-C   |         |
-| ES108FC2   | VB3300-KHB   | 320          | 1920x1080   | Carta                       |       |        |       | TTL       |           |         |         |
-| ED113TC1   | VB3300-LCA   | 320          | 2400x1034   | Carta                       | 35%   | 12:1   | 2017  | TTL       | 50        | 50P-A   |         |
-| ED113TC2   | VB3300-LCB   | 320          | 2400x1034   | Carta 1.2                   | 35%   | 12:1   | 2019  | TTL       | 50        | 50P-A   |         |
-| EC113TC1   | SC1452-LCA   |              | 2400x1034   | Kaleido Plus ?              |       |        |       | TTL       | 50        | 50P-A   |         |
-| ED115OC1   |              | V220         | 2760x2070   | Pearl                       | 35%   | 12:1   | 2012  | TTL       | 40        | 40P-A   | Yes     |
-| AC118TC1   | AD1004-LHA   |              |             | Gallery 3                   |       |        |       | MiniLVDS  |           |         |         |
-| ES120MC1   | VD1400-MOA   | 400          | 2560x1600   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
-| ES133UT1   |              | V220         | 1600x1200   | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        | 39P-A   | Yes     |
-| ES133UT2   |              | 320          | 1600x1200   | Carta                       |       |        |       | TTL       | 39        | 39P-A   | Yes     |
-| ES133UE2   |              | 320          | 1600x1200   | Carta                       |       |        |       | TTL       | 39        | 39P-A   |         |
-| ED133UT2   | VB3300-NCB   | 320          | 1600x1200   | Carta 1.2                   | 45%   | 16:1   | 2016  | TTL       | 39        | 39P-A   |         |
-| ED133UT3   | VB3300-NCC   | 320          | 1600x1200   | Carta                       | 45%   | 16:1   | 2019  | TTL       | 39        | 39P-A   |         |
-| ES133TT3   |              | 320          | 2200x1650   | Carta 1.2                   | 40%   | 12:1   | 2016  | TTL       | 39        |         |         |
-| ES133TT5   | VH1948-NCC   | 450          | 2200x1650   | Carta 1250                  |       |        |       | TTL       | 39        |         |         |
-| EC133UJ1   | SD1452-NCB   |              | 1600x1200   | Kaleido 3 Outdoor           |       |        |       | TTL       | 39        | 39P-A   |         |
-| EQ133ME1   | SC1452-NCC   |              | 2200x1650   | Kaleido 3                   |       |        |       | TTL       | 45        |         |         |
-| AC133UT1   | AA1020-NCA   |              | 1600x1200   | Gallery / Gallery 4000      | 35%   | 10:1   | 2020  | TTL       | 39        | 39P-A   |         |
-| EL133US1   |              |              | 1600x1200   | Spectra 3000                |       |        |       | TTL       | 39        | 39P-A   | Yes     |
-| EL133UR1   | EA2220-NCC   |              | 1600x1200   | Spectra 3000                | 33%   | 15:1   | 2020  | TTL       | 39        | 39P-A   |         |
-| EL133UF1   | ED2208-NCA   |              | 1600x1200   | Spectra 6                   | 34%   | 22:1   | 2024  | QSPI      | 60        |         |         |
-| ED140TT1   | VB3300-IDA   | 320          | 1440x300    | Carta                       |       |        |       | TTL       |           |         |         |
-| AC253TT1   | AA1020-PEA   |              | 3200x1800   | Gallery Plus / Gallery 4000 | 35%   | 10:1   | 2020  | MiniLVDS  | 51x2      |         |         |
-| EL253EW1   | ED2208-PEA   |              | 3200x1800   | Spectra 6                   |       |        |       | MiniLVDS  |           |         |         |
-| EC253TT1   | SD1452-PEA   |              | 3200x1800   | Kaleido 3 Outdoor           |       |        |       | MiniLVDS  |           |         |         |
-| ED253TT1   | VB3300-PEA   | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
-| ED253TT2   | VB3300-PEB   | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
-| ED253TT3   | VB3300-PEC   | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
-| EL253TV1   | EB2200-PEA   |              | 3200x1800   | Spectra 3100                |       |        |       | MiniLVDS  | 51x2      |         |         |
-| ED280TT1   | VB3300-PHA   | 320          | 3840x1080   | Carta 1.2                   | 40%   | 12:1   | 2020  | MiniLVDS  | 51x2      |         |         |
-| ED312TT2   | VA3200-QAA   | V220         | 2560x1440   | Pearl                       |       |        |       | TTL       | 50x4      |         |         |
-| ED312TT3   | VA3200-QAB   | V220         | 2560x1440   | Pearl                       | 40%   | 12:1   | 2018  | TTL       | 50x4      |         |         |
-| EC312TT2   | SB1452-QAA   | V220         | 2560x1440   | Triton                      |       |        |       | TTL       | 50x4      |         |         |
-| EL315TW1   | ED2208-QBA   |              | 2560x1440   | Spectra 6                   |       |        |       | QSPI      |           |         |         |
-| ED420TT1   |              | V220         | 2880x2160   | Pearl                       |       |        |       | TTL       | 50x2      |         |         |
-| ED420TT3   | VB3300-RBA   | 320          | 2880x2160   | Carta 1.2                   | 45%   | 16:1   | 2020  | TTL       | 50x2      |         |         |
-| ED420TT5   | VB3300-RBB   | 320          | 2880x2160   | Carta 1.2                   |       |        |       | TTL       | 50x2      |         |         |
+| Model Name | Model Number | SN Initial | FPL Platform | Resolution  | Marketing Name              | R Typ | CR Typ | Year  | Interface | Pin Count | Adapter | Tested? |
+| ---------- | ------------ | ---------- | ------------ | ----------- | --------------------------- | ----- | ------ | ----- | --------- | --------- | ------- | ------- |
+| ET040TC1   |              | EBC        |              | 720x480     | Pearl                       |       |        |       | TTL       |           |         |         |
+| ED038TH1   |              | EKD        | V320         | 600x600     | Carta                       | 45%   | 17:1   | 2015  | TTL       | 34        | 34P-A   |         |
+| ET040TC2   |              |            |              | 720x480     | Pearl                       |       |        |       | TTL       |           |         |         |
+| ET040TC3   |              | EMA        |              | 720x480     | Pearl                       |       |        |       | TTL       | 40        |         |         |
+| ED043WC1   |              | E8N        | V220         | 800x480     | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        | 39P-C   |         |
+| ED043WC3   | VA3200-DCA   | EE7        | V220         | 800x480     | Pearl                       |       |        | 2014  | TTL       | 39        | 39P-C   |         |
+| ED043WC5   | VD1405-CGA   |            | 400          | 800x480     | Carta 1200                  |       |        |       | SPI       |           |         |         |
+| ED043WH1   |              | EA7        | V220         |             | Pearl                       |       |        |       | TTL       | 40        |         |         |
+| ED047TC1   |              | EDV/W      | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2015  | TTL       | 44        |         |         |
+| ED047TC2   |              | EG8        | V220         | 960x540     | Pearl                       | 35%   | 12:1   | 2016  | TTL       | 40        |         |         |
+| ET047TC1   |              | EBL        | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
+| ET047TC2   |              | EF5        | 320          | 960x540     | Carta 1.2                   |       |        |       | TTL       |           |         |         |
+| ED050SC3   |              | E0Y/1N/7Y  | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 33        | 33P-A   |         |
+| ED050SC5   |              | E7V        | V100/V220    | 800x600     | Vizplex / Pearl             |       |        |       | TTL       |           |         |         |
+| ED050SU1   |              | E0W        | V110         | 800x600     | Vizplex                     |       |        |       | TTL       |           |         |         |
+| ED050SU3   |              | E2U        | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 39        | 39P-A   | Yes     |
+| ED052TC2   |              |            | 320          | 960x540     | Carta                       | 45%   | 16:1   | 2016  | TTL       | 40        |         |         |
+| ED052TC4   | VB3300-EBA   | ENB        | 320          | 1280x720    | Carta 1.2                   | 45%   | 16:1   | 2017  | TTL       | 50        |         |         |
+| EC058TC1   | SA1452-EHA   |            | 320          | 1440x720    | Kaleido / Carta             | 24%   | 15:1   | 2020  | TTL       | 50        |         |         |
+| ED058TC7   |              |            | 320          |             | Carta                       |       |        |       | TTL       |           |         |         |
+| ED058TC8   | VB3300-EHB   |            | 320          | 1440x720    | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060SC1   |              |            | 2.1          | 800x600     |                             |       |        |       | TTL       | 39        | 39P-B   |         |
+| ED060SC3   |              |            | V100         | 800x600     | Vizplex                     |       |        |       | TTL       | 39        | 39P-B   |         |
+| ED060SC4   |              | E0R/1M/X   | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 39        | 39P-B   |         |
+| ED060SC7   |              | E2N/30/1/2 | V220E        | 800x600     | Pearl                       | 40%   | 12:1   | 2010  | TTL       | 34        | 34P-B   |         |
+| ED060SCA   |              | E3D        | V110         | 800x600     | Vizplex                     |       |        |       | TTL       |           |         |         |
+| ED060SCE   |              |            | V220/V220E   | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-B   |         |
+| ED060SCF   |              |            | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060SCG   |              |            | V220E        | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-B   |         |
+| ED060SCN   |              |            | V220E        | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060SCS   |              | EHB        | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-B   |         |
+| ED060SCP   |              |            | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060SCQ   |              |            | V220         | 800x600     | Pearl                       |       |        |       | TTL       |           |         |         |
+| ED060SCS   |              |            |              | 800x600     |                             |       |        |       | TTL       |           |         |         |
+| ED060SCT   |              |            | 320          | 800x600     | Carta                       |       |        |       | TTL       | 34        | 34P-B   |         |
+| ED060SD1   |              |            | 320          | 800x600     | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060SH2   |              |            | 320          | 800x600     | Carta                       |       |        |       | TTL       | 35        |         |         |
+| ED060XC3   |              |            | V220         | 1024x758    | Pearl                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
+| ED060XC5   |              | E61        | V220         | 1024x758    | Pearl                       | 35%   | 12:1   | 2011  | TTL       | 34        | 34P-A   |         |
+| ED060XC8   |              |            | V320         | 1024x758    | Carta                       |       |        |       | TTL       | 35        | 35P-A   | Yes     |
+| ED060XC9   |              |            |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060XCA   |              | EEG        |              | 1024x758    | Spectra 3000                |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060XCD   |              |            | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060XCG   | VD1405-FOA   |            | 320/400      | 1024x758    | Carta 1000 / 1200           | 40%   | 17:1   | 2020  | TTL       |           |         |         |
+| ED060XCH   | VD1405-FOE   |            | 400          | 1024x758    | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ED060XD4   |              |            | 320          | 1024x758    | Carta                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
+| ED060XD6   |              |            |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060XG1   |              | E7B/G      | V110/V220    | 1024x758    | Vizplex / Pearl             | 40%   | 12:1   | 2012  | TTL       |           |         |         |
+| ED060XG2   |              |            | V220         | 1024x758    | Pearl                       |       |        |       | TTL       |           |         |         |
+| ED060XG3   |              |            | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060XH2   |              |            |              | 1024x758    |                             |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED060XH7   |              |            | 320          | 1024x758    | Carta 1.2                   | 45%   | 17:1   | 2015  | TTL       |           |         |         |
+| ED060XH9   | VB3300-FOG   |            | 320          | 1024x758    | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060TC1   |              |            | 320          | 1448x1072   | Carta                       |       |        |       | TTL       | 35        | 35P-A   |         |
+| EN060TC1   |              | EDG        | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KC1   |              | ECV/X/LY   | 320          | 1448x1072   | Carta                       | 46%   | 17:1   | 2014  | TTL       | 34        | 34P-A   |         |
+| ED060KC4   |              |            | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KD1   |              | EGS/NT     | 320          | 1448x1072   | Carta                       |       |        |       | TTL       | 34        | 34P-A   | Yes     |
+| ED060KG1   |              | EDJ/R      | 320          | 1448x1072   | Carta                       | 47%   | 17:1   | 2015  | TTL       | 34        | 34P-A   |         |
+| ED060KH4   |              |            | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KH5   |              | EGT        | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KH6   | VB3300-FOE   | ER8/M      | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KHA   | VB3300-FOJ   | H4A        | 320          | 1448x1072   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED060KHC   | VD1405-FOD   | H3J        |              | 1448x1072   |                             |       |        |       | TTL       |           |         |         |
+| ED060KHE   | VD1405-FOH   |            |              | 1448x1072   | Carta 1300                  |       |        |       | TTL       | 34        | 34P-A   |         |
+| EC060KH1   | SA1452-FOA   | EVB        |              | 1448x1072   | Kaleido                     | 20%   | 16:1   | 2019  | TTL       | 34        | 34P-A   |         |
+| EC060KH3   | SC1452-FOA   | EYW        |              | 1448x1072   | Kaleido Plus                | 20%   | 14:1   | 2021  | TTL       | 34        | 34P-A   |         |
+| EC060KH5   | SC1452-FOD   |            |              | 1448x1072   | Kaleido 3                   |       |        |       | TTL       | 34        | 34P-A   |         |
+| ED061KC1   | VD1405-FAA   |            | 400          | 1648x824    | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ED067KC1   | VB3300-FGA   | EWY        | 320          | 1800x900    | Carta                       | 45%   | 16:1   | 2020  | TTL       | 50        | 50P-B   |         |
+| EC067KC1   | SA1452-FGA   |            |              | 1800x900    | Kaleido                     |       |        |       | TTL       | 50        | 50P-B   |         |
+| ED068OG1   |              |            | V220         | 1440x1080   | Pearl                       |       |        | <2014 | TTL       |           |         |         |
+| ED068TG1   |              |            | 320          | 1440x1080   | Carta                       |       |        | <2013 | TTL       |           |         |         |
+| ED068TH1   |              |            | 320          | 1440x1080   | Carta                       |       |        | <2014 | TTL       |           |         |         |
+| ED068TH3   | VB3300-FHA   |            | 320          | 1440x1080   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED068KC1   |              | EUU/S/V    | 400SU        | 1648x1236   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
+| ED068KC3   | VD1405-FHD   |            | 400          | 1648x1236   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
+| ED068KC5   | VD1405-FHF   | EXS/YC     | 400          | 1648x1236   | Carta 1200                  | \>44% | \>19:1 |       | TTL       | 40        |         |         |
+| ET068SC1   |              | EMF        |              | 800x600     | Thin Pearl                  |       | 14:1   | 2018  | TTL       |           |         |         |
+| ED070KC2   |              | ELF        | 320          | 1680x1264   | Carta 1100                  | \>47% | \>16:1 |       | TTL       |           |         |         |
+| ED070KC3   |              |            | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
+| ED070KC4   | VD1400-GOC   |            | 400          | 1680x1264   | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ED070KH1   |              |            | 320          | 1680x1264   | Carta 1100                  |       |        |       | TTL       |           |         |         |
+| EC070KH1   | SC1452-GOA   |            |              | 1680x1264   | Kaleido Plus                |       |        |       | TTL       |           |         |         |
+| EC070KH2   | SC1452-GOC   |            |              |             |                             |       |        |       | TTL       | 45        |         |         |
+| LB071WS1   |              |            |              | 1024x600    |                             |       | 7:1    |       | TTL       |           |         |         |
+| EC071KC2   | SC1452-GAB   |            |              | 1680x1264   | Kaleido ? + IGZO            |       |        | 2024? |           | 60        |         |         |
+| ET073TC1   |              |            | V320         | 750x200     | Carta                       |       |        | 2016  | TTL       |           |         |         |
+| ED078KC1   |              |            |              | 1872x1404   | Carta 1.2                   | 45%   | 16:1   | 2016  | TTL       | 40        | 40P-A   |         |
+| ED078KC2   | VB3300-GHC   | ERJ        | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
+| ED078KH1   |              |            | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
+| ED078KH3   |              |            | 320          | 1872x1404   | Carta 1.2                   |       |        |       | TTL       | 40        | 40P-A   |         |
+| ED078KH4   | VB3300-GHB   |            | 320          | 1872x1404   | Carta                       |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH3   | SC1452-GHA   |            |              | 1872x1404   | Kaleido Plus                |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH4   | SC1452-GHB   |            |              | 1872x1404   | Kaleido Plus ?              |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH5   | SC1452-GHC   |            |              | 1872x1404   | Kaleido Plus ?              |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH6   | SC1452-GHD   |            |              | 1872x1404   | Kaleido 3                   |       |        |       | TTL       | 40        | 40P-A   |         |
+| EC078KH7   | SC1452-GHE   |            |              | 1872x1404   | Kaleido 3                   |       |        |       | TTL       | 40        | 40P-A   |         |
+| ED080XC1   |              |            | V110         | 1024x768    | Vizplex                     |       |        |       | TTL       |           |         |         |
+| ED080TC1   |              | EBH        | V220         | 1600x1200   | Pearl                       |       |        |       | TTL       | 40        | 40P-A   | Yes     |
+| EC080SC2   |              | E9J        | V250         | 600xRGBx800 | Triton 2                    |       |        |       | TTL       | 40        | 40P-A   | Yes     |
+| ES080KC2   | VD1400-HOB   |            | 400          | 1920x1440   | Carta 1200                  |       |        |       | TTL       |           |         |         |
+| ES080KH1   |              |            |              |             |                             |       |        |       |           |           |         |         |
+| AC080KH1   | AD1004-HOA   |            | HAL3         | 1920x1440   | Gallery 3                   |       |        |       | MiniLVDS  |           |         |         |
+| ED097OC1   |              |            | V110A        | 1200x825    | Vizplex                     | 35%   | 7:1    | 2008  | TTL       | 33        | 33P-A   |         |
+| ED097OC4   |              | E35        | V110A/V220   | 1200x825    | Vizplex / Pearl             |       |        |       | TTL       | 33        | 33P-A   |         |
+| ED097OD2   |              |            | V220         | 1200x825    | Pearl                       |       |        |       | TTL       | 33        | 33P-A   |         |
+| ED097TC1   |              |            | V220         | 1200x825    | Pearl                       |       |        |       | TTL       | 33        | 33P-A   |         |
+| ED097TC2   | VB3300-JGA   |            | 320          | 1200x825    | Carta 1.2                   | 42%   | 16:1   | 2016  | TTL       | 33        | 33P-A   |         |
+| EC097SC3   |              |            | V250         | 1600x1200   | Triton                      |       |        |       | TTL       | 40        |         |         |
+| EL097TR2   | EA2220-JGB   |            |              | 1200x825    | Spectra 3000                |       |        |       | TTL       |           |         |         |
+| ED100UC1   | VB3300-KOA   | EUT        | 320          | 1600x1200   | Carta                       | 45%   | 16:1   | 2020  | TTL       | 40        | DIRECT  | Yes     |
+| ES103TC1   | VB3300-KCA   | EKQ        | 320          | 1872x1404   | Carta 1.2                   | 40%   | 12:1   | 2016  | TTL       | 40        | DIRECT  |         |
+| ED103TC2   | VB3300-KCD   |            | 320          | 1872x1404   | Carta                       | 43%   | 14:1   | 2019  | TTL       | 40        | DIRECT  |         |
+| ES103TD1   |              |            | 320          | 1872x1404   | Carta                       |       |        |       | TTL       |           |         |         |
+| ES103TD3   |              |            | 320          | 1872x1404   | Carta                       |       |        |       | TTL       |           |         |         |
+| ES103TD6   | VH1948-KCA   |            | 450          |             | Carta 1250                  |       |        |       | TTL       | 45        |         |         |
+| EC103TD1   | SA1452-KCC   |            |              | 1872x1404   | Kaleido                     |       |        |       | TTL       |           |         |         |
+| EC103TH2   | SC1452-KCB   |            |              | 1872x1404   | Kaleido 3 ?                 |       |        |       | TTL       |           |         |         |
+| ED103KC1   | VD1400-KCF   |            | 400          | 2480x1860   | Carta 1200                  |       |        |       | TTL       | 61        |         |         |
+| EC103KH2   | SC1452-KCD   |            |              | 2480x1860   | Kaleido 3                   |       |        |       | TTL       |           |         |         |
+| ES107KC1   | VD1400-KGA   | H4X        | 400          | 2560x1920   | Carta 1300                  |       |        |       | TTL       |           |         |         |
+| ES108FC1   |              | EQG        | 320          | 1920x1080   | Carta                       | 46%   | 16:1   | 2017  | TTL       | 50        | 50P-C   |         |
+| ES108FC2   | VB3300-KHB   | ESS        | 320          | 1920x1080   | Carta                       |       |        |       | TTL       |           |         |         |
+| ED113TC1   | VB3300-LCA   | EQA        | 320          | 2400x1034   | Carta                       | 35%   | 12:1   | 2017  | TTL       | 50        | 50P-A   |         |
+| ED113TC2   | VB3300-LCB   |            | 320          | 2400x1034   | Carta 1.2                   | 35%   | 12:1   | 2019  | TTL       | 50        | 50P-A   |         |
+| EC113TC1   | SC1452-LCA   |            |              | 2400x1034   | Kaleido Plus ?              |       |        |       | TTL       | 50        | 50P-A   |         |
+| ED115OC1   |              | E4R        | V220         | 2760x2070   | Pearl                       | 35%   | 12:1   | 2012  | TTL       | 40        | 40P-A   | Yes     |
+| AC118TC1   | AD1004-LHA   | C0F        |              | 2160x1620   | Gallery 3                   |       |        |       | MiniLVDS  |           |         |         |
+| ES120MC1   | VD1400-MOA   |            | 400          | 2560x1600   | Carta 1200                  |       |        |       | TTL       | 40        |         |         |
+| ES133UT1   |              | E7S        | V220         | 1600x1200   | Pearl                       | 35%   | 12:1   | 2013  | TTL       | 39        | 39P-A   | Yes     |
+| ES133UT2   |              | EM1        | 320          | 1600x1200   | Carta                       |       |        |       | TTL       | 39        | 39P-A   | Yes     |
+| ES133UE2   |              |            | 320          | 1600x1200   | Carta                       |       |        |       | TTL       | 39        | 39P-A   |         |
+| ED133UT2   | VB3300-NCB   |            | 320          | 1600x1200   | Carta 1.2                   | 45%   | 16:1   | 2016  | TTL       | 39        | 39P-A   |         |
+| ED133UT3   | VB3300-NCC   | ET4        | 320          | 1600x1200   | Carta                       | 45%   | 16:1   | 2019  | TTL       | 39        | 39P-A   | Yes     |
+| ES133TT1   |              | EKV        | 320          | 2200x1650   | Carta                       |       |        |       | TTL       |           |         |         |
+| ES133TT3   |              |            | 320          | 2200x1650   | Carta 1.2                   | 40%   | 12:1   | 2016  | TTL       | 39        |         |         |
+| ES133TEB   | VH1948-NCA   | EWN        | 450          | 2200x1650   | Carta 1250                  |       |        |       | TTL       | 45        |         |         |
+| ES133TT5   | VH1948-NCC   | EXW        | 450          | 2200x1650   | Carta 1250                  |       |        |       | TTL       | 45        |         |         |
+| EC133UJ1   | SD1452-NCB   | H60        |              | 1600x1200   | Kaleido 3 Outdoor           |       |        |       | TTL       | 39        | 39P-A   | Yes     |
+| EQ133ME1   | SC1452-NCC   | H94        |              | 2200x1650   | Kaleido 3                   |       |        |       | TTL       | 45        |         |         |
+| EQ133ME2   | SC1452-NCD   | HAD        |              | 2200x1650   | Kaleido 3                   |       |        |       | TTL       | 45        |         |         |
+| ED133KC1   |              | HAL        |              | 3200x2400   |                             |       |        |       | TTL       |           |         |         |
+| AC133UT1   | AA1020-NCA   |            |              | 1600x1200   | Gallery / Gallery 4000      | 35%   | 10:1   | 2020  | TTL       | 39        | 39P-A   |         |
+| EL133US1   |              |            |              | 1600x1200   | Spectra 3000                |       |        |       | TTL       | 39        | 39P-A   | Yes     |
+| EL133UR1   | EA2220-NCC   |            |              | 1600x1200   | Spectra 3000                | 33%   | 15:1   | 2020  | TTL       | 39        | 39P-A   |         |
+| EL133UF1   | ED2208-NCA   | H7R        |              | 1600x1200   | Spectra 6                   | 34%   | 22:1   | 2024  | QSPI      | 60        |         |         |
+| ED140TT1   | VB3300-IDA   |            | 320          | 1440x300    | Carta                       |       |        |       | TTL       |           |         |         |
+| AC253TT1   | AA1020-PEA   |            |              | 3200x1800   | Gallery Plus / Gallery 4000 | 35%   | 10:1   | 2020  | MiniLVDS  | 51x2      |         |         |
+| EL253EW1   | ED2208-PEA   |            |              | 3200x1800   | Spectra 6                   |       |        |       | MiniLVDS  |           |         |         |
+| EC253TT1   | SD1452-PEA   |            |              | 3200x1800   | Kaleido 3 Outdoor           |       |        |       | MiniLVDS  |           |         |         |
+| ED253TT1   | VB3300-PEA   |            | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
+| ED253TT2   | VB3300-PEB   |            | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
+| ED253TT3   | VB3300-PEC   |            | 320          | 3200x1800   | Carta 1.2                   |       |        |       | MiniLVDS  | 51x2      |         |         |
+| EL253TV1   | EB2200-PEA   |            |              | 3200x1800   | Spectra 3100                |       |        |       | MiniLVDS  | 51x2      |         |         |
+| ED280TT1   | VB3300-PHA   |            | 320          | 3840x1080   | Carta 1.2                   | 40%   | 12:1   | 2020  | MiniLVDS  | 51x2      |         |         |
+| ED312TT2   | VA3200-QAA   |            | V220         | 2560x1440   | Pearl                       |       |        |       | TTL       | 50x4      |         |         |
+| ED312TT3   | VA3200-QAB   |            | V220         | 2560x1440   | Pearl                       | 40%   | 12:1   | 2018  | TTL       | 50x4      |         |         |
+| EC312TT2   | SB1452-QAA   |            | V220         | 2560x1440   | Triton                      |       |        |       | TTL       | 50x4      |         |         |
+| EL315TW1   | ED2208-QBA   |            |              | 2560x1440   | Spectra 6                   |       |        |       | QSPI      |           |         |         |
+| ED420TT1   | VA3200-RBA   |            | V220         | 2880x2160   | Pearl                       |       |        |       | TTL       | 50x2      |         |         |
+| ED420TT3   | VB3300-RBA   |            | 320          | 2880x2160   | Carta 1.2                   | 45%   | 16:1   | 2020  | TTL       | 50x2      |         |         |
+| ED420TT5   | VB3300-RBB   |            | 320          | 2880x2160   | Carta 1.2                   |       |        |       | TTL       | 50x2      |         |         |
 
 Note: Carta 1.2 is also known as Carta 1000. If the table cell says Carta it also likely means Carta 1000 (could be 1100 as well, I don't know for sure).
