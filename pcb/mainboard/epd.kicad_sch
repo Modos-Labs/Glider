@@ -6,9 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Glider")
-		(date "2025-04-18")
-		(rev "R0.13")
-		(company "Copyright 2025 Wenting Zhang")
+		(date "2025-06-26")
+		(rev "R1.1")
+		(company "Copyright 2025 Modos Tech Inc")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic_MountingPin:Conn_01x16_MountingPin"
@@ -4887,6 +4887,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C131394"
+			(at 110.49 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2c82a7c6-7b08-4873-bfb9-78b7d0c14e1f")
 		)
@@ -5032,6 +5041,15 @@
 			)
 		)
 		(property "desc" ""
+			(at 110.49 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C131394"
 			(at 110.49 152.4 0)
 			(effects
 				(font
@@ -5922,6 +5940,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C131394"
+			(at 110.49 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "14772bc3-4980-4572-9dd4-c2693dc3a2d4")
 		)
@@ -5956,7 +5983,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "FH12-16S-0.5SH"
+		(property "Value" "FPC-05F-16PH20"
 			(at 210.82 84.1755 0)
 			(effects
 				(font
@@ -5984,6 +6011,15 @@
 			)
 		)
 		(property "Description" "Generic connectable mounting pin connector, single row, 01x16, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 208.28 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2856801"
 			(at 208.28 81.28 0)
 			(effects
 				(font
@@ -6071,7 +6107,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "FH12-50S-0.5SH"
+		(property "Value" "FPC-05F-50PH20"
 			(at 142.24 107.0355 0)
 			(effects
 				(font
@@ -6099,6 +6135,15 @@
 			)
 		)
 		(property "Description" "\"Generic connectable mounting pin connector, single row, 01x50, script generated\""
+			(at 139.7 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C2856813"
 			(at 139.7 104.14 0)
 			(effects
 				(font
@@ -6341,6 +6386,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C131394"
+			(at 110.49 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f60665d0-249c-4158-94f6-1c3b6ff72f7a")
 		)
@@ -6420,6 +6474,15 @@
 			)
 		)
 		(property "desc" ""
+			(at 110.49 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C131394"
 			(at 110.49 40.64 0)
 			(effects
 				(font
@@ -6580,6 +6643,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C131394"
+			(at 110.49 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d7d1eb58-66c3-4bb8-a678-bd18397cbbee")
 		)
@@ -6659,6 +6731,15 @@
 			)
 		)
 		(property "desc" ""
+			(at 110.49 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C131394"
 			(at 110.49 162.56 0)
 			(effects
 				(font

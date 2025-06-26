@@ -816,6 +816,12 @@
           "label": "desc",
           "name": "desc",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": false
         }
       ],
       "filter_string": "",

@@ -6,9 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Glider")
-		(date "2025-04-18")
-		(rev "R0.13")
-		(company "Copyright 2025 Wenting Zhang")
+		(date "2025-06-26")
+		(rev "R1.1")
+		(company "Copyright 2025 Modos Tech Inc")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic_MountingPin:Conn_01x08_MountingPin"
@@ -916,6 +916,15 @@
 			)
 		)
 		(property "Description" "Generic connectable mounting pin connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 154.94 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "DNP"
 			(at 154.94 99.06 0)
 			(effects
 				(font

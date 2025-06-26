@@ -6,9 +6,9 @@
 	(paper "A4")
 	(title_block
 		(title "Glider")
-		(date "2025-04-18")
-		(rev "R0.13")
-		(company "Copyright 2025 Wenting Zhang")
+		(date "2025-06-26")
+		(rev "R1.1")
+		(company "Copyright 2025 Modos Tech Inc")
 	)
 	(lib_symbols
 		(symbol "Device:LED"
@@ -7787,6 +7787,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C39313"
+			(at 91.44 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "A8"
 			(uuid "b3363f92-cfb6-4e85-b36c-4f6f07e74cfb")
 		)
@@ -8619,6 +8628,15 @@
 			)
 		)
 		(property "desc" ""
+			(at 195.58 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C39313"
 			(at 195.58 93.98 0)
 			(effects
 				(font
@@ -9532,6 +9550,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C965804"
+			(at 204.47 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "63623f02-2bf0-4806-a986-97ffa97849f2")
 		)
@@ -9731,6 +9758,15 @@
 			)
 		)
 		(property "desc" ""
+			(at 194.31 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
 			(at 194.31 162.56 0)
 			(effects
 				(font

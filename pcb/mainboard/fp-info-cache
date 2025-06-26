@@ -1,4 +1,4 @@
-24583697963333340
+24611727372102061
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -98595,12 +98595,26 @@ Varistor VF
 2
 2
 footprints
+245805030000829
+
+
+0
+30
+30
+footprints
 8P_2.54
 
 
 0
 8
 8
+footprints
+47P_0.8
+
+
+0
+47
+47
 footprints
 120220-0204
 
@@ -98629,6 +98643,13 @@ AXE520124
 0
 24
 21
+footprints
+AXE534124
+
+
+0
+38
+35
 footprints
 AXE550127
 
@@ -98770,6 +98791,13 @@ DFN NoLead
 22
 11
 footprints
+D_SOD-323_Alt
+SOD-323
+SOD-323
+0
+2
+2
+footprints
 FCI_10064555-392120HLF
 
 
@@ -98798,12 +98826,33 @@ FPC_12
 12
 12
 footprints
+FPC_14_P0.8
+
+
+0
+14
+14
+footprints
 FPC_30
 
 
 0
 30
 30
+footprints
+GT-TC067C-H0080-L10
+
+
+0
+4
+2
+footprints
+HC-FPC-05-09-6RLTAG
+Hirose FH12, FFC/FPC connector, FH12-8S-0.5SH, 8 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose FH12 horizontal
+0
+8
+7
 footprints
 HDMI_C_GT-HD006A-CGNGX
 
@@ -98917,6 +98966,13 @@ headphones jack plug stereo 3.5mm PJ327E
 5
 4
 footprints
+KAF-22000CE
+
+
+0
+44
+44
+footprints
 KAI-1100X
 
 
@@ -99022,6 +99078,20 @@ connector Molex  top entry
 8
 7
 footprints
+Molex_502250-2191_2Rows-21Pins-1MP_P0.60mm_Horizontal_Mirrored
+Molex Molex 0.30mm Pitch Easy-On BackFlip Type FFC/FPC, 502250-2191, 21 Circuits (http://www.molex.com/pdm_docs/sd/5022502191_sd.pdf), generated with kicad-footprint-generator
+connector Molex  top entry
+0
+23
+22
+footprints
+Molex_5000272041
+
+
+0
+24
+21
+footprints
 Molex_5025983993
 
 
@@ -99099,12 +99169,26 @@ QFN DFN_QFN
 70
 57
 footprints
+RP2350-QFN-60-1EP_7x7_P0.4mm_EP3.4x3.4mm_ThermalVias
+Raspberry Pi RP2350 QFN-60
+QFN DFN_QFN
+0
+74
+61
+footprints
 RP2350-QFN-80-1EP_10x10_P0.4mm_EP3.4x3.4mm_ThermalVias
 
 
 0
 102
 81
+footprints
+SD_TE_2041021_NoRuleZone
+SD card connector, top mount, SMT (http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F2041021%7FB%7Fpdf%7FEnglish%7FENG_CD_2041021_B_C_2041021_B.pdf%7F2041021-4)
+sd card
+0
+15
+12
 footprints
 SIQ-02FVS3
 
@@ -99120,12 +99204,33 @@ SIQ-02FVS3_L
 8
 5
 footprints
+SOT-666-Alt
+SOT666
+SOT-666
+0
+6
+6
+footprints
+SS-12D11G5R
+
+
+0
+5
+4
+footprints
 SW_3.2X4.2X2.5_XKB_TS_1145A_C_A_HIGHDENSITY
 
 
 0
 4
 2
+footprints
+TE_0-1734839-5_1x05-1MP_P0.5mm_Horizontal_Mirrored
+TE FPC connector, 05 top-side contacts, 0.5mm pitch, SMT, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1734839%7FC%7Fpdf%7FEnglish%7FENG_CD_1734839_C_C_1734839.pdf%7F4-1734839-0
+te fpc 1734839
+0
+7
+6
 footprints
 TE_5-2069716-3_1x40-1MP_P0.5mm_Horizontal
 TE FPC connector, 40 top-side contacts, 0.5mm pitch, SMT, https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1734839%7FC%7Fpdf%7FEnglish%7FENG_CD_1734839_C_C_1734839.pdf%7F4-1734839-0
@@ -99224,6 +99329,13 @@ connector Hirose FH12 horizontal
 0
 18
 17
+footprints
+Xunpu_FPC-05F-34PH20_1x34-1MP_P0.50mm_Horizontal
+Hirose FH12, FFC/FPC connector, FH12-50S-0.5SH, 50 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
+connector Hirose FH12 horizontal
+0
+36
+35
 footprints
 Xunpu_FPC-05F-50PH20_1x50-1MP_P0.50mm_Horizontal
 Hirose FH12, FFC/FPC connector, FH12-50S-0.5SH, 50 Pins per row (https://www.hirose.com/product/en/products/FH12/FH12-24S-0.5SH(55)/), generated with kicad-footprint-generator
