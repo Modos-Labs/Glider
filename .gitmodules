@@ -1,6 +1,6 @@
 [submodule "pcb/pcb_common"]
 	path = pcb/pcb_common
-	url = git@gitlab.com:zephray/pcb_common.git
+	url = ../pcb_common.git
 [submodule "fw/User/tinyusb"]
 	path = fw/User/tinyusb
 	url = https://www.github.com/hathach/tinyusb
