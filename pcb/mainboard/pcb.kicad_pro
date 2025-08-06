@@ -119,7 +119,7 @@
         "allow_blind_buried_vias": false,
         "allow_microvias": false,
         "max_error": 0.005,
-        "min_clearance": 0.0,
+        "min_clearance": 0.1,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.3,
         "min_hole_clearance": 0.15,
@@ -821,7 +821,7 @@
           "group_by": false,
           "label": "LCSC",
           "name": "LCSC",
-          "show": false
+          "show": true
         }
       ],
       "filter_string": "",

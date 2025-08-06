@@ -5703,6 +5703,16 @@
 	)
 	(wire
 		(pts
+			(xy 27.94 88.9) (xy 33.02 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a9de7b9-491c-4946-8a45-2da7f0f1acb3")
+	)
+	(wire
+		(pts
 			(xy 215.9 33.02) (xy 228.6 33.02)
 		)
 		(stroke
@@ -6140,6 +6150,16 @@
 			(type default)
 		)
 		(uuid "3e60d8df-3780-4af7-b3e2-44fc53bb4efd")
+	)
+	(wire
+		(pts
+			(xy 40.64 88.9) (xy 45.72 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3fab5923-83e7-446d-a1ad-715483e1e31a")
 	)
 	(wire
 		(pts
@@ -7030,16 +7050,6 @@
 			(type default)
 		)
 		(uuid "a079d473-373b-4bba-8577-2821c554ac7f")
-	)
-	(wire
-		(pts
-			(xy 45.72 88.9) (xy 40.64 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a154fbde-a44f-4d1a-aa0b-b0fe5da213a1")
 	)
 	(wire
 		(pts
@@ -8711,7 +8721,7 @@
 	)
 	(global_label "EPD_PWR_EN"
 		(shape output)
-		(at 40.64 88.9 180)
+		(at 27.94 88.9 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8720,7 +8730,7 @@
 		)
 		(uuid "78377d39-e250-4cd5-a205-fa6f5d94b2c1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at -63.5 -25.4 0)
+			(at -76.2 -25.4 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12877,6 +12887,91 @@
 			(project "pcb"
 				(path "/4654897e-3e2f-4522-96c3-20b19803c088/5f589a85-47ef-4b9c-90f9-dfdcb1c7f590"
 					(reference "SW1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 36.83 88.9 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8a3dbbca-224f-49e8-b138-d2df3a9e25ef")
+		(property "Reference" "R22"
+			(at 30.48 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1K/1%"
+			(at 43.18 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 36.83 90.678 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 36.83 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 36.83 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "desc" ""
+			(at 36.83 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C11702"
+			(at 36.83 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "96cac0b7-6be9-4fa2-ab26-8b5e8b5d63dd")
+		)
+		(pin "2"
+			(uuid "2591fe03-6eea-40e6-9c0a-5cfe542072a9")
+		)
+		(instances
+			(project "pcb"
+				(path "/4654897e-3e2f-4522-96c3-20b19803c088/5f589a85-47ef-4b9c-90f9-dfdcb1c7f590"
+					(reference "R22")
 					(unit 1)
 				)
 			)
