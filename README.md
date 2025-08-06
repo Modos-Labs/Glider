@@ -4,7 +4,7 @@ Open-source Eink monitor with an emphasis on low latency.
 
 Note: This repo only contains the hardware design, the gateware running on the FPGA is my open-source [Caster EPDC](https://gitlab.com/zephray/Caster/) design. This README also contains information about the Caster as well.
 
-![Hardware Photo](assets/hw_with_screen.jpg)
+![Hardware Photo](assets/modos-mono-color-16x9_jpg_md-xl.jpg)
 
 This is a long document, containing not just information about this project, but also pretty much everything I know about Eink. Given it's a bit hard to gather information about Eink online, I think this is the right thing to do. Use the following table of contents to navigate around.
 
@@ -12,7 +12,7 @@ Eink is a registered trademark and brand of E Ink Corporation. All the contents 
 
 If you're interested in attaining a board, or the reference monitor, see and subscribe to the [pre-launch page for the Modos Paper Monitor on Crowd Supply](https://www.crowdsupply.com/modos-tech/modos-paper-monitor) for updates.
 
-If you are interested in Eink or any other display technologies, I have a Discord server for that. Feel free to join: https://discord.gg/rtT7euSHQS . (This Discord server is also not endorsed by Eink or any other company. It's not a customer support server.)
+If you are interested in Eink or any other display technologies, I have a Discord server for that. Feel free to join: [https://discord.gg/rtT7euSHQS](https://discord.gg/rtT7euSHQS) . (This Discord server is also not endorsed by Eink or any other company. It's not a customer support server.) For Modos product support or other inqueries about Modos products, use [https://discord.gg/6ktE6VxSyh](https://discord.gg/6ktE6VxSyh).
 
 ## Table of Contents 
 
@@ -44,7 +44,7 @@ If you are interested in Eink or any other display technologies, I have a Discor
     - [PCB](#pcb)
     - [FPGA Bitstream](#fpga-bitstream)
     - [MCU Firmware](#mcu-firmware)
-    - [Working with Waveforms](#working-with-waveforms)
+    - [Flashing Board](#flashing-board)
     - [Compatible Screens](#compatible-screens)
 - [References](#references)
 - [License](#license)
@@ -57,7 +57,7 @@ If you are interested in Eink or any other display technologies, I have a Discor
 ### Features
 
 - Complete solution for low-latency/ high-refresh-rate EPD monitor
-- Supports electrophoretic display panels with parallel I/F (Eink(R), SiPix and DES)
+- Supports electrophoretic display panels with parallel I/F (Eink(R), OED and DES)
 - Supports both monochrome and color-filter-array (such as Kaleido(TM)) based color screen
 - Extremely low processing delay of \<20 us
 - Supports binary, 4-level grayscale, and 16-level grayscale output modes
@@ -65,12 +65,12 @@ If you are interested in Eink or any other display technologies, I have a Discor
 - Hybrid automatic binary and 16-level grayscale driving mode
 - Host software runtime controllable regional update and mode switching
 - Hardware bayer dithering, blue-noise dithering, and error-diffusion dithering with no additional latency
-- Controller natively supports FPD-Link (LVDS), DVI (TMDS), and MIPI-DSI input
+- Controller takes standard HVsync signal input
 - Board-level design supports USB-C (USB Type-C DisplayPort Alt Mode) and DVI input
 
 ### Hardware
 
-![r0p7_mb](assets/r0p7_mb.jpg)
+![r0p7_mb](assets/modos-pcb-front-back-01_jpg_md-xl.jpg)
 
 - Xilinx(R) Spartan-6 LX16 FPGA running Caster
 - DDR3-800 framebuffer memory
@@ -78,14 +78,14 @@ If you are interested in Eink or any other display technologies, I have a Discor
 - DVI (via microHDMI connector) video input with onboard ADV7611 decoder
 - Epaper power supply with up to 1A peak current on +/-15V rail supporting large panels
 - VCOM kick-back voltage measurement support
-- On-board RaspberryPi(R) RP2040 microcontroller for USB communication and firmware upgrade
+- On-board STM32H750 microcontroller for USB communication and firmware upgrade
 - Up to 133MP/s processing rate with dithering enabled, >200MP/s when disabled
 
 The board is designed with KiCad. You may need the latest stable version of KiCad to open the source file.
 
 ### Components
 
-This repo hosts the PCB design, firmware source code, and a reference 3D-printable case design. The RTL code is in a separate repo: [https://gitlab.com/zephray/Caster/](https://gitlab.com/zephray/Caster/).
+This repo hosts the PCB design and firmware source code. The RTL code is in a separate repo: [https://gitlab.com/zephray/Caster/](https://gitlab.com/zephray/Caster/).
 
 ## Eink Screens
 
@@ -355,8 +355,6 @@ Take one line from that file:
 
 This means from greyscale level 6 to level 13, it needs to go through the following sequence. Each number means the operation on that frame, 0 is no-operation, 1 is darken, and 2 is lighten. In this case, there are 38 frames, first 9 frames do nothing, then lighten for 1 frame, darken for 10 frames, lighten for 16 frames, and finally darken for 1 frame and have no operation for the last frame. This is the sequence to change a pixel from level 6 to level 13. Such lookup is done for every pixel on every frame.
 
-For specifics on waveform file formats, check the [Working with Waveforms](#working-with-waveforms) section.
-
 #### Waveform Modes
 
 To give system designers more flexibility, Eink controllers often offer multiple "modes", like binary mode, 16-level grayscale mode, 16-level grayscale mode with reduced flashing, 4-level grayscale mode, etc.
@@ -375,6 +373,59 @@ It provides a good overview of the modes. I am just going to add some comments.
 - Eink doesn't even know if it should be spelled as REAGL or REGAL:  Google search "REAGL site:eink.com" and "REGAL site:eink.com" both returned several results.
 - Eink-provided waveform usually implements all these modes, however it is not always required. The waveform file may also contain waveform tables in other orders.
 - In terms of the waveform, the waveform for GL16, GLR16, and GLD16 are identical. This is expected, the REGAL requires an additional algorithm on the host image processing and is not a technology based on tweaking the waveform.
+
+#### Obtaining Waveform
+
+In general, the screen vendor (Eink, Good Display, etc.) should provide the waveform file.
+
+If your screen has a flash chip on it, it's also possible to extract the waveform from a flash dump:
+
+```dd if=somedump.bin of=waveform.wbf bs=1 skip=2182```
+
+If you have access to an application board, it might also be possible to extract the waveform there. For example, if the system uses a T1000/T2000/T2001 controller, the waveform is usually stored in the SPI flash connected to the controller. Some times the waveform stored on the flash is compressed (in addition to the RLE compression already applied to the waveform file itself).
+
+#### Waveform Formats
+
+E-Ink distributes waveforms in the wbf file format. SoC/ Eink controller hardware often requires converting the file into a vendor-specific file format. Caster/ Glider also uses a specific binary format. This project defines a common human-readable format (Interchangeable Waveform Format, IWF) and provides several tools for working with different binary formats and the IWF format.
+
+#### Interchangeable Waveform Format
+
+The waveform consists of one descriptor file in iwf extension (ini format) and various lut data files in csv format.
+
+The descriptor contains the following required fields:
+
+- VERSION: the version of the descriptor (should be 2.0)
+- NAME: (optional) original name for the waveform
+- BPP: (optional, default 4) 4 or 5, representing the internal state count used for waveform
+- PREFIX: the filename prefix for actual waveform files
+- MODES: the total modes supported by the waveform
+- TEMPS: the total number of temperature ranges supported by the waveform
+- TxRANGE: the supported temperature in degC, where x is the temperature ID
+- TUPBOUND: (optional) upper bound for temperature range, each range is TxRANGE to Tx+1RANGE (or TUPBOUND in case of the last one)
+- TABLES: total number of LUTs inside the waveform
+- TBxFC: the frame count for the table, where x is the LUT ID
+
+Each mode has its own mode section named [MODEx], where x is the mode ID, containing the following fields:
+
+- NAME: the name for that mode
+- T*TABLE: the table used for the temperature in that mode
+
+There should be a number of LUTs, saved in the filename like PREFIX_TBx.csv, where x is the LUT ID. Each csv file should contain a LUT like this: lut[src][dst][frame], which means, to transition from src greyscale level to dst greyscale level, at a certain frame in a frame sequence, what voltage should be applied to the screen (0/3: GND / Keep, 1: VNEG / To black, 2: VPOS / To white). Each line contains the frame sequence for one or more source-to-destination pairs.
+
+For example:
+
+- ```4,7,1,1,1,0,2``` means to transition from greyscale level 4 to greyscale level 7, there should be 5 frames, each applying VNEG VNEG VNEG GND VPOS
+- ```0:14,15,2,2,2``` means to transition from any greyscale level between 0 and 14 to greyscale level 15, there should be 3 frames, each applying VPOS VPOS VPOS
+
+These are provided to only illustrate the file format, they are not valid or meaningful Eink driving sequences.
+
+#### Converting Between Waveform Formats
+
+The following converters are provided in the repo:
+
+- To convert from iwf to fw (iMX6/7 EPDC format): ```./mxc_wvfm_asm v1/v2 input.iwf output.fw```
+- To convert from fw to iwf: ```./mxc_wvfm_dump v1/v2 input.fw output_prefix```
+- To convert from wbf to iwf: ```./wbf_wvfm_dump input.wbf output_prefix```
 
 #### Waveform Tweaks
 
@@ -527,21 +578,19 @@ The one on the left is the Gallery 3 used on eReaders, and the one on the right 
 
 ##### Future of ACeP
 
-While as previously referenced that Eink was hoping to ship lot of Gallery 3 based E-readers in 2023, 2023 passed with exactly one product, the Bigme Galy, with mixed receptions. Early 2024, it was announced that [Bigme Galy has been discontinued](https://goodereader.com/blog/electronic-readers/bigme-galy-is-discontinued), and [Eink has announced EOL for certain ACeP-based products](https://www.ineltek.com/wp-content/uploads/2024/04/EInk_AC073TC1_EOLNoticeLetter_notice_20240401.pdf). It does sound like ACeP is now dead.
+While as previously referenced that Eink was hoping to ship lot of Gallery 3 based E-readers in 2023, 2023 passed with exactly one product, the Bigme Galy, with mixed receptions. Early 2024, it was announced that [Bigme Galy has been discontinued](https://goodereader.com/blog/electronic-readers/bigme-galy-is-discontinued), and [Eink has announced EOL for certain ACeP-based products](https://www.ineltek.com/wp-content/uploads/2024/04/EInk_AC073TC1_EOLNoticeLetter_notice_20240401.pdf). But ACeP is not dead yet.
 
-The following are purely my speculation. But I see this as 2 separate decisions:
+Going forward, Eink has 3 different line-ups for different markets:
+- Eink Marquee for outdoor signage
+- Eink Spectra for electronic shelf labels and advertisements
+- Eink Gallery for e-readers and e-notebooks
 
-- ~~There will be no more multi-pigment-based displays for the eReader market~~
-- ACeP (CMYW) is being replaced with Spectra 6 (RYBW) in other markets
+All of these lines are direct offspring of the original ACeP screens:
+- Eink Marquee uses the same color composition as the ACeP, but replaces the SiPix-style micro-cup with micro-capsule
+- Eink Spectra uses similar structure as the ACeP, but replaces color composition
+- Eink Gallery is the original ACeP line up
 
-The second one is evident from the EOL notice linked previously, the 7.3" ACeP screen has a direct replacement of the 7.3" Spectra 6 screen. One major drawback of ACeP in the digital signage market (as far as I see) is its inability to reproduce the cyan color. This actually means there is no good way to display blue sky on an ACeP screen, not even through dithering, it's simply outside of its color gamut. By changing the base colors used, Eink was able to mitigate this issue in the Spectra 6 product lines.
-
-The first one is more or less speculation. (UPDATE: I WAS WRONG, read on) I have two clues for that. One is the fact that Eink is doubling down on digital signage for Spectra 6: [Both 13.3" and 31.5" Spectra 6 screens will have integrated controller](https://www.beck-elektronik.de/en/newsroom/news/article/e-ink-spectratm-6-der-hingucker-des-jahres-2024). This make them much more interesting for the signage applications, but unsuitable for eReader applications. The other is that [the 8" Spectra 6 Plus screen](https://www.ereaderpro.co.uk/en/blogs/news/e-ink-news-eink-technology-has-unveiled-the-new-generation-of-colour-e-paper-technology-e-ink-spectra-6-plus-designed-for-retail-tags-and-advertising-billboards), while using the same backplane as the Gallery 3 ACeP screen, now quote a 7 second refresh time (compared to less than a second on Gallery 3). If Eink still wanted to make a Spectra 6 eReader screen, this 8" backplane would be the one to use given it was used in the ACeP product line.
-
-So is the ACeP dead? Yes and no. ~~Yes in the sense that we are less likely to see any new ACeP products in the future~~, and we are also unlikely to see any Spectra 6-based eReader products. No in the sense that ACeP is superseded by Spectra 6, so the technology lives on. Just like how the Pearl replaced the Vizplex, and the Carta replaced the Pearl. Now we have Carta so we don't look back to the older generation of screens. Also, in another sense, there are likely at least thousands of ACeP screens already manufactured but haven't been made into consumer devices. We will probably see these screens in the not-too-distant future! 
-
-UPDATE: As pointed out in a [reddit post by Disastrous_Analyst_1](https://www.reddit.com/r/eink/comments/1d2j4mv/gallery_3_part_ii/), Eink in their [2023 Annual Report](https://www.eink.com/upload/2024_05_27/47_20240527170208rfrozhGN77.pdf) said that "In 2024, we will provide an upgraded version of the 8-inch advanced color ePaper (Gallery™ 3), aiming to deliver optimized performance and enhanced visual experience for customers. (在 2024 年，我們將進一步提供進階版 8 吋先進彩色電子紙（Gallery ™ 3），期待能提
-供更優化的性能及更好的視覺體驗給客戶)" in V. Operational Highlights, 5.1 Business Activities, 5.1.2 Industrial Overview, 3. Product Developmenet Trends, A. eReader. This means we might be able to see more Gallery 3 (or similar technology) based eReaders in the years to come.
+In 2024, we saw the release of reMarkable Paper Pro, which is a 11.8" Gallery 3 e-notebook. ACeP screens are still in production and we might be able to see more products in the future.
 
 ##### Spectra 6
 
@@ -668,7 +717,7 @@ That is the FPL code in the following table:
 | V320         | ?        | VB3300?        | Carta 1100              | 2019             |
 | V400         | A, C     | VD1400/ VD1405 | Roadrunner / Carta 1200 | 2021             |
 | V450         | ?        | VH1948         | Carta 1250              | 2021?            |
-| ?            | ?        | VD1405         | Carta 1300              | 2023             |
+| ?            | ?        | VD1400/ VD1405 | Carta 1300              | 2023             |
 | ?            | M        | ?              | Spectra (BWR)           | ?                |
 
 Data points used to create the table above:
@@ -693,7 +742,7 @@ For the CFA-based screens, the following generations of screens exist:
 - Eink Kaleido 3: 3rd gen Kaleido. There are at least 2 different configurations exist. One features RGB filter covering 1 pixel per color, the other features a 2R/2G/1B configuration, on average 5/3 pixels per color. The underlying screen panel uses Carta 1000/1200/1250/1300 film depending on the model.
 - Eink Kaleido 3 Outdoor: Wide temperature version of Kaleido 3.
 
-As far as I know, all CFA-based color screen panels don't come with an integrated controller.
+Most CFA-based color screen panels don't come with an integrated controller, but there are a few exceptions.
 
 For the multiple-pigment color screens based on SiPix technology, the following generations of screens exist:
 
@@ -701,13 +750,13 @@ For the multiple-pigment color screens based on SiPix technology, the following 
 
 - Eink Spectra 3000: BWR or BWY 3 color screen.
 - Eink Spectra 3100: BWRY 4 color screen.
-- Eink Spectra 3100 Plus: BWRY 4 color screen. The orange display is now possible with driver circuit changes
-- Eink Spectra 6: RYBW 4 color screen. Can reproduce 6 different colors by mixing colors
-- Eink Spectra 6 Plus: RYBW 4 color screen. Still reproduces 6 different colors. Allows faster refresh compared to 6 with driver circuit changes
+- Eink Spectra 3100 Plus: BWRY 4 color screen. The orange display is now possible with driver circuit changes.
+- Eink Spectra 6: RYBW 4 color screen. Can reproduce 6 primary different colors. Newer waveforms released by Eink increased this number to 10.
+- Eink Spectra 6 Plus: RYBW 4 color screen. Still reproduces 6 different colors. Allows faster refresh compared to 6 with driver circuit changes.
 - Eink Gallery (also known as Gallery 4000): CMYW 4 color screen (ACeP).
 - Eink Gallery Plus (also known as Gallery 4000): CMYW 4 color screen (ACeP).
 - Eink Gallery Palette (also known as Gallery Palette 4000)： CMYW 4 color screen (ACeP). Reproduce 7 different colors.
-- Eink Gallery 3: CMYW 4 color screen (ACeP). Reproduce around 10 different colors, much faster than other Gallery screens at the cost of lower saturation and lower reflectivity
+- Eink Gallery 3: CMYW 4 color screen (ACeP). Reproduce 8 different colors, much faster than other Gallery screens at the cost of lower saturation.
 
 There are both integrated-controller Spectra/Gallery screens and controller-less Spectra/Gallery screens.
 
@@ -749,11 +798,12 @@ The EPDC always processes 4 pixels per clock. For screens with different interfa
 
 ### Firmware Functions
 
-The MCU manages housekeeping items as described below. It currently doesn’t use any operating system but rather relies on a main-loop style operation.
+The MCU manages housekeeping items as described below. It uses FreeRTOS as the operating system.
 
-- EPD Power Supply: The power supply provides a common, source, and gate supply to the EPD panel. In addition to a basic on/off switch, the MCU can also adjust the VCOM voltage, and measure the optimal VCOM voltage of the panel installed. The VCOM measurement is done by isolating the VCOM supply from the screen while keeping the gate supply, scanning the screen with source = VCOM, and measuring the kick-back voltage on the VCOM.
-- FPGA Bitstream Loading: The FPGA doesn’t have its own flash memory, the bitstream is pushed over SPI from the MCU to the FPGA upon powering up. In this way, the FPGA bitstream can be easily bundled together with the MCU’s firmware and updated together.
-- Type-C Negotiation: The onboard USB Type-C port can support video input in addition to powering the board using the USB-C DisplayPort Alt Mode. The MCU runs a USB-C PD stack to communicate this capability to the video source device over standard USB PD protocol. The MCU also controls the Type-C signal mux to remap the lanes to the correct place depending on the cable orientation.
+- EPD power supply: The power supply provides a common, source, and gate supply to the EPD panel. In addition to a basic on/off switch, the MCU can also adjust the VCOM voltage, and measure the optimal VCOM voltage of the panel installed. The VCOM measurement is done by isolating the VCOM supply from the screen while keeping the gate supply, scanning the screen with source = VCOM, and measuring the kick-back voltage on the VCOM.
+- Power supply monitoring: The microcontroller monitors voltage and current of different rails, and ensure they are in the expected range.
+- FPGA bitstream loading: The FPGA doesn’t have its own flash memory, the bitstream is pushed over SPI from the MCU to the FPGA upon powering up. In this way, the FPGA bitstream can be easily bundled together with the MCU’s firmware and updated together.
+- Type-C negotiation: The onboard USB Type-C port can support video input in addition to powering the board using the USB-C DisplayPort Alt Mode. The MCU runs a USB-C PD stack to communicate this capability to the video source device over standard USB PD protocol. The MCU also controls the Type-C signal mux to remap the lanes to the correct place depending on the cable orientation.
 - Video decoder initialization: The FPGA used on the board doesn’t have high-speed deserializers to interface with common high-speed video interfaces such as DisplayPort or DVI directly. Instead, dedicated video decoder chips are used on the board. They typically need initialization before use, and the MCU takes care of this. In this specific design, the DP decoder chip also handles AUX P/N line flipping based on the Type-C cable orientation.
 - PC communication: One advantage of the Caster is that update modes and forced update/ clearing can be applied on a per-pixel basis. Software may utilize this to assign different modes to different windows or change update modes depending on the content on the fly. This is done by sending requests to the MCU over a USB connection. The MCU runs TinyUSB and presents itself as an HID device so it can forward messages between the host PC and the FPGA.
 
@@ -805,76 +855,104 @@ The following numbers are for reference only and would vary depending on RTL opt
 
 The PCB is designed with KiCAD 8.0. To get optimal results, use a 4-layer stack up with 1080 PP layers, but 2313 or 3313 are also acceptable.
 
-There are 2 versions of the mainboard, one full version, and a lite version. For now, only the full version is being actively worked on. The lite version removes dedicated external decoders for DVI/ DP and removes the bulk of the TypeC circuitry to lower the cost. The only video interface is a DVI port feeding directly into the FPGA.
-
 ### FPGA Bitstream
 
-To be written (TODO)
+To build the FPGA bitstream:
+
+#### Install Xilinx ISE 14.7
+
+Xilinx ISE 14.7 is required for building bitstream of the FPGA. It no longer supports latest operating systems (officially only up to Windows 7), so there are 3 ways:
+
+- Use the official RHEL virtual machine provided by Xilinx: the recommended way, should work on any modern OSes
+- Use old operating system (such as Windows 7): Obvious way, but using deprecated OSes has its own implications
+- Install the software anyways and find hacks to make it work: I have had luck get it running on Ubuntu 20.04, Windows 10, and Windows 11. Your mileage might vary.
+
+The software is available for download at [https://www.xilinx.com/downloadNav/vivado-design-tools/archive-ise.html](https://www.xilinx.com/downloadNav/vivado-design-tools/archive-ise.html). The "ISE Design Suite for Windows 10 and Windows 11" is the official virtual machine. To use the virtual machine method, download this even if you are not on Windows 10/11. Otherwise, download the normal 14.7 version.
+
+If you are using the virtual machine on platforms other than Windows 10/11, you can extract only the ova file from the zip file. The ova file can then be imported into software like VirtualBox. Note that the ISE inside the virtual machine uses the MAC address for verifying the license. Please make sure you don't change the MAC address for the NIC inside the virtual machine. (When importing, include all network adapter MAC addresses just to be sure.)
+
+#### Clone Caster Repository
+
+The FPGA gateware source code is hosted in a separate repository, and can be cloned by running:
+
+```
+git clone --recursive https://gitlab.com/zephray/Caster.git
+```
+
+Make sure to use the recursive flag to clone submodules as well.
+
+#### Configuring Parameters
+
+Most of the parameters are configured over the SPI bus from the MCU. However there are still some compile time parameters to be set before building the FPGA bitstream.
+
+- In `rtl/spartan6/top.v`, there is a parameter called `COLORMODE`. It can be set to `MONO`, `RGBW`, or `DES`. `RGBW` should be used on OED panels, and `DES` should be used on Kaleido 3 and DES screens.
+- In `rtl/defines.vh`, there is a define called `OUTPUT_16B`. Define this flag when using 16-bit panels.
+
+Note that for both Modos kits (6" and 13"), default setting (MONO, 8-bit) is the correct setting.
+
+#### Build FPGA Gateware using GUI
+
+There are 2 ways to build the gateware. One is using Xilinx's ISE GUI, another is using build script. Both should work.
+
+1. Open ISE Project Navigator
+2. Click `Open Project...`, open `Caster/rtl/spartan6/caster.xise`
+3. In the left processes pane, double click `Generate Programming File`
+4. It would prompt about IP regeneration multiple times, click `Yes` every time
+5. It should then build the bitstream. The output file is `rtl/spartan6/top.bit`
+
+#### Build FPGA Gateware using script
+
+1. Open a terminal
+2. Change directory to `Caster/rtl/spartan6/par`
+3. Run `build.sh` or `build.bat` depending on the OS to build the bitstream. The output file is `fpga.bit`
 
 ### MCU Firmware
 
-To be written (TODO)
+To build the MCU firmware:
 
-### Working with Waveforms
+#### Install STM32CubeIDE
 
-The following section describes the waveform file format and how to use it.
+The software is freely available on ST's website: [https://www.st.com/en/development-tools/stm32cubeide.html](https://www.st.com/en/development-tools/stm32cubeide.html). It supports all 3 major operating systems.
 
-#### Obtaining Waveform
+#### Clone Glider Repository
 
-In general, the screen vendor (Eink, Good Display, etc.) should provide the waveform file.
+The repository can be cloned by doing:
 
-If your screen has a flash chip on it, it's also possible to extract the waveform from a flash dump:
+```
+git clone --recursive https://gitlab.com/zephray/Glider.git
+```
 
-```dd if=somedump.bin of=waveform.wbf bs=1 skip=2182```
+Make sure to use the recursive flag to clone submodules as well.
 
-If you have access to an application board, it might also be possible to extract the waveform there. For example, if the system uses a T1000 controller, the waveform is usually stored in the SPI flash connected to the T1000.
+#### Build MCU firmware
 
-#### Waveform Formats
+1. Open STM32CubeIDE, launch with any workspace path (default is fine)
+2. In the menu, click `File` -> `Open projects from file systems`
+3. Click `Directory...` button and select `Glider/fw`, click `Open`
+4. It should scan the folder and recognize it as a project, click `Finish`
+5. In the `Project Explorer` pane on the left, click the `glider_ec_rtos` project to highlight it
+6. Click the build icon in the toolbar (or in the menu, `Project` -> `Build Project`)
+7. It should build correctly. If it complaines about missing tusb.h, it means the submodule wasn't cloned (probably because the `--recursive` flag was missing or it was downloaded from the webpage). The output is `Glider/fw/Debug/glider_ec_rtos.bin`
 
-E-Ink distributes waveforms in the wbf file format. SoC/ Eink controller hardware often requires converting the file into a vendor-specific file format. Caster/ Glider also uses a specific binary format. This project defines a common human-readable format (Interchangeable Waveform Format, IWF) and provides several tools for working with different binary formats and the IWF format.
+### Flashing Board
 
-#### Interchangeable Waveform Format
+To flash the firmware:
 
-The waveform consists of one descriptor file in iwf extension (ini format) and various lut data files in csv format.
-
-The descriptor contains the following required fields:
-
-- VERSION: the version of the descriptor (should be 2.0)
-- NAME: (optional) original name for the waveform
-- BPP: (optional, default 4) 4 or 5, representing the internal state count used for waveform
-- PREFIX: the filename prefix for actual waveform files
-- MODES: the total modes supported by the waveform
-- TEMPS: the total number of temperature ranges supported by the waveform
-- TxRANGE: the supported temperature in degC, where x is the temperature ID
-- TUPBOUND: (optional) upper bound for temperature range, each range is TxRANGE to Tx+1RANGE (or TUPBOUND in case of the last one)
-- TABLES: total number of LUTs inside the waveform
-- TBxFC: the frame count for the table, where x is the LUT ID
-
-Each mode has its own mode section named [MODEx], where x is the mode ID, containing the following fields:
-
-- NAME: the name for that mode
-- T*TABLE: the table used for the temperature in that mode
-
-There should be a number of LUTs, saved in the filename like PREFIX_TBx.csv, where x is the LUT ID. Each csv file should contain a LUT like this: lut[src][dst][frame], which means, to transition from src greyscale level to dst greyscale level, at a certain frame in a frame sequence, what voltage should be applied to the screen (0/3: GND / Keep, 1: VNEG / To black, 2: VPOS / To white). Each line contains the frame sequence for one or more source-to-destination pairs.
-
-For example:
-
-- ```4,7,1,1,1,0,2``` means to transition from greyscale level 4 to greyscale level 7, there should be 5 frames, each applying VNEG VNEG VNEG GND VPOS
-- ```0:14,15,2,2,2``` means to transition from any greyscale level between 0 and 14 to greyscale level 15, there should be 3 frames, each applying VPOS VPOS VPOS
-
-These are provided to only illustrate the file format, they are not valid or meaningful Eink driving sequences.
-
-#### Converting
-
-The following converters are provided in the repo:
-
-- To convert from iwf to fw (iMX6/7 EPDC format): ```./mxc_wvfm_asm v1/v2 input.iwf output.fw```
-- To convert from fw to iwf: ```./mxc_wvfm_dump v1/v2 input.fw output_prefix```
-- To convert from wbf to iwf: ```./wbf_wvfm_dump input.wbf output_prefix```
+- Install dfu-util (for example, `apt install dfu-util`, or `brew install dfu-util`)
+- Holding the button closer to the SD card slot and plug in the USB cable
+- Run `sudo dfu-util -l`, it should detect 2 DFU devices
+- Run `sudo dfu-util -a 0 -i 0 -s 0x08000000:leave -D glider_ec_rtos.bin`
+- It should show `File downloaded successfully`
+- Unplug and plug in the USB cable again to reboot to the new firmware
+- The board should be detected as an USB serial device (check /dev/tty*, on macOS it's something like /dev/tty.usbmodem310038002, on Linux probably /dev/ttyACM0)
+- Use a serial terminal to connect to the board (I recommend use minicom for Linux, coolterm for macOS, and Tera Term for Windows)
+-  Now you should be in Glider's shell. Pressing enter should show a "#" prompt. Run the `ver` command, it should report the new build date time.- Now use the shell to update the bitstream for fpga. Enter command  `recv fpga.bit` in the shell (recv is the command for receiving file over XMODEM protocol, 'fpga.bit' is the filename to save as. It would be saved to the on-board flash)
+- After that, the board would start waiting for file transmission. In minicom, Press Meta-S (Ctrl-A then S on Linux) to open the upload menu. Select xmodem then select the top.bit file to transmit it. It might take up to 2 seconds to establish the transfer. There is a 10s timeout after which the board stops trying to receive the file. Just run the recv command again to retry if that happens. In other software, similarly use Xmodem transfer feature to send the file
+- After the bitstream is transferred, firmware upgrade is finished
 
 ### Compatible Screens
 
-This project only focuses on driving off-the-shelf active matrix electrophoretic displays without integrated controllers. See [Screen Panels](#screen-panels) for differences between different types of screen panels available. That being said, this project is compatible with the majority of these panels, including sizes from 4.3" up to 13.3", and potentially supporting panels as large as 42" as well (additional power supply required in that case).
+The Modos Dev Kit offers two screen options: 13.3" 1600x1200 and 6" 1404x1072. However the board is capable of driving other panels as well. See [Screen Panels](#screen-panels) for differences between different types of screen panels available.
 
 #### Screen Adapters
 
@@ -944,9 +1022,32 @@ Common screen resolution peak pixel rate (with CVT-RBv2):
 
 Rendering the grayscale requires the screen to be refreshed at 85Hz (85Hz is the supported refresh rate by Eink, 60Hz can be made to work with some effort in some cases). Running an input refresh rate lower than the internal refresh rate incurs additional processing latency from both source (PC) and monitor due to buffering.
 
-### Case
+#### Setting Configurations
 
-A reference case design is provided. The case is 3D printable and designed with FreeCAD. Note the design is currently outdated.
+The board won't be able to automatically detect the resolution of connected screen. It need to be set manually through boards' shell.
+
+Here is an example:
+
+```
+setcfg set pclk_hz 158873000
+setcfg set hfp 8
+setcfg set vfp 18
+setcfg set hsync 32
+setcfg set vsync 8
+setcfg set hact 2240
+setcfg set vact 1680
+setcfg set vblk 32
+setcfg set vcom 0.8
+setcfg set tcon_vfp 12
+setcfg set tcon_vsync 1
+setcfg set tcon_vbp 1
+setcfg set tcon_vact 1680
+setcfg set tcon_hfp 16
+setcfg set tcon_hsync 2
+setcfg set tcon_hbp 2
+setcfg set tcon_hact 560
+setcfg save
+```
 
 ## References
 
@@ -982,7 +1083,7 @@ To be written
 
 ### Screen List
 
-This is a list of Eink screens their key parameters and their compatibilities with Caster/ Glider. The information is gathered from public sources, so they might be incorrect. This is not a complete list of all screens Eink has ever produced or is in production. This table is intended for hobbyists buying used screens. If you are designing a product with Eink screen please contact Eink directly.
+This is a list of Eink screens their key parameters and their compatibilities with Caster/ Glider. **This is a list of all E-ink screens that have public information available, not a list of screens that's compatible with the Glider.** The information is gathered from public sources, so they might be incorrect. This is not a complete list of all screens Eink has ever produced or is in production. This table is intended for hobbyists buying used screens. If you are designing a product with Eink screen please contact Eink directly.
 
 Other than a few exceptions, only screens without integrated TCON are listed here (in other words, SPI screens are generally not included here). These screens are the main focus of this project anyway.
 
@@ -1017,7 +1118,7 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | ED050SC3   |              | E0Y/1N/7Y  | V110         | 800x600     | Vizplex                     | 35%   | \>6:1  | 2008  | TTL       | 33        | 33P-A   |         |
 | ED050SC5   |              | E7V        | V100/V220    | 800x600     | Vizplex / Pearl             |       |        |       | TTL       |           |         |         |
 | ED050SU1   |              | E0W        | V110         | 800x600     | Vizplex                     |       |        |       | TTL       |           |         |         |
-| ED050SU3   |              | E2U        | V220         | 800x600     | Pearl                       |       |        |       | TTL       | 39        | 39P-A   | Yes     |
+| ED050SU3   |              | E2U        | V220E        | 800x600     | Pearl                       |       |        |       | TTL       | 39        | 39P-A   | Yes     |
 | ED052TC2   |              |            | 320          | 960x540     | Carta                       | 45%   | 16:1   | 2016  | TTL       | 40        |         |         |
 | ED052TC4   | VB3300-EBA   | ENB        | 320          | 1280x720    | Carta 1.2                   | 45%   | 16:1   | 2017  | TTL       | 50        |         |         |
 | EC058TC1   | SA1452-EHA   |            | 320          | 1440x720    | Kaleido / Carta             | 24%   | 15:1   | 2020  | TTL       | 50        |         |         |
@@ -1144,7 +1245,8 @@ The adapter column refers to the adapter needed for this particular screen, howe
 | EC133UJ1   | SD1452-NCB   | H60        |              | 1600x1200   | Kaleido 3 Outdoor           |       |        |       | TTL       | 39        | 39P-A   | Yes     |
 | EQ133ME1   | SC1452-NCC   | H94        |              | 2200x1650   | Kaleido 3                   |       |        |       | TTL       | 45        |         |         |
 | EQ133ME2   | SC1452-NCD   | HAD        |              | 2200x1650   | Kaleido 3                   |       |        |       | TTL       | 45        |         |         |
-| ED133KC1   |              | HAL        |              | 3200x2400   |                             |       |        |       | TTL       |           |         |         |
+| ED133KC1   | VD1400-NCC   | HAL        |              | 3200x2400   | Carta 1300                  |       |        |       | TTL       | 61x2      |         |         |
+| EC133KH1   | SC1452-NCB   | HAK        |              | 3200x2400   | Kaleido 3                   |       |        |       | TTL       | 61x2      |         |         |
 | AC133UT1   | AA1020-NCA   |            |              | 1600x1200   | Gallery / Gallery 4000      | 35%   | 10:1   | 2020  | TTL       | 39        | 39P-A   |         |
 | EL133US1   |              |            |              | 1600x1200   | Spectra 3000                |       |        |       | TTL       | 39        | 39P-A   | Yes     |
 | EL133UR1   | EA2220-NCC   |            |              | 1600x1200   | Spectra 3000                | 33%   | 15:1   | 2020  | TTL       | 39        | 39P-A   |         |
