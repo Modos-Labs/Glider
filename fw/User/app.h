@@ -22,6 +22,7 @@
 //
 #pragma once
 
+#include "app_main.h"
 #include "shell.h"
 #include "syslog.h"
 #include "usbapp.h"
@@ -42,6 +43,7 @@
 #include "button.h"
 #include "ui.h"
 #include "fonts.h"
+#include "error.h"
 
 //#define UNUSED(expr) do { (void)(expr); } while (0)
 
@@ -53,6 +55,7 @@
 #define STARTUP_TASK_HIGH_PRIORITY      (tskIDLE_PRIORITY + 5)
 #define KEY_SCAN_TASK_PRIORITY          (tskIDLE_PRIORITY + 5)
 #define POWER_MON_TASK_PRIORITY         (tskIDLE_PRIORITY + 5)
+#define HIGHEST_PRIORITY                (tskIDLE_PRIORITY + 6)
 
 #define STARTUP_TASK_STACK_SIZE         (configMINIMAL_STACK_SIZE + 1024)
 #define USB_DEVICE_TASK_STACK_SIZE      (configMINIMAL_STACK_SIZE + 128)

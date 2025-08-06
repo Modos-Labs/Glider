@@ -181,15 +181,21 @@ portTASK_FUNCTION(ui_task, pvParameters) {
     fpga_init("fpga.bit");
     power_on_epd();
     // TODO: Timeout
+    int timeout = 10; // 1 sec
     while (1) {
         // Wait for PLL to lock
         vTaskDelay(pdMS_TO_TICKS(100));
         uint8_t result = fpga_write_reg8(CSR_ID0, 0x00);
         if (result == 0x35)
             break;
+        timeout--;
+        if (timeout == 0) {
+            fatal("FPGA failed to start up: %02x", result);
+        }
     }
      // Wait PLL lock
     caster_init(); // Start refresh
+    syslog_printf("FPGA started with status %02x", fpga_write_reg8(CSR_STATUS, 0x00));
 
     while (1) {
         // Check OSD timeout

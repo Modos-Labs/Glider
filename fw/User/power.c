@@ -33,6 +33,8 @@ static float p_cur[8];
 static float p_avg[8];
 static float p_max[8];
 
+#define ABSF(x) (((x) < 0) ? (0.f-(x)) : (x))
+
 void power_on(void) {
 
 }
@@ -42,15 +44,60 @@ void power_off(void) {
 }
 
 void power_on_epd(void) {
+    int timeout = 0;
     gpio_put(VCOM_MEN, 1); // Disable
     gpio_put(VCOM_EN, 1); // Disable
 	HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
     gpio_put(EPD_PWREN, 1);
-    sleep_ms(100);
+    while (1) {
+        sleep_ms(100);
+        // Check if negative rails have reached targeted voltage
+        float v = power_get_rail_voltage(RAIL_VN);
+        if ((v <= -14.0f) && (v >= -16.0f))
+            break;
+        v = power_get_rail_voltage(RAIL_VGL);
+        if ((v <= -19.0f) && (v >= -21.0f))
+            break;
+        timeout++;
+        if (timeout == 5) {
+            // Power failed to start
+            fatal("Failed to bring up neg rails");
+        }
+    }
+    //sleep_ms(200);
     gpio_put(EPD_POSEN, 1);
     HAL_DAC_Start(&hdac1, DAC_CHANNEL_2);
-    sleep_ms(10);
+    while (1) {
+        sleep_ms(100);
+        // Check if positive rails have reached targeted voltage
+        float v = power_get_rail_voltage(RAIL_VP);
+        if ((v >= 14.0f) && (v <= 16.0f))
+            break;
+        v = power_get_rail_voltage(RAIL_VGH);
+        if ((v >= 21.0f) && (v <= 28.0f))
+            break;
+        timeout++;
+        if (timeout == 5) {
+            // Power failed to start
+            fatal("Failed to bring up pos rails");
+        }
+    }
+    //sleep_ms(200);
     gpio_put(VCOM_EN, 0); // Enable
+    gpio_put(VCOM_MEN, 0); // Enable
+    while (1) {
+        sleep_ms(100);
+        // Check if positive rails have reached targeted voltage
+        float v = power_get_rail_voltage(RAIL_VCOM);
+        if (ABSF(v - config.vcom) < 0.2f) // Allow up to 0.2V difference
+            break;
+        timeout++;
+        if (timeout == 5) {
+            // Power failed to start
+            fatal("Failed to bring up VCOM");
+        }
+    }
+    gpio_put(VCOM_MEN, 1); // Disable
 }
 
 void power_off_epd(void) {
@@ -156,6 +203,10 @@ static float convert_negative_adc_voltage(uint16_t sample, float ref_voltage) {
     return convert_positive_adc_voltage(sample, ref_voltage) - ref_voltage * 10.f;
 }
 
+static float convert_vcom_adc_voltage(uint16_t sample, float ref_voltage) {
+    return (float)sample / 65535.0f * ref_voltage * 3.18f - ref_voltage * 2.18f;
+}
+
 static float convert_bus_voltage(uint16_t sample) {
     return (float)(*(int16_t *)&sample) / 1000.f;
 }
@@ -215,6 +266,7 @@ portTASK_FUNCTION(power_monitor_task, pvParameters) {
             for (int i = 3; i < 6; i++) {
                 voltages[8 + i] = convert_negative_adc_voltage(adc_buffer[i], voltages[RAIL_3V3]);
             }
+            voltages[(int)RAIL_VCOM] = convert_vcom_adc_voltage(adc_buffer[3], voltages[RAIL_3V3]);
             adc_conv_done = false;
             HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buffer, 6);
         }
