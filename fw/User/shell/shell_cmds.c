@@ -641,6 +641,7 @@ cfg_var_t vars[] = {
     {"tcon_hsync", &(config.tcon_hsync), UINT8},
     {"tcon_hbp", &(config.tcon_hbp), UINT8},
     {"tcon_hact", &(config.tcon_hact), UINT16},
+    {"mirror", &(config.mirror), UINT8}
 };
 int num_vars = sizeof(vars) / sizeof(cfg_var_t);
 
