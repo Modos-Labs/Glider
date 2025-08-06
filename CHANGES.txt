@@ -39,8 +39,35 @@ R0.8
 2. Add FL connector
 
 R0.9
-1. New 50P connector for EPD
-2. Add voltage/ current monitoring for the screen and the FPGA
-3. Use FFC for FL connector
-4. Add jumper for RP2040 ISP
-5. Add shield
+1. Switch to 7-series FPGA
+2. New 50P connector for EPD
+3. Add voltage/ current monitoring for the screen and the FPGA
+4. Use FFC for FL connector
+5. Add jumper for RP2040 ISP
+6. Add shield
+
+R0.10
+1. Switch back to 6-series FPGA
+2. Switch to use STM32H750 as EC
+
+R0.11
+1. Fix main DCDC feedback resistors
+2. Adjust pinout assignment for EPD again
+
+R0.12
+1. Fix buttons
+2. Fix DVI HPD connection
+
+R0.13
+1. Add user GPIOs
+2. Use a lower profile USB receptacle
+
+R1.0
+1. Replace LGS5148 with LGS5145
+
+R1.1
+1. Fix DVI HPD glitch
+
+R1.2
+1. Add additional power switches for positive rails
+2. Add additional decap for VCOM measurement
