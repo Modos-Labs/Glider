@@ -207,7 +207,7 @@ unsigned crc32(unsigned char *buf, int len) {
   return update_crc(crc_table, 0, buf, len);
 }
 
-void dump_phases(FILE* fp, uint8_t* buffer, int bpp, int phases, int phase_per_byte) {
+void dump_phases(FILE* fp, uint8_t* buffer, int bpp, int phases, int phase_per_byte, bool uni) {
     int states;
     int i, j, k, x, y;
 
@@ -215,29 +215,50 @@ void dump_phases(FILE* fp, uint8_t* buffer, int bpp, int phases, int phase_per_b
     uint8_t luts[phases][states][states];
     uint8_t *ptr = buffer;
 
-    for (i = 0; i < phases; i ++) {
-        for (x = 0; x < states; x++) {
-            for (y = 0; y < states; y+=phase_per_byte) {
-                uint8_t val = *ptr++;
-                if (phase_per_byte == 4) {
-                    luts[i][y+0][x] = (val >> 0) & 0x3;
-                    luts[i][y+1][x] = (val >> 2) & 0x3;
-                    luts[i][y+2][x] = (val >> 4) & 0x3;
-                    luts[i][y+3][x] = (val >> 6) & 0x3;
-                }
-                else if (phase_per_byte == 2) {
-                    luts[i][y+0][x] = (val >> 0) & 0xf;
-                    luts[i][y+1][x] = (val >> 4) & 0xf;
+    if (!uni) {
+        // 2D LUT
+        for (i = 0; i < phases; i ++) {
+            for (x = 0; x < states; x++) { // dst
+                for (y = 0; y < states; y+=phase_per_byte) { // src
+                    uint8_t val = *ptr++;
+                    if (phase_per_byte == 4) {
+                        luts[i][y+0][x] = (val >> 0) & 0x3;
+                        luts[i][y+1][x] = (val >> 2) & 0x3;
+                        luts[i][y+2][x] = (val >> 4) & 0x3;
+                        luts[i][y+3][x] = (val >> 6) & 0x3;
+                    }
+                    else if (phase_per_byte == 2) {
+                        luts[i][y+0][x] = (val >> 0) & 0xf;
+                        luts[i][y+1][x] = (val >> 4) & 0xf;
+                    }
                 }
             }
         }
-    }
 
-    for (i = 0; i < states; i++) {
-        for (j = 0; j < states; j++) {
-            fprintf(fp, "%d,%d,", i, j);
+        for (i = 0; i < states; i++) {
+            for (j = 0; j < states; j++) {
+                fprintf(fp, "%d,%d,", i, j);
+                for (k = 0; k < phases; k++) {
+                    fprintf(fp, "%d,", luts[k][i][j]);
+                }
+                fprintf(fp, "\n");
+            }
+        }
+    }
+    else {
+        // 1D LUT
+        for (i = 0; i < phases; i ++) {
+            for (x = 0; x < states; x+=phase_per_byte) { // dst
+                uint8_t val = *ptr++;
+                luts[i][0][x+0] = (val >> 0) & 0xf;
+                luts[i][0][x+1] = (val >> 4) & 0xf;
+            }
+        }
+
+        for (i = 0; i < states; i++) {
+            fprintf(fp, "%d,", i);
             for (k = 0; k < phases; k++) {
-                fprintf(fp, "%d,", luts[k][i][j]);
+                fprintf(fp, "%d,", luts[k][0][i]);
             }
             fprintf(fp, "\n");
         }
@@ -306,14 +327,19 @@ int main(int argc, char **argv) {
     printf("Number of modes: %d\n", header->mc + 1);
     printf("Number of temperature ranges: %d\n", header->trc + 1);
 
-    int bpp = ((header->luts & 0xC) == 0x4) ? 5: 4;
+    int bpp = ((header->luts & 0xC) == 0x4) ? 5: (header->luts == 0x1d) ? 5 : 4;
     printf("BPP: %d (LUTS = 0x%02x)\n", bpp, header->luts);
-    bool acep = false;
+    bool mv = false;
+    bool uni = false;
     if (header->luts == 0x15) {
-        printf("Looks like you've supplied a waveform for ACeP screens\n");
+        printf("Looks like you've supplied a waveform for newer multi-voltage screens\n");
         printf("Expect the checksum for the header to fail.\n");
         bpp = 5;
-        acep = true;
+        mv = true;
+    }
+    else if (header->luts == 0x1d) {
+        mv = true;
+        uni = true;
     }
 
     // Compare checksum
@@ -506,8 +532,8 @@ int main(int argc, char **argv) {
             printf("Checksum mismatch!\n");
         }
 
-        int phase_per_byte = acep ? 2 : 4;
-        int transitions = ((bpp == 4) ? (16 * 16) : (32 * 32));
+        int phase_per_byte = mv ? 2 : 4;
+        int transitions = uni ? 32 : ((bpp == 3) ? (8 * 8) : (bpp == 4) ? (16 * 16) : (32 * 32));
         int phases = idx * phase_per_byte / transitions;
         frame_counts[i] = phases;
 
@@ -516,7 +542,12 @@ int main(int argc, char **argv) {
         fp = fopen(fn, "w");
         assert(fp);
         size_t index = i * trt_entries + j;
-        dump_phases(fp, derle_buffer, bpp, phases, phase_per_byte);
+        dump_phases(fp, derle_buffer, bpp, phases, phase_per_byte, uni);
+        fclose(fp);
+        sprintf(fn, "%s_TB%d.bin", prefix, i);
+        fp = fopen(fn, "wb");
+        assert(fp);
+        fwrite(derle_buffer, idx, 1, fp);
         fclose(fp);
     }
 
