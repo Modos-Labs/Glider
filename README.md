@@ -939,7 +939,7 @@ Make sure to use the recursive flag to clone submodules as well.
 To flash the firmware:
 
 - Install dfu-util (for example, `apt install dfu-util`, or `brew install dfu-util`)
-- Holding the button closer to the SD card slot and plug in the USB cable
+- Holding the button closer to the USB port and plug in the USB cable
 - Run `sudo dfu-util -l`, it should detect 2 DFU devices
 - Run `sudo dfu-util -a 0 -i 0 -s 0x08000000:leave -D glider_ec_rtos.bin`
 - It should show `File downloaded successfully`
@@ -1024,28 +1024,60 @@ Rendering the grayscale requires the screen to be refreshed at 85Hz (85Hz is the
 
 #### Setting Configurations
 
-The board won't be able to automatically detect the resolution of connected screen. It need to be set manually through boards' shell.
+The board won't be able to automatically detect the resolution of connected screen. It need to be set manually through boards' shell. Here is a general guide for calculating these values.
 
-Here is an example:
+First, use the [video_timings_calculator](https://tomverbeure.github.io/video_timings_calculator) to calculate host timings. Enter the resolution and desired refresh rate in the calculator. Note the pixel clock cannot exceed 165MHz. If the result is higher than 165MHz, lower the refresh rate.
+
+Current version of the Caster has additional requirements of the resoltion: X resolution multiply by Y resolution must be a multiple of 128. This limitation means certain screens won't be able to display the full image/ utilize the full panel.
+
+Using 13.3" 220ppi screen with a resolution of 2200x1650 as an example. Notice that 2200x1650 is not a multiple of 128. Here I choose 2200x1648 as a compromise, leaving the last 2 lines unused. Enter the value 2200 into horizontal pixels, and 1648 into vertical pixels. It provides several standards to choose from, for most screens we can just use CVT-RBv2 for lowest pixel clock. Notice that in this case, the calculated pixel clock is 231.876MHz at 60Hz, which is higher than 165MHz. So the refresh rate has to decreased to 42Hz for a pixel clock of 160.972MHz. Now we have our first set of parameters:
 
 ```
-setcfg set pclk_hz 158873000
+pclk_hz (Pixel Clock) = 160972000
+hfp (H Front Porch) = 8
+hsync (H Sync) = 32
+hblk (H Blank) = 80
+hact (H Active) = 2200
+vfp (V Front Porch) = 19
+vsync (V Sync) = 8
+vblk (V Blank) = 33
+vact (V Active) = 1648
+```
+
+Next on to TCON (timing controller) parameters. For the vertical timings,
+
+- tcon_vact is equal to vact, which is 1650 in this case
+- tcon_vsync is generally set to 1
+- tcon_vbp is generally set to 2 (It depends on the screen used. If the image is vertically shifted, adjust this value)
+- tcon_vfp is equal to vblk - vfp - tcon_vsync - tcon_vbp, which is 33 - 19 - 1 - 2 =  11 in this case
+- tcon_hact is equal to hact divide by 4, which is 2200 / 4 = 550 in this case
+- tcon_hsync is generally set to 2
+- tcon_hbp is generally 2 (It depends on the screen used. If the image is horizontally shifted for a few pixels, adjust this value)
+- tcon_hfp is euqal to hblk / 4 - tcon_hsync - tcon_hbp, which is 80 / 4 - 2 - 2 = 16 in this case 
+
+The VCOM voltage should be somewhere on your screen. It's a negative voltage between -3V to 0V. Enter either the value or it's absolute value here (eg. enter either 0.8 or -0.8 for -0.8V).
+
+Finally, using setcfg command to save these settings to the board:
+
+```
+setcfg set pclk_hz 160972000
 setcfg set hfp 8
-setcfg set vfp 18
 setcfg set hsync 32
+setcfg set hblk 80
+setcfg set hact 2200
+setcfg set vfp 19
 setcfg set vsync 8
-setcfg set hact 2240
-setcfg set vact 1680
-setcfg set vblk 32
-setcfg set vcom 0.8
-setcfg set tcon_vfp 12
+setcfg set vblk 33
+setcfg set vact 1650
+setcfg set vcom -1.26
+setcfg set tcon_vact 1648
 setcfg set tcon_vsync 1
-setcfg set tcon_vbp 1
-setcfg set tcon_vact 1680
-setcfg set tcon_hfp 16
+setcfg set tcon_vbp 2
+setcfg set tcon_vfp 11
+setcfg set tcon_hact 550
 setcfg set tcon_hsync 2
 setcfg set tcon_hbp 2
-setcfg set tcon_hact 560
+setcfg set tcon_hfp 16
 setcfg save
 ```
 
