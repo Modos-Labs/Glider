@@ -106,7 +106,7 @@
  #define CFG_TUD_CDC_EP_BUFSIZE   (TUD_OPT_HIGH_SPEED ? 512 : 64)
 
  // HID buffer size Should be sufficient to hold ID (if any) + Data
- #define CFG_TUD_HID_EP_BUFSIZE    16
+ #define CFG_TUD_HID_EP_BUFSIZE    64
  
  #ifdef __cplusplus
   }

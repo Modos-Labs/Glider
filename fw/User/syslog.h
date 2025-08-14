@@ -87,6 +87,8 @@ void syslog_printf(char *fmt, ...);
  ******************************************************************/
 void syslog_vprintf(char *fmt, va_list args);
 
+void syslog_dump_bytes(unsigned char *rdata, unsigned rlen);
+
 /*!****************************************************************
  * @brief  System log next line
  *

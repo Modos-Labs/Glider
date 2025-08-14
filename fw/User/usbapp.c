@@ -70,6 +70,8 @@ uint16_t tud_hid_get_report_cb(uint8_t instance, uint8_t report_id, hid_report_t
     return 0;
 }
 
+#define RX_BLK_SIZE (64*1024)
+
 // Invoked when received SET_REPORT control request or
 // received data on OUT endpoint ( Report ID = 0, Type = 0 )
 void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_t report_type, uint8_t const* buffer, uint16_t bufsize)
@@ -80,64 +82,119 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
     (void) report_type;
 
     // Process the request
-    uint16_t cmd = (buffer[1] << 8) | buffer[0];
-    uint16_t param = (buffer[3] << 8) | buffer[2];
-    uint16_t x0 = (buffer[5] << 8) | buffer[4];
-    uint16_t y0 = (buffer[7] << 8) | buffer[6];
-    uint16_t x1 = (buffer[9] << 8) | buffer[8];
-    uint16_t y1 = (buffer[11] << 8) | buffer[10];
-    uint16_t id = (buffer[13] << 8) | buffer[12];
-    uint16_t chksum = (buffer[15] << 8) | buffer[14];
+    uint8_t cmd = buffer[0];
+    uint16_t param = (buffer[2] << 8) | buffer[1];
+    uint16_t x0 = (buffer[4] << 8) | buffer[3];
+    uint16_t y0 = (buffer[6] << 8) | buffer[5];
+    uint16_t x1 = (buffer[8] << 8) | buffer[7];
+    uint16_t y1 = (buffer[10] << 8) | buffer[9];
+    uint16_t id = (buffer[12] << 8) | buffer[11];
+    uint16_t chksum = (buffer[14] << 8) | buffer[13];
 
-    uint8_t retval;
-    uint16_t exp_chksum = crc16(buffer, 14);
-    if (chksum != exp_chksum) {
-        retval = USBRET_CHKSUMFAIL;
-        goto returnval;
-    }
-    retval = 1;
+    static bool is_recv = false;
+    static uint16_t recv_name_cnt;
+    static uint32_t recv_data_cnt;
+    static uint32_t recv_buf_cnt;
+    static uint32_t recv_chksum_expected;
+    static uint32_t recv_chksum;
+    static spiffs_file recv_f;
+    static uint8_t *recv_buf;
 
-    switch (cmd) {
-    case USBCMD_RESET:
-        // reset system
-        //iap_reset();
-        break;
-    case USBCMD_POWERDOWN:
-        // TODO
-        break;
-    case USBCMD_POWERUP:
-        // TODO
-        break;
-    case USBCMD_SETINPUT:
-        // TODO
-        break;
-    case USBCMD_REDRAW:
-        retval = caster_redraw(x0, y0, x1, y1);
-        break;
-    case USBCMD_SETMODE:
-        retval = caster_setmode(x0, y0, x1, y1, (update_mode_t)param);
-        break;
-    case USBCMD_USBBOOT:
-        //iap_usbboot();
-        break;
-    case USBCMD_NUKE:
-        //iap_nuke();
-        break;
+    uint8_t retval = 1;
+    uint16_t exp_chksum;
+    bool ret = true;
+
+    if (!is_recv) {
+        exp_chksum = crc16(buffer, 13);
+        if (chksum != exp_chksum) {
+            retval = USBRET_CHKSUMFAIL;
+            goto returnval;
+        }
+        switch (cmd) {
+        case USBCMD_RESET:
+            // reset system
+            //iap_reset();
+            break;
+        case USBCMD_POWERDOWN:
+            // TODO
+            break;
+        case USBCMD_POWERUP:
+            // TODO
+            break;
+        case USBCMD_SETINPUT:
+            // TODO
+            break;
+        case USBCMD_REDRAW:
+            retval = caster_redraw(x0, y0, x1, y1);
+            break;
+        case USBCMD_SETMODE:
+            retval = caster_setmode(x0, y0, x1, y1, (update_mode_t)param);
+            break;
+        case USBCMD_USBBOOT:
+            //iap_usbboot();
+            break;
+        case USBCMD_NUKE:
+            //iap_nuke();
+            break;
+        case USBCMD_RECV:
+            is_recv = true;
+            recv_name_cnt = param;
+            recv_data_cnt = ((uint32_t)y0 << 16) | (uint32_t)x0;
+            recv_chksum_expected = ((uint32_t)y1 << 16) | (uint32_t)x1;
+            recv_buf_cnt = 0;
+            recv_buf = pvPortMalloc(RX_BLK_SIZE);
+            retval = 0;
+            break;
+        }
     }
+    else {
+        ret = false;
+        //exp_chksum = crc16(buffer, 16);
+        if (recv_name_cnt > 0) {
+            // Buffer should be a null terminated string
+            recv_f = SPIFFS_open(&spiffs_fs, buffer, SPIFFS_O_CREAT | SPIFFS_O_TRUNC | SPIFFS_O_WRONLY, 0);
+            recv_name_cnt = 0;
+            ret = true;
+            syslog_printf("Start receiving file %s, %d bytes\n", buffer, recv_data_cnt);
+        }
+        else if (recv_data_cnt > 0) {
+            uint8_t data_to_recv = (recv_data_cnt > bufsize) ? bufsize : recv_data_cnt;
+            // More to recv, recv all 16 bytes into buffer
+            //syslog_dump_bytes(buffer, bufsize);
+            //syslog_printf("RCNT: %d, CCNT: %d\n", bufsize, data_to_recv);
+            memcpy(recv_buf + recv_buf_cnt, buffer, data_to_recv);
+            recv_buf_cnt += data_to_recv;
+            recv_data_cnt -= data_to_recv;
+            if ((recv_buf_cnt >= (RX_BLK_SIZE - 64)) || (recv_data_cnt == 0)) {
+                SPIFFS_write(&spiffs_fs, recv_f, recv_buf, recv_buf_cnt);
+                recv_buf_cnt = 0;
+                if (recv_data_cnt == 0) {
+                    SPIFFS_close(&spiffs_fs, recv_f);
+                    is_recv = false;
+                    vPortFree(recv_buf);
+                    ret = true;
+                    syslog_printf("File received\n");
+                }
+            }
+        }
+        retval = 0;
+    }
+
     if (retval == 0)
         retval = USBRET_SUCCESS;
     else
         retval = USBRET_GENERALFAIL;
 
 returnval:
-    uint8_t txbuf[16] = {0};
-    txbuf[0] = retval;
-    txbuf[2] = buffer[14];
-    txbuf[3] = buffer[15];
+    uint8_t txbuf[CFG_TUD_HID_EP_BUFSIZE] = {0};
+    txbuf[1] = retval;
+    txbuf[2] = buffer[13];
+    txbuf[3] = buffer[14];
     txbuf[4] = exp_chksum & 0xff;
     txbuf[5] = (exp_chksum >> 8) & 0xff;
 
-    tud_hid_report(0, txbuf, 16);
+    if (ret)
+        tud_hid_report(0, txbuf, CFG_TUD_HID_EP_BUFSIZE);
 }
 
 portTASK_FUNCTION(usb_device_task, pvParameters) {

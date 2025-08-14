@@ -152,6 +152,34 @@ static bool is_dp_active(void) {
     return dp_ready;
 }
 
+static void restart_fpga(void) {
+    bool fpga_up = false;
+    int retry = 3;
+    while (!fpga_up) {
+        fpga_init("fpga.bit");
+        int timeout = 10; // 1 sec
+        while (timeout) {
+            // Wait for PLL to lock
+            vTaskDelay(pdMS_TO_TICKS(100));
+            uint8_t result = fpga_write_reg8(CSR_ID0, 0x00);
+            if (result == 0x35) {
+                fpga_up = true;
+                break;
+            }
+            timeout--;
+            if (timeout == 0) {
+                syslog_printf("FPGA failed to start up (%02x), retrying...", result);
+            }
+        }
+        if (!fpga_up) {
+            retry--;
+            if (retry == 0) {
+                fatal("FPGA failed to start up, giving up.");
+            }
+        }
+    }
+}
+
 portTASK_FUNCTION(ui_task, pvParameters) {
     TickType_t osd_timeout = 0;
     bool setmode = false;
@@ -178,26 +206,22 @@ portTASK_FUNCTION(ui_task, pvParameters) {
         }
         vTaskDelay(pdMS_TO_TICKS(100)); // Wait before next iteration
     }
-    fpga_init("fpga.bit");
+    restart_fpga();
     power_on_epd();
-    // TODO: Timeout
-    int timeout = 10; // 1 sec
-    while (1) {
-        // Wait for PLL to lock
-        vTaskDelay(pdMS_TO_TICKS(100));
-        uint8_t result = fpga_write_reg8(CSR_ID0, 0x00);
-        if (result == 0x35)
-            break;
-        timeout--;
-        if (timeout == 0) {
-            fatal("FPGA failed to start up: %02x", result);
-        }
-    }
-     // Wait PLL lock
     caster_init(); // Start refresh
     syslog_printf("FPGA started with status %02x", fpga_write_reg8(CSR_STATUS, 0x00));
 
     while (1) {
+        // Check FPGA lost sync
+        if (fpga_write_reg8(CSR_ID0, 0x00) != 0x35) {
+            syslog_printf("Lost access to FPGA, attempt to restart...");
+            power_off_epd();
+            restart_fpga();
+            power_on_epd();
+            caster_init();
+            syslog_printf("FPGA restarted");
+        }
+
         // Check OSD timeout
         if ((osd_timeout != 0) && (((int32_t)xTaskGetTickCount() - (int32_t)osd_timeout) >= 0)) {
             osd_timeout = 0;
@@ -223,6 +247,21 @@ portTASK_FUNCTION(ui_task, pvParameters) {
             // Stop and restart when TMDS is detected
             power_off_epd();
             NVIC_SystemReset();
+        }
+
+        // Detect signal mode
+        // TODO: This should be implemented in FPGA
+        if (tmds_mode) {
+            uint16_t x, y;
+            x = (uint16_t)(adv7611_read_reg(HDMI_I2C_ADDR, 0x07) & 0x1f) << 8;
+            x |= adv7611_read_reg(HDMI_I2C_ADDR, 0x08);
+
+            y = (uint16_t)(adv7611_read_reg(HDMI_I2C_ADDR, 0x09) & 0x1f) << 8;
+            y |= adv7611_read_reg(HDMI_I2C_ADDR, 0x0a);
+
+            if ((x != config.hact) || (y != config.vact)) {
+                fatal("Incorrect input resolution, detected %d x %d.", x, y);
+            }
         }
 
         // Key press logic

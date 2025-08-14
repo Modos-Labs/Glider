@@ -30,6 +30,7 @@
 #define USBCMD_SETMODE      0x05
 #define USBCMD_NUKE         0x06
 #define USBCMD_USBBOOT      0x07
+#define USBCMD_RECV         0x08
 
 #define USBRET_GENERALFAIL  0x00
 #define USBRET_CHKSUMFAIL   0x01

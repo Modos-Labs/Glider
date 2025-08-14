@@ -411,59 +411,59 @@ void shell_rm(shell_context_t *ctx, int argc, char **argv) {
 //    }
 //}
 //
-//const char shell_help_fdump[] =
-//  "[file] <start> <size>\n"
-//  "  file - File to dump\n"
-//  "  start - Start offset in bytes (default: 0)\n"
-//  "  size - Size in bytes (default: full file)\n";
-//const char shell_help_summary_fdump[] = "Dumps the contents of a file in hex";
-//
-//#define DUMP_SIZE 512
-//
-//void shell_fdump(shell_context_t *ctx, int argc, char **argv) {
-//    spiffs_file f;
-//    size_t start = 0;
-//    size_t size = SIZE_MAX;
-//    uint8_t *buf = NULL;
-//    size_t rlen;
-//    int c;
-//
-//    if( argc < 2 ) {
-//        printf("No file given\n");
-//        return;
-//    }
-//
-//    if (argc > 2) {
-//        start = (size_t)strtoul(argv[2], NULL, 0);
-//    }
-//
-//    if (argc > 3) {
-//        size = (size_t)strtoul(argv[3], NULL, 0);
-//    }
-//
-//    f = SPIFFS_open(&spiffs_fs, argv[1], SPIFFS_O_RDONLY, 0);
-//    if (f) {
-//        buf = SHELL_MALLOC(DUMP_SIZE);
-//        SPIFFS_lseek(&spiffs_fs, f, start, SPIFFS_SEEK_SET);
-//        do {
-//            rlen = (size < DUMP_SIZE) ? size : DUMP_SIZE;
-//            rlen = SPIFFS_read(&spiffs_fs, f, buf, rlen);
-//            if (rlen) {
-//                dump_bytes(ctx, buf, start, rlen);
-//                size -= rlen;
-//                start += rlen;
-//                c = term_getch(&ctx->t, TERM_INPUT_DONT_WAIT);
-//            }
-//        } while (size && rlen && (c < 0));
-//        if (buf) {
-//            SHELL_FREE(buf);
-//        }
-//        SPIFFS_close(&spiffs_fs, f);
-//    }
-//    else {
-//        printf("Unable to open '%s'\n", argv[1]);
-//    }
-//}
+const char shell_help_fdump[] =
+ "[file] <start> <size>\n"
+ "  file - File to dump\n"
+ "  start - Start offset in bytes (default: 0)\n"
+ "  size - Size in bytes (default: full file)\n";
+const char shell_help_summary_fdump[] = "Dumps the contents of a file in hex";
+
+#define DUMP_SIZE 512
+
+void shell_fdump(shell_context_t *ctx, int argc, char **argv) {
+    spiffs_file f;
+    size_t start = 0;
+    size_t size = SIZE_MAX;
+    uint8_t *buf = NULL;
+    size_t rlen;
+    int c;
+
+    if( argc < 2 ) {
+        printf("No file given\n");
+        return;
+    }
+
+    if (argc > 2) {
+        start = (size_t)strtoul(argv[2], NULL, 0);
+    }
+
+    if (argc > 3) {
+        size = (size_t)strtoul(argv[3], NULL, 0);
+    }
+
+    f = SPIFFS_open(&spiffs_fs, argv[1], SPIFFS_O_RDONLY, 0);
+    if (f) {
+        buf = SHELL_MALLOC(DUMP_SIZE);
+        SPIFFS_lseek(&spiffs_fs, f, start, SPIFFS_SEEK_SET);
+        do {
+            rlen = (size < DUMP_SIZE) ? size : DUMP_SIZE;
+            rlen = SPIFFS_read(&spiffs_fs, f, buf, rlen);
+            if (rlen) {
+                dump_bytes(ctx, buf, start, rlen);
+                size -= rlen;
+                start += rlen;
+                c = term_getch(&ctx->t, TERM_INPUT_DONT_WAIT);
+            }
+        } while (size && rlen && (c < 0));
+        if (buf) {
+            SHELL_FREE(buf);
+        }
+        SPIFFS_close(&spiffs_fs, f);
+    }
+    else {
+        printf("Unable to open '%s'\n", argv[1]);
+    }
+}
 
 /***********************************************************************
  * CMD: recv

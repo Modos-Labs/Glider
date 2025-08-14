@@ -50,16 +50,16 @@ void power_on_epd(void) {
 	HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
     gpio_put(EPD_PWREN, 1);
     while (1) {
-        sleep_ms(100);
+        sleep_ms(200);
         // Check if negative rails have reached targeted voltage
-        float v = power_get_rail_voltage(RAIL_VN);
-        if ((v <= -14.0f) && (v >= -16.0f))
-            break;
-        v = power_get_rail_voltage(RAIL_VGL);
-        if ((v <= -19.0f) && (v >= -21.0f))
+        float vn = power_get_rail_voltage(RAIL_VN);
+        float vgl = power_get_rail_voltage(RAIL_VGL);
+        syslog_printf("VN: %.2f V\n", vn);
+        syslog_printf("VGL: %.2f V\n", vgl);
+        if ((vn <= -14.0f) && (vn >= -16.0f) && (vgl <= -19.0f) && (vgl >= -21.0f))
             break;
         timeout++;
-        if (timeout == 5) {
+        if (timeout == 3) {
             // Power failed to start
             fatal("Failed to bring up neg rails");
         }
@@ -67,17 +67,18 @@ void power_on_epd(void) {
     //sleep_ms(200);
     gpio_put(EPD_POSEN, 1);
     HAL_DAC_Start(&hdac1, DAC_CHANNEL_2);
+    timeout = 0;
     while (1) {
-        sleep_ms(100);
+        sleep_ms(200);
         // Check if positive rails have reached targeted voltage
-        float v = power_get_rail_voltage(RAIL_VP);
-        if ((v >= 14.0f) && (v <= 16.0f))
-            break;
-        v = power_get_rail_voltage(RAIL_VGH);
-        if ((v >= 21.0f) && (v <= 28.0f))
+        float vp = power_get_rail_voltage(RAIL_VP);
+        float vgh = power_get_rail_voltage(RAIL_VGH);
+        syslog_printf("VP: %.2f V\n", vp);
+        syslog_printf("VGH: %.2f V\n", vgh);
+        if ((vp >= 14.0f) && (vp <= 16.0f) && (vgh >= 21.0f) && (vgh <= 28.0f))
             break;
         timeout++;
-        if (timeout == 5) {
+        if (timeout == 3) {
             // Power failed to start
             fatal("Failed to bring up pos rails");
         }
@@ -85,19 +86,21 @@ void power_on_epd(void) {
     //sleep_ms(200);
     gpio_put(VCOM_EN, 0); // Enable
     gpio_put(VCOM_MEN, 0); // Enable
+    timeout = 0;
     while (1) {
-        sleep_ms(100);
+        sleep_ms(200);
         // Check if positive rails have reached targeted voltage
         float v = power_get_rail_voltage(RAIL_VCOM);
+        syslog_printf("VCOM: %.2f V\n", v);
         if (ABSF(v - config.vcom) < 0.2f) // Allow up to 0.2V difference
             break;
         timeout++;
-        if (timeout == 5) {
+        if (timeout == 3) {
             // Power failed to start
             fatal("Failed to bring up VCOM");
         }
     }
-    gpio_put(VCOM_MEN, 1); // Disable
+    //gpio_put(VCOM_MEN, 1); // Disable
 }
 
 void power_off_epd(void) {

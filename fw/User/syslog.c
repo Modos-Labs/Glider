@@ -119,6 +119,17 @@ void syslog_vprintf(char *fmt, va_list args)
     syslog_print(line);
 }
 
+void syslog_dump_bytes(unsigned char *rdata, unsigned rlen) {
+    unsigned i, j;
+    char line[SYSLOG_LINE_MAX];
+    for (i = 0; i < rlen / 16; i++) {
+        for (j = 0; j < 16; j++) {
+            sprintf(line + 3 * j, "%02x ", rdata[i * 16 + j]);
+        }
+        syslog_print(line);
+    }
+}
+
 void syslog_dump(unsigned max)
 {
     syslog_context_t *log = &consoleLog;

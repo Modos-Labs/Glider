@@ -74,6 +74,7 @@ SHELL_FUNC( shell_recv );
 SHELL_FUNC( shell_send );
 SHELL_FUNC( shell_df );
 SHELL_FUNC( shell_format );
+SHELL_FUNC( shell_fdump );
 SHELL_FUNC( shell_rm );
 SHELL_FUNC( shell_setvolt );
 SHELL_FUNC( shell_setcfg );
@@ -89,6 +90,7 @@ SHELL_HELP( recv );
 SHELL_HELP( send );
 SHELL_HELP( df );
 SHELL_HELP( format );
+SHELL_HELP( fdump );
 SHELL_HELP( rm );
 SHELL_HELP( setvolt );
 SHELL_HELP( setcfg );
@@ -107,6 +109,7 @@ const SHELL_COMMAND shell_commands[] =
   { "send", shell_send },
   { "df", shell_df },
   { "format", shell_format },
+  { "fdump", shell_fdump },
   { "rm", shell_rm },
   { "setvolt", shell_setvolt },
   { "setcfg", shell_setcfg },
@@ -127,6 +130,7 @@ static const SHELL_HELP_DATA shell_help_data[] =
   SHELL_INFO( send ),
   SHELL_INFO( df ),
   SHELL_INFO( format ),
+  SHELL_INFO( fdump ),
   SHELL_INFO( rm ),
   SHELL_INFO( setvolt ),
   SHELL_INFO( setcfg ),
@@ -455,8 +459,8 @@ void shell_exec( shell_context_t *ctx, const char *command )
 
 void shell_start( shell_context_t *ctx )
 {
-  term_reset_mode(&ctx->t);
-  term_sync_size(&ctx->t);
+  //term_reset_mode(&ctx->t);
+  //term_sync_size(&ctx->t);
   printf("\n");
   shellh_execute_command(ctx, "ver", 0);
   shell_poll(ctx);
