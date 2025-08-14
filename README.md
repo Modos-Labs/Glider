@@ -940,6 +940,17 @@ To flash the firmware:
 
 - Install dfu-util (for example, `apt install dfu-util`, or `brew install dfu-util`)
 - Holding the button closer to the USB port and plug in the USB cable
+- Use one of the 2 methods to complete the flashing process
+
+#### Method 1: Use the provided flashing tool
+
+- Make sure you have a Python 3 environment and you can install packages to it
+- Install `hidapi` Python package by running `pip3 install hidapi`
+- Change directory into `utils/flash_tool` and copy over compiled bitstream `fpga.bit` and firmware `glider_ec_rtos.bin`
+- Run the tool `python3 flash.py`
+
+#### Method 2: Manual flashing
+
 - Run `sudo dfu-util -l`, it should detect 2 DFU devices
 - Run `sudo dfu-util -a 0 -i 0 -s 0x08000000:leave -D glider_ec_rtos.bin`
 - It should show `File downloaded successfully`
@@ -949,6 +960,7 @@ To flash the firmware:
 -  Now you should be in Glider's shell. Pressing enter should show a "#" prompt. Run the `ver` command, it should report the new build date time.- Now use the shell to update the bitstream for fpga. Enter command  `recv fpga.bit` in the shell (recv is the command for receiving file over XMODEM protocol, 'fpga.bit' is the filename to save as. It would be saved to the on-board flash)
 - After that, the board would start waiting for file transmission. In minicom, Press Meta-S (Ctrl-A then S on Linux) to open the upload menu. Select xmodem then select the top.bit file to transmit it. It might take up to 2 seconds to establish the transfer. There is a 10s timeout after which the board stops trying to receive the file. Just run the recv command again to retry if that happens. In other software, similarly use Xmodem transfer feature to send the file
 - After the bitstream is transferred, firmware upgrade is finished
+- If this is a fresh install, transfer over the font file (font_24x40.bin) using the same method as the bitstream
 
 ### Compatible Screens
 
