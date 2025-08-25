@@ -21,7 +21,8 @@ def process_table(fn, newfn):
     with open(newfn, 'w') as csvfile: 
         for src in range(16):
             for dst in range(16):
-                csvfile.write(f'{src},{dst},{','.join(newtable[f'{src}_{dst}'])}\n')
+                ss = ','.join(newtable[f'{src}_{dst}'])
+                csvfile.write(f'{src},{dst},{ss}\n')
 
 def main():
     parser = argparse.ArgumentParser(prog='wvfm_converter')
