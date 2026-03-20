@@ -31,6 +31,8 @@
 #include "linenoise.h"
 #include "term.h"
 #include "version.h"
+// auto-generated at build time
+#include "git_hash.h"
 
 #ifdef printf
 #undef printf
@@ -278,6 +280,9 @@ void shell_ver( shell_context_t *ctx, int argc, char **argv )
     return;
   }
   printf( SHELL_WELCOMEMSG, STR_VERSION, __DATE__, __TIME__);
+#ifdef GIT_HASH
+  printf( "Git: %s\n", GIT_HASH);
+#endif
 }
 
 // ****************************************************************************
