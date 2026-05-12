@@ -209,6 +209,7 @@ void config_init(void) {
     //config.mirror = 1;
 
     config.input_sel = INPUT_SEL_AUTO;
+    strncpy(config.bitstream, "fpga.bit", BITSTREAM_NAME_MAX);
 }
 
 void config_load(void) {
@@ -220,12 +221,12 @@ void config_load(void) {
     spiffs_stat s;
     SPIFFS_fstat(&spiffs_fs, f, &s);
     uint32_t size = s.size;
-    if (size != sizeof(config)) {
+    if (size > sizeof(config)) {
         SPIFFS_close(&spiffs_fs, f);
         return;
     }
 
-    SPIFFS_read(&spiffs_fs, f, &config, sizeof(config));
+    SPIFFS_read(&spiffs_fs, f, &config, size);
     SPIFFS_close(&spiffs_fs, f);
 }
 

@@ -22,6 +22,8 @@
 //
 #pragma once
 
+#define BITSTREAM_NAME_MAX  40
+
 #define INPUT_SEL_AUTO      0
 #define INPUT_SEL_TMDS      1
 #define INPUT_SEL_DP        2
@@ -54,6 +56,10 @@ typedef struct {
     uint8_t mirror;
     // Input selection (0 - Auto, 1 - TMDS, 2 - DP)
     uint8_t input_sel;
+    // without 'aligned' attribute, the first 2 bytes of bitstream will be
+    // overwritten when loading 'legacy' configs (w/o 'bitstream' field),
+    // because their config_t padded with 2 extra bytes at the end
+    char bitstream[BITSTREAM_NAME_MAX] __attribute__((aligned(4)));
 } config_t;
 
 extern config_t config;

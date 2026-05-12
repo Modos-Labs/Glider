@@ -112,10 +112,11 @@ void shell_syslog(shell_context_t *ctx, int argc, char **argv) {
 }
 
 /***********************************************************************
- * CMD: stacks
+ * CMD: mem
  **********************************************************************/
-const char shell_help_stacks[] = "\n";
-const char shell_help_summary_stacks[] = "Report task stack usage";
+const char shell_help_mem[] = "[detail]\n"
+  "  detail - Show detailed heap information\n";
+const char shell_help_summary_mem[] = "Report memory (stack & heap) usage";
 
 static void shell_print_task_stack(shell_context_t *ctx, TaskHandle_t task) {
     if (task) {
@@ -125,9 +126,45 @@ static void shell_print_task_stack(shell_context_t *ctx, TaskHandle_t task) {
     }
 }
 
-void shell_stacks(shell_context_t *ctx, int argc, char **argv ) {
+static void shell_print_heap_summary(shell_context_t *ctx) {
+    size_t total = configTOTAL_HEAP_SIZE;
+    size_t free = xPortGetFreeHeapSize();
+    size_t used = total - free;
+    size_t min_free = xPortGetMinimumEverFreeHeapSize();
+
+    printf("\nHeap Usage:\n");
+    printf(" Total:    %u\n", (unsigned)total);
+    printf(" Used:     %u\n", (unsigned)used);
+    printf(" Free:     %u\n", (unsigned)free);
+    printf(" Min Free: %u\n", (unsigned)min_free);
+}
+
+static void shell_print_heap_details(shell_context_t *ctx) {
+    HeapStats_t stats;
+
+    vPortGetHeapStats(&stats);
+
+    printf("\nHeap Details:\n");
+    printf(" Largest Free Block:   %u\n", (unsigned)stats.xSizeOfLargestFreeBlockInBytes);
+    printf(" Smallest Free Block:  %u\n", (unsigned)stats.xSizeOfSmallestFreeBlockInBytes);
+    printf(" Num Free Blocks:      %u\n", (unsigned)stats.xNumberOfFreeBlocks);
+    printf(" Successful Allocs:    %u\n", (unsigned)stats.xNumberOfSuccessfulAllocations);
+    printf(" Successful Frees:     %u\n", (unsigned)stats.xNumberOfSuccessfulFrees);
+}
+
+void shell_mem(shell_context_t *ctx, int argc, char **argv ) {
+    int detail = 0;
+
+    if ((argc > 1) && (strcmp(argv[1], "detail") == 0)) {
+        detail = 1;
+    }
+    else if (argc > 1) {
+        printf("Invalid argument. Usage: %s\n", shell_help_mem);
+        return;
+    }
+
     printf("High Water Marks are in 32-bit words (zero is bad).\n");
-    printf("Task Stask High Water Marks:\n");
+    printf("Task Stack High Water Marks:\n");
 
     shell_print_task_stack(ctx, startup_task_handle);
     shell_print_task_stack(ctx, housekeeping_task_handle);
@@ -136,6 +173,12 @@ void shell_stacks(shell_context_t *ctx, int argc, char **argv ) {
     shell_print_task_stack(ctx, ui_task_handle);
     shell_print_task_stack(ctx, key_scan_task_handle);
     shell_print_task_stack(ctx, power_mon_task_handle);
+
+    shell_print_heap_summary(ctx);
+
+    if (detail) {
+        shell_print_heap_details(ctx);
+    }
 }
 
 /***********************************************************************
@@ -340,134 +383,186 @@ static void file_data_read(void *usr, void *data, int size) {
 }
 
 /***********************************************************************
- * CMD: format
+ * CMD: fs - filesystem operations
  **********************************************************************/
-const char shell_help_format[] = "";
-const char shell_help_summary_format[] = "Formats an internal flash filesystem";
-
-void shell_format(shell_context_t *ctx, int argc, char **argv) {
-    printf("Be patient, this may take a while.\n");
-    printf("Formatting...\n");
-
-    TickType_t start = xTaskGetTickCount();
-    SPIFFS_unmount(&spiffs_fs);
-    if (SPIFFS_format(&spiffs_fs) != SPIFFS_OK) {
-        printf("SPIFFS format failed: %d\n", SPIFFS_errno(&spiffs_fs));
-    }
-    TickType_t end = xTaskGetTickCount();
-    printf("Time spent: %d seconds\n", (end - start) / configTICK_RATE_HZ);
-
-    printf("Done. Please reset the board\n");
-}
-
-/***********************************************************************
- * CMD: rm/del
- **********************************************************************/
-const char shell_help_rm[] = "<file1> [<file2> ...]\n";
-const char shell_help_summary_rm[] = "Removes a file";
-
-#include <stdio.h>
-
-void shell_rm(shell_context_t *ctx, int argc, char **argv) {
-    int i;
-
-    if (argc < 2) {
-        printf( "Usage: rm <file1> [<file2> ...]\n" );
-        return;
-    }
-
-    for (i = 1; i < argc; i++) {
-        if (SPIFFS_remove(&spiffs_fs, argv[i]) != 0) {
-          printf("Unable to remove '%s'\n", argv[i]);
-        }
-    }
-}
-
-//const char shell_help_dump[] = "[addr] <len>\n"
-//    "  addr - Starting address to dump\n"
-//    "  len - Number of bytes to dump (default 1)\n";
-//const char shell_help_summary_dump[] = "Hex dump of flash contents";
-//
-//void shell_dump(shell_context_t *ctx, int argc, char **argv)
-//{
-//    uintptr_t addr = 0;
-//    unsigned len = 1;
-//    uint8_t *buf;
-//    int ok;
-//
-//    if (argc < 2) {
-//        printf("Invalid arguments\n");
-//        return;
-//    }
-//
-//    addr = strtoul(argv[1], NULL, 0);
-//    if (argc > 2) {
-//        len = strtoul(argv[2], NULL, 0);
-//    }
-//
-//    buf = SHELL_MALLOC(len);
-//    if (buf) {
-//        ok = spif_read(addr, len, buf);
-//        if (ok == 0) {
-//            dump_bytes(ctx, buf, addr, len);
-//        }
-//        SHELL_FREE(buf);
-//    }
-//}
-//
-const char shell_help_fdump[] =
- "[file] <start> <size>\n"
- "  file - File to dump\n"
- "  start - Start offset in bytes (default: 0)\n"
- "  size - Size in bytes (default: full file)\n";
-const char shell_help_summary_fdump[] = "Dumps the contents of a file in hex";
+const char shell_help_fs[] = "<cp|mv|rm|ls|df|dump|format> [args...]\n"
+  "  cp <src> <dest> - Copy file\n"
+  "  mv <src> <dest> - Rename/move file\n"
+  "  rm <file1> [<file2> ...] - Remove file(s)\n"
+  "  ls - List files\n"
+  "  df - Show filesystem disk usage\n"
+  "  dump <file> [<start> <size>] - Dump file contents in hex\n"
+  "  format - Format the internal flash filesystem\n";
+const char shell_help_summary_fs[] = "filesystem operations";
 
 #define DUMP_SIZE 512
 
-void shell_fdump(shell_context_t *ctx, int argc, char **argv) {
-    spiffs_file f;
-    size_t start = 0;
-    size_t size = SIZE_MAX;
-    uint8_t *buf = NULL;
-    size_t rlen;
-    int c;
-
-    if( argc < 2 ) {
-        printf("No file given\n");
+void shell_fs(shell_context_t *ctx, int argc, char **argv) {
+    if (argc < 2) {
+        printf("Usage: fs %s", shell_help_fs);
         return;
     }
 
-    if (argc > 2) {
-        start = (size_t)strtoul(argv[2], NULL, 0);
-    }
-
-    if (argc > 3) {
-        size = (size_t)strtoul(argv[3], NULL, 0);
-    }
-
-    f = SPIFFS_open(&spiffs_fs, argv[1], SPIFFS_O_RDONLY, 0);
-    if (f) {
-        buf = SHELL_MALLOC(DUMP_SIZE);
-        SPIFFS_lseek(&spiffs_fs, f, start, SPIFFS_SEEK_SET);
-        do {
-            rlen = (size < DUMP_SIZE) ? size : DUMP_SIZE;
-            rlen = SPIFFS_read(&spiffs_fs, f, buf, rlen);
-            if (rlen) {
-                dump_bytes(ctx, buf, start, rlen);
-                size -= rlen;
-                start += rlen;
-                c = term_getch(&ctx->t, TERM_INPUT_DONT_WAIT);
-            }
-        } while (size && rlen && (c < 0));
-        if (buf) {
-            SHELL_FREE(buf);
+    if (strcmp(argv[1], "cp") == 0) {
+        if (argc < 4) {
+            printf("Usage: fs cp <src> <dest>\n");
+            return;
         }
-        SPIFFS_close(&spiffs_fs, f);
+        spiffs_file src_fd = SPIFFS_open(&spiffs_fs, argv[2], SPIFFS_RDONLY, 0);
+        if (src_fd < 0) {
+            printf("Unable to open source '%s'\n", argv[2]);
+            return;
+        }
+        spiffs_file dest_fd = SPIFFS_open(&spiffs_fs, argv[3], SPIFFS_WRONLY | SPIFFS_CREAT | SPIFFS_TRUNC, 0);
+        if (dest_fd < 0) {
+            printf("Unable to open destination '%s'\n", argv[3]);
+            SPIFFS_close(&spiffs_fs, src_fd);
+            return;
+        }
+        char buf[256];
+        int32_t n;
+        while ((n = SPIFFS_read(&spiffs_fs, src_fd, buf, sizeof(buf))) > 0) {
+            SPIFFS_write(&spiffs_fs, dest_fd, buf, n);
+        }
+        SPIFFS_close(&spiffs_fs, src_fd);
+        SPIFFS_close(&spiffs_fs, dest_fd);
+    }
+    else if (strcmp(argv[1], "mv") == 0) {
+        if (argc < 4) {
+            printf("Usage: fs mv <src> <dest>\n");
+            return;
+        }
+        if (SPIFFS_rename(&spiffs_fs, argv[2], argv[3]) != 0) {
+            printf("Unable to rename '%s' to '%s': %d\n",
+                   argv[2], argv[3], SPIFFS_errno(&spiffs_fs));
+        }
+    }
+    else if (strcmp(argv[1], "rm") == 0) {
+        int i;
+        if (argc < 3) {
+            printf("Usage: fs rm <file1> [<file2> ...]\n");
+            return;
+        }
+        for (i = 2; i < argc; i++) {
+            if (SPIFFS_remove(&spiffs_fs, argv[i]) != 0) {
+                printf("Unable to remove '%s'\n", argv[i]);
+            }
+        }
+    }
+    else if (strcmp(argv[1], "ls") == 0) {
+        spiffs_DIR d;
+        struct spiffs_dirent e;
+        SPIFFS_opendir(&spiffs_fs, "/", &d);
+        printf("%-32s %10s\n", "Name", "Bytes");
+        printf("%-32s %10s\n", "----", "-----");
+        while (SPIFFS_readdir(&d, &e)) {
+            printf("%-32s %10u\n", e.name, (unsigned)e.size);
+        }
+        SPIFFS_closedir(&d);
+    }
+    else if (strcmp(argv[1], "df") == 0) {
+        printf("%10s %10s %10s %5s\n", "Size", "Used", "Available", "Use %");
+        int32_t serr;
+        uint32_t ssize;
+        uint32_t sused;
+        serr = SPIFFS_info(&spiffs_fs, &ssize, &sused);
+        if (serr == SPIFFS_OK) {
+            printf("%10u %10u %10u %5u\n",
+                (unsigned)ssize, (unsigned)sused, (unsigned)(ssize - sused),
+                (unsigned)((100 * sused) / ssize));
+        }
+    }
+    else if (strcmp(argv[1], "dump") == 0) {
+        spiffs_file f;
+        size_t start = 0;
+        size_t size = 0;
+        uint8_t *buf = NULL;
+        int32_t bytes_read; // MUST be signed to properly check for SPIFFS negative error codes
+        int c = -1;
+
+        if (argc < 3) {
+            printf("No file given\n");
+            return;
+        }
+        if (argc > 3) {
+            start = (size_t)strtoul(argv[3], NULL, 0);
+        }
+        if (argc > 4) {
+            size = (size_t)strtoul(argv[4], NULL, 0);
+        }
+
+        f = SPIFFS_open(&spiffs_fs, argv[2], SPIFFS_O_RDONLY, 0);
+        if (f >= 0) {
+            spiffs_stat stat;
+
+            if (SPIFFS_fstat(&spiffs_fs, f, &stat) >= 0) {
+
+                if (start > stat.size) {
+                    start = stat.size;
+                }
+
+                size_t max_size = stat.size - start;
+
+                if (argc <= 4 || size > max_size) {
+                    size = max_size;
+                }
+
+                if (size <= 0) {
+                    SPIFFS_close(&spiffs_fs, f);
+                    printf("Nothing to dump!\n");
+                    return;
+                }
+
+
+                buf = SHELL_MALLOC(DUMP_SIZE);
+                if (buf) {
+                    SPIFFS_lseek(&spiffs_fs, f, start, SPIFFS_SEEK_SET);
+
+                    do {
+                        size_t to_read = (size < DUMP_SIZE) ? size : DUMP_SIZE;
+
+                        // SPIFFS_read returns int32_t. Negative on error/EOF.
+                        bytes_read = SPIFFS_read(&spiffs_fs, f, buf, to_read);
+
+                        if (bytes_read > 0) {
+                            dump_bytes(ctx, buf, start, bytes_read);
+                            size -= bytes_read;
+                            start += bytes_read;
+                            c = term_getch(&ctx->t, TERM_INPUT_DONT_WAIT);
+                        }
+                    } while (size > 0 && bytes_read > 0 && (c < 0));
+
+                    SHELL_FREE(buf);
+                } else {
+                    printf("Memory allocation failed\n");
+                }
+            } else {
+                printf("Failed to stat file\n");
+            }
+            SPIFFS_close(&spiffs_fs, f);
+        }
+        else {
+            printf("Unable to open '%s' (Error: %d)\n", argv[2], f);
+        }
+    }
+    else if (strcmp(argv[1], "format") == 0) {
+        printf("Be patient, this may take a while.\n");
+        printf("Formatting...\n");
+        TickType_t start = xTaskGetTickCount();
+        SPIFFS_unmount(&spiffs_fs);
+        if (SPIFFS_format(&spiffs_fs) != SPIFFS_OK) {
+            printf("SPIFFS format failed: %d\n", SPIFFS_errno(&spiffs_fs));
+        }
+        TickType_t end = xTaskGetTickCount();
+        printf("Time spent: %d seconds\n", (end - start) / configTICK_RATE_HZ);
+        printf("Done. Please reset the board\n");
     }
     else {
-        printf("Unable to open '%s'\n", argv[1]);
+        printf("Unknown subcommand: %s\n", argv[1]);
+        printf("Usage: fs %s", shell_help_fs);
     }
 }
+
 
 /***********************************************************************
  * CMD: recv
@@ -578,25 +673,6 @@ void shell_send(shell_context_t *ctx, int argc, char **argv)
 }
 
 
-/***********************************************************************
- * CMD: df
- **********************************************************************/
-const char shell_help_df[] = "\n";
-const char shell_help_summary_df[] = "Shows internal filesystem disk full status";
-
-void shell_df(shell_context_t *ctx, int argc, char **argv) {
-    printf("%10s %10s %10s %5s\n", "Size", "Used", "Available", "Use %");
-
-    int32_t serr; uint32_t ssize; uint32_t sused;
-    serr = SPIFFS_info(&spiffs_fs, &ssize, &sused);
-    if (serr == SPIFFS_OK) {
-        printf("%10u %10u %10u %5u\n",
-            (unsigned)ssize, (unsigned)sused, (unsigned)(ssize - sused),
-            (unsigned)((100 * sused) / ssize));
-    }
-}
-
-
 const char shell_help_setvolt[] = "<rail> <volt>\n";
 const char shell_help_summary_setvolt[] = "Set voltage";
 
@@ -622,7 +698,7 @@ const char shell_help_summary_setcfg[] = "Sets configuration. Remember to use sa
 typedef struct {
     const char *name;
     void *pointer;
-    enum {UINT8, UINT16, UINT32, FLOAT32} type;
+    enum {UINT8, UINT16, UINT32, FLOAT32, STRING} type;
 } cfg_var_t;
 
 cfg_var_t vars[] = {
@@ -650,11 +726,12 @@ cfg_var_t vars[] = {
     {"tcon_hbp", &(config.tcon_hbp), UINT8},
     {"tcon_hact", &(config.tcon_hact), UINT16},
     {"mirror", &(config.mirror), UINT8},
-    {"input_sel", &(config.input_sel), UINT8}
+    {"input_sel", &(config.input_sel), UINT8},
+    {"bitstream", &(config.bitstream), STRING}
 };
 int num_vars = sizeof(vars) / sizeof(cfg_var_t);
 
-static void setcfg_set_helper(cfg_var_t *var, char *val) {
+static void setcfg_set_helper(shell_context_t *ctx, cfg_var_t *var, char *val) {
     if (var->type == UINT8) {
         *(uint8_t *)(var->pointer) = strtol(val, NULL, 10);
     }
@@ -666,6 +743,14 @@ static void setcfg_set_helper(cfg_var_t *var, char *val) {
     }
     else if (var->type == FLOAT32) {
         *(float *)(var->pointer) = strtof(val, NULL);
+    }
+    else if (var->type == STRING) {
+        if (strlen(val) >= BITSTREAM_NAME_MAX) {
+            printf("Error: value too long (max %d chars)\n", BITSTREAM_NAME_MAX - 1);
+            return;
+        }
+        strncpy((char *)(var->pointer), val, BITSTREAM_NAME_MAX);
+        ((char *)(var->pointer))[BITSTREAM_NAME_MAX - 1] = '\0';
     }
 }
 
@@ -681,6 +766,9 @@ static void setcfg_get_helper(shell_context_t *ctx, cfg_var_t *var) {
     }
     else if (var->type == FLOAT32) {
         printf("%f\n", *(float *)(var->pointer));
+    }
+    else if (var->type == STRING) {
+        printf("%s\n", (char *)(var->pointer));
     }
 }
 
@@ -708,7 +796,7 @@ void shell_setcfg(shell_context_t *ctx, int argc, char **argv) {
             printf("Key and value required for set\n");
             return;
         }
-        setcfg_set_helper(var, argv[3]);
+        setcfg_set_helper(ctx, var, argv[3]);
     }
     else if (strcmp(argv[1], "get") == 0) {
         if (argc < 4) {

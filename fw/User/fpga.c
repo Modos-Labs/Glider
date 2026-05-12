@@ -60,6 +60,8 @@ static void fpga_load_bitstream(const char *fn) {
 
     TickType_t start = xTaskGetTickCount();
 
+    syslog_printf("Loading bitstream '%s'", fn);
+
     SPIFFS_clearerr(&spiffs_fs);
     spiffs_file f = SPIFFS_open(&spiffs_fs, fn, SPIFFS_O_RDONLY, 0);
     if (SPIFFS_errno(&spiffs_fs) != 0)

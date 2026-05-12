@@ -24,6 +24,12 @@
 #include "board.h"
 #include "app.h"
 
+static struct {
+    SemaphoreHandle_t mutex;
+    bool powered;
+    int  reverse_polarity;
+} ptn_state;
+
 static void ptn3460_write(uint8_t reg, uint8_t val) {
     int result = pal_i2c_write_reg(PTN3460_I2C, PTN3460_I2C_ADDR, reg, val);
     if (result != 0) {
@@ -32,11 +38,11 @@ static void ptn3460_write(uint8_t reg, uint8_t val) {
 }
 
 static uint8_t ptn3460_read(uint8_t reg) {
-	uint8_t val;
-	int result = pal_i2c_read_reg(PTN3460_I2C, PTN3460_I2C_ADDR, reg, &val);
-	if (result != 0) {
-		syslog_printf("Failed reading data from PTN3460\n");
-	}
+    uint8_t val;
+    int result = pal_i2c_read_reg(PTN3460_I2C, PTN3460_I2C_ADDR, reg, &val);
+    if (result != 0) {
+        syslog_printf("Failed reading data from PTN3460\n");
+    }
     return val;
 }
 
@@ -44,7 +50,7 @@ static void ptn3460_select_edid_emulation(uint8_t id) {
     ptn3460_write(0x84, 0x01 | (id << 1));
 }
 
-void ptn3460_load_edid(uint8_t *edid) {
+static void ptn3460_load_edid(uint8_t *edid) {
     int result = pal_i2c_write_longreg(PTN3460_I2C, PTN3460_I2C_ADDR,
         0x00, edid, 128);
     if (result != 0) {
@@ -53,6 +59,7 @@ void ptn3460_load_edid(uint8_t *edid) {
 }
 
 void ptn3460_early_init(void) {
+    ptn_state.mutex = xSemaphoreCreateMutex();
     gpio_put(DP_PDN, 1);
 }
 
@@ -67,6 +74,10 @@ void ptn3460_init(void) {
         sleep_ms(1);
     }
     syslog_printf("PTN3460 up after %d ms\n", ticks);
+
+    xSemaphoreTake(ptn_state.mutex, portMAX_DELAY);
+    ptn_state.powered = true;
+
     // Enable EDID emulation
     ptn3460_select_edid_emulation(0);
     ptn3460_load_edid(edid_get_raw());
@@ -74,15 +85,28 @@ void ptn3460_init(void) {
     ptn3460_write(0x81, 0x29); // 18bpp, clock on odd bus, dual channel
     uint8_t rdval = ptn3460_read(0x81);
     syslog_printf("PTN3460 readback value %02x (expected %02x)\n", rdval, 0x29);
+
+    // Apply any cached aux polarity
+    ptn3460_write(0x80, ptn_state.reverse_polarity ? 0x02 : 0x00);
+
+    xSemaphoreGive(ptn_state.mutex);
 }
 
 void ptn3460_set_aux_polarity(int reverse) {
-    if (reverse)
-        ptn3460_write(0x80, 0x02); // Enable AUX reverse
-    else
-        ptn3460_write(0x80, 0x00); // Disable AUX reverse
+    xSemaphoreTake(ptn_state.mutex, portMAX_DELAY);
+    ptn_state.reverse_polarity = reverse;
+    if (ptn_state.powered) {
+        if (reverse)
+            ptn3460_write(0x80, 0x02); // Enable AUX reverse
+        else
+            ptn3460_write(0x80, 0x00); // Disable AUX reverse
+    }
+    xSemaphoreGive(ptn_state.mutex);
 }
 
 void ptn3460_powerdown(void) {
+    xSemaphoreTake(ptn_state.mutex, portMAX_DELAY);
+    ptn_state.powered = false;
     gpio_put(DP_PDN, 0);
+    xSemaphoreGive(ptn_state.mutex);
 }

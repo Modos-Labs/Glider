@@ -153,7 +153,7 @@ static bool is_dp_active(void) {
 }
 
 static void restart_fpga(void) {
-    fpga_init("fpga.bit");
+    fpga_init(config.bitstream);
     syslog_printf("Waiting for video signal to lock");
     while (true) {
         // Wait for PLL to lock
@@ -245,6 +245,7 @@ portTASK_FUNCTION(ui_task, pvParameters) {
         // Detect loss of signal / lost access to FPGA
         if ((tmds_mode && (!is_tmds_active())) || (fpga_write_reg8(CSR_ID0, 0x00) != 0x35)) {
             // Stop and restart
+            syslog_print("System reset!");
             power_off_epd();
             NVIC_SystemReset();
         }
