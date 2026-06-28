@@ -71,7 +71,7 @@ void fatal(char *fmt, ...) {
     syslog_print(line);
 
     // Increase priority of the shell so it becomes the only thing to run
-    vTaskPrioritySet(&startup_task_handle, HIGHEST_PRIORITY);
+    vTaskPrioritySet(startup_task_handle, HIGHEST_PRIORITY);
 
     taskEXIT_CRITICAL();
 

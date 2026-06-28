@@ -1440,6 +1440,14 @@ int pd_alt_mode(int port, uint16_t svid);
 void pd_send_hpd(int port, enum hpd_event hpd);
 
 /**
+ * Check if the VDM state machine is currently busy.
+ *
+ * @param port port number.
+ * @return true if VDM is busy, false otherwise.
+ */
+bool pd_is_vdm_busy(int port);
+
+/**
  * Enable USB Billboard Device.
  */
 extern const struct deferred_data pd_usb_billboard_deferred_data;

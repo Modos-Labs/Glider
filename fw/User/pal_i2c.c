@@ -22,6 +22,8 @@
 //
 #include "platform.h"
 #include "pal_i2c.h"
+#include "board.h"
+#include "syslog.h"
 
 // Ugly
 #define I2C1_SCL        GPIOB, GPIO_PIN_6

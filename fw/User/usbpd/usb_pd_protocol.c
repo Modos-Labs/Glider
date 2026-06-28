@@ -3419,10 +3419,10 @@ int pd_run_state_machine(int port)
 
 	/* Check for disconnection if we're connected */
 	if (!pd_is_connected(port))
-		return;
+		return timeout;
 #ifdef CONFIG_USB_PD_DUAL_ROLE
 	if (pd_is_power_swapping(port))
-		return;
+		return timeout;
 #endif
 	if (pd[port].power_role == PD_ROLE_SOURCE) {
 		/* Source: detect disconnect by monitoring CC */

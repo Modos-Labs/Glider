@@ -28,6 +28,7 @@ extern "C" {
 #endif
 
 #include "usb_pd.h"
+#include "board.h"
 
 #include <stdint.h>
 
@@ -78,8 +79,8 @@ extern "C" {
 
 #define PDO_FIXED_FLAGS (PDO_FIXED_COMM_CAP)
 
-#define usleep(us) (delay_us(us))
-#define msleep(ms) (delay_ms(ms))
+#define usleep(us) (sleep_us(us))
+#define msleep(ms) (sleep_ms(ms))
 
 typedef union {
 	uint64_t val;
@@ -114,6 +115,16 @@ timestamp_t get_time(void);
 	temp_a < temp_b ? temp_a : temp_b;	\
 })
 #endif
+
+/* No-op implementations of Chrome EC hooks and deferred functions */
+#define DECLARE_HOOK(hook, routine, priority)
+#define DECLARE_DEFERRED(routine)
+#define HOOK_PRIO_DEFAULT 0
+#define HOOK_BATTERY_SOC_CHANGE 0
+#define HOOK_CHIPSET_RESUME 0
+#define HOOK_CHIPSET_SUSPEND 0
+#define HOOK_CHIPSET_STARTUP 0
+#define HOOK_CHIPSET_SHUTDOWN 0
 
 #ifdef __cplusplus
 }
