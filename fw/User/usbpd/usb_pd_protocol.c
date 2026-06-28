@@ -3081,7 +3081,7 @@ int pd_run_state_machine(int port)
 		}
 
 		/* Sent all messages, don't need to wake very often */
-		timeout = 200*MSEC_US;
+		timeout = 2000*MSEC_US;
 		break;
 	case PD_STATE_SNK_SWAP_INIT:
 		if (pd[port].last_state != pd[port].task_state) {

@@ -90,32 +90,38 @@ portTASK_FUNCTION(usb_pd_task, pvParameters) {
     int timeout = 0;
     while (1) {
         BaseType_t rtos_result = xSemaphoreTake(isr_sem, pdMS_TO_TICKS(timeout/1000));
-//        if (rtos_result) {
-//            syslog_printf("FUSB302 interrupt");
-//            //fusb302_tcpc_alert(0);
-//        }
-        do {
-            fusb302_tcpc_alert(0);
+        if (rtos_result == pdTRUE || gpio_get(TCPC_INT) == 0) {
+            int loop_count = 0;
+            do {
+                tcpc_alert(0);
+                timeout = pd_run_state_machine(0);
+                loop_count++;
+                if (loop_count > 5) {
+                    vTaskDelay(pdMS_TO_TICKS(5));
+                    break;
+                }
+            } while (gpio_get(TCPC_INT) == 0);
+        } else {
+            // Just a periodic state machine tick, no hardware interrupt pending
             timeout = pd_run_state_machine(0);
-            if (!dp_enabled) {
-                hpd_sent = false;
-                hpd_low_requested = false;
-                dp_ready = false;
-            }
-            else if (hpd_low_requested && !pd_is_vdm_busy(0)) {
-                syslog_printf("DP HPD low\n");
-                pd_send_hpd(0, hpd_low);
-                hpd_low_requested = false;
-            }
-            else if (!displayport_suspended && !hpd_sent && !pd_is_vdm_busy(0)) {
-                syslog_printf("DP enabled\n");
-                pd_send_hpd(0, hpd_high);
-                hpd_sent = true;
-                dp_ready = true;
-            }
-//            vTaskDelay(pdMS_TO_TICKS(5));
-            //xSemaphoreTake(isr_sem, 0); // Clear semaphore
-        } while (gpio_get(TCPC_INT) == 0);
+        }
+
+        if (!dp_enabled) {
+            hpd_sent = false;
+            hpd_low_requested = false;
+            dp_ready = false;
+        }
+        else if (hpd_low_requested && !pd_is_vdm_busy(0)) {
+            syslog_printf("DP HPD low\n");
+            pd_send_hpd(0, hpd_low);
+            hpd_low_requested = false;
+        }
+        else if (!displayport_suspended && !hpd_sent && !pd_is_vdm_busy(0)) {
+            syslog_printf("DP enabled\n");
+            pd_send_hpd(0, hpd_high);
+            hpd_sent = true;
+            dp_ready = true;
+        }
     }
 
     vSemaphoreDelete(isr_sem);
