@@ -54,6 +54,13 @@
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
+void PreSleepProcessing(uint32_t ulExpectedIdleTime) {
+    (void)ulExpectedIdleTime;
+    HAL_SuspendTick();
+}
 
+void PostSleepProcessing(uint32_t ulExpectedIdleTime) {
+    (void)ulExpectedIdleTime;
+    HAL_ResumeTick();
+}
 /* USER CODE END Application */
-

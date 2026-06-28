@@ -168,8 +168,17 @@ standard names. */
 
 /* USER CODE BEGIN Defines */
 /* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */
+#define configUSE_TICKLESS_IDLE 1
 #define INCLUDE_xTaskGetIdleTaskHandle 1
 #define configAPPLICATION_ALLOCATED_HEAP 1
+
+#if defined(__ICCARM__) || defined(__CC_ARM) || defined(__GNUC__)
+  void PreSleepProcessing(uint32_t ulExpectedIdleTime);
+  void PostSleepProcessing(uint32_t ulExpectedIdleTime);
+#endif
+
+#define configPRE_SLEEP_PROCESSING(x)        PreSleepProcessing(x)
+#define configPOST_SLEEP_PROCESSING(x)       PostSleepProcessing(x)
 /* USER CODE END Defines */
 
 #endif /* FREERTOS_CONFIG_H */
