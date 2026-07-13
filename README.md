@@ -79,7 +79,7 @@ If you already have a Glider board/ kit: For board setup, flashing, development 
 - Xilinx(R) Spartan-6 LX16 FPGA running Caster
 - DDR3-800 framebuffer memory
 - Type-C DisplayPort Alt-Mode video input with onboard PTN3460 DP-LVDS bridge or
-- DVI (via microHDMI connector) video input with onboard ADV7611 decoder
+- DVI (via miniHDMI connector) video input with onboard ADV7611 decoder
 - Epaper power supply with up to 1A peak current on +/-15V rail supporting large panels
 - VCOM kick-back voltage measurement support
 - On-board STM32H750 microcontroller for USB communication and firmware upgrade
