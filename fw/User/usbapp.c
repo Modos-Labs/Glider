@@ -23,6 +23,7 @@
 #include "platform.h"
 #include "app.h"
 #include "tusb.h"
+#include "power.h"
 
 void usbapp_term_out(char data, void *usr) {
 	tud_cdc_write_char(data);
@@ -159,10 +160,12 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
             NVIC_SystemReset();
             break;
         case USBCMD_POWERDOWN:
-            // TODO
+            power_suspend(POWER_SUSPEND_USER);
+            retval = 0;
             break;
         case USBCMD_POWERUP:
-            // TODO
+            power_request_resume(POWER_WAKE_USB);
+            retval = 0;
             break;
         case USBCMD_SETINPUT:
             config.input_sel = param;

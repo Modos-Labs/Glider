@@ -61,6 +61,7 @@ static void ptn3460_load_edid(uint8_t *edid) {
 void ptn3460_early_init(void) {
     ptn_state.mutex = xSemaphoreCreateMutex();
     gpio_put(DP_PDN, 1);
+    sleep_ms(50);
 }
 
 void ptn3460_init(void) {
@@ -72,6 +73,7 @@ void ptn3460_init(void) {
         ticks ++;
         if (ticks > 500) {
             syslog_printf("PTN3460 boot timeout\n");
+            break;
         }
         sleep_ms(1);
     }
