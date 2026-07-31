@@ -663,12 +663,91 @@ static void restart_fpga(void) {
     syslog_printf("FPGA up");
 }
 
-static void start_display_pipeline(bool *tmds_mode, const osd_fonts_t *fonts,
-        signal_osd_state_t *signal_osd_state, TickType_t *no_signal_deadline) {
+// How long to wait at startup for a video input to become live before loading
+// the bitstream. The decoder does not report lock immediately after
+// adv7611_init() -- measured around 1.1s against a host that was already
+// running, and far longer if the host is still booting. Generous on purpose:
+// with a live source the wait exits as soon as it sees signal, so this only
+// elapses when there is genuinely nothing attached.
+#define VIDEO_INPUT_WAIT_MS     30000
+#define VIDEO_INPUT_POLL_MS     100
+
+// Minimum interval between pipeline reloads after video is lost. The reload
+// path must NOT wait for an input -- video has just gone away, so there is
+// nothing to wait for and waiting delays the no-signal state by the full
+// timeout. But it does need a floor: without one, lose-reload-lose cycles as
+// fast as the bitstream loads, which shows up as the panel flashing.
+#define VIDEO_RELOAD_MIN_MS     5000
+
+// Bring up the video frontends and wait for an input to go live. This must run
+// BEFORE restart_fpga(): initialising the decoder resets its pixel clock and
+// reasserts HPD, and doing that after the gateware has started locking prevents
+// TMDS from ever coming up.
+//
+static void prepare_video_input(bool *tmds_mode, bool wait_for_input) {
+    switch (config.input_sel) {
+    case INPUT_SEL_TMDS:
+        *tmds_mode = true;
+        adv7611_early_init();
+        adv7611_init();
+        ptn3460_powerdown();
+        break;
+    case INPUT_SEL_DP:
+        *tmds_mode = false;
+        ptn3460_init();
+        usbpd_resume_displayport();
+        adv7611_powerdown();
+        break;
+    case INPUT_SEL_AUTO:
+    default:
+        resume_video_frontends();
+        break;
+    }
+
+    if (!wait_for_input)
+        return;
+
+    for (int i = 0; i < (VIDEO_INPUT_WAIT_MS / VIDEO_INPUT_POLL_MS); i++) {
+        if (is_tmds_active()) {
+            if (config.input_sel == INPUT_SEL_AUTO)
+                *tmds_mode = true;
+            return;
+        }
+        if (is_dp_active()) {
+            if (config.input_sel == INPUT_SEL_AUTO)
+                *tmds_mode = false;
+            return;
+        }
+        vTaskDelay(pdMS_TO_TICKS(VIDEO_INPUT_POLL_MS));
+    }
+    syslog_print("No live video input; continuing");
+}
+
+// The half that has to run after restart_fpga(), because CSR_INPUT_CTRL needs
+// the FPGA to be up.
+static void commit_input_selection(void) {
+    switch (config.input_sel) {
+    case INPUT_SEL_TMDS:
+        caster_input_request_tmds();
+        break;
+    case INPUT_SEL_DP:
+        caster_input_request_dp();
+        break;
+    case INPUT_SEL_AUTO:
+    default:
+        caster_input_request_auto();
+        break;
+    }
+}
+
+static void start_display_pipeline_ex(bool *tmds_mode, const osd_fonts_t *fonts,
+        signal_osd_state_t *signal_osd_state, TickType_t *no_signal_deadline,
+        bool wait_for_input) {
+    prepare_video_input(tmds_mode, wait_for_input);
     restart_fpga();
     power_on_epd();
     caster_init();
-    apply_input_selection(tmds_mode);
+    commit_input_selection();
     caster_osd_set_enable(false);
     *signal_osd_state = SIGNAL_OSD_NONE;
     *no_signal_deadline = xTaskGetTickCount() +
@@ -750,13 +829,19 @@ static void log_input_status(uint8_t input_status) {
             input_status, hact, vact, htotal, vtotal);
 }
 
+static void start_display_pipeline(bool *tmds_mode, const osd_fonts_t *fonts,
+        signal_osd_state_t *signal_osd_state, TickType_t *no_signal_deadline) {
+    start_display_pipeline_ex(tmds_mode, fonts, signal_osd_state,
+            no_signal_deadline, true);
+}
+
 static void reload_to_internal_source(bool *tmds_mode, const osd_fonts_t *fonts,
         signal_osd_state_t *signal_osd_state, TickType_t *no_signal_deadline,
         const char *reason) {
     syslog_print(reason);
     power_off_epd();
-    start_display_pipeline(tmds_mode, fonts, signal_osd_state,
-            no_signal_deadline);
+    start_display_pipeline_ex(tmds_mode, fonts, signal_osd_state,
+            no_signal_deadline, false);
 }
 
 static void recover_from_live_loss(bool *tmds_mode, const osd_fonts_t *fonts,
@@ -814,6 +899,8 @@ portTASK_FUNCTION(ui_task, pvParameters) {
     bool live_was_selected = false;
     uint8_t last_logged_input_status = 0xff;
     TickType_t no_signal_deadline = 0;
+    // When the pipeline was last reloaded after video loss, for rate limiting.
+    TickType_t last_reload_time = 0;
     TickType_t usbpd_wake_arm_time = 0;
     ui_menu_t menu;
     osd_menu_render_state_t menu_render_state = {0};
@@ -919,6 +1006,18 @@ portTASK_FUNCTION(ui_task, pvParameters) {
         // selected, a stopped external clock can also stop CSR access, so use
         // the frontend signal check before touching FPGA registers.
         if (live_was_selected && !is_video_active(tmds_mode)) {
+            // Rate limit the reload. The wait inside prepare_video_input()
+            // used to provide this by accident; the reload path no longer
+            // waits, so enforce a floor explicitly or a flapping input
+            // reloads the bitstream continuously.
+            TickType_t now = xTaskGetTickCount();
+            if ((last_reload_time != 0) &&
+                    (((int32_t)now - (int32_t)last_reload_time) <
+                     (int32_t)pdMS_TO_TICKS(VIDEO_RELOAD_MIN_MS))) {
+                vTaskDelay(pdMS_TO_TICKS(200));
+                continue;
+            }
+            last_reload_time = now;
             recover_from_live_loss(&tmds_mode, &fonts, &signal_osd_state,
                     &no_signal_deadline);
             live_was_selected = false;
