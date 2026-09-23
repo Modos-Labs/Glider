@@ -22,5 +22,9 @@
 //
 #pragma once
 
-void edid_init();
-uint8_t *edid_get_raw();
+#include <stdint.h>
+
+void edid_init(void);
+uint8_t *edid_get_raw(void);
+uint8_t *edid_get_raw_hdmi(void);
+uint16_t edid_get_raw_hdmi_size(void);

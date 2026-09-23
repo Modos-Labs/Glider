@@ -356,10 +356,61 @@ static int test_system_menu_exposes_osd_scale_setting(void) {
     return 0;
 }
 
+static int test_per_mode_tone_note_and_recall(void) {
+    config_init();
+
+    // No tone stored anywhere: recall is a no-op for every mode.
+    config.lightness = 1;
+    config.contrast = 2;
+    ASSERT_TRUE(!config_recall_tone_for_mode(UM_FAST_GREY));
+    ASSERT_EQ(1, config.lightness);
+    ASSERT_EQ(2, config.contrast);
+
+    // Store a tone for FastGrey; other modes stay unset.
+    config.lightness = -2;
+    config.contrast = 5;
+    config_note_tone_for_mode(UM_FAST_GREY);
+    ASSERT_EQ(-2, config.tone_lightness[UM_FAST_GREY]);
+    ASSERT_EQ(5, config.tone_contrast[UM_FAST_GREY]);
+    ASSERT_EQ(TONE_UNSET, config.tone_lightness[UM_FAST_MONO_NO_DITHER]);
+
+    // Switching to a mode with no stored tone leaves the current tone.
+    ASSERT_TRUE(!config_recall_tone_for_mode(UM_FAST_MONO_NO_DITHER));
+    ASSERT_EQ(-2, config.lightness);
+
+    // Switching back to FastGrey recalls its tone.
+    config.lightness = 0;
+    config.contrast = 0;
+    ASSERT_TRUE(config_recall_tone_for_mode(UM_FAST_GREY));
+    ASSERT_EQ(-2, config.lightness);
+    ASSERT_EQ(5, config.contrast);
+
+    // Recalling an already-active tone is a no-op.
+    ASSERT_TRUE(!config_recall_tone_for_mode(UM_FAST_GREY));
+
+    // Validation keeps out-of-range stored tones from breaking bounds and
+    // preserves TONE_UNSET sentinels.
+    config.tone_lightness[UM_FAST_MONO_BAYER] = 99;
+    config.tone_contrast[UM_FAST_MONO_BAYER] = 99;
+    config.tone_lightness[UM_AUTO_LUT_ERROR_DIFFUSION] = TONE_UNSET;
+    config.tone_contrast[UM_AUTO_LUT_ERROR_DIFFUSION] = TONE_UNSET;
+    config_validate_loaded(sizeof(config_t));
+    ASSERT_EQ(3, config.tone_lightness[UM_FAST_MONO_BAYER]);
+    ASSERT_EQ(6, config.tone_contrast[UM_FAST_MONO_BAYER]);
+    ASSERT_EQ(TONE_UNSET, config.tone_lightness[UM_AUTO_LUT_ERROR_DIFFUSION]);
+
+    // Out-of-range mode indexes are rejected safely.
+    config_note_tone_for_mode((update_mode_t)99);
+    ASSERT_TRUE(!config_recall_tone_for_mode((update_mode_t)99));
+
+    return 0;
+}
+
 int main(void) {
     int rc = 0;
 
     rc |= test_config_defaults_match_button_design();
+    rc |= test_per_mode_tone_note_and_recall();
     rc |= test_legacy_config_validation_repairs_appended_fields();
     rc |= test_legacy_config_validation_defaults_osd_scale_from_ppi();
     rc |= test_config_validation_repairs_invalid_values();

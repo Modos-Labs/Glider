@@ -27,6 +27,7 @@
 #include <string.h>
 #include "autoclear.h"
 #include "ui.h"
+#include "config.h"
 #include "osd_font.h"
 #include "ui_menu.h"
 
@@ -459,11 +460,19 @@ static const char *autoclear_mode_label(void) {
     }
 }
 
+// If a tone was stored for the given update mode (from a previous tone
+// change made while that mode was active), make it the active tone.
+static void apply_recalled_tone(update_mode_t mode_id) {
+    if (config_recall_tone_for_mode(mode_id))
+        caster_set_tone(config.lightness, config.contrast);
+}
+
 static void apply_display_mode(update_mode_t id, const osd_fonts_t *fonts,
         TickType_t *osd_timeout) {
     mode = mode_index_for(id);
     config.update_mode = modes[mode].id;
     caster_setmode(0, 0, config.hact, config.vact, modes[mode].id);
+    apply_recalled_tone(modes[mode].id);
     config_save();
 
     draw_status_popup(fonts, "Mode", modes[mode].name);
@@ -482,6 +491,22 @@ static bool menu_config_changed(const config_t *previous) {
             (memcmp(previous->button_actions, config.button_actions,
                     sizeof(config.button_actions)) != 0);
 }
+
+// Set by usbapp when a USB command changes the update mode, so the UI task
+// re-syncs its mode index without stealing USB response timing.
+volatile bool usbapp_mode_changed = false;
+
+// Set by usbapp when a USB command changes an auto-clear setting, so the UI
+// task re-syncs its local autoclear mirror without stealing USB timing.
+volatile bool usbapp_ac_changed = false;
+
+// Deadline for re-issuing the saved update mode after a pipeline (re)start.
+// A SETMODE written while the FPGA is running its power-up refresh can be
+// dropped (observed: quick replugs came back in the FPGA's default mode), so
+// the command is repeated unconditionally after this delay, followed by a
+// full redraw to re-render the current content in the right mode.
+static TickType_t mode_reapply_deadline = 0;
+#define MODE_REAPPLY_DELAY_MS 2000
 
 static void preview_tone_modal(const ui_menu_t *menu) {
     int lightness = config.lightness;
@@ -668,6 +693,14 @@ static void start_display_pipeline(bool *tmds_mode, const osd_fonts_t *fonts,
     restart_fpga();
     power_on_epd();
     caster_init();
+    // The FPGA powers up with its own built-in update mode; apply the saved
+    // mode here so boot/resume actually renders with the configured mode
+    // instead of only recording it (GETMODE/OSD previously claimed Typing
+    // while the panel rendered FastMonoBayer until the next mode change).
+    caster_setmode(0, 0, config.hact, config.vact,
+            (update_mode_t)config.update_mode);
+    mode_reapply_deadline = xTaskGetTickCount() +
+            pdMS_TO_TICKS(MODE_REAPPLY_DELAY_MS);
     apply_input_selection(tmds_mode);
     caster_osd_set_enable(false);
     *signal_osd_state = SIGNAL_OSD_NONE;
@@ -744,10 +777,14 @@ static void log_input_status(uint8_t input_status) {
     uint16_t vact;
     uint16_t htotal;
     uint16_t vtotal;
+    uint8_t input_debug;
 
     caster_input_get_measured(&hact, &vact, &htotal, &vtotal);
-    syslog_printf("Input status %02x, measured %u x %u, total %u x %u",
-            input_status, hact, vact, htotal, vtotal);
+    input_debug = caster_input_debug();
+    syslog_printf("Input status %02x debug %02x, measured %u x %u, total %u x %u",
+            input_status, input_debug, hact, vact, htotal, vtotal);
+    if (config.input_sel != INPUT_SEL_DP)
+        adv7611_log_signal_status();
 }
 
 static void reload_to_internal_source(bool *tmds_mode, const osd_fonts_t *fonts,
@@ -813,6 +850,7 @@ portTASK_FUNCTION(ui_task, pvParameters) {
     bool usbpd_wake_armed = false;
     bool live_was_selected = false;
     uint8_t last_logged_input_status = 0xff;
+    uint8_t last_logged_input_debug = 0xff;
     TickType_t no_signal_deadline = 0;
     TickType_t usbpd_wake_arm_time = 0;
     ui_menu_t menu;
@@ -826,6 +864,10 @@ portTASK_FUNCTION(ui_task, pvParameters) {
     };
 
     mode = mode_index_for((update_mode_t)config.update_mode);
+    // Recall before the pipeline starts: start_display_pipeline() applies
+    // the resulting config tone itself, so no LUT call is needed here (and
+    // the caster is not ready for one yet).
+    config_recall_tone_for_mode((update_mode_t)config.update_mode);
 
     bool tmds_mode = false;
     start_display_pipeline(&tmds_mode, &fonts, &signal_osd_state,
@@ -931,9 +973,12 @@ portTASK_FUNCTION(ui_task, pvParameters) {
         }
 
         uint8_t input_status = caster_input_status();
-        if (input_status != last_logged_input_status) {
+        uint8_t input_debug = caster_input_debug();
+        if ((input_status != last_logged_input_status) ||
+                (input_debug != last_logged_input_debug)) {
             log_input_status(input_status);
             last_logged_input_status = input_status;
+            last_logged_input_debug = input_debug;
         }
         update_input_tracking(input_status, &tmds_mode, &live_was_selected);
         if (input_status & INPUT_STATUS_LOST) {
@@ -973,6 +1018,57 @@ portTASK_FUNCTION(ui_task, pvParameters) {
         // Key press logic
         btn_event_t btn_event;
         BaseType_t result = xQueueReceive(btn_queue, &btn_event, pdMS_TO_TICKS(200));
+
+        // A USB host command changed the mode: re-sync the mode index and
+        // recall the tone stored for that mode, matching button-driven
+        // switches. Any pending save picks up the recalled values.
+        if (usbapp_mode_changed) {
+            usbapp_mode_changed = false;
+            mode = mode_index_for((update_mode_t)config.update_mode);
+            apply_recalled_tone((update_mode_t)config.update_mode);
+        }
+
+        // A USB host command changed an auto-clear setting: re-sync the local
+        // mirror and reset timers so the new mode/interval/threshold takes
+        // effect immediately, matching OSD-driven changes.
+        if (usbapp_ac_changed) {
+            usbapp_ac_changed = false;
+            autoclear = config.autoclear_mode != AC_OFF;
+            reset_autoclear_state(&autoclear_timeout, &autoclear_damage_counter,
+                    &autoclear_damage_last);
+        }
+
+        // Re-apply the saved update mode once the FPGA has finished its
+        // power-up refresh: the immediate write in start_display_pipeline can
+        // be dropped while the FPGA's operation queue is still busy (observed
+        // Re-issue the saved update mode once the FPGA has had a moment to
+        // settle after the pipeline start. This is deliberately unconditional:
+        // with live video the FPGA operation queue is effectively always
+        // busy, so waiting for an idle queue never fires (measured: give-up
+        // after 10 s without a single idle tick). Re-reading
+        // config.update_mode keeps this correct even if the mode changed
+        // again meanwhile; the redraw re-renders the current content in the
+        // right mode.
+        if (mode_reapply_deadline != 0) {
+            if (((int32_t)xTaskGetTickCount() -
+                    (int32_t)mode_reapply_deadline) >= 0) {
+                mode_reapply_deadline = 0;
+                syslog_printf("Re-applying saved update mode %d",
+                        config.update_mode);
+                caster_setmode(0, 0, config.hact, config.vact,
+                        (update_mode_t)config.update_mode);
+                caster_redraw(0, 0, config.hact, config.vact);
+            }
+        }
+
+        // Perform config saves requested by other tasks (e.g. the USB tone
+        // setters); the 200 ms queue timeout bounds the latency and bursts
+        // coalesce into a single write.
+        if (config_save_pending) {
+            config_save_pending = false;
+            config_save();
+        }
+
         if (result != pdTRUE)
             continue;
 
@@ -1025,6 +1121,12 @@ portTASK_FUNCTION(ui_task, pvParameters) {
                             autoclear_previous_mode = previous_config.autoclear_mode;
                         }
                     }
+                    // Note the tone for the current mode before saving so the
+                    // per-mode arrays are persisted by this very save.
+                    if ((previous_config.lightness != config.lightness) ||
+                            (previous_config.contrast != config.contrast)) {
+                        config_note_tone_for_mode((update_mode_t)config.update_mode);
+                    }
                     config_save();
                     autoclear = config.autoclear_mode != AC_OFF;
                     if (previous_config.input_sel != config.input_sel) {
@@ -1046,6 +1148,7 @@ portTASK_FUNCTION(ui_task, pvParameters) {
                         mode = mode_index_for((update_mode_t)config.update_mode);
                         caster_setmode(0, 0, config.hact, config.vact,
                                 modes[mode].id);
+                        apply_recalled_tone(modes[mode].id);
                         reset_autoclear_state(&autoclear_timeout,
                                 &autoclear_damage_counter,
                                 &autoclear_damage_last);

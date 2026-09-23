@@ -31,9 +31,19 @@
 #define USBCMD_NUKE         0x06
 #define USBCMD_USBBOOT      0x07
 #define USBCMD_RECV         0x08
+#define USBCMD_SETLIGHTNESS 0x09
+#define USBCMD_SETCONTRAST  0x0A
+#define USBCMD_GETTONE      0x0B
+#define USBCMD_GETMODE      0x0C
+#define USBCMD_GETSIGNAL    0x0D
+#define USBCMD_SETACMODE      0x0E
+#define USBCMD_SETACINTERVAL  0x0F
+#define USBCMD_SETACTHRESHOLD 0x10
+#define USBCMD_GETAC          0x11
 
 #define USBRET_GENERALFAIL  0x00
 #define USBRET_CHKSUMFAIL   0x01
+#define USBRET_BADVALUE     0x02
 #define USBRET_SUCCESS      0x55
 
 enum {
@@ -50,3 +60,6 @@ int usbapp_term_in(int mode, void *usr);
 bool usbapp_take_suspend_event(void);
 bool usbapp_take_resume_event(void);
 portTASK_FUNCTION(usb_device_task, pvParameters);
+void usbapp_query_tone(int *lightness, int *contrast);
+uint8_t usbapp_query_mode(void);
+uint8_t usbapp_query_signal_status(void);

@@ -232,6 +232,14 @@ Diagnostic builds also include XMODEM file-transfer commands such as `recv`. Nor
 - There is a screen update LED near the screen connector. If that lights up but no image on the screen, double check the screen is firmly seated.
 - If the board powers on but there is no video, check whether the PC has detected the monitor and whether the output is enabled.
 - If USB-C DisplayPort Alt Mode is used, make sure the cable supports DisplayPort Alt Mode. Many charge-only USB-C cables will not work for video.
+- On some Linux systems using Intel `i915`, the Mini-HDMI/DVI path may be detected but expose no usable mode. The EDID can be valid, but `i915` may still reject the advertised HDMI clock rate during mode validation. If this happens, add the configured mode manually with `xrandr`, replacing `HDMI-1` and the timing values as needed for your config:
+
+```bash
+xrandr --newmode "1448x1072_75.00" 134.00 1448 1496 1528 1608 1072 1075 1085 1111 +HSync +VSync
+xrandr --addmode HDMI-1 "1448x1072_75.00"
+xrandr --output HDMI-1 --mode "1448x1072_75.00"
+```
+
 - Use a serial terminal and run `syslog` to see what the firmware is doing. This is often the fastest way to distinguish video-input, config, FPGA-load, and power-state issues.
 - If `dfu-util` reports no DFU device, re-enter DFU mode by holding the button closer to the USB port while plugging in USB.
 - If `dfu-util` or Python `hidapi` reports a permission error on Linux, install the udev rules from [Flashing Requirements](#flashing-requirements), then unplug and reconnect the board.

@@ -40,10 +40,17 @@ static int clamp_int(int value, int min_value, int max_value) {
 }
 
 static bool is_valid_update_mode(int mode) {
-    return (mode == UM_FAST_MONO_BAYER) ||
+    // Everything the USB protocol can legally set and the firmware can render
+    // without extra state. UM_MANUAL_LUT_* (0/1) are excluded: they need a
+    // host-uploaded LUT, and persisting them would boot the panel into a
+    // mode the firmware cannot reproduce. Modes 2 and 7 were previously
+    // rejected here, silently resetting a saved host-set mode at boot.
+    return (mode == UM_FAST_MONO_NO_DITHER) ||
+           (mode == UM_FAST_MONO_BAYER) ||
            (mode == UM_FAST_MONO_BLUE_NOISE) ||
            (mode == UM_FAST_GREY) ||
-           (mode == UM_AUTO_LUT_NO_DITHER);
+           (mode == UM_AUTO_LUT_NO_DITHER) ||
+           (mode == UM_AUTO_LUT_ERROR_DIFFUSION);
 }
 
 static int default_osd_scale_2x_from_ppi(void) {
@@ -75,6 +82,10 @@ static void config_init_settings(void) {
     config.autoclear_interval = AC_5MIN;
     config.autoclear_threshold = AC_THRES_MED;
     config.osd_scale_2x = 0;
+    for (int i = 0; i < TONE_MODE_COUNT; i++) {
+        config.tone_lightness[i] = TONE_UNSET;
+        config.tone_contrast[i] = TONE_UNSET;
+    }
 }
 
 void config_init(void) {
@@ -306,6 +317,21 @@ void config_validate_loaded(size_t loaded_size) {
         config.osd_scale_2x = default_osd_scale_2x_from_ppi();
     else
         config.osd_scale_2x = clamp_int(config.osd_scale_2x, 0, 1);
+
+    // Tone arrays are appended to config_t: legacy saves are shorter and
+    // leave the init values (TONE_UNSET) in place, which is exactly the
+    // "no tone stored for this mode" state.
+    for (int i = 0; i < TONE_MODE_COUNT; i++) {
+        if ((config.tone_lightness[i] == TONE_UNSET) ||
+                (config.tone_contrast[i] == TONE_UNSET)) {
+            config.tone_lightness[i] = TONE_UNSET;
+            config.tone_contrast[i] = TONE_UNSET;
+        }
+        else {
+            config.tone_lightness[i] = clamp_int(config.tone_lightness[i], -3, 3);
+            config.tone_contrast[i] = clamp_int(config.tone_contrast[i], -1, 6);
+        }
+    }
 }
 
 #ifndef GLIDER_HOST_TEST
@@ -333,10 +359,31 @@ void config_load(void) {
 void config_save(void) {
     SPIFFS_clearerr(&spiffs_fs);
     spiffs_file f = SPIFFS_open(&spiffs_fs, "config.bin", SPIFFS_O_CREAT | SPIFFS_O_TRUNC | SPIFFS_O_WRONLY, 0);
-    if (SPIFFS_errno(&spiffs_fs) != 0)
+    if (SPIFFS_errno(&spiffs_fs) != 0) {
+        syslog_printf("config_save: open failed: %d\n", SPIFFS_errno(&spiffs_fs));
         return;
-    
-    SPIFFS_write(&spiffs_fs, f, &config, sizeof(config));
+    }
+
+    int32_t res = SPIFFS_write(&spiffs_fs, f, &config, sizeof(config));
+    if (res != sizeof(config)) {
+        syslog_printf("config_save: write failed: %d (res %d)\n",
+                SPIFFS_errno(&spiffs_fs), (int)res);
+    }
+    // Close must not be skipped: SPIFFS flushes cached writes to flash only
+    // on close, and an unclosed fd leaks one of the 32 fd slots per save.
+    res = SPIFFS_close(&spiffs_fs, f);
+    if (res != SPIFFS_OK) {
+        syslog_printf("config_save: close failed: %d\n", SPIFFS_errno(&spiffs_fs));
+    }
+}
+
+// Set by tasks that want a config save without doing flash work in their
+// own context (e.g. the USB handler); consumed by the UI task, which
+// coalesces bursts into a single write.
+volatile bool config_save_pending = false;
+
+void config_request_save(void) {
+    config_save_pending = true;
 }
 #else
 void config_load(void) {
@@ -345,4 +392,31 @@ void config_load(void) {
 
 void config_save(void) {
 }
+
+void config_request_save(void) {
+}
 #endif
+
+// Legacy configs (shorter than the tone arrays) leave the arrays at their
+// init values, so no migration is needed: TONE_UNSET means "nothing stored
+// for this mode" and such modes keep whatever tone is currently active.
+void config_note_tone_for_mode(update_mode_t mode) {
+    if ((unsigned)mode >= TONE_MODE_COUNT)
+        return;
+    config.tone_lightness[mode] = config.lightness;
+    config.tone_contrast[mode] = config.contrast;
+}
+
+bool config_recall_tone_for_mode(update_mode_t mode) {
+    if ((unsigned)mode >= TONE_MODE_COUNT)
+        return false;
+    if (config.tone_lightness[mode] == TONE_UNSET)
+        return false;
+    if ((config.lightness == config.tone_lightness[mode]) &&
+            (config.contrast == config.tone_contrast[mode]))
+        return false;
+    config.lightness = config.tone_lightness[mode];
+    config.contrast = config.tone_contrast[mode];
+    return true;
+}
+

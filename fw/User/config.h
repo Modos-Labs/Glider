@@ -117,6 +117,11 @@ typedef struct {
     int autoclear_interval;
     int autoclear_threshold;
     int osd_scale_2x;
+    // Per-mode tone recall: the tone stored for each update mode (indexed by
+    // update_mode_t). TONE_UNSET means no tone has been saved for that mode
+    // yet; such modes keep whatever tone is currently active.
+    int tone_lightness[8];
+    int tone_contrast[8];
 } config_t;
 
 extern config_t config;
@@ -126,3 +131,21 @@ void config_reset_button_actions(void);
 void config_validate_loaded(size_t loaded_size);
 void config_load(void);
 void config_save(void);
+// Request a config save from a non-config task context (e.g. the USB
+// handler). The UI task performs the actual save, coalescing bursts.
+extern volatile bool config_save_pending;
+void config_request_save(void);
+
+// Number of update modes tracked for per-mode tone storage (the
+// config_t::tone_* arrays); must match the array dimension.
+#define TONE_MODE_COUNT 8
+// Sentinel: no tone stored for a mode.
+#define TONE_UNSET      0x7fff
+// Store the current lightness/contrast as the tone of the given update mode
+// (called when the tone is changed while that mode is active).
+void config_note_tone_for_mode(update_mode_t mode);
+// If a tone was stored for the given update mode and it differs from the
+// current one, update config.lightness/contrast to it and return true.
+// Pure config operation; the caller applies the tone (e.g. via
+// caster_set_tone) so config.c stays free of video-stack dependencies.
+bool config_recall_tone_for_mode(update_mode_t mode);

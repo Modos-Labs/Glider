@@ -84,6 +84,10 @@ static uint8_t is_busy() {
     return !!(status & STATUS_OP_QUEUE);
 }
 
+uint8_t caster_is_busy(void) {
+    return is_busy();
+}
+
 uint8_t caster_load_waveform(uint8_t *waveform, uint8_t frames) {
     fpga_write_reg8(CSR_LUT_FRAME, 0); // Reset value before loading
     fpga_write_reg16(CSR_LUT_ADDR, 0);
@@ -175,6 +179,10 @@ void caster_set_tone(int lightness, int contrast) {
 
 uint8_t caster_input_status(void) {
     return fpga_write_reg8(CSR_INPUT_STATUS, 0x00);
+}
+
+uint8_t caster_input_debug(void) {
+    return fpga_write_reg8(CSR_INPUT_DEBUG, 0x00);
 }
 
 void caster_input_force_internal(void) {

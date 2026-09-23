@@ -90,6 +90,7 @@
 #define CSR_INPUT_MEAS_VTOT_LO  141
 #define CSR_DEBUG_MEMIF_STATE   142
 #define CSR_DEBUG_FIFO_STATE    143
+#define CSR_INPUT_DEBUG         144
 // Alias for 16bit registers
 #define CSR_LUT_ADDR        CSR_LUT_ADDR_HI
 #define CSR_OP_LEFT         CSR_OP_LEFT_HI
@@ -156,6 +157,7 @@ uint8_t caster_redraw(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
 uint8_t caster_setmode(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1,
     update_mode_t mode);
 uint32_t caster_get_damage_counter(void);
+uint8_t caster_is_busy(void);
 void caster_redraw_blank(void);
 uint8_t caster_osd_send_buf(uint8_t *buf);
 uint8_t caster_osd_set_window(uint16_t left, uint16_t top,
@@ -163,6 +165,7 @@ uint8_t caster_osd_set_window(uint16_t left, uint16_t top,
 uint8_t caster_osd_set_enable(bool en);
 void caster_set_tone(int lightness, int contrast);
 uint8_t caster_input_status(void);
+uint8_t caster_input_debug(void);
 void caster_input_force_internal(void);
 void caster_input_request_tmds(void);
 void caster_input_request_dp(void);

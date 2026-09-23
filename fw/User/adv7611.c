@@ -94,6 +94,17 @@ static const uint8_t adv7611_init_2[] = {
     HDMI_I2C_ADDR,      0x6c, 0xa2  // disable manual HPA
 };
 
+static bool adv7611_initialized = false;
+
+static int adv7611_write_reg(uint8_t addr, uint8_t reg, uint8_t val) {
+    uint8_t buf[2] = {reg, val};
+    int result = pal_i2c_write_payload(ADV7611_I2C, addr, buf, 2);
+    if (result != 0) {
+        syslog_printf("Failed writing data to ADV7611\n");
+    }
+    return result;
+}
+
 static void adv7611_send_init_seq(const uint8_t *seq, int entries) {
     uint8_t addr;
     uint8_t buf[2];
@@ -109,10 +120,14 @@ static void adv7611_send_init_seq(const uint8_t *seq, int entries) {
     }
 }
 
-static void adv7611_load_edid(uint8_t *edid) {
+static void adv7611_disable_edid(void) {
+    adv7611_write_reg(KSV_I2C_ADDR, 0x74, 0x00);
+}
+
+static void adv7611_load_edid(uint8_t *edid, uint16_t edid_size) {
     uint8_t buf[2];
     int result;
-    for (int i = 0; i < 128; i++) {
+    for (uint16_t i = 0; i < edid_size; i++) {
         buf[0] = i;
         buf[1] = edid[i];
         result = pal_i2c_write_payload(ADV7611_I2C, EDID_I2C_ADDR, buf, 2);
@@ -120,6 +135,55 @@ static void adv7611_load_edid(uint8_t *edid) {
             syslog_printf("Failed writing data to ADV7611\n");
         }
     }
+}
+
+static bool adv7611_wait_edid_enabled(void) {
+    for (int i = 0; i < 20; i++) {
+        uint8_t val = adv7611_read_reg(KSV_I2C_ADDR, 0x76);
+        if (val & 0x01) {
+            return true;
+        }
+        sleep_ms(1);
+    }
+    return false;
+}
+
+static void adv7611_log_edid_status(uint8_t *edid, uint16_t edid_size) {
+    uint8_t base_sum = 0;
+    uint8_t ext_sum = 0;
+    for (int i = 0; i < 128; i++) {
+        base_sum += edid[i];
+    }
+    if (edid_size >= 256) {
+        for (int i = 128; i < 256; i++) {
+            ext_sum += edid[i];
+        }
+    }
+
+    syslog_printf("ADV7611 EDID status %02x, size %u, sums %02x/%02x, ext %u, input %02x, features %02x",
+            (unsigned int)adv7611_read_reg(KSV_I2C_ADDR, 0x76),
+            (unsigned int)edid_size, (unsigned int)base_sum,
+            (unsigned int)ext_sum, (unsigned int)edid[126],
+            (unsigned int)edid[20], (unsigned int)edid[24]);
+}
+
+void adv7611_log_signal_status(void) {
+    uint8_t main_6a = adv7611_read_reg(ADV7611_I2C_ADDR, 0x6a);
+    uint8_t hdmi_04 = adv7611_read_reg(HDMI_I2C_ADDR, 0x04);
+    uint8_t hdmi_05 = adv7611_read_reg(HDMI_I2C_ADDR, 0x05);
+    uint8_t hdmi_07 = adv7611_read_reg(HDMI_I2C_ADDR, 0x07);
+    uint16_t tmds_mhz = ((uint16_t)adv7611_read_reg(HDMI_I2C_ADDR, 0x51) << 1) |
+            (adv7611_read_reg(HDMI_I2C_ADDR, 0x52) >> 7);
+    uint16_t line_total = ((uint16_t)adv7611_read_reg(HDMI_I2C_ADDR, 0x1e) << 8) |
+            adv7611_read_reg(HDMI_I2C_ADDR, 0x1f);
+    uint16_t hact = ((uint16_t)(hdmi_07 & 0x1f) << 8) |
+            adv7611_read_reg(HDMI_I2C_ADDR, 0x08);
+    uint16_t vact = ((uint16_t)(adv7611_read_reg(HDMI_I2C_ADDR, 0x09) & 0x1f) << 8) |
+            adv7611_read_reg(HDMI_I2C_ADDR, 0x0a);
+
+    syslog_printf("ADV7611 signal main6a %02x hdmi04 %02x hdmi05 %02x hdmi07 %02x, tmds %u MHz, active %u x %u, line %u",
+            main_6a, hdmi_04, hdmi_05, hdmi_07, tmds_mhz, hact, vact,
+            line_total);
 }
 
 uint8_t adv7611_read_reg(uint8_t addr, uint8_t reg) {
@@ -132,8 +196,13 @@ uint8_t adv7611_read_reg(uint8_t addr, uint8_t reg) {
 }
 
 void adv7611_early_init(void) {
+    if (adv7611_initialized)
+        return;
+
     // Initialize IO, reset ADV7611 and allocate I2C addresses
     // So it won't conflict with other ICs
+    gpio_put(HPD_EN, 0);
+    sleep_ms(100);
     gpio_put(DEC_RST, 1);
     sleep_ms(10);
     gpio_put(DEC_RST, 0);
@@ -142,15 +211,26 @@ void adv7611_early_init(void) {
 }
 
 void adv7611_init(void) {
+    if (adv7611_initialized)
+        return;
+
     adv7611_send_init_seq(adv7611_init_0, sizeof(adv7611_init_0) / 3);
+    adv7611_disable_edid();
+    sleep_ms(2);
     adv7611_send_init_seq(adv7611_init_1, sizeof(adv7611_init_1) / 3);
 
-    uint8_t *edid = edid_get_raw();
-    adv7611_load_edid(edid);
+    uint8_t *edid = edid_get_raw_hdmi();
+    uint16_t edid_size = edid_get_raw_hdmi_size();
+    adv7611_load_edid(edid, edid_size);
 
     adv7611_send_init_seq(adv7611_init_2, sizeof(adv7611_init_2) / 3);
+    if (!adv7611_wait_edid_enabled()) {
+        syslog_printf("ADV7611 EDID enable timeout\n");
+    }
+    adv7611_log_edid_status(edid, edid_size);
 
     gpio_put(HPD_EN, 1);
+    adv7611_initialized = true;
 
     syslog_printf("ADV7611 initialization done\n");
 }
@@ -164,4 +244,5 @@ void adv7611_powerdown(void) {
     if (result != 0) {
         syslog_printf("Failed powering down ADV7611\n");
     }
+    adv7611_initialized = false;
 }

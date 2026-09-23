@@ -22,7 +22,69 @@
 //
 #include "platform.h"
 #include "app.h"
+#include "caster.h"
+#include "ui.h"
 #include "tusb.h"
+
+// Mutex protecting config tone fields and the tone LUT from concurrent
+// modification by the USB handler, the OSD UI task, and the shell.
+static SemaphoreHandle_t usb_tone_lock;
+static volatile bool usb_tone_lock_ready;
+
+static bool usb_tone_lock_take(void) {
+    if (!usb_tone_lock_ready)
+        return false;
+    return xSemaphoreTake(usb_tone_lock, pdMS_TO_TICKS(100)) == pdTRUE;
+}
+
+static void usb_tone_lock_give(void) {
+    if (usb_tone_lock_ready)
+        xSemaphoreGive(usb_tone_lock);
+}
+
+void usbapp_query_tone(int *lightness, int *contrast) {
+    if (usb_tone_lock_take()) {
+        *lightness = config.lightness;
+        *contrast = config.contrast;
+        usb_tone_lock_give();
+    }
+}
+
+uint8_t usbapp_query_mode(void) {
+    uint8_t mode = 0xFF;
+
+    if (usb_tone_lock_take()) {
+        mode = (uint8_t)config.update_mode;
+        usb_tone_lock_give();
+    }
+    return mode;
+}
+
+uint8_t usbapp_query_signal_status(void) {
+    return caster_input_status();
+}
+
+// Pending getter payloads delivered in the next IN report, matching the
+// out-of-band response pattern used for command status.
+static struct {
+    int8_t lightness;
+    int8_t contrast;
+    bool pending;
+} tone_getter;
+static struct {
+    uint8_t mode;
+    bool pending;
+} mode_getter;
+static struct {
+    uint8_t status;
+    bool pending;
+} signal_getter;
+static struct {
+    uint8_t mode;
+    uint8_t interval;
+    uint8_t threshold;
+    bool pending;
+} ac_getter;
 
 void usbapp_term_out(char data, void *usr) {
 	tud_cdc_write_char(data);
@@ -133,6 +195,9 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
     uint16_t id = (buffer[12] << 8) | buffer[11];
     uint16_t chksum = (buffer[14] << 8) | buffer[13];
 
+    // Signed view of param for the tone commands (two's complement).
+    int16_t param16 = (int16_t)param;
+
     static bool is_recv = false;
     static uint16_t recv_name_cnt;
     static uint32_t recv_data_cnt;
@@ -174,6 +239,107 @@ void tud_hid_set_report_cb(uint8_t instance, uint8_t report_id, hid_report_type_
             break;
         case USBCMD_SETMODE:
             retval = caster_setmode(x0, y0, x1, y1, (update_mode_t)param);
+            if (retval == 0) {
+                // Track the mode in config so GETMODE reports USB-initiated
+                // changes; the OSD path maintains this via apply_display_mode().
+                config.update_mode = (int)param;
+                config_request_save();
+                usbapp_mode_changed = true;
+            }
+            break;
+        case USBCMD_SETLIGHTNESS:
+            if ((param16 < -3) || (param16 > 3)) {
+                retval = USBRET_BADVALUE;
+                goto returnval;
+            }
+            if (!usb_tone_lock_take()) {
+                retval = USBRET_GENERALFAIL;
+                goto returnval;
+            }
+            config.lightness = param16;
+            // Remember this tone for the current mode, apply immediately via
+            // the tone LUT (same path the OSD uses), and defer the flash
+            // write to the UI task so the USB handler never does flash work
+            // in its own context.
+            config_note_tone_for_mode((update_mode_t)config.update_mode);
+            config_request_save();
+            caster_set_tone(config.lightness, config.contrast);
+            usb_tone_lock_give();
+            retval = 0;
+            break;
+        case USBCMD_SETCONTRAST:
+            if ((param16 < -1) || (param16 > 6)) {
+                retval = USBRET_BADVALUE;
+                goto returnval;
+            }
+            if (!usb_tone_lock_take()) {
+                retval = USBRET_GENERALFAIL;
+                goto returnval;
+            }
+            config.contrast = param16;
+            config_note_tone_for_mode((update_mode_t)config.update_mode);
+            config_request_save();
+            caster_set_tone(config.lightness, config.contrast);
+            usb_tone_lock_give();
+            retval = 0;
+            break;
+        case USBCMD_GETTONE:
+            if (!usb_tone_lock_take()) {
+                retval = USBRET_GENERALFAIL;
+                goto returnval;
+            }
+            tone_getter.lightness = config.lightness;
+            tone_getter.contrast = config.contrast;
+            usb_tone_lock_give();
+            tone_getter.pending = true;
+            retval = 0;
+            break;
+        case USBCMD_GETMODE:
+            mode_getter.mode = usbapp_query_mode();
+            mode_getter.pending = true;
+            retval = 0;
+            break;
+        case USBCMD_GETAC:
+            ac_getter.mode = (uint8_t)config.autoclear_mode;
+            ac_getter.interval = (uint8_t)config.autoclear_interval;
+            ac_getter.threshold = (uint8_t)config.autoclear_threshold;
+            ac_getter.pending = true;
+            retval = 0;
+            break;
+        case USBCMD_GETSIGNAL:
+            signal_getter.status = usbapp_query_signal_status();
+            signal_getter.pending = true;
+            retval = 0;
+            break;
+        case USBCMD_SETACMODE:
+            if ((param16 < AC_OFF) || (param16 >= AC_MODE_COUNT)) {
+                retval = USBRET_BADVALUE;
+                goto returnval;
+            }
+            config.autoclear_mode = param16;
+            usbapp_ac_changed = true;
+            config_request_save();
+            retval = 0;
+            break;
+        case USBCMD_SETACINTERVAL:
+            if ((param16 < AC_1MIN) || (param16 >= AC_INTERVAL_COUNT)) {
+                retval = USBRET_BADVALUE;
+                goto returnval;
+            }
+            config.autoclear_interval = param16;
+            usbapp_ac_changed = true;
+            config_request_save();
+            retval = 0;
+            break;
+        case USBCMD_SETACTHRESHOLD:
+            if ((param16 < AC_THRES_HIGH) || (param16 >= AC_THRES_COUNT)) {
+                retval = USBRET_BADVALUE;
+                goto returnval;
+            }
+            config.autoclear_threshold = param16;
+            usbapp_ac_changed = true;
+            config_request_save();
+            retval = 0;
             break;
         case USBCMD_USBBOOT:
             //iap_usbboot();
@@ -241,8 +407,32 @@ returnval:
     txbuf[6] = exp_chksum & 0xff;
     txbuf[7] = (exp_chksum >> 8) & 0xff;
 
-    if (ret)
-        tud_hid_report(0, txbuf, CFG_TUD_HID_EP_BUFSIZE);
+    if (!ret)
+        return;
+
+    // Stamp getter payloads into reserved response bytes when a GET
+    // command completed successfully.
+    if ((retval == USBRET_SUCCESS) && tone_getter.pending) {
+        tone_getter.pending = false;
+        txbuf[8] = (uint8_t)tone_getter.lightness;
+        txbuf[9] = (uint8_t)tone_getter.contrast;
+    }
+    else if ((retval == USBRET_SUCCESS) && mode_getter.pending) {
+        mode_getter.pending = false;
+        txbuf[8] = mode_getter.mode;
+    }
+    else if ((retval == USBRET_SUCCESS) && signal_getter.pending) {
+        signal_getter.pending = false;
+        txbuf[8] = signal_getter.status;
+    }
+    else if ((retval == USBRET_SUCCESS) && ac_getter.pending) {
+        ac_getter.pending = false;
+        txbuf[8] = ac_getter.mode;
+        txbuf[9] = ac_getter.interval;
+        txbuf[10] = ac_getter.threshold;
+    }
+
+    tud_hid_report(0, txbuf, CFG_TUD_HID_EP_BUFSIZE);
 }
 
 portTASK_FUNCTION(usb_device_task, pvParameters) {
@@ -252,6 +442,8 @@ portTASK_FUNCTION(usb_device_task, pvParameters) {
     };
     
     rxqueue = xQueueCreate(1024, sizeof(char));
+    usb_tone_lock = xSemaphoreCreateMutex();
+    usb_tone_lock_ready = (usb_tone_lock != NULL);
     tusb_init(BOARD_TUD_RHPORT, &dev_init);
 
     // RTOS forever loop

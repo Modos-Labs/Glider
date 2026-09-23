@@ -25,4 +25,5 @@
 void adv7611_early_init(void);
 void adv7611_init(void);
 uint8_t adv7611_read_reg(uint8_t addr, uint8_t reg);
+void adv7611_log_signal_status(void);
 void adv7611_powerdown(void);
